@@ -48,7 +48,7 @@ describe("workspace folder resolution cache", () => {
       HostRpcRegistry,
       "workspace.resolvePathsByRepoIdentifiers"
     >(mockLocalHostEntry.hostId, "workspace.resolvePathsByRepoIdentifiers", {
-      repoIdentifiers: [{ owner: "TRAYCERAI", repo: "Planwise" }],
+      repoIdentifiers: [{ owner: "TRAYCERAI", repo: "Traycer" }],
     });
     fixture.queryClient.setQueryData(unrelatedKey, { mappings: [] });
     fixture.queryClient.setQueryData(caseVariantKey, { mappings: [] });

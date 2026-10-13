@@ -3630,7 +3630,7 @@ describe("ResourceMonitorPopover", () => {
     fireEvent.change(
       screen.getByRole("searchbox", { name: "Search resources" }),
       {
-        target: { value: "TRAYCER MAIN" },
+        target: { value: "PLANWISE MAIN" },
       },
     );
     expect(screen.getByText("Main")).not.toBeNull();
@@ -3639,7 +3639,7 @@ describe("ResourceMonitorPopover", () => {
     fireEvent.change(
       screen.getByRole("searchbox", { name: "Search resources" }),
       {
-        target: { value: "traycer other" },
+        target: { value: "planwise other" },
       },
     );
     expect(screen.getByText("Other")).not.toBeNull();
