@@ -1458,7 +1458,7 @@ describe("<ProviderMcpTab />", () => {
       "codex",
     );
 
-    expect(screen.queryByText(/Traycer sessions only/)).toBeNull();
+    expect(screen.queryByText(/Planwise sessions only/)).toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: /Expand context7/ }));
 

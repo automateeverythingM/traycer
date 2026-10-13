@@ -398,13 +398,13 @@ function createStatusBridge(): {
 
 function findHostUpdateBanner(): Promise<HTMLElement> {
   return screen.findByRole("status", {
-    name: /Traycer host update available: 1\.4\.2/i,
+    name: /Planwise host update available: 1\.4\.2/i,
   });
 }
 
 function queryHostUpdateBanner(): HTMLElement | null {
   return screen.queryByRole("status", {
-    name: /Traycer host update/i,
+    name: /Planwise host update/i,
   });
 }
 

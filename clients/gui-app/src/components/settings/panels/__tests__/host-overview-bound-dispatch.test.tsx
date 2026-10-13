@@ -1017,7 +1017,7 @@ describe("HostOverviewPanel — the dialog's Force bypasses the catalog gate (i)
       await screen.findByTestId("host-overview-operation-restart"),
     );
     await screen.findByTestId("host-busy-force-defer-dialog");
-    expect(screen.queryByText(/Traycer couldn't verify/)).toBeNull();
+    expect(screen.queryByText(/Planwise couldn't verify/)).toBeNull();
 
     fireEvent.click(screen.getByTestId("host-busy-force"));
     await waitFor(() => {

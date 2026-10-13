@@ -49,7 +49,7 @@ describe("UsageErrorCard", () => {
     // Naming Traycer Cloud here would send a local-plane account chasing
     // connectivity for a local-database failure.
     expect(screen.getByText("Couldn't load usage data.")).not.toBeNull();
-    expect(screen.queryByText(/Traycer Cloud/)).toBeNull();
+    expect(screen.queryByText(/Planwise Cloud/)).toBeNull();
     // The specific cause still reaches the reader through the message line.
     expect(screen.getByText("sqlite: database is locked")).not.toBeNull();
   });

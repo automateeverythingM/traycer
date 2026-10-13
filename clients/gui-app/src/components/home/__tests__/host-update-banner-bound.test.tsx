@@ -1367,7 +1367,7 @@ describe("HostUpdateBanner — bound arm (Ticket 06 subject E)", () => {
       renderBanner(createFakeRunnerHost({ hostManagement: management })),
     ).not.toThrow();
     await screen.findByRole("status", {
-      name: /Traycer host update available: 1\.4\.2/i,
+      name: /Planwise host update available: 1\.4\.2/i,
     });
     // Never the attempt-driven copy - the unbound arm has no attempt to read.
     expect(screen.queryByTestId("host-update-banner-force-restart")).toBeNull();
@@ -1407,7 +1407,7 @@ describe("HostUpdateBanner — bound arm (Ticket 06 subject E)", () => {
     expect(screen.queryByRole("button", { name: /Update now/i })).toBeNull();
     // Not a failure: the info tint, never the destructive one.
     const banner = screen.getByRole("status", {
-      name: /Traycer host update waiting/i,
+      name: /Planwise host update waiting/i,
     });
     expect(banner.className).not.toContain("destructive");
 
@@ -1509,7 +1509,7 @@ describe("HostUpdateBanner — bound arm (Ticket 06 subject E)", () => {
         updateReady: true,
       });
       await screen.findByRole("status", {
-        name: /Traycer host update available: 1\.4\.2/i,
+        name: /Planwise host update available: 1\.4\.2/i,
       });
       expect(screen.queryByTestId("host-update-banner-phase")).toBeNull();
     });

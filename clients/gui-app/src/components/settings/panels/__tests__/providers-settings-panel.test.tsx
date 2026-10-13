@@ -1984,7 +1984,7 @@ describe("<ProvidersSettingsPanel />", () => {
       </TooltipProvider>,
     );
 
-    fireEvent.click(railProviderRow(/Traycer/i, false));
+    fireEvent.click(railProviderRow(/Planwise/i, false));
     // CLI candidates live on CLI & Args; Account / Profiles lead the tab order.
     selectTab("CLI & Args");
 
@@ -2403,7 +2403,7 @@ describe("<ProvidersSettingsPanel />", () => {
 
     expect(screen.queryByText(/Disabled by/)).toBeNull();
 
-    fireEvent.click(railProviderRow(/Traycer/i, false));
+    fireEvent.click(railProviderRow(/Planwise/i, false));
 
     expect(screen.queryByText(/Disabled by/)).toBeNull();
   });

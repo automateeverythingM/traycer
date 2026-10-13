@@ -1947,7 +1947,7 @@ describe("FallbackManualRungActions", () => {
       expect(screen.getByRole("button", { name: "Retry" })).toBeDefined();
       // A stalled stream has no reset boundary to be "beyond the cap" of, and
       // `REASON_ELIGIBLE_RUNGS.missing_terminal_event` carries no "wait" rung.
-      expect(screen.queryByText(/Traycer is set to wait/)).toBeNull();
+      expect(screen.queryByText(/Planwise is set to wait/)).toBeNull();
     });
 
     it("does not show the beyond-cap sentence for a non-wait reason (billing), with a reset time in hand", () => {
@@ -1970,7 +1970,7 @@ describe("FallbackManualRungActions", () => {
       expect(screen.getByRole("button", { name: "Retry" })).toBeDefined();
       // `REASON_ELIGIBLE_RUNGS.billing` is `["profile", "tier"]` - no "wait".
       // Matches both wordings of the sentence, which share this clause.
-      expect(screen.queryByText(/Traycer is set to wait/)).toBeNull();
+      expect(screen.queryByText(/Planwise is set to wait/)).toBeNull();
     });
 
     /**
@@ -2008,7 +2008,7 @@ describe("FallbackManualRungActions", () => {
           screen.getByRole("button", { name: "Retry" }),
           reason,
         ).toBeDefined();
-        expect(screen.queryByText(/Traycer is set to wait/), reason).toBeNull();
+        expect(screen.queryByText(/Planwise is set to wait/), reason).toBeNull();
         unmount();
       }
     });
