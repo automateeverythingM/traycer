@@ -17,6 +17,10 @@ export const AGENT_SELECTION = defineSettingsSection("agents", {
       "delegation",
       "child agent",
       "routing",
+      "auto-model",
+      "auto model",
+      "router",
+      "tier",
     ],
   },
 });

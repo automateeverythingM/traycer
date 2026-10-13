@@ -11,6 +11,7 @@ import {
 import { useStore } from "zustand";
 import type { ProviderTerminalLoginSurface } from "@/lib/providers/provider-terminal-login-surface";
 import type { JsonContent } from "@traycer/protocol/common/registry";
+import { noteRouterPreviewContent } from "@/stores/composer/model-router-preview";
 import type { GuiHarnessId } from "@traycer/protocol/host/index";
 import type {
   ChatActiveTurn,
@@ -621,6 +622,7 @@ function ChatComposerImpl(props: ChatComposerProps) {
     (content: JsonContent, selection: { from: number; to: number }): void => {
       authority.noteEdit();
       handleDocumentChange(content, selection);
+      noteRouterPreviewContent(toolbarStore, content);
       // The document is the queue, and mount-time re-entry cannot see a node
       // that did not exist at mount. The browser-preview screenshot the mention
       // extension appends asynchronously is exactly that node, and it enters
@@ -628,7 +630,7 @@ function ChatComposerImpl(props: ChatComposerProps) {
       // started is never looked at again this mount - so this costs one scan.
       noteContentImages(content);
     },
-    [authority, handleDocumentChange, noteContentImages],
+    [authority, handleDocumentChange, noteContentImages, toolbarStore],
   );
 
   const steerEnabled = useSettingsStore((s) => s.steerOnModEnterEnabled);

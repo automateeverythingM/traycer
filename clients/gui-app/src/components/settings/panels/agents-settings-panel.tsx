@@ -4,6 +4,7 @@
  */
 import { SettingsPanelShell } from "@/components/settings/settings-panel-shell";
 import { AgentSelectionGuideSection } from "./agent-selection-guide-section";
+import { AutoModelSettingsSection } from "./auto-model-settings-section";
 
 // The global agent selection guide lives in its own full-height settings
 // section so the Markdown source editor can use all remaining panel space.
@@ -21,7 +22,12 @@ export function AgentsSettingsPanel() {
       description="How Traycer picks a coding agent, model, and reasoning effort when it spawns child agents. This does not manage the agents inside a Task."
       fillHeight
     >
-      <AgentSelectionGuideSection />
+      <div className="flex h-full min-h-0 flex-col overflow-y-auto">
+        <AutoModelSettingsSection />
+        <div className="min-h-[min(60vh,32rem)] flex-1">
+          <AgentSelectionGuideSection />
+        </div>
+      </div>
     </SettingsPanelShell>
   );
 }

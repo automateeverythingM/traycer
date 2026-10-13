@@ -11,6 +11,7 @@ import { createStore } from "zustand/vanilla";
 import { useStore } from "zustand";
 import { useShallow } from "zustand/react/shallow";
 import type { JsonContent } from "@traycer/protocol/common/registry";
+import { noteRouterPreviewContent } from "@/stores/composer/model-router-preview";
 import type { ChatRunSettings } from "@traycer/protocol/host/agent/gui/subscribe";
 
 import { v4 as uuidv4 } from "uuid";
@@ -582,6 +583,7 @@ export function LandingComposer(props: LandingComposerProps) {
 
   const handleDocumentChange = useCallback(
     (content: JsonContent, selection: { from: number; to: number }) => {
+      noteRouterPreviewContent(toolbarStore, content);
       if (runtime !== null) {
         runtime.setSnapshot(content, selection);
         // After the write, in the same handler: a fork flushes the runtime
@@ -601,7 +603,7 @@ export function LandingComposer(props: LandingComposerProps) {
         .getState()
         .setDraftContent(ensureBoundDraftId(), content, selection);
     },
-    [authority, ensureBoundDraftId, runtime, unboundRuntime],
+    [authority, ensureBoundDraftId, runtime, toolbarStore, unboundRuntime],
   );
 
   const handleSelectionChange = useCallback(

@@ -58,6 +58,11 @@ import {
   buildSubmittedChatJSONContent,
   extractPlainTextFromComposerJSONContent,
 } from "@/lib/composer/tiptap-json-content";
+import {
+  applyRouterToToolbar,
+  decideRoute,
+} from "@/lib/model-router/model-router";
+import { readModelRouterConfig } from "@/stores/composer/model-router-store";
 import { buildChatRunSettings } from "@/lib/composer/chat-run-settings";
 import { decideSteerSettings } from "@/lib/chats/decide-steer-settings";
 import {
@@ -491,12 +496,14 @@ export function useChatComposerSubmit(
         // lets `appendImageAttachmentAtoms` pair each record with its crop.
         const { annotationRecords: liveAnnotationRecords } =
           readDraftSidecars(taskId);
-        const settings = buildChatRunSettings({
-          selection: toolbar.selection,
-          permission: toolbar.permission,
-          reasoning: toolbar.reasoning,
-          serviceTier: toolbar.serviceTier,
-        });
+        // Auto-Model: the prompt's tier may name a different model than the
+        // picker shows. Decided on the live text, the same text that is sent.
+        const settings = buildChatRunSettings(
+          applyRouterToToolbar(
+            toolbar,
+            decideRoute(liveContentText, readModelRouterConfig()),
+          ),
+        );
         const submittedContent = appendImageAttachmentAtoms(
           buildSubmittedChatJSONContent(
             sendableContent,

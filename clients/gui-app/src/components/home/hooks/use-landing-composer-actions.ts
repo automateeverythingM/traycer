@@ -106,6 +106,11 @@ import {
   pollEpicExistence,
 } from "@/lib/epics/epic-existence-poll";
 import { scheduleLandingImageReconcile } from "@/lib/composer/landing-image-gc";
+import {
+  applyRouterToToolbar,
+  decideRoute,
+} from "@/lib/model-router/model-router";
+import { readModelRouterConfig } from "@/stores/composer/model-router-store";
 import { buildChatRunSettings } from "@/lib/composer/chat-run-settings";
 import { useAccountContextStore } from "@/stores/auth/account-context-store";
 import {
@@ -542,12 +547,13 @@ export function useLandingComposerActions(
       );
       const profile = useAuthStore.getState().profile;
 
-      const settings = buildChatRunSettings({
-        selection: toolbar.selection,
-        permission: toolbar.permission,
-        reasoning: toolbar.reasoning,
-        serviceTier: toolbar.serviceTier,
-      });
+      // Auto-Model: route the first turn by what the prompt asks for.
+      const settings = buildChatRunSettings(
+        applyRouterToToolbar(
+          toolbar,
+          decideRoute(text, readModelRouterConfig()),
+        ),
+      );
       if (settings.model.length === 0) {
         draftRuntimeRegistry.complete(attempt);
         return;

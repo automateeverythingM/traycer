@@ -334,6 +334,9 @@ export const PERSIST_STORES = [
     leaf: "resource-monitor",
     kind: "static",
   },
+  // Auto-Model: on/off plus the tier -> model table. A preference about how
+  // this person likes turns run, kept on the device like the settings store.
+  { camelName: "modelRouter", leaf: "model-router", kind: "static" },
   // Every preference about the app's own chrome — where a surface lives and
   // what it renders — one slice per surface (`layout-store.ts`). Device-local
   // display preferences, same tier as theme and font size, so machine-local
