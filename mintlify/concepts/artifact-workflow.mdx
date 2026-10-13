@@ -1,6 +1,6 @@
 ---
 title: "Artifact workflow"
-description: "How agents use Traycer's built-in skills to plan, build, and review work through artifacts."
+description: "How agents use Planwise's built-in skills to plan, build, and review work through artifacts."
 keywords:
   [
     "artifacts",
@@ -23,7 +23,7 @@ keywords:
   the [IDE Extension docs](/extension).
 </Note>
 
-A **Task** is the container for a piece of work. It holds agents, files, the git diff, and [artifacts](/panels/artifacts): specs, tickets, stories, and reviews. Traycer ships a set of skills that tell agents how to plan, build, and review through those artifacts.
+A **Task** is the container for a piece of work. It holds agents, files, the git diff, and [artifacts](/panels/artifacts): specs, tickets, stories, and reviews. Planwise ships a set of skills that tell agents how to plan, build, and review through those artifacts.
 
 ## How Artifacts Appear
 
@@ -66,7 +66,7 @@ For a large feature, a typical order is brief, core flows, tech plan, tickets, e
 | Skill                  | What it does                                                                                                                             |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `traycer-debate`       | Runs a structured debate between agents with different perspectives. You approve the perspectives and models, and it ends with a written synthesis. |
-| `traycer-housekeeping` | Audits the Traycer-created worktrees on the host, recommends which to remove, and deletes only the ones you approve.                     |
+| `traycer-housekeeping` | Audits the Planwise-created worktrees on the host, recommends which to remove, and deletes only the ones you approve.                     |
 
 ## Where Skill Output Lands
 
@@ -100,7 +100,7 @@ $traycer-execute Implement the offline-mode tickets.
 $traycer-review Review the changes on this branch.
 ```
 
-Some coding agents also start a skill on their own when a request matches its description. Traycer doesn't run the steps as an automatic pipeline and doesn't fail a turn when a skill is skipped. Picking the skill yourself is the reliable way to run it.
+Some coding agents also start a skill on their own when a request matches its description. Planwise doesn't run the steps as an automatic pipeline and doesn't fail a turn when a skill is skipped. Picking the skill yourself is the reliable way to run it.
 
 To add skills of your own, see [Skills](/settings/providers/skills).
 

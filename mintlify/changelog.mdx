@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 sidebarTitle: "Desktop"
-description: "Track the latest updates and improvements to Traycer Desktop."
+description: "Track the latest updates and improvements to Planwise Desktop."
 rss: true
 ---
 
@@ -32,7 +32,7 @@ See the [GitHub release](https://github.com/traycerai/traycer/releases/tag/deskt
 <Update label="v1.4.0">
 Model routing, Auto mode, version history for artifacts, machines that work together, themes, labels, Antigravity, and a faster Host.
 
-- **Model routing** — when a chat hits a usage limit, gets signed out, or its provider is down, Traycer can move it to an equivalent model in the same tier. For a usage limit or a sign-out it can also switch to another account for the same agent, and for a usage limit it can wait for the limit to reset. Before it switches or starts waiting, a countdown lets you cancel or pick a different model. Turn on **Route automatically** in **Settings › Model routing**.
+- **Model routing** — when a chat hits a usage limit, gets signed out, or its provider is down, Planwise can move it to an equivalent model in the same tier. For a usage limit or a sign-out it can also switch to another account for the same agent, and for a usage limit it can wait for the limit to reset. Before it switches or starts waiting, a countdown lets you cancel or pick a different model. Turn on **Route automatically** in **Settings › Model routing**.
 - **Auto mode** — a new permission mode: a judge approves routine commands and asks you about risky ones. Choose the judge's model and add your own rules in **Settings › Permissions**. For Claude Code, you can use Claude Code's own classifier instead, in **Settings › Providers › Claude Code**.
 - **Version history** — changes to specs, stories, tickets, and reviews are saved as versions, labelled by who made them. Compare a version with the one before it, restore any version as a new one, and bring back deleted artifacts. Retention settings are in **Settings › Host › Overview › Data**.
 - **Your machines, working together** — agents can forward ports between your machines, so a dev server started on a remote Host opens at localhost on yours. They can also message and create agents on your other machines, run commands there, and copy files between them. A remote agent's browser tab can open in the desktop app you messaged it from. See and stop forwards in the chat's Background panel or **Settings › Host › Overview › Ports**.
@@ -46,20 +46,20 @@ Model routing, Auto mode, version history for artifacts, machines that work toge
 - **Home tab** — everything that needs you and everything that's running, across all your Tasks. Turn it on in **Settings › Layout › Tabs**.
 - **Faster and lighter** — the Host's storage was rebuilt: database queries run in the background instead of blocking the Host, and chats are saved row by row instead of rewriting the whole conversation. Separately, big chats open much faster after a restart, the app uses less memory, and on a Mac the Host uses less memory and closing a big Task is much smoother.
 - **Mobile** — Android on Google Play and iPhone on TestFlight. The latest iPhone beta signs in through the system sign-in sheet, opens with a short guided tour, has a pull-up composer for long messages, shows artifact version history and export, and lets you request account deletion.
-- **Agents** — Grok supports editing earlier messages, native `/compact`, and image attachments; Claude Opus 5.5, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and Grok 4.7 are on Traycer Inference; the model picker has a reasoning slider; Stop now works even when the agent's provider has stopped responding; and signing in to a provider account no longer interrupts running chats.
+- **Agents** — Grok supports editing earlier messages, native `/compact`, and image attachments; Claude Opus 5.5, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and Grok 4.7 are on Planwise Inference; the model picker has a reasoning slider; Stop now works even when the agent's provider has stopped responding; and signing in to a provider account no longer interrupts running chats.
 - **Worktrees** — optional automatic cleanup of inactive worktrees whose work is merged or pushed, with no uncommitted changes, open PR, or active session, per machine, in **Settings › Worktrees**.
 - **Fixes** — chats stay open while the Host restarts; edits to an artifact are no longer dropped when its file names a different kind; the Host no longer replays old terminal output after a Mac restart, which kept the CPU busy; terminal agent arguments on Windows keep their backslashes; and the microphone no longer opens while Voice input is off.
 </Update>
 
 <Update label="v1.3.0">
-A browser inside Traycer, the mobile app, and importing your Claude Code and Codex sessions.
+A browser inside Planwise, the mobile app, and importing your Claude Code and Codex sessions.
 
-- **In-app browser** — browse the web without leaving Traycer, and let agents drive a browser session of their own. Sign-ins are kept between sessions, can be imported from another browser on this machine, and carry over when an agent opens the same site.
+- **In-app browser** — browse the web without leaving Planwise, and let agents drive a browser session of their own. Sign-ins are kept between sessions, can be imported from another browser on this machine, and carry over when an agent opens the same site.
 - **Mobile app** — follow your Tasks, agents, artifacts, terminals, and comments from your phone. Link it from **Settings › Link mobile app** by scanning a code.
-- **Session import** — bring existing Claude Code and Codex sessions into Traycer, from Settings or as the last step of the tour.
+- **Session import** — bring existing Claude Code and Codex sessions into Planwise, from Settings or as the last step of the tour.
 - **Side chats** — type `/btw` or `/side` with a question to ask it in a fork, leaving the running agent undisturbed.
 - **Communication Graph** — an office view of the agents in a Task, search, and message cards that jump between the sent and received sides of an exchange.
-- **Sweep** — review worktrees in two steps before anything is deleted, let a confirmed sweep run in the background, and see worktree counts per Host. Busy worktrees can be force-deleted after Traycer shows what will be stopped.
+- **Sweep** — review worktrees in two steps before anything is deleted, let a confirmed sweep run in the background, and see worktree counts per Host. Busy worktrees can be force-deleted after Planwise shows what will be stopped.
 - **Long chats** — very long transcripts open quickly and load older messages as you scroll.
 - **Previews** — open PDFs from the workspace and git diff.
 - **Artifacts** — send selected artifact text to a chat, and search artifacts by path.
@@ -100,7 +100,7 @@ Remote hosts, chats backed up to the cloud, and usage dashboards.
 The per-agent Epic / Regular mode control is gone. Tasks and artifacts remain.
 
 - **Per-agent mode** — the composer, settings, and `traycer agent create` no longer offer Epic Mode. That setting belonged to the agent, not to the Task. A Task is still the container for agents, files, git diff, and artifacts.
-- **Artifact workflow** — [Artifact workflow](/concepts/artifact-workflow) covers the remaining planning skills, typical order, and that Traycer does not guarantee an automatic skill pipeline. Picking a skill with `$` or `/` is a reliable way to run one; it is not a new requirement that every artifact be requested by hand.
+- **Artifact workflow** — [Artifact workflow](/concepts/artifact-workflow) covers the remaining planning skills, typical order, and that Planwise does not guarantee an automatic skill pipeline. Picking a skill with `$` or `/` is a reliable way to run one; it is not a new requirement that every artifact be requested by hand.
 </Update>
 
 <Update label="v1.1.9">
@@ -117,7 +117,7 @@ Two tabs side by side, search across artifacts and workspaces, and the Oh My Pi 
 - **Grok profiles** — connect several Grok accounts and choose which one each agent uses, with isolated sessions and usage limits per account.
 - **Workspace files** — the file list keeps up as files change, and artifacts tell you once they have finished syncing.
 - **Notifications** — an agent that stops because it ran out of context, or because its request was refused, now tells you which. Clicking a notification opens the window holding that chat, and terminal agents get their own indicators.
-- **Installing and updating** — a failed install or update offers a way forward instead of leaving you stuck. On macOS, Traycer recovers from a failed background-service registration, and no longer runs slowed down in the background.
+- **Installing and updating** — a failed install or update offers a way forward instead of leaving you stuck. On macOS, Planwise recovers from a failed background-service registration, and no longer runs slowed down in the background.
 - **Windows** — fixed the menu bar, window controls at non-default zoom levels, and theme switching. Environment variable overrides keep their original capitalization.
 - **Fixes** — drafts clear everywhere once sent; sign-in completes as soon as you approve it in the browser; updates ask once rather than twice before restarting; a terminal agent that fails to launch explains why; Worktrees keeps your selection as you move around Settings; adding an image no longer moves your cursor; a failed compaction is no longer marked as done; numbered lists keep their starting number; mentions accept spaces; the composer keeps focus when you switch panes; buttons work again after your machine wakes; and a provider being rechecked keeps its models on screen.
 </Update>
@@ -156,8 +156,8 @@ Several accounts per provider, two new coding agents, artifact export, and termi
 - **Artifacts** — edit the agent guide as Markdown, open links with editing behind a hover card, and pin items in a Task's history.
 - **Background work** — background tasks show elapsed time and readable results, and finished cards show what resumed the agent.
 - **Resource monitor** — counts everything an agent started, and sorts by total CPU or memory use.
-- **Analytics** — Traycer now collects product usage data. Automatic capture, session recording, page addresses, errors, and your content are all switched off; events are linked to your Traycer account.
-- **Open source** — Traycer's public repository is now MIT-licensed.
+- **Analytics** — Planwise now collects product usage data. Automatic capture, session recording, page addresses, errors, and your content are all switched off; events are linked to your Planwise account.
+- **Open source** — Planwise's public repository is now MIT-licensed.
 - **Fixes** — Ctrl shortcuts on macOS no longer trigger the wrong action, terminal sizing and scrolling behave, the app recovers when the Host becomes reachable again instead of leaving chats offline, and WSL no longer fills up with crash dumps.
 </Update>
 
@@ -170,10 +170,10 @@ Fork a chat while a question is still waiting on you.
 </Update>
 
 <Update label="v1.1.5">
-Traycer Desktop comes to Windows, with a resource monitor and worktree cleanup.
+Planwise Desktop comes to Windows, with a resource monitor and worktree cleanup.
 
-- **Windows** — Traycer Desktop and the bundled CLI run on Windows, with window controls that follow your theme, on signed builds.
-- **Resource monitor** — see CPU and memory for everything Traycer runs, expand any entry to its sub-processes, and keep the section header in view while scrolling.
+- **Windows** — Planwise Desktop and the bundled CLI run on Windows, with window controls that follow your theme, on signed builds.
+- **Resource monitor** — see CPU and memory for everything Planwise runs, expand any entry to its sub-processes, and keep the section header in view while scrolling.
 - **Amp** — the Amp coding agent from Sourcegraph is now available.
 - **Worktree cleanup** — see which worktrees are stale, which have open or merged PRs, and which have landed. The list pages as it grows and links back to the Task that created each one.
 - **Queued messages** — pause and resume them.
@@ -199,7 +199,7 @@ Scheduled wake-ups get real controls, and diffs understand submodules.
 <Update label="v1.1.3">
 Account usage moves into the header, alongside display scaling and font controls.
 
-- **Account usage** — check Codex, Claude Code, OpenRouter, Kilo Code, and Traycer usage from the header.
+- **Account usage** — check Codex, Claude Code, OpenRouter, Kilo Code, and Planwise usage from the header.
 - **Appearance** — scale the interface, and set separate fonts for the interface, code, and terminal.
 - **Canvas** — drag artifact cards, and references to specs or tickets in the same Task, onto the canvas.
 - **Mentions** — preview the highlighted result in a tighter menu, with results that no longer jump while you type.
@@ -212,16 +212,16 @@ Account usage moves into the header, alongside display scaling and font controls
 Full access becomes the default permission mode.
 
 - **Permissions** — new conversations default to full access.
-- **Model picker** — Traycer models being retired carry a Deprecated badge and an explanation.
-- **Updating the Host** — restarts ask first, install and update no longer collide, progress appears in both the banner and Settings, and Traycer checks for new releases on launch and when your machine wakes.
+- **Model picker** — Planwise models being retired carry a Deprecated badge and an explanation.
+- **Updating the Host** — restarts ask first, install and update no longer collide, progress appears in both the banner and Settings, and Planwise checks for new releases on launch and when your machine wakes.
 - **New Conversation** — the branch and worktree pickers scroll properly.
 - **Terminal agents** — worktree setup progress appears in the tile, with retry and open-terminal actions if it fails.
 - **Homebrew** — install a specific Desktop release, with x86_64 Linux AppImage support.
-- **Fixes** — on WSL and manually installed Linux packages, Traycer now explains how to update by hand instead of quietly reopening the old version, and sign-in steps time out rather than hanging.
+- **Fixes** — on WSL and manually installed Linux packages, Planwise now explains how to update by hand instead of quietly reopening the old version, and sign-in steps time out rather than hanging.
 </Update>
 
 <Update label="v1.1.1">
-Traycer remembers your model and reasoning effort for each coding agent.
+Planwise remembers your model and reasoning effort for each coding agent.
 
 - **Remembered settings** — your model, reasoning effort, and speed tier are kept for each coding agent.
 - **Child chats** — create them from the same New Conversation dialog.
@@ -235,28 +235,28 @@ Eight new coding agents, device sign-in, and a much faster first launch.
 
 - **Eight new coding agents** — Grok (xAI), Qwen, Kiro, Kilo Code, Copilot, Kimi, Droid, and OpenRouter join the ones already supported.
 - **Faster first launch** — providers appear as they finish loading, so a new install no longer waits for all of them.
-- **Device sign-in** — sign in by approving Traycer on a web page.
+- **Device sign-in** — sign in by approving Planwise on a web page.
 - **Model picker** — consistent provider order, OpenRouter models grouped by vendor, and keyboard shortcuts.
 - **Search** — ⌘F within a canvas tile.
 - **Navigation** — Back and Forward inside the app.
 - **Background Claude subagents** — progress keeps updating after the main reply ends, with clearer finished, failed, and stopped states.
 - **Context usage** — a clearer breakdown, which you can pin.
 - **History** — activity shown on each row, a right-click menu, and titles that fill in once generated.
-- **Diagnostics** — choose how much Traycer logs, in Settings → Diagnostics.
+- **Diagnostics** — choose how much Planwise logs, in Settings → Diagnostics.
 - **Worktrees** — delete many at once with progress that persists, and preview a branch's setup scripts before creating one.
 - **Terminals** — reconnecting replays a clean screen without leftover output.
 - **Approvals** — approval cards summarize the command.
 - **Updates** — start an update yourself, move from a prerelease to the final version, and installs that were relocated or are read-only on macOS are handled.
-- **Homebrew** — install Traycer Desktop as a cask.
-- **Removing Traycer** — the Host no longer comes back after removal, and the app shows the removed state without needing a reload.
+- **Homebrew** — install Planwise Desktop as a cask.
+- **Removing Planwise** — the Host no longer comes back after removal, and the app shows the removed state without needing a reload.
 - **Mermaid** — PNG downloads work.
 </Update>
 
 <Update label="v1.0.0">
-First public release of Traycer Desktop — the native app for delegating engineering work to coding agents in a local-first workspace. It bundles the Traycer CLI and provisions the local Host automatically, so there is nothing else to install.
+First public release of Planwise Desktop — the native app for delegating engineering work to coding agents in a local-first workspace. It bundles the Planwise CLI and provisions the local Host automatically, so there is nothing else to install.
 
 - **Tasks** — long-lived, repository-bound workspaces where you plan, chat, run terminal agents, review diffs, and keep history. Everything is stored locally.
-- **Coding agents, your choice** — connect Claude (Claude Code), OpenAI Codex, Cursor, OpenCode, or Traycer Inference and switch per conversation. Set reasoning effort and an optional Fast tier on supported models.
+- **Coding agents, your choice** — connect Claude (Claude Code), OpenAI Codex, Cursor, OpenCode, or Planwise Inference and switch per conversation. Set reasoning effort and an optional Fast tier on supported models.
 - **Chats** — persistent conversations, run several in parallel, per-conversation change tracking, auto-saved drafts.
 - **Terminal agents** — terminal-based agents on a full xterm terminal; sessions persist across host restarts.
 - **Plan and review** — side-by-side git diffs, file viewing, and line-level comment threads.

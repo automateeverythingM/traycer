@@ -1,10 +1,10 @@
 ---
 title: 'YOLO Mode'
-description: 'YOLO Mode (You Only Look Once) automates your entire workflow. From intelligent orchestration that adapts at runtime to fixed-configuration automation, let Traycer handle planning, coding, and verification without manual intervention.'
+description: 'YOLO Mode (You Only Look Once) automates your entire workflow. From intelligent orchestration that adapts at runtime to fixed-configuration automation, let Planwise handle planning, coding, and verification without manual intervention.'
 keywords: ['yolo mode', 'you only look once', 'automated workflow', 'phases automation', 'epic automation', 'smart yolo', 'automatic handoff', 'coding agent automation', 'plan workflow', 'review workflow', 'user query handoff', 'plan handoff', 'verification handoff', 'review handoff', 'handoff template', 'phase range', 'artifact slots', 'claude code cli', 'gemini cli', 'codex cli', 'automated execution', 'orchestration', 'dynamic configuration', 'runtime adaptation']
 ---
 
-YOLO Mode brings automated execution to Traycer, minimizing manual intervention and letting you focus on higher-level decisions. Traycer offers two flavors of YOLO:
+YOLO Mode brings automated execution to Planwise, minimizing manual intervention and letting you focus on higher-level decisions. Planwise offers two flavors of YOLO:
 
 - **Smart YOLO for Epic Mode**: Intelligent orchestrator that learns from implementation and adapts at runtime-updating specs and tickets, steering plans, and adjusting configurations as it executes Epics end-to-end
 - **YOLO for Phases Mode**: Powerful automation using fixed configurations you define upfront for phase-by-phase workflows
@@ -43,7 +43,7 @@ Smart YOLO brings intelligent orchestration to [Epic Mode](/extension/tasks/epic
 To start automated execution in Epic Mode:
 
 - Use the `/execute` command in the Epic chat, or
-- Simply tell Traycer to execute your tickets or specs (e.g., "Execute these tickets")
+- Simply tell Planwise to execute your tickets or specs (e.g., "Execute these tickets")
 
 Smart YOLO will take over from there, coordinating the entire execution process.
 
@@ -115,7 +115,7 @@ YOLO Mode works with two types of workflows:
 #### Plan Workflow
 For implementation tasks, YOLO Mode automatically executes these steps for each phase:
 
-1. **Planning** - Traycer generates detailed plans or skips directly to coding (based on your config)
+1. **Planning** - Planwise generates detailed plans or skips directly to coding (based on your config)
 2. **Coding** - Automatically hands off to your selected coding agent with optional custom templates
 3. **Verification** - Validates implementation and optionally hands off selected comment categories back to your agent
 4. **Next phase** - Continues to the next phase automatically until all phases are complete
@@ -123,7 +123,7 @@ For implementation tasks, YOLO Mode automatically executes these steps for each 
 #### Review Workflow
 For code review tasks, YOLO Mode automatically executes these steps for each phase:
 
-1. **Review** - Traycer analyzes code and generates review comments
+1. **Review** - Planwise analyzes code and generates review comments
 2. **Coding** - Automatically hands off review comments to your selected coding agent for fixes
 3. **Next phase** - Continues to the next phase automatically until all phases are complete
 
@@ -145,7 +145,7 @@ The entire cycle runs without manual intervention using your predefined configur
     Set up your automation preferences (see [Configuration Options](#configuration-options) below). These settings will be used consistently across all selected phases.
   </Step>
   <Step title="5. Start automation">
-    Confirm your configuration and let Traycer run the entire workflow automatically across the selected phase range.
+    Confirm your configuration and let Planwise run the entire workflow automatically across the selected phase range.
   </Step>
 </Steps>
 
@@ -219,7 +219,7 @@ Generate a detailed plan and automatically hand it off to your coding agent. Thi
 <img src="/images/yolo-verification-handoff.png" alt="Verification handoff configuration" />
 </Frame>
 
-After Traycer verifies the agent's implementation, automatically send selected comment categories back to the agent for fixes.
+After Planwise verifies the agent's implementation, automatically send selected comment categories back to the agent for fixes.
 
 **Options:**
 - **Skip verification**: Check this to bypass verification for this phase
@@ -318,7 +318,7 @@ To see how usage is metered and how to buy more, see [Pricing & Usage Limits](/e
   </Accordion>
 
   <Accordion title="How do templates work with YOLO Mode?">
-    Templates wrap Traycer's generated content with your custom instructions. You can select different templates for user query handoff, plan handoff, and verification handoff. This allows you to maintain consistent project standards across automated executions. Learn more in the [Templates documentation](/extension/integrations/templates).
+    Templates wrap Planwise's generated content with your custom instructions. You can select different templates for user query handoff, plan handoff, and verification handoff. This allows you to maintain consistent project standards across automated executions. Learn more in the [Templates documentation](/extension/integrations/templates).
   </Accordion>
 
   <Accordion title="What's the difference between user query handoff and plan handoff?">
@@ -350,7 +350,7 @@ To see how usage is metered and how to buy more, see [Pricing & Usage Limits](/e
     Understand the Review workflow for code review tasks.
   </Card>
   <Card title="Verification" href="/extension/tasks/verification">
-    Learn how Traycer validates agent implementations and categorizes issues.
+    Learn how Planwise validates agent implementations and categorizes issues.
   </Card>
   <Card title="Supported Agents" href="/extension/integrations/agents">
     Browse the full list of coding agents and add additional agents.

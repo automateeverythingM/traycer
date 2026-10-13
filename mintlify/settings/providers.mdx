@@ -5,9 +5,9 @@ description: "Turn coding agents on and off, and configure their credentials, pr
 
 import { FeatureVideo } from "/snippets/feature-video.jsx";
 
-**Providers** settings control the coding agents Traycer can run on a host. They apply to the host selected with the host switcher at the top of the Settings sidebar; see [Host Picker](/settings#host-picker).
+**Providers** settings control the coding agents Planwise can run on a host. They apply to the host selected with the host switcher at the top of the Settings sidebar; see [Host Picker](/settings#host-picker).
 
-For which coding agents Traycer supports and what each one can do, see [Agents & Models](/agents-and-models/coding-agents).
+For which coding agents Planwise supports and what each one can do, see [Agents & Models](/agents-and-models/coding-agents).
 
 ## Provider List
 
@@ -24,9 +24,9 @@ Select a provider to open its tabs.
 The switch in the provider's header reads **Enabled** or **Disabled**. Only enabled providers appear in the composer's model picker.
 
 - Claude Code and Codex are enabled in a new install.
-- Other providers, except Traycer Inference, can turn on automatically when the host starts and verifies their credentials. If verification fails, a later host start can try again. Signing in during a session does not turn a provider on by itself.
+- Other providers, except Planwise Inference, can turn on automatically when the host starts and verifies their credentials. If verification fails, a later host start can try again. Signing in during a session does not turn a provider on by itself.
 - Once a provider has an enabled or disabled setting, host startup preserves it. You can change it with the switch.
-- **Traycer Inference** is opt-in. It uses Traycer credits, so only you can turn it on.
+- **Planwise Inference** is opt-in. It uses Planwise credits, so only you can turn it on.
 
 At least one provider must stay enabled. A provider with managed profiles needs at least one enabled profile before you can turn it on.
 
@@ -38,7 +38,7 @@ Tabs depend on the provider. A provider opens on its first tab.
 | --------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | **Account**           | The provider's [API key](#account).                                                                    | Cursor, Kiro, Droid, OpenRouter, Hugging Face, Amp                            |
 | **Profiles & Limits** | [Managed profiles](#managed-profiles) and their usage limits.                                          | Claude Code, Codex, Grok, Antigravity                                         |
-| **Usage limits**      | The provider's usage limits, or your Traycer subscription for Traycer Inference.                       | OpenCode, Traycer Inference, Cursor, OpenRouter, Kilo Code, Hugging Face      |
+| **Usage limits**      | The provider's usage limits, or your Planwise subscription for Planwise Inference.                       | OpenCode, Planwise Inference, Cursor, OpenRouter, Kilo Code, Hugging Face      |
 | **CLI & Args**        | The [CLI binary and its versions](#cli-binary-and-arguments), and Terminal interface CLI arguments.    | Every provider                                                                |
 | **Env**               | [Environment variables](#environment-variables) for that provider.                                     | Every provider                                                                |
 | **Permissions**       | Who reviews that provider's commands in Auto mode.                                                     | Every provider                                                                |
@@ -56,8 +56,8 @@ The **Account** tab holds the API key for providers that authenticate with one.
 | Status               | Meaning                                                                            |
 | -------------------- | ---------------------------------------------------------------------------------- |
 | **Not set**          | No key is stored, and none was found in your shell environment.                    |
-| **Key set**          | A key is stored in Traycer.                                                        |
-| **From environment** | Traycer is using the key's environment variable from your shell.                   |
+| **Key set**          | A key is stored in Planwise.                                                        |
+| **From environment** | Planwise is using the key's environment variable from your shell.                   |
 
 Paste a key and click **Save**. A stored key is encrypted on the host and overrides the one in your shell. When a key is stored, the field reads **Replace stored key…**, and **Clear** removes it. Some providers show a **Create an API key** link to their dashboard.
 
@@ -136,25 +136,25 @@ Browser sign-in runs on the machine the host is on. For a host on another machin
 
 ## CLI Binary And Arguments
 
-The **CLI & Args** tab chooses which binary Traycer runs for the provider:
+The **CLI & Args** tab chooses which binary Planwise runs for the provider:
 
-- the copy Traycer manages for you,
+- the copy Planwise manages for you,
 - a copy found on your `PATH`, or
 - a binary you point to with **Add custom path**.
 
-For CLIs that Traycer manages, open the version menu on the managed row to see the available versions.
+For CLIs that Planwise manages, open the version menu on the managed row to see the available versions.
 
 - **Download**, **Use**, and **Delete** act on one version.
 - **Use** pins that version. A pinned provider shows "Pinned to" its version; **Use latest automatically** removes the pin.
 - **Check for updates** looks for a newer version, and **Auto-download updates** downloads new versions as they come out.
 
-Traycer does not manage the Amp, Hermes Agent, or Command Code CLIs; install them yourself, then pick the detected copy or add its path.
+Planwise does not manage the Amp, Hermes Agent, or Command Code CLIs; install them yourself, then pick the detected copy or add its path.
 
-For Claude Code, Codex, and OpenCode, this tab also has **Terminal interface CLI arguments**. They are appended to the CLI when you start an agent on the Terminal interface, and they pre-fill the launch picker, where you can change them for one launch. Use bypass or auto-approval flags deliberately. Codex permission flags such as `--approve-for-me`, `--ask-for-approval`, and `--sandbox` apply when a session starts; when Traycer reopens or forks a Codex session, the session keeps its own permissions, so Traycer leaves those flags out.
+For Claude Code, Codex, and OpenCode, this tab also has **Terminal interface CLI arguments**. They are appended to the CLI when you start an agent on the Terminal interface, and they pre-fill the launch picker, where you can change them for one launch. Use bypass or auto-approval flags deliberately. Codex permission flags such as `--approve-for-me`, `--ask-for-approval`, and `--sandbox` apply when a session starts; when Planwise reopens or forks a Codex session, the session keeps its own permissions, so Planwise leaves those flags out.
 
 ### Model List Timeout
 
-The **Model list** group on the **CLI & Args** tab sets how long Traycer waits for the provider to list its models: when you open the model picker, and when an agent creates another agent. **Timeout** offers **60 s** (the default), **90 s**, **120 s**, and **180 s**. Pick a longer one on a slow or heavily loaded machine, where a provider can take more than a minute to answer.
+The **Model list** group on the **CLI & Args** tab sets how long Planwise waits for the provider to list its models: when you open the model picker, and when an agent creates another agent. **Timeout** offers **60 s** (the default), **90 s**, **120 s**, and **180 s**. Pick a longer one on a slow or heavily loaded machine, where a provider can take more than a minute to answer.
 
 With **Same for all providers** on, the timeout is shared: changing it changes every provider whose switch is also on. Turn the switch off to give this provider its own timeout, which starts at the shared value; turn it back on to follow the shared value again.
 
@@ -162,7 +162,7 @@ A change applies from the next model list the host reads, and a model list that 
 
 ## Environment Variables
 
-The **Env** tab sets environment variables for one provider. Each row has a name and either **Set** with a value, or **Unset** to drop a variable inherited from your shell. They apply when Traycer starts that provider.
+The **Env** tab sets environment variables for one provider. Each row has a name and either **Set** with a value, or **Unset** to drop a variable inherited from your shell. They apply when Planwise starts that provider.
 
 For Cursor, these variables reach only its configuration commands, such as MCP setup, and not chat turns.
 
@@ -170,7 +170,7 @@ Shell-wide host environment variables live in [Shell](/settings/shell).
 
 ## Permissions
 
-The **Permissions** tab shows who reviews this provider's commands in Auto mode. Where the provider has a reviewer of its own, a switch chooses between it and Traycer's judge; otherwise the tab shows which one applies. **All permission settings** opens [Permissions](/settings/permissions#providers-with-a-built-in-reviewer).
+The **Permissions** tab shows who reviews this provider's commands in Auto mode. Where the provider has a reviewer of its own, a switch chooses between it and Planwise's judge; otherwise the tab shows which one applies. **All permission settings** opens [Permissions](/settings/permissions#providers-with-a-built-in-reviewer).
 
 ## Model Providers
 

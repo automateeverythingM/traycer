@@ -10,7 +10,7 @@ Opening Sweep lets you inspect the worktrees before removing anything. Sweep kee
 Removing a worktree doesn't delete its local or remote branch, so committed work stays on the branch. The exception is a submodule checked out on its own branch for that worktree: that branch lives inside the worktree and is deleted with it, together with any commits that exist only there. A configured [teardown script](/concepts/worktrees/scripts#how-teardown-runs) may also perform additional cleanup.
 
 <Warning>
-  Removal has no undo in Traycer. Uncommitted files and work that exists only in a removed worktree may be permanently lost. Save anything you need elsewhere before removing it, including ignored files you want to keep.
+  Removal has no undo in Planwise. Uncommitted files and work that exists only in a removed worktree may be permanently lost. Save anything you need elsewhere before removing it, including ignored files you want to keep.
 </Warning>
 
 <Warning>
@@ -25,7 +25,7 @@ Removing a worktree doesn't delete its local or remote branch, so committed work
 | **History: one Task** | Hover the Task's row and click its paintbrush ("Sweep this task's worktrees"), or right-click the row and choose **Sweep Worktrees…**. |
 | **History: several Tasks** | Click **Select**, select the Tasks, then click the paintbrush in the History toolbar. |
 
-The paintbrush is faded when the Task has no worktrees on this host. For an inventory of all Traycer-managed worktrees on a host, use [Settings › Worktrees](/settings/worktrees).
+The paintbrush is faded when the Task has no worktrees on this host. For an inventory of all Planwise-managed worktrees on a host, use [Settings › Worktrees](/settings/worktrees).
 
 ## Choose What To Remove
 
@@ -33,9 +33,9 @@ Sweep lists each worktree with its branch, repository, path, status, and availab
 
 | Status or message | What it means for your decision |
 |---|---|
-| **Landed** | Traycer has evidence that the current work landed, such as a merged PR matching the current commit or commits contained in the default branch. A merged PR alone does not prove later changes are safe to remove. |
+| **Landed** | Planwise has evidence that the current work landed, such as a merged PR matching the current commit or commits contained in the default branch. A merged PR alone does not prove later changes are safe to remove. |
 | **At base commit** | No committed work has been added beyond the starting point, and no uncommitted changes were found. |
-| **Review** / **Not proven landed** | There may be uncommitted changes, unmerged or unpushed commits, unmerged submodule work, a detached HEAD, or information Traycer could not verify. Read the row's explanation before selecting it. |
+| **Review** / **Not proven landed** | There may be uncommitted changes, unmerged or unpushed commits, unmerged submodule work, a detached HEAD, or information Planwise could not verify. Read the row's explanation before selecting it. |
 | **Also used by a Task outside this sweep** | Removing this worktree also leaves that other Task's saved run location pointing to a missing checkout. It starts unchecked even if its work has landed. |
 | **In use** | Something is using the worktree. It starts unchecked; selecting it requires reviewing what will be stopped. |
 | **Orphaned** | The directory or Git metadata is missing or broken. Cleanup requires forced removal and is not preselected. |
@@ -44,7 +44,7 @@ Sweep lists each worktree with its branch, repository, path, status, and availab
 When several selected Tasks share a worktree, it appears once. It counts as shared outside the sweep only if a Task outside your selection also references it.
 
 <Note>
-  **Select all** includes selectable worktrees that did not start checked, including work needing review. Keep the default selection if you only want the worktrees Traycer has preselected as safe.
+  **Select all** includes selectable worktrees that did not start checked, including work needing review. Keep the default selection if you only want the worktrees Planwise has preselected as safe.
 </Note>
 
 Press **A** to select or deselect all, and **R** to refresh the worktree details. The footer shows when the details were last checked ("Workspace snapshot ·" followed by the time).
@@ -52,15 +52,15 @@ Press **A** to select or deselect all, and **R** to refresh the worktree details
 ## Remove The Selected Worktrees
 
 1. Check the paths, branches, and selected count. Deselect anything you want to keep.
-2. Click **Remove N worktrees**. Traycer refreshes its checks before proceeding.
+2. Click **Remove N worktrees**. Planwise refreshes its checks before proceeding.
 3. If the selection is still safe, removal starts immediately. If it includes unproven work, active work, or worktrees shared with other Tasks, **Review this sweep** shows the consequences first.
 4. In that review, read the possible work loss, activity that will be stopped, affected Tasks, and worktree paths. Choose **Back** to change the selection, **Cancel** to leave, or **Confirm and remove N worktrees** to proceed.
 
-For a selected worktree in use, confirmation authorizes stopping anything working there when deletion runs. If Traycer cannot identify everything using it, the review says so. If the activity changes during review, Traycer asks you to review the updated consequences.
+For a selected worktree in use, confirmation authorizes stopping anything working there when deletion runs. If Planwise cannot identify everything using it, the review says so. If the activity changes during review, Planwise asks you to review the updated consequences.
 
 Cleanup runs in the background and can run the workspace's configured teardown script. Closing the dialog does not cancel cleanup that has started; while a sweep runs, **Cancel** becomes **Close**. Reopen Sweep to see progress; the result notification reports removals, failures, or unconfirmed outcomes.
 
-If you close the dialog after clicking **Remove N worktrees** but before Traycer finishes rechecking, and the selection turns out to need review, a "Sweep needs your confirmation." notification offers **Review sweep**. Nothing is removed until you confirm.
+If you close the dialog after clicking **Remove N worktrees** but before Planwise finishes rechecking, and the selection turns out to need review, a "Sweep needs your confirmation." notification offers **Review sweep**. Nothing is removed until you confirm.
 
 When the list includes proven-safe worktrees and automatic cleanup is off for the host, the dialog offers **Set up automatic cleanup**.
 
@@ -79,7 +79,7 @@ An empty list means no worktrees were found for the selected Tasks on that host.
 ## If Cleanup Does Not Finish
 
 - **Couldn't be removed:** Inspect the reported reason, address it, then select the worktree again to retry.
-- **Unconfirmed:** Traycer could not confirm the outcome. Check the worktree and refresh its status before taking further action; Sweep does not automatically retry that deletion.
+- **Unconfirmed:** Planwise could not confirm the outcome. Check the worktree and refresh its status before taking further action; Sweep does not automatically retry that deletion.
 - **Couldn't check these worktrees:** Retry or inspect the host's inventory in [Settings › Worktrees](/settings/worktrees).
 
 Sweep is manual cleanup. Opening it does not enable [automatic cleanup](/settings/worktrees#automatic-cleanup), a separate, opt-in setting that removes inactive, proven-safe worktrees on a schedule. See Settings › Worktrees for its eligibility rules, timing, and cleanup history.

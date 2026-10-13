@@ -1,11 +1,11 @@
 ---
 title: "Agent-to-Agent"
-description: "How Traycer agents create child agents, message each other across Tasks and hosts, read each other's transcripts, and show up in the Agent office."
+description: "How Planwise agents create child agents, message each other across Tasks and hosts, read each other's transcripts, and show up in the Agent office."
 ---
 
 import { FeatureVideo } from "/snippets/feature-video.jsx";
 
-Agent-to-agent communication lets Traycer agents coordinate with each other. Agents can reach your other agents in the same Task, in your other Tasks, and on your other hosts.
+Agent-to-agent communication lets Planwise agents coordinate with each other. Agents can reach your other agents in the same Task, in your other Tasks, and on your other hosts.
 
 Use it when running agents need to split work, ask another agent to investigate something, get a review, or share results without losing the larger Task context.
 
@@ -77,7 +77,7 @@ This is why agent-to-agent work shows up as hierarchy in the Agents panel instea
 
 ## Agent Selection
 
-Traycer uses agent-selection instructions to choose the right coding agent, model, and reasoning effort for delegated work. Configure the global defaults in [Settings > Agent selection](/settings/agents). A workspace can refine them with `.traycer/agent-selection-guide.md`.
+Planwise uses agent-selection instructions to choose the right coding agent, model, and reasoning effort for delegated work. Configure the global defaults in [Settings > Agent selection](/settings/agents). A workspace can refine them with `.traycer/agent-selection-guide.md`.
 
 ## Three Separate Capabilities
 
@@ -115,7 +115,7 @@ Read this by interface, not by product:
 A message can go to any of **your own** agents that can receive:
 
 - **In the same Task**, or in **another Task** you can edit, including a Task someone shared with you as an editor.
-- **On any of your hosts.** The message is sent from the host the sending agent runs on. If the receiver runs on another of your hosts, Traycer delivers the message through the cloud, and the receiving host picks it up from there. The send succeeds once the cloud has accepted the message.
+- **On any of your hosts.** The message is sent from the host the sending agent runs on. If the receiver runs on another of your hosts, Planwise delivers the message through the cloud, and the receiving host picks it up from there. The send succeeds once the cloud has accepted the message.
 
 A message is rejected, not queued, when:
 
@@ -130,13 +130,13 @@ When a message asks for a reply, the reply comes back to the sending agent's inb
 ## Transcripts
 
 - **Your Chat agents** can be read from any of your hosts. A Chat agent that runs on another host may be read from its synced copy. That copy is read-only and says it can lag the live chat.
-- **Your Terminal agents** are read on the host that runs them. From another host, Traycer sends the read to that host, so it has to be reachable. See [Durability Is Not Availability](#durability-is-not-availability).
+- **Your Terminal agents** are read on the host that runs them. From another host, Planwise sends the read to that host, so it has to be reachable. See [Durability Is Not Availability](#durability-is-not-availability).
 - **In a shared Task**, another user's Chat agent is readable, read-only, while they share the Task. Their Terminal agents are not readable.
 - **In another Task**, reading needs editor access to that Task.
 
 ## Durability Is Not Availability
 
-Closing a Terminal surface does **not** erase the agent's history. Traycer reads a Terminal-interface transcript from the coding agent's own session history rather than from terminal scrollback, so the record survives the terminal, and the app, closing.
+Closing a Terminal surface does **not** erase the agent's history. Planwise reads a Terminal-interface transcript from the coding agent's own session history rather than from terminal scrollback, so the record survives the terminal, and the app, closing.
 
 That is durability, not universal readability. Reading it still requires the host that runs the agent to be reachable and the coding agent's own session history to still be present. If either is missing, the transcript read fails rather than returning a partial or empty result.
 

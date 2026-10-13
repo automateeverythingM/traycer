@@ -1,11 +1,11 @@
 ---
 title: "Hosts"
-description: "Understand the Traycer process that runs agents, terminals and file access on each of your machines."
+description: "Understand the Planwise process that runs agents, terminals and file access on each of your machines."
 ---
 
-A **host** is the Traycer process that connects the app to workspace folders, files, terminals, git state and coding agents on one machine. Each machine you use runs its own host. The app can use a host on the same computer or on another machine you've added to your account.
+A **host** is the Planwise process that connects the app to workspace folders, files, terminals, git state and coding agents on one machine. Each machine you use runs its own host. The app can use a host on the same computer or on another machine you've added to your account.
 
-Most of the time you don't manage hosts directly. You notice them when Traycer is starting, when a machine is offline or updating, or when a tab belongs to a different machine.
+Most of the time you don't manage hosts directly. You notice them when Planwise is starting, when a machine is offline or updating, or when a tab belongs to a different machine.
 
 ## What The Host Owns
 
@@ -29,16 +29,16 @@ To add one, open the host picker in Settings and choose **Add host…**. See [Re
 The picker lists every host on your account. Rows show an **Active** tag on the active host, a short status word when a host needs attention (such as offline or restarting), and an update word such as updating or update waiting.
 
 <Note>
-Traycer on native Windows and Traycer inside WSL are separate hosts, each with its own folders, tools and agents.
+Planwise on native Windows and Planwise inside WSL are separate hosts, each with its own folders, tools and agents.
 </Note>
 
 ## The Active Host
 
-The **active host** is where new work starts unless you choose otherwise. It is shared by every Traycer window.
+The **active host** is where new work starts unless you choose otherwise. It is shared by every Planwise window.
 
 To change it, open **Settings › Host › Overview** for another host and click **Activate**. See [Overview](/settings/host#header).
 
-**Failover.** If the active host can't be reached, Traycer switches to another host that is working and shows "Switched to &lt;host&gt;". It switches back once the host you chose has been reachable for about 20 seconds.
+**Failover.** If the active host can't be reached, Planwise switches to another host that is working and shows "Switched to &lt;host&gt;". It switches back once the host you chose has been reachable for about 20 seconds.
 
 **Choosing a host for one piece of work.** Several places let you pick a host without changing the active host:
 

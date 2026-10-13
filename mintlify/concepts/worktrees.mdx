@@ -1,17 +1,17 @@
 ---
 title: "Worktrees"
-description: "Understand how Traycer uses workspace folders and git worktrees for agents and diffs."
+description: "Understand how Planwise uses workspace folders and git worktrees for agents and diffs."
 ---
 
 import { FeatureVideo } from "/snippets/feature-video.jsx";
 
-A **worktree** is a separate checkout of the same git repository. Traycer uses worktrees so agent work can run in an isolated folder without changing the main workspace folder.
+A **worktree** is a separate checkout of the same git repository. Planwise uses worktrees so agent work can run in an isolated folder without changing the main workspace folder.
 
 Worktree choices are made per workspace folder. A Task can include more than one workspace folder, and each folder can use its own run location.
 
 ## Run Locations
 
-When Traycer asks where an agent should run, each workspace folder can use one of these locations:
+When Planwise asks where an agent should run, each workspace folder can use one of these locations:
 
 | Location | What it does | When it is available |
 |---|---|---|
@@ -21,7 +21,7 @@ When Traycer asks where an agent should run, each workspace folder can use one o
 
 For a **New worktree**, you choose the source the new branch starts from and the new branch's name. In the app, a new worktree always gets a new branch.
 
-For an **Existing worktree**, the branch is whatever that worktree has checked out. Traycer uses it as-is.
+For an **Existing worktree**, the branch is whatever that worktree has checked out. Planwise uses it as-is.
 
 <FeatureVideo src="https://assets.traycer.ai/docs/videos/worktree-run-location.mp4" label="Choose a new worktree and branch" />
 
@@ -38,7 +38,7 @@ When you choose **New worktree**, click the folder's branch control to open the 
 
 The list shows every local branch except the one checked out in the folder, including branches checked out in other worktrees, most recently committed first. A remote branch is listed only when there is no local branch with the same name.
 
-Generated names use your [branch prefix](/concepts/worktrees/scripts#branch-prefix), for example `traycer/swift-otter`. If you keep a generated name and a branch with that name already exists, Traycer picks another generated name. If you typed the name yourself and the branch exists, creating the worktree fails.
+Generated names use your [branch prefix](/concepts/worktrees/scripts#branch-prefix), for example `traycer/swift-otter`. If you keep a generated name and a branch with that name already exists, Planwise picks another generated name. If you typed the name yourself and the branch exists, creating the worktree fails.
 
 <Note>
   To check out an existing branch into a fresh worktree without creating a new branch, use the CLI: `traycer worktree create --existing <branch>`. See [CLI](/cli/commands).
@@ -46,7 +46,7 @@ Generated names use your [branch prefix](/concepts/worktrees/scripts#branch-pref
 
 ## Where You Choose A Worktree
 
-Worktree choices appear in the places where Traycer starts agent work:
+Worktree choices appear in the places where Planwise starts agent work:
 
 | Place | What you can choose |
 |---|---|
@@ -56,17 +56,17 @@ Worktree choices appear in the places where Traycer starts agent work:
 | **Terminal interface launch** | The workspace folder and run location, among the other launch choices. They stay fixed after launch; see [Terminal Agents vs Terminals](/concepts/terminal-agents-vs-terminals). |
 | **Git Diff** | Which worktree's changed files to inspect. |
 
-On the Chat interface, worktree changes apply to the next agent turn. If Traycer needs to create or set up a worktree first, the agent shows setup progress before continuing. The Terminal interface is different: an agent's workspace and worktree choices are fixed when it starts.
+On the Chat interface, worktree changes apply to the next agent turn. If Planwise needs to create or set up a worktree first, the agent shows setup progress before continuing. The Terminal interface is different: an agent's workspace and worktree choices are fixed when it starts.
 
 ## Existing Worktrees
 
-Existing worktrees are useful when you already have a checkout for a branch and want Traycer to use that folder instead of creating another one.
+Existing worktrees are useful when you already have a checkout for a branch and want Planwise to use that folder instead of creating another one.
 
 Pick **Existing worktree** in the folder's run location menu, then choose a worktree from the list. Each entry shows its branch, its path, and how many uncommitted changes it has. With more than five worktrees, a **Search worktrees** box appears.
 
 When you select an existing worktree:
 
-- Traycer runs in that existing checkout
+- Planwise runs in that existing checkout
 - the branch is read-only in the picker because it belongs to the selected worktree
 - the worktree can appear in Git Diff and file-related views for that Task
 
@@ -74,13 +74,13 @@ When you select an existing worktree:
 
 A repository can run a **setup script** in each new worktree, for example to install dependencies, and a **teardown script** before a worktree is removed. You edit both, and the repository's branch prefix, with the gear **Repository settings** button on the folder's row in the workspace picker. They are stored in the repository's `.traycer/environment.json`.
 
-While Traycer creates and sets up a worktree, the agent shows a setup card: **Creating worktree**, **Setting up worktree**, then **Worktree ready**. If something goes wrong, the card shows **Setup failed**, **Setup cancelled**, or **Worktree creation failed**, with **Open terminal** and **Retry setup** or **Retry creation**.
+While Planwise creates and sets up a worktree, the agent shows a setup card: **Creating worktree**, **Setting up worktree**, then **Worktree ready**. If something goes wrong, the card shows **Setup failed**, **Setup cancelled**, or **Worktree creation failed**, with **Open terminal** and **Retry setup** or **Retry creation**.
 
 See [Setup and Teardown Scripts](/concepts/worktrees/scripts) for the file format, how setup and teardown run, and every setup state. For fixing setup problems, see [Troubleshooting](/reference/troubleshooting).
 
 ## Where Worktrees Live
 
-Traycer creates worktrees on the host, under your home folder:
+Planwise creates worktrees on the host, under your home folder:
 
 ```text
 ~/.traycer/worktrees/<owner>__<repo>/<slug>
@@ -88,14 +88,14 @@ Traycer creates worktrees on the host, under your home folder:
 
 `<owner>` and `<repo>` come from the repository's remote, and `<slug>` comes from the branch name. A repository without a recognized remote uses a `local__<folder>__<id>` folder instead of `<owner>__<repo>`.
 
-Only worktrees in this folder appear in [Settings › Worktrees](/settings/worktrees), and only these can be removed by Traycer.
+Only worktrees in this folder appear in [Settings › Worktrees](/settings/worktrees), and only these can be removed by Planwise.
 
 ## Managing Worktrees
 
 [Sweep](/concepts/sweep) cleans up worktrees belonging to one or more Tasks while keeping the Tasks, conversations, and artifacts. Open it from a Task's status row or History to review what will be removed. Sweep preselects idle worktrees whose work is proven safe to remove and shows additional consequences for shared, active, or unverified work.
 
-[Settings › Worktrees](/settings/worktrees) lists every worktree Traycer created on a host, with its status, and lets you delete them or turn on automatic cleanup. Deleting Tasks in [History](/concepts/history#delete-tasks) can remove their worktrees too.
+[Settings › Worktrees](/settings/worktrees) lists every worktree Planwise created on a host, with its status, and lets you delete them or turn on automatic cleanup. Deleting Tasks in [History](/concepts/history#delete-tasks) can remove their worktrees too.
 
-Removing a worktree deletes its folder, including uncommitted and ignored files. It keeps the branch, so committed work stays on that branch. The exception is a submodule checked out on its own branch for that worktree: the submodule's branch lives inside the worktree and is deleted with it, together with any commits that exist only there. When you delete a worktree yourself, Traycer also closes any terminal open inside it.
+Removing a worktree deletes its folder, including uncommitted and ignored files. It keeps the branch, so committed work stays on that branch. The exception is a submodule checked out on its own branch for that worktree: the submodule's branch lives inside the worktree and is deleted with it, together with any commits that exist only there. When you delete a worktree yourself, Planwise also closes any terminal open inside it.
 
 The CLI can also create, list, and delete worktrees. See [CLI](/cli/commands).

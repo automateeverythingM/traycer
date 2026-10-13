@@ -36,7 +36,7 @@ The judge is the model that reviews commands when a conversation runs in Auto mo
 
 | Option               | What reviews commands                                                                                                                                            |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Automatic**        | Traycer's hosted model when Traycer inference is available and uses Traycer credits. If it isn't available, the conversation's own provider reviews, billed to your account there. |
+| **Automatic**        | Planwise's hosted model when Planwise inference is available and uses Planwise credits. If it isn't available, the conversation's own provider reviews, billed to your account there. |
 | **A specific model** | The **Provider**, **Account**, and **Model** you choose. It is billed to that provider's account, on top of the conversation itself.                             |
 
 <Note>
@@ -47,13 +47,13 @@ This tab is where you see which judge is active and how it is billed. The Auto o
 
 ### Providers With A Built-In Reviewer
 
-Some providers can review their own commands. Claude Code can use its own classifier instead of Traycer's judge. It is faster and costs nothing extra, but your [rules](#rules) do not apply to it. For that provider's conversations, the built-in reviewer takes the place of the judge above.
+Some providers can review their own commands. Claude Code can use its own classifier instead of Planwise's judge. It is faster and costs nothing extra, but your [rules](#rules) do not apply to it. For that provider's conversations, the built-in reviewer takes the place of the judge above.
 
-Choose **Traycer's judge** or the provider's classifier for each provider here, or on that provider's **Permissions** tab in [Providers](/settings/providers). If the provider's own auto mode is unavailable, for example because an administrator turned it off, Traycer's judge reviews that turn and the chat says so.
+Choose **Planwise's judge** or the provider's classifier for each provider here, or on that provider's **Permissions** tab in [Providers](/settings/providers). If the provider's own auto mode is unavailable, for example because an administrator turned it off, Planwise's judge reviews that turn and the chat says so.
 
 ## Rules
 
-Rules tell the judge what to trust and what to bring to you. Your rules add to Traycer's built-in ones, which you can expand under **Built-in** to read. They are saved to your account and apply on every machine.
+Rules tell the judge what to trust and what to bring to you. Your rules add to Planwise's built-in ones, which you can expand under **Built-in** to read. They are saved to your account and apply on every machine.
 
 | Section          | Use it for                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -69,7 +69,7 @@ Click **Save rules** to apply your changes, or **Discard** to drop them.
 
 When the judge sends you an action only because you didn't ask for that exact action, the approval card says "Sent to you because you didn't ask for this exact action." and offers **Allow from now on…**. The same link appears on those decisions in [Activity](#activity).
 
-**Allow from now on…** opens the **Rules** tab with a drafted **Always allow** rule that names the judge's rule and the exact action. When Traycer knows where the conversation runs, the draft is narrowed to that repository and worktree branch. Edit the draft if you want it broader or narrower, then click **Save rules**. Nothing changes until you save.
+**Allow from now on…** opens the **Rules** tab with a drafted **Always allow** rule that names the judge's rule and the exact action. When Planwise knows where the conversation runs, the draft is narrowed to that repository and worktree branch. Edit the draft if you want it broader or narrower, then click **Save rules**. Nothing changes until you save.
 
 ### Repository Rules
 
@@ -91,6 +91,6 @@ For a conversation reviewed by a provider's built-in classifier, Activity shows 
 
 <Note>
   If a host predates Auto mode, the Auto option says **Needs a newer
-  Traycer on this machine**, and these tabs ask you to update the host. See
+  Planwise on this machine**, and these tabs ask you to update the host. See
   [Overview](/settings/host).
 </Note>

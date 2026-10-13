@@ -1,4 +1,4 @@
-<img alt="Traycer" src="https://assets.traycer.ai/traycer-readme-banner.png" />
+<img alt="Planwise" src="https://assets.traycer.ai/traycer-readme-banner.png" />
 
 <div align="center">
 
@@ -17,15 +17,17 @@
 
 </div>
 
-Traycer is an open-source AI orchestration app for advanced agent orchestration. Bring your existing provider subscriptions and run multiple agents in parallel without losing context, using shared memory across all models and providers.
+Planwise is an open-source AI orchestration app for advanced agent orchestration. Bring your existing provider subscriptions and run multiple agents in parallel without losing context, using shared memory across all models and providers.
+
+Planwise is based on [Traycer](https://github.com/traycerai/traycer), copyright 2026 Traycer AI, used under the [MIT License](./LICENSE).
 
 Switch models instantly within the same agent, orchestrate agent-to-agent communication, and collaborate in real time.
 
-[![Traycer Demo Video](https://github.com/user-attachments/assets/a5efda0c-16f2-453b-9f8d-50d09df25aa4)](https://youtu.be/doh2yz3ZFvU)
+[![Planwise Demo Video](https://github.com/user-attachments/assets/a5efda0c-16f2-453b-9f8d-50d09df25aa4)](https://youtu.be/doh2yz3ZFvU)
 
 ## Features
 
-- **Bring Your Own Agent (BYOA):** Connect your existing coding agents without paying twice, or use Traycer's own inference subscription.
+- **Bring Your Own Agent (BYOA):** Connect your existing coding agents without paying twice, or use Planwise's own inference subscription.
 - **Unified Context:** Instantly switch to another model within the same agent. The context window is seamlessly shared across all providers.
 - **Agent-to-Agent Communication:** Create automated loops where agents talk among themselves to debate architecture or peer-review code. Every agent can be referenced; reading a transcript and delivering a message are narrower and depend on user, Host, and runtime - see the [capability matrix](https://docs.traycer.ai/concepts/agent-to-agent).
 - **Collaboration:** Invite team members to collaborate using shareable boards, real-time editing, and ticket assignment features directly in the workspace.
@@ -46,7 +48,7 @@ See the [latest release](https://github.com/traycerai/traycer/releases/latest) f
 
 ## Bring Your Own Agent
 
-Traycer connects to the subscriptions you already pay for instead of locking you into one ecosystem — or use Traycer's native inference subscription. Connect any of these coding agents:
+Planwise connects to the subscriptions you already pay for instead of locking you into one ecosystem — or use Planwise's native inference subscription. Connect any of these coding agents:
 
 <div align="center">
 <table>
@@ -57,7 +59,7 @@ Traycer connects to the subscriptions you already pay for instead of locking you
   </tr>
   <tr>
     <td align="center" width="150"><a href="https://opencode.ai"><img src="assets/readme/agents/opencode.svg" width="28" alt="OpenCode" /><br /><b>OpenCode</b></a></td>
-    <td align="center" width="150"><a href="https://traycer.ai"><img src="assets/readme/agents/traycer.svg" width="28" alt="Traycer" /><br /><b>Traycer</b></a></td>
+    <td align="center" width="150"><a href="https://traycer.ai"><img src="assets/readme/agents/traycer.svg" width="28" alt="Planwise" /><br /><b>Planwise</b></a></td>
     <td align="center" width="150"><a href="https://x.ai"><img src="assets/readme/agents/grok.svg" width="28" alt="Grok" /><br /><b>Grok</b></a></td>
   </tr>
   <tr>
@@ -95,7 +97,7 @@ Setup commands and provider-specific configuration: [Coding Agents docs](https:/
 
 ## Collaboration Features
 
-Traycer is built for teams. The integrated collaboration features allow multiple developers to jump into the same shared workspace. You can assign tickets to specific agents, use shareable boards to visualize your development progress, and co-edit code alongside your AI loops.
+Planwise is built for teams. The integrated collaboration features allow multiple developers to jump into the same shared workspace. You can assign tickets to specific agents, use shareable boards to visualize your development progress, and co-edit code alongside your AI loops.
 
 See our [Sharing docs](https://docs.traycer.ai/panels/sharing) for details on team management and sharing configurations.
 
@@ -103,7 +105,7 @@ See our [Sharing docs](https://docs.traycer.ai/panels/sharing) for details on te
 
 Your code is processed in-memory and never stored or used for training. Prompts and conversations follow **Privacy Mode** (default on for Team plans, opt-in for individuals); with it off, prompts may be logged to help improve our Services.
 
-Agent requests for the CLI providers you configure go directly to that provider; Traycer's own inference is served by Traycer. Crash reporting (Sentry) and analytics (PostHog) may be enabled in release builds.
+Agent requests for the CLI providers you configure go directly to that provider; Planwise's own inference is served by Planwise. Crash reporting (Sentry) and analytics (PostHog) may be enabled in release builds.
 
 See our full [Privacy Policy](https://traycer.ai/legal/privacy-policy) for details.
 
@@ -123,11 +125,11 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) to get started 
 
 ## Community
 
-Join the Traycer community to get help, share feedback, and connect with other users:
+Join the Planwise community to get help, share feedback, and connect with other users:
 
 - **[Discord](https://traycer.ai/discord)** — Chat with the team and community
 - **[X / Twitter](https://x.com/traycerai)** — Follow for updates and announcements
-- **[YouTube](https://www.youtube.com/@TraycerAI)** — Subscribe for walkthroughs and other Traycer videos.
+- **[YouTube](https://www.youtube.com/@TraycerAI)** — Subscribe for walkthroughs and other Planwise videos.
 
 ## License
 

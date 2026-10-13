@@ -1,6 +1,6 @@
-# Contributing to Traycer
+# Contributing to Planwise
 
-Thanks for helping improve Traycer! This repo holds the open-source clients, CLI, and protocol.
+Thanks for helping improve Planwise! This repo holds the open-source clients, CLI, and protocol.
 
 ## Prerequisites
 
@@ -48,11 +48,11 @@ bunx nx run @traycer-clients/traycer-cli:build
 Each client's `src/config.ts` holds the **dev** values in source. Release
 builds run that client's `scripts/set-deploy-target.cjs` to stamp staging or
 production values into the file, then restore it, so those values are never
-committed. The CLI's source config already trusts Traycer's production
+committed. The CLI's source config already trusts Planwise's production
 host-signing key, so a build from source verifies released hosts;
 `~/.traycer/cli/host-trusted-pubkeys` can add keys without a rebuild.
 
-Releases are built and signed in Traycer's internal repository and published
+Releases are built and signed in Planwise's internal repository and published
 to this repo's [Releases](https://github.com/traycerai/traycer/releases).
 Signing secrets never enter this repository, so you need no secrets to build
 or test the code here.

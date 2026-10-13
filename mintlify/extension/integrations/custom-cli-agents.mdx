@@ -6,7 +6,7 @@ keywords: ['custom cli agents', 'cli agents', 'claude code', 'dangerous flag', '
 
 ## Overview
 
-Traycer allows you to create custom CLI agent with custom arguments and permissions for any CLI-based coding agent. This powerful feature enables you to pass special flags and create platform-specific configurations tailored to your workflow.
+Planwise allows you to create custom CLI agent with custom arguments and permissions for any CLI-based coding agent. This powerful feature enables you to pass special flags and create platform-specific configurations tailored to your workflow.
 
 ## What are Custom CLI Agents?
 
@@ -18,7 +18,7 @@ Custom CLI agents allow you to:
 
 ## Available Template Tags
 
-Custom CLI agents support the following environment variables set by Traycer at runtime:
+Custom CLI agents support the following environment variables set by Planwise at runtime:
 
 | Variable | Bash / Git Bash | PowerShell |
 |----------|-----------------|------------|
@@ -36,7 +36,7 @@ Custom CLI agents support the following environment variables set by Traycer at 
 <ParamField query="TRAYCER_PROMPT_TMP_FILE" type="placeholder">
   Temporary file path containing the prompt content. Ideal for large prompts that exceed environment variable size limits.
   Use commands like `cat "$TRAYCER_PROMPT_TMP_FILE"` (Bash) or `Get-Content -Raw "$env:TRAYCER_PROMPT_TMP_FILE"` (PowerShell) to read and pass the prompt content to the CLI agent at runtime.
-  The temporary file is automatically cleaned up by Traycer after 30 seconds.
+  The temporary file is automatically cleaned up by Planwise after 30 seconds.
 </ParamField>
 
 <ParamField query="TRAYCER_PHASE_ID" type="placeholder">
@@ -52,7 +52,7 @@ Custom CLI agents support the following environment variables set by Traycer at 
 </ParamField>
 
 <ParamField query="TRAYCER_SYSTEM_PROMPT" type="placeholder">
-  System prompt to append to the CLI agent (environment variable set by Traycer at runtime). Use this with --append-system-prompt or equivalent flag to pass trusted instructions at the system level.
+  System prompt to append to the CLI agent (environment variable set by Planwise at runtime). Use this with --append-system-prompt or equivalent flag to pass trusted instructions at the system level.
 </ParamField>
 
 ## Creating Custom CLI Agents
@@ -591,7 +591,7 @@ Custom CLI agents are particularly useful for:
 </Accordion>
 
 <Accordion title="Can I edit an existing CLI agent?">
-  Yes, you can modify any custom CLI agent by clicking on it within the Custom CLI Agents section of Traycer settings. This will open the file for editing.
+  Yes, you can modify any custom CLI agent by clicking on it within the Custom CLI Agents section of Planwise settings. This will open the file for editing.
 </Accordion>
 
 <Accordion title="What's the difference between Bash and PowerShell syntax for environment variables?">
@@ -624,7 +624,7 @@ Custom CLI agents are particularly useful for:
 </Accordion>
 
 <Accordion title="How does TRAYCER_PROMPT_TMP_FILE work internally?">
-  Traycer creates a temporary file containing the prompt content and sets `TRAYCER_PROMPT_TMP_FILE` to the file path. When you reference `$TRAYCER_PROMPT_TMP_FILE` in your template, you need to read the file content using commands like `cat "$TRAYCER_PROMPT_TMP_FILE"` (bash/sh) or `Get-Content -Raw "$env:TRAYCER_PROMPT_TMP_FILE"` (PowerShell). This approach bypasses environment variable size limits that can cause issues with very large prompts. The temporary file is automatically cleaned up by Traycer after 30 seconds.
+  Planwise creates a temporary file containing the prompt content and sets `TRAYCER_PROMPT_TMP_FILE` to the file path. When you reference `$TRAYCER_PROMPT_TMP_FILE` in your template, you need to read the file content using commands like `cat "$TRAYCER_PROMPT_TMP_FILE"` (bash/sh) or `Get-Content -Raw "$env:TRAYCER_PROMPT_TMP_FILE"` (PowerShell). This approach bypasses environment variable size limits that can cause issues with very large prompts. The temporary file is automatically cleaned up by Planwise after 30 seconds.
 </Accordion>
 
 <Accordion title="Can I use custom CLI agents with YOLO Mode?">
@@ -636,6 +636,6 @@ Custom CLI agents are particularly useful for:
 </Accordion>
 
 <Accordion title="What if the CLI tool isn't installed on my system?">
-  Traycer does not install CLI agents for you. You must install the CLI tool separately before creating a custom CLI agent. We recommend testing the CLI command in your terminal first to ensure it works correctly before adding it to an agent.
+  Planwise does not install CLI agents for you. You must install the CLI tool separately before creating a custom CLI agent. We recommend testing the CLI command in your terminal first to ensure it works correctly before adding it to an agent.
 </Accordion>
 </AccordionGroup>

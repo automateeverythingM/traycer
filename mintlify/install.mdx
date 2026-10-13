@@ -1,10 +1,10 @@
 ---
 title: "Install"
-description: "Get Traycer Desktop running on your machine, keep it updated, and remove it."
+description: "Get Planwise Desktop running on your machine, keep it updated, and remove it."
 keywords: ["install traycer", "download traycer", "macos", "windows", "linux", "wsl", "update", "uninstall", "mobile", "iphone", "ipad", "android", "tablet", "testflight", "google play"]
 ---
 
-Download the Traycer Desktop app for your operating system. Links always point to the latest release.
+Download the Planwise Desktop app for your operating system. Links always point to the latest release.
 
 | Platform                  | Download                                                                                                                  | Notes                                            |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -26,7 +26,7 @@ All releases are published on [GitHub](https://github.com/traycerai/traycer/rele
 
 ## Mobile App
 
-The Traycer mobile app lets you follow and steer your Tasks from your phone. It connects to the hosts on your other machines, so install Traycer Desktop first.
+The Planwise mobile app lets you follow and steer your Tasks from your phone. It connects to the hosts on your other machines, so install Planwise Desktop first.
 
 | Platform            | Download                                                                                      | Notes                                 |
 | ------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -42,14 +42,14 @@ To sign the app in, see [Mobile App](/account/mobile-app#sign-in).
 If your Windows setup supports Linux GUI apps with WSLg, you can run the Linux desktop app through WSL instead of the native Windows app.
 
 <Note>
-Traycer inside WSL and Traycer on native Windows are separate hosts. Each has its own folders, tools and agents, and each appears in the host picker.
+Planwise inside WSL and Planwise on native Windows are separate hosts. Each has its own folders, tools and agents, and each appears in the host picker.
 </Note>
 
-Before installing Traycer in WSL:
+Before installing Planwise in WSL:
 
 - Update WSL with `wsl --update`, then restart your Ubuntu distribution.
 - Use WSL 2 on a recent Windows build with WSLg enabled.
-- Turn on systemd. Traycer's host runs as a systemd user service, and it can't be installed without systemd. Add this to `/etc/wsl.conf` inside the distribution:
+- Turn on systemd. Planwise's host runs as a systemd user service, and it can't be installed without systemd. Add this to `/etc/wsl.conf` inside the distribution:
 
   ```ini
   [boot]
@@ -57,7 +57,7 @@ Before installing Traycer in WSL:
   ```
 
   Then run `wsl --shutdown` from Windows and open the distribution again.
-- Set a default browser inside WSL so Traycer can open its sign-in page. If no browser opens, use **Use code instead** and approve the sign-in from a browser on Windows. See [Sign In](/account/sign-in#if-the-browser-does-not-open).
+- Set a default browser inside WSL so Planwise can open its sign-in page. If no browser opens, use **Use code instead** and approve the sign-in from a browser on Windows. See [Sign In](/account/sign-in#if-the-browser-does-not-open).
 
 Then install the package that matches your WSL distribution:
 
@@ -83,13 +83,13 @@ chmod +x traycer-desktop-linux-x86_64.AppImage
 ./traycer-desktop-linux-x86_64.AppImage
 ```
 
-Launch Traycer from WSL (`.deb` / `.rpm` installs):
+Launch Planwise from WSL (`.deb` / `.rpm` installs):
 
 ```bash
 /opt/Traycer/traycer-desktop
 ```
 
-You may also see Traycer in the Windows Start menu if WSLg has registered the desktop app.
+You may also see Planwise in the Windows Start menu if WSLg has registered the desktop app.
 
 ## Install With Homebrew
 
@@ -122,12 +122,12 @@ Both install the `traycer` command. Check it with `traycer --version`. See the [
 ## After Install
 
 <Steps>
-  <Step title="Open Traycer">Launch the desktop app.</Step>
+  <Step title="Open Planwise">Launch the desktop app.</Step>
   <Step title="Sign in">
-    Traycer opens a sign-in page in your browser. If the browser doesn't open, choose **Use code instead**. See [Sign In](/account/sign-in).
+    Planwise opens a sign-in page in your browser. If the browser doesn't open, choose **Use code instead**. See [Sign In](/account/sign-in).
   </Step>
-  <Step title="Let Traycer set up">
-    On first launch, **Setting up Traycer** prepares this machine's host. It runs once.
+  <Step title="Let Planwise set up">
+    On first launch, **Setting up Planwise** prepares this machine's host. It runs once.
   </Step>
   <Step title="Choose your agents">
     Onboarding asks which coding agents to use and can import your existing Claude Code, Codex and OpenCode chats. See [First run and importing](/first-run) and [Coding agents](/agents-and-models/coding-agents).
@@ -141,15 +141,15 @@ Both install the `traycer` command. Check it with `traycer --version`. See the [
 
 ### The App
 
-Traycer checks for new versions in the background, but doesn't download them on its own.
+Planwise checks for new versions in the background, but doesn't download them on its own.
 
 To check yourself, choose **Help › Check for Updates**, or **Check for Updates** in the tray menu.
 
-Traycer installs stable releases. It offers a release candidate only when a host you use needs one, and asks you first.
+Planwise installs stable releases. It offers a release candidate only when a host you use needs one, and asks you first.
 
-- **macOS:** Traycer has to run from your Applications folder to update. If you open it from somewhere else, such as the disk image, it offers **Move to Applications Folder**.
-- **Windows:** once an update is downloaded, restart Traycer from the update button to install it.
-- **Linux `.deb` and `.rpm`:** installing an update asks for your administrator password. In WSL, or when the package manager doesn't own the install, the button reads **Finish update** instead. It opens **Finish updating Traycer**, which gives you a `sudo dpkg -i` or `sudo rpm -U` command to run in a terminal; restart Traycer when it finishes.
+- **macOS:** Planwise has to run from your Applications folder to update. If you open it from somewhere else, such as the disk image, it offers **Move to Applications Folder**.
+- **Windows:** once an update is downloaded, restart Planwise from the update button to install it.
+- **Linux `.deb` and `.rpm`:** installing an update asks for your administrator password. In WSL, or when the package manager doesn't own the install, the button reads **Finish update** instead. It opens **Finish updating Planwise**, which gives you a `sudo dpkg -i` or `sudo rpm -U` command to run in a terminal; restart Planwise when it finishes.
 
 ### Hosts
 
@@ -172,12 +172,12 @@ Some host updates need a newer CLI first. The host's Overview then shows **Needs
 ## Uninstall
 
 <Steps>
-  <Step title="Remove Traycer's background host">
-    In Traycer, open **Settings › Host › Overview** for this computer, go to **Installation**, and click **Remove Traycer** in the **Danger zone**. This stops and removes the host and its service so it no longer starts at login. Your agents, history and credentials stay on this computer. When it finishes, click **Quit Traycer**.
+  <Step title="Remove Planwise's background host">
+    In Planwise, open **Settings › Host › Overview** for this computer, go to **Installation**, and click **Remove Planwise** in the **Danger zone**. This stops and removes the host and its service so it no longer starts at login. Your agents, history and credentials stay on this computer. When it finishes, click **Quit Planwise**.
   </Step>
   <Step title="Remove the app">
-    - **macOS:** drag Traycer from Applications to the Trash. If you installed it with Homebrew, run `brew uninstall --cask traycer-desktop`.
-    - **Windows:** uninstall Traycer from **Settings › Apps › Installed apps**. The `.exe` installer's uninstaller also removes the task that starts the host at logon.
+    - **macOS:** drag Planwise from Applications to the Trash. If you installed it with Homebrew, run `brew uninstall --cask traycer-desktop`.
+    - **Windows:** uninstall Planwise from **Settings › Apps › Installed apps**. The `.exe` installer's uninstaller also removes the task that starts the host at logon.
     - **Linux:** remove the package with `apt` or `dnf`, or delete the AppImage.
   </Step>
   <Step title="Remove the CLI, if you installed it">

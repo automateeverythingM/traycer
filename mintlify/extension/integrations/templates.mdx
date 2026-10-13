@@ -35,9 +35,9 @@ keywords:
 
 ## What are templates?
 
-Templates are a formatting mechanism that allows you to wrap Traycer's generated content (like plans or verification comments) with your own custom instructions. When you hand off to a coding agent, templates let you include additional context before and after the core content.
+Templates are a formatting mechanism that allows you to wrap Planwise's generated content (like plans or verification comments) with your own custom instructions. When you hand off to a coding agent, templates let you include additional context before and after the core content.
 
-For example, when Traycer generates a plan, you can use templates to:
+For example, when Planwise generates a plan, you can use templates to:
 
 - Add project-specific setup instructions before the plan.
 - Include testing requirements after the plan.
@@ -46,7 +46,7 @@ For example, when Traycer generates a plan, you can use templates to:
 
 ### Example template structure
 
-In the following example, `{{planMarkdown}}` is where Traycer inserts the generated plan content, surrounded by your custom instructions. The frontmatter defines the template's display name (`displayName`) and type (`applicableFor`).
+In the following example, `{{planMarkdown}}` is where Planwise inserts the generated plan content, surrounded by your custom instructions. The frontmatter defines the template's display name (`displayName`) and type (`applicableFor`).
 
 ```handlebars MyTemplate.md wrap highlight={1-4,8} icon="markdown"
 ---

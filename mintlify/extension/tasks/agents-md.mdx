@@ -1,6 +1,6 @@
 ---
 title: "AGENTS.md"
-description: "Traycer automatically detects and uses AGENTS.md files to enhance AI task execution with project-specific context"
+description: "Planwise automatically detects and uses AGENTS.md files to enhance AI task execution with project-specific context"
 keywords: ['AGENTS.md', 'agent instructions', 'project context', 'AI agents', 'automatic detection', 'workspace configuration', 'coding standards', 'build instructions']
 ---
 
@@ -8,11 +8,11 @@ keywords: ['AGENTS.md', 'agent instructions', 'project context', 'AI agents', 'a
 
 AGENTS.md is an open standard that provides AI coding agents with machine-readable, project-specific instructions. Unlike README.md files designed for human developers, AGENTS.md focuses on giving AI agents clear guidance about build processes, testing procedures, coding conventions, and architectural patterns.
 
-Traycer automatically detects and uses AGENTS.md files when generating and executing Tasks - no configuration or setup required.
+Planwise automatically detects and uses AGENTS.md files when generating and executing Tasks - no configuration or setup required.
 
-## How Traycer Uses AGENTS.md
+## How Planwise Uses AGENTS.md
 
-When you create a Task, Traycer automatically searches for AGENTS.md files to gather project context:
+When you create a Task, Planwise automatically searches for AGENTS.md files to gather project context:
 
 1. **Finds the nearest AGENTS.md**: Starts from the location of attached file references or the current working directory during exploration
 2. **Traverses to workspace root**: Continues up the directory tree if no AGENTS.md is found nearby
@@ -25,7 +25,7 @@ This means:
 
 ## What This Means for Your Tasks
 
-When Traycer finds an AGENTS.md file, it uses the project-specific instructions to:
+When Planwise finds an AGENTS.md file, it uses the project-specific instructions to:
 
 - **Generate more accurate plans**: Understands your project's structure, conventions, and patterns
 - **Follow your standards**: Respects your team's coding style, testing requirements, and workflows
@@ -44,4 +44,4 @@ AGENTS.md is supported by AI coding tools including Cursor, GitHub Copilot, Fact
 
 ## Disabling AGENTS.md Detection
 
-You can disable AGENTS.md detection at any time in your Traycer settings if you prefer not to use this feature.
+You can disable AGENTS.md detection at any time in your Planwise settings if you prefer not to use this feature.

@@ -3,7 +3,7 @@ title: "Shell"
 description: "Choose the shell a host uses for terminals and for finding your tools, set its startup flags, and set the host's own environment variables."
 ---
 
-**Shell** settings control how Traycer launches terminals, the host, and coding agents on a host. Shell is in the Host group of Settings, so it applies to the host selected in the [host picker](/settings#host-picker), including remote hosts.
+**Shell** settings control how Planwise launches terminals, the host, and coding agents on a host. Shell is in the Host group of Settings, so it applies to the host selected in the [host picker](/settings#host-picker), including remote hosts.
 
 The page has two groups: **Terminal shell · New terminals** and **Host environment · After restart**. New terminals pick up shell changes immediately. Host environment changes apply when the host restarts.
 
@@ -34,7 +34,7 @@ The group opens with a preview of the **effective command**: the program and fla
 Click the **Shell program** picker to choose a shell. It lists:
 
 - **System default**: your login shell (on Windows, the system's default command processor). Pick it to go back to the login shell after choosing another one. Your added shells and their flags are kept.
-- The shells Traycer detected on the host and the shells you added yourself, in one alphabetical list.
+- The shells Planwise detected on the host and the shells you added yourself, in one alphabetical list.
 
 Selecting a shell saves it immediately.
 
@@ -76,7 +76,7 @@ Per-provider variables live in [Providers](/settings/providers) and take precede
 
 On Windows, you can pick WSL as the shell. That opens new terminal tabs inside WSL, but the host and agents keep running on Windows, so they use the Windows environment and can't see tools installed inside WSL. The picker notes this with **WSL applies to terminal tabs only**.
 
-To run agents with your WSL toolchain, run Traycer itself inside WSL. See [Windows via WSL](/install#windows-via-wsl).
+To run agents with your WSL toolchain, run Planwise itself inside WSL. See [Windows via WSL](/install#windows-via-wsl).
 
 If WSL can't start a terminal, the picker shows the WSL row but won't let you select it. When WSL is already the selected shell, a caption under the picker says why:
 

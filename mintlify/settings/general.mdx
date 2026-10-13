@@ -19,17 +19,17 @@ To hide the mic button but keep the dictation shortcut, set **Microphone** to **
 
 **Prevent sleep while running** keeps the computer awake while an agent is running, so work continues when you step away. It is off by default.
 
-## When You Quit Traycer
+## When You Quit Planwise
 
-On Desktop, **General › Agents › When you quit Traycer** controls the host on this computer, regardless of which host is selected in Settings.
+On Desktop, **General › Agents › When you quit Planwise** controls the host on this computer, regardless of which host is selected in Settings.
 
 | Choice | What happens |
 | --- | --- |
-| **Keep the host running in the background** (default) | Starts the host at login and keeps work running after you quit Traycer. Other devices can still connect to it. |
-| **Ask me each time** | Starts the host with Traycer and asks whether to keep work running or stop it when you quit. |
-| **Stop the host if nothing is running, otherwise ask** | Starts the host with Traycer. On quit, stops an idle host automatically and asks if work is running. |
-| **Stop the host with the app** | Starts the host with Traycer and stops it when you quit, ending work running on it. |
-| **Don't run a host on this computer** | Uses remote hosts instead of starting a local host. Choosing this while Traycer manages a local host asks you to confirm stopping it. |
+| **Keep the host running in the background** (default) | Starts the host at login and keeps work running after you quit Planwise. Other devices can still connect to it. |
+| **Ask me each time** | Starts the host with Planwise and asks whether to keep work running or stop it when you quit. |
+| **Stop the host if nothing is running, otherwise ask** | Starts the host with Planwise. On quit, stops an idle host automatically and asks if work is running. |
+| **Stop the host with the app** | Starts the host with Planwise and stops it when you quit, ending work running on it. |
+| **Don't run a host on this computer** | Uses remote hosts instead of starting a local host. Choosing this while Planwise manages a local host asks you to confirm stopping it. |
 
 A host you started manually in a terminal keeps running when you quit Desktop. If Settings says a restart is needed to apply your choice, follow that notice.
 
@@ -37,7 +37,7 @@ You can also inspect or change the choice with the [host lifecycle CLI commands]
 
 ## Worktrees
 
-**Default branch prefix** is the start of every branch name Traycer creates for a new worktree. The default is `traycer/`.
+**Default branch prefix** is the start of every branch name Planwise creates for a new worktree. The default is `traycer/`.
 
 - The row previews an example branch name, such as "New branches start like `traycer/<name>`", and updates as you type.
 - Changes save automatically. The reset button next to the field restores `traycer/`.
@@ -58,7 +58,7 @@ A repository can set its own prefix in `<repo>/.traycer/environment.json`, which
 - drafts
 - settings and view preferences
 
-You stay signed in, and nothing on your hosts or in your Tasks is deleted. Traycer asks you to confirm first, and the reset can't be undone.
+You stay signed in, and nothing on your hosts or in your Tasks is deleted. Planwise asks you to confirm first, and the reset can't be undone.
 
 File edit snapshots are cleared per host, from **Host › Overview › Data**; see [Overview](/settings/host).
 

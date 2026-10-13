@@ -26,7 +26,7 @@ The header stays at the top on every tab.
 
 The **⋯** menu holds **Restart**, **Run doctor**, **Reset name to default** (only when the host has a custom name) and **Copy host ID**.
 
-If this computer's host isn't running, the header offers **Run doctor**. After you remove Traycer from this computer, it also offers **Reinstall Traycer**.
+If this computer's host isn't running, the header offers **Run doctor**. After you remove Planwise from this computer, it also offers **Reinstall Planwise**.
 
 ## Notices
 
@@ -48,7 +48,7 @@ Between the header and the tabs, the page shows what is happening to the host ri
 | **Install record** | How the host was installed: **Version**, **Build**, **Source**, **Installed**, **Verification**, **SHA-256** and **Platform**. |
 | **OS service** | Whether the host is registered to start when you log in, with **Re-register** and **Deregister**. |
 | **Command-line tools** | This computer only. Appears when the `traycer` command you installed with a package manager (such as Homebrew, npm or winget) is older than the one bundled with the app. It shows the upgrade command to copy, and the **Installation** tab shows a dot. |
-| **Danger zone** | **Remove Traycer from this computer** for this computer's host, or **Remove from account** for a host on another machine. |
+| **Danger zone** | **Remove Planwise from this computer** for this computer's host, or **Remove from account** for a host on another machine. |
 
 The install record and OS service are read from the host, so they need a connection to it.
 
@@ -58,22 +58,22 @@ The OS service starts the host when you log in, so agents keep running after you
 
 | Platform | How the host is registered |
 |---|---|
-| macOS | A login item that Traycer Desktop registers and manages. The page reads "Registered and managed by Traycer Desktop, which owns this host's service registration." A host installed with the CLI alone uses a launch agent instead. |
-| Linux | A systemd user service. Traycer also enables lingering, so the host keeps running after you log out. |
+| macOS | A login item that Planwise Desktop registers and manages. The page reads "Registered and managed by Planwise Desktop, which owns this host's service registration." A host installed with the CLI alone uses a launch agent instead. |
+| Linux | A systemd user service. Planwise also enables lingering, so the host keeps running after you log out. |
 | Windows | A per-user scheduled task that starts the host at logon. |
 
 - **Re-register** registers the service again. It restarts the host.
-- **Deregister** stops the host and removes the registration. Nothing is uninstalled and no data is deleted, but Traycer can't start the host again from Settings. To bring it back, run `traycer host service install` on that machine.
+- **Deregister** stops the host and removes the registration. Nothing is uninstalled and no data is deleted, but Planwise can't start the host again from Settings. To bring it back, run `traycer host service install` on that machine.
 
-When Traycer Desktop manages the service, these buttons aren't offered.
+When Planwise Desktop manages the service, these buttons aren't offered.
 
 ### Danger Zone
 
-**Remove Traycer from this computer** stops and removes Traycer's background host and services. Click **Remove Traycer**, then confirm in "Remove Traycer from this computer?". Your agents, history and credentials stay on this computer, and the host won't reinstall itself. When it finishes, the row reads **Traycer removed** with **Quit Traycer**. To finish uninstalling, see [Uninstall](/install#uninstall).
+**Remove Planwise from this computer** stops and removes Planwise's background host and services. Click **Remove Planwise**, then confirm in "Remove Planwise from this computer?". Your agents, history and credentials stay on this computer, and the host won't reinstall itself. When it finishes, the row reads **Planwise removed** with **Quit Planwise**. To finish uninstalling, see [Uninstall](/install#uninstall).
 
-If the background service is still registered afterwards, the row reads **Traycer removal incomplete** with **Try again**. If Traycer couldn't check, it reads **Traycer removal unverified**; run `traycer host service status` in a terminal to see what is left.
+If the background service is still registered afterwards, the row reads **Planwise removal incomplete** with **Try again**. If Planwise couldn't check, it reads **Planwise removal unverified**; run `traycer host service status` in a terminal to see what is left.
 
-**Remove from account** removes a host on another machine from your host list. Nothing on that machine changes: Traycer stays installed and no agents, history or credentials are deleted. The host won't rejoin on its own, and signing in again on that machine won't bring it back; you have to set it up again there. Its host ID is kept, so setting it up again restores the same name and settings.
+**Remove from account** removes a host on another machine from your host list. Nothing on that machine changes: Planwise stays installed and no agents, history or credentials are deleted. The host won't rejoin on its own, and signing in again on that machine won't bring it back; you have to set it up again there. Its host ID is kept, so setting it up again restores the same name and settings.
 
 ## Updates
 
@@ -86,7 +86,7 @@ When there is something to act on, a card leads the tab:
 | Card | Meaning |
 |---|---|
 | **Update available** | A newer version can be installed. It shows the move, such as v1.4.0 → v1.5.1. Click **Update now** to install it. |
-| **Needs newer CLI tools** | The update needs a newer version of Traycer's command-line tools first. The card shows what to do. |
+| **Needs newer CLI tools** | The update needs a newer version of Planwise's command-line tools first. The card shows what to do. |
 | **Restart to finish** | An update is installed and the host needs a restart to use it. |
 | **Newer version on another release line** | A newer version exists, but this host follows its own release line. Pick it from the versions below to move. |
 | **Update unavailable for this host** | A newer version exists, but this host can't install it. |
@@ -97,15 +97,15 @@ To check again, click **Check now** next to **Pick a different version**.
 
 While an update is in progress, the update card above the tabs reports progress, and **Check now** is hidden until it finishes.
 
-**Traycer Desktop.** The app updates separately from the host. In the desktop app, the Updates tab of this machine's host also shows where the app stands: **Up to date**, a newer version with **Download**, the download's progress, or a downloaded version with **Restart**. See [Updates](/install#updates).
+**Planwise Desktop.** The app updates separately from the host. In the desktop app, the Updates tab of this machine's host also shows where the app stands: **Up to date**, a newer version with **Download**, the download's progress, or a downloaded version with **Restart**. See [Updates](/install#updates).
 
-**Needs newer CLI tools.** In place of **Update now**, the card gives the fix: a command to copy and run on that machine (**Copy command**), the steps to update Traycer Desktop, or **Show installation help**. While the page is open it checks again every 30 seconds, and **Update now** appears once the host accepts the update.
+**Needs newer CLI tools.** In place of **Update now**, the card gives the fix: a command to copy and run on that machine (**Copy command**), the steps to update Planwise Desktop, or **Show installation help**. While the page is open it checks again every 30 seconds, and **Update now** appears once the host accepts the update.
 
 ### Auto-Update
 
 The **Auto-update** switch installs new host versions for you. They are "Applied on this host's next check-in — within ~10 minutes, and only when no sessions are running." The setting is stored in your account, so you can change it while the host is offline. An **Update pending** tag shows while an update waits to be applied.
 
-When an update is waiting for running work, the notices strip shows the wait. The start page also shows a "Traycer host update available" banner while a host update is pending, with **Update now** or **Restart host**. Dismissing the banner reminds you later.
+When an update is waiting for running work, the notices strip shows the wait. The start page also shows a "Planwise host update available" banner while a host update is pending, with **Update now** or **Restart host**. Dismissing the banner reminds you later.
 
 If you restart or update a host that is busy, a **Host is busy** dialog names the work that is still running. Choose **Defer** to wait, or **Force restart** / **Force update** to end that work now.
 
@@ -125,7 +125,7 @@ The Data tab covers what this host keeps on its disk. It needs a connection to t
 
 | Row | What it does |
 |---|---|
-| **Import your work** | **Import** brings work you started in Claude Code, Codex or OpenCode into Traycer as Tasks. See [First run and importing](/first-run). |
+| **Import your work** | **Import** brings work you started in Claude Code, Codex or OpenCode into Planwise as Tasks. See [First run and importing](/first-run). |
 | **Data migration** | **Re-attempt migration** retries moving this host's local Tasks to the cloud. |
 
 ### Version History
@@ -152,7 +152,7 @@ When anything is forwarded or held, the **Ports** tab shows a count. See [Port f
 
 ## Doctor
 
-**⋯ › Run doctor** opens the **Host doctor** sheet. It lists any issues it finds, each with a fix button where Traycer can apply one:
+**⋯ › Run doctor** opens the **Host doctor** sheet. It lists any issues it finds, each with a fix button where Planwise can apply one:
 
 | Button | What it does |
 |---|---|

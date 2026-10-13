@@ -5,35 +5,35 @@ description: "Understand the difference between an agent on the Terminal interfa
 
 import { FeatureVideo } from "/snippets/feature-video.jsx";
 
-Traycer has two terminal-looking surfaces with very different roles. One is an **agent** using the Terminal interface; the other is a plain shell.
+Planwise has two terminal-looking surfaces with very different roles. One is an **agent** using the Terminal interface; the other is a plain shell.
 
 Throughout this page, "Terminal Agent" is shorthand for _an agent you interact with through the Terminal interface_. It is not a separate kind of entity from the agents in the [Agents](/panels/agents) panel - it is one of the two interfaces those agents can use.
 
 | Difference             | Terminal Agent                                                                                                                                                                    | Terminal                                                                                                        |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | **What it is**         | A coding-agent session that runs through a terminal-style interface.                                                                                                              | A plain shell session that you control directly.                                                                |
-| **Traycer context**    | Receives Task context, artifact guidance, skills, and agent-to-agent tools. What it can do with other agents depends on the coding agent; see [Agent-to-Agent](/concepts/agent-to-agent#agent-to-agent-support). | Does not receive agent prompts, skills, artifact instructions, or agent-to-agent tools.                         |
+| **Planwise context**    | Receives Task context, artifact guidance, skills, and agent-to-agent tools. What it can do with other agents depends on the coding agent; see [Agent-to-Agent](/concepts/agent-to-agent#agent-to-agent-support). | Does not receive agent prompts, skills, artifact instructions, or agent-to-agent tools.                         |
 | **Setup**              | Starts with a workspace folder or worktree, coding agent, model, thinking effort, and optional CLI arguments. See [Launch Setup](#launch-setup).                                   | Starts with a host and a folder. The shell comes from [Shell](/settings/shell) settings. See [Start A Terminal](#start-a-terminal). |
 | **After launch**       | Launch choices stay fixed for that Terminal Agent.                                                                                                                                | You control the shell directly.                                                                                 |
-| **Session continuity** | Traycer stores the coding agent's upstream session id and uses it to resume the same agent session when reopened on its original host.                                            | No coding-agent session id; it is just a PTY shell.                                                             |
+| **Session continuity** | Planwise stores the coding agent's upstream session id and uses it to resume the same agent session when reopened on its original host.                                            | No coding-agent session id; it is just a PTY shell.                                                             |
 | **Listed in**          | [Agents](/panels/agents), because it is an agent.                                                                                                                                 | [Terminals](/panels/terminals) in a Task, or the start page's terminal panel outside one.                       |
 
-They can look similar because both use a terminal surface. The difference is that a Terminal Agent is still a Traycer agent, while a Terminal is just a shell.
+They can look similar because both use a terminal surface. The difference is that a Terminal Agent is still a Planwise agent, while a Terminal is just a shell.
 
 ## Terminal Agents
 
-A **Terminal Agent** runs a coding agent in a PTY, but Traycer still wraps that session with Task context.
+A **Terminal Agent** runs a coding agent in a PTY, but Planwise still wraps that session with Task context.
 
 Terminal Agents can receive:
 
-- Traycer's system prompt
+- Planwise's system prompt
 - the Task id and agent identity
 - artifact instructions for specs, tickets, stories, and reviews
 - guidance for creating or updating artifacts as markdown files
-- Traycer skills and planning/execution instructions
+- Planwise skills and planning/execution instructions
 - agent-to-agent instructions and tools, as far as the coding agent supports them
 
-That means a Terminal Agent is not the same as opening the coding-agent CLI yourself. Traycer prepares the session so the agent understands the Task, the artifact model, and the multi-agent environment.
+That means a Terminal Agent is not the same as opening the coding-agent CLI yourself. Planwise prepares the session so the agent understands the Task, the artifact model, and the multi-agent environment.
 
 ## Coding Agents That Support The Terminal Interface
 
@@ -55,7 +55,7 @@ A **Terminal** is a shell session.
 
 Use it to run commands yourself: package scripts, tests, dev servers, logs, local debugging, or one-off shell work.
 
-A plain Terminal does not receive Traycer's agent prompt, does not use Traycer skills, does not create artifacts by itself, and does not take part in agent-to-agent communication. It is not an agent session.
+A plain Terminal does not receive Planwise's agent prompt, does not use Planwise skills, does not create artifacts by itself, and does not take part in agent-to-agent communication. It is not an agent session.
 
 ### Start A Terminal
 
@@ -83,7 +83,7 @@ Those choices stay fixed after launch. Start a new Terminal Agent when you need 
 
 Worktree choices are covered in [Worktrees](/concepts/worktrees). Default CLI arguments for each coding agent are set in [Providers](/settings/providers#cli-binary-and-arguments).
 
-Traycer also keeps the upstream coding-agent session id for the Terminal Agent. When the app or host restarts and the same Terminal Agent is reopened on its original host, Traycer resumes the underlying coding-agent session instead of starting from scratch.
+Planwise also keeps the upstream coding-agent session id for the Terminal Agent. When the app or host restarts and the same Terminal Agent is reopened on its original host, Planwise resumes the underlying coding-agent session instead of starting from scratch.
 
 Plain Terminals do not have a coding agent, model, thinking effort, or artifact behavior. They only need a host and a folder.
 
@@ -95,7 +95,7 @@ In **Start a new agent**, choose **Switch to Terminal**, configure the launch, t
 
 Terminal Agents take part in agent-to-agent work, but referencing, reading transcripts, and messaging are separate capabilities, and what a Terminal Agent can do depends on its coding agent. The rules are in [Agent-to-Agent](/concepts/agent-to-agent).
 
-Traycer reads a Terminal Agent's transcript from the coding agent's own session history rather than terminal scrollback, so the record survives the terminal closing.
+Planwise reads a Terminal Agent's transcript from the coding agent's own session history rather than terminal scrollback, so the record survives the terminal closing.
 
 Every Terminal Agent appears in the Task's agent hierarchy either way, so you can always see where delegated terminal work came from.
 

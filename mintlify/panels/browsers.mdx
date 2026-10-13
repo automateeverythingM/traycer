@@ -1,10 +1,10 @@
 ---
 title: "Browsers"
-description: "Open web pages inside Traycer, watch and guide agents that use the in-app browser, and view browser tabs that run on other machines."
+description: "Open web pages inside Planwise, watch and guide agents that use the in-app browser, and view browser tabs that run on other machines."
 keywords: ['browser', 'in-app browser', 'browser tab', 'browsers panel', 'website sessions', 'picture in picture', 'annotate', 'driven by', 'open natively']
 ---
 
-Traycer has its own browser. Browser tabs open as tiles on the canvas, next to your agents, terminals and artifacts. Agents use the same browser, so you can watch what they do and step in.
+Planwise has its own browser. Browser tabs open as tiles on the canvas, next to your agents, terminals and artifacts. Agents use the same browser, so you can watch what they do and step in.
 
 The **Browsers** panel lists the browser tabs in the open Task.
 
@@ -59,7 +59,7 @@ When the panel has nothing to show, it reads "No browsers yet." If the Task has 
 | **Convert to picture-in-picture** | Move the tab into a small floating window over the canvas. |
 | **More browser controls** | **Zoom** the page, view **Site information**, **Clear cookies for** the current site, and **Open DevTools**. |
 
-**Clear cookies for** a site asks you to confirm. You are signed out of that site in Traycer, everywhere your account is signed in. Other sites are untouched. Private sessions don't offer it.
+**Clear cookies for** a site asks you to confirm. You are signed out of that site in Planwise, everywhere your account is signed in. Other sites are untouched. Private sessions don't offer it.
 
 ### Annotate A Page
 
@@ -74,7 +74,7 @@ Browser tabs share one signed-in browser profile, so a site you sign in to stays
 In [Browser settings](/settings/browser#website-sessions) you can:
 
 - Stop saving website sessions on this computer.
-- Review and remove saved sessions. Saved sessions are shared with your connected Traycer hosts.
+- Review and remove saved sessions. Saved sessions are shared with your connected Planwise hosts.
 - Bring in sign-ins from another browser or a cookie file, so you don't have to sign in again.
 
 The **Browser sign-ins** guide in [Getting started](/settings/getting-started) walks you through bringing in your sign-ins.
@@ -87,7 +87,7 @@ Agents open a private session when you ask them for privacy or isolation.
 
 ## Agents In The Browser
 
-When **Let agents use the in-app browser** is on in [Browser settings](/settings/browser), agents get Traycer's browser as a tool. It is on by default, and it is set per host. When it's off, agents use their own browser tooling instead.
+When **Let agents use the in-app browser** is on in [Browser settings](/settings/browser), agents get Planwise's browser as a tool. It is on by default, and it is set per host. When it's off, agents use their own browser tooling instead.
 
 - **Watch an agent.** A tab an agent is using shows the robot icon in the Browsers panel, with the tooltip "Driven by" and the agent's name. Click the row to watch the tab, or click the icon to open the agent's chat.
 - **Where agent tabs go.** Tabs an agent opens stay in the Browsers panel without opening on the canvas. To open them like any other browser tab, set **Agent-opened tabs** to **Like any browser tile** in [Browser settings](/settings/browser#agent-opened-tabs).
@@ -95,16 +95,16 @@ When **Let agents use the in-app browser** is on in [Browser settings](/settings
 
 ## Tabs On Another Machine
 
-A browser tab runs on the host that opened it. When that host is this computer, the tab runs in the desktop app itself. When it runs on another machine, Traycer streams the page into the tile.
+A browser tab runs on the host that opened it. When that host is this computer, the tab runs in the desktop app itself. When it runs on another machine, Planwise streams the page into the tile.
 
 - A badge in the toolbar shows the stream's state: **Live**, **Connecting**, **Stale**, or **Disconnected**.
-- Click the page to control it. The toolbar shows **Controlling**; click **Release** to give the keyboard back to Traycer.
-- A tab that is open in the Traycer desktop app on another machine can't be streamed. The tile shows **Open natively** and names the machine it is open on.
+- Click the page to control it. The toolbar shows **Controlling**; click **Release** to give the keyboard back to Planwise.
+- A tab that is open in the Planwise desktop app on another machine can't be streamed. The tile shows **Open natively** and names the machine it is open on.
 - In the web app and the mobile app, streamed tabs are **View only**.
 
 ## Shortcuts In A Browser Tile
 
-While a browser tile has keyboard focus, these shortcuts act on the browser instead of Traycer:
+While a browser tile has keyboard focus, these shortcuts act on the browser instead of Planwise:
 
 | Shortcut | What it does |
 |---|---|
@@ -115,4 +115,4 @@ While a browser tile has keyboard focus, these shortcuts act on the browser inst
 
 In a tab streamed from another machine, only ⌘L / Ctrl+L is taken over; ⌘W and ⌘T go to the page.
 
-Every other key goes to the page, except a few Traycer shortcuts that keep working: the command palette, **Reopen closed tab**, **Close active tab**, and the next and previous tab shortcuts. If you rebind one of these, your new shortcut is the one that works. [Keybindings](/settings/keybindings) warns you when a shortcut you choose would be taken over by a focused browser tile.
+Every other key goes to the page, except a few Planwise shortcuts that keep working: the command palette, **Reopen closed tab**, **Close active tab**, and the next and previous tab shortcuts. If you rebind one of these, your new shortcut is the one that works. [Keybindings](/settings/keybindings) warns you when a shortcut you choose would be taken over by a focused browser tile.

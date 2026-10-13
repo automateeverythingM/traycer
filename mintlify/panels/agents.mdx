@@ -12,7 +12,7 @@ You interact with an agent through one of two **interfaces**: **Chat** or **Term
 | Interface    | What it looks like                          | What can change after start                                                                                                                                                  |
 | ------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Chat**     | In-app conversation with composer controls. | Model, permissions, thinking effort, fast mode, attachments, and voice can change turn by turn.                                                                              |
-| **Terminal** | Terminal-style coding-agent session.        | The launch setup is chosen at start and stays fixed. Traycer can resume the underlying coding-agent session on its original host.                                            |
+| **Terminal** | Terminal-style coding-agent session.        | The launch setup is chosen at start and stays fixed. Planwise can resume the underlying coding-agent session on its original host.                                            |
 
 A plain **Terminal** is a different thing entirely: it is a shell session and lives under [Terminals](/panels/terminals). The full distinction is covered in [Terminal Agents VS Terminals](/concepts/terminal-agents-vs-terminals).
 
@@ -44,14 +44,14 @@ The composer is the prompt area for an agent on the Chat interface. See [Compose
 | **Thinking effort**      | Choose reasoning depth when the selected model supports it.                                              |
 | **Fast mode**            | Use a faster service tier when the selected model offers one.                                            |
 | **Attach image**         | Attach images. Add files and folders with `@` mentions, drag and drop, or paste. See [Attachments and voice](#attachments-and-voice). |
-| **Skills and commands**  | Type `/` or `$` to use the coding agent's commands and skills. See [Artifact workflow](/concepts/artifact-workflow) for Traycer's planning skills. |
+| **Skills and commands**  | Type `/` or `$` to use the coding agent's commands and skills. See [Artifact workflow](/concepts/artifact-workflow) for Planwise's planning skills. |
 | **Voice**                | Dictate a prompt instead of typing.                                                                      |
 | **Send / Stop**          | Start the next turn or stop the active one.                                                              |
 
 ### Changing Settings During A Turn
 
 - **Permissions** apply to the running turn right away. See [Permissions](#permissions).
-- **Model, thinking effort, fast mode, and provider profile** apply from the next turn. If you change one of them and then steer a message into the running turn, Traycer asks **End the current turn to send with new settings?**. **End turn & send** ends the turn and resends your message with the new settings. See [Message queue](/panels/agents/message-queue#steering-after-changing-settings).
+- **Model, thinking effort, fast mode, and provider profile** apply from the next turn. If you change one of them and then steer a message into the running turn, Planwise asks **End the current turn to send with new settings?**. **End turn & send** ends the turn and resends your message with the new settings. See [Message queue](/panels/agents/message-queue#steering-after-changing-settings).
 
 When a provider reports a usage limit, see [Usage limits and model routing](/agents-and-models/usage-limits-and-routing).
 
@@ -85,9 +85,9 @@ In **Auto**, reads, searches, and edits run as they would in Auto-accept edits. 
 
 The judge never refuses an action on its own; anything it does not approve comes to you. The one exception is a conversation another agent started with nobody watching it: there is no one to ask, so the action is refused and the chat says so.
 
-When Traycer's judge reviews the conversation, switching to Auto mid-turn applies right away, but approvals that are already waiting still ask you. When the coding agent's own classifier reviews instead, Auto can't be switched on during a running turn: the picker disables it and says why. Choose Auto before your next message, or pick **Traycer's judge** on that provider's **Permissions** tab in [Providers](/settings/providers) to switch now.
+When Planwise's judge reviews the conversation, switching to Auto mid-turn applies right away, but approvals that are already waiting still ask you. When the coding agent's own classifier reviews instead, Auto can't be switched on during a running turn: the picker disables it and says why. Choose Auto before your next message, or pick **Planwise's judge** on that provider's **Permissions** tab in [Providers](/settings/providers) to switch now.
 
-Mid-turn, Auto is also unavailable for a moment while Traycer checks which judge would review the conversation. The picker then says "Still checking which judge reviews this conversation.", and Auto can be switched on once that's known.
+Mid-turn, Auto is also unavailable for a moment while Planwise checks which judge would review the conversation. The picker then says "Still checking which judge reviews this conversation.", and Auto can be switched on once that's known.
 
 The picker's Auto option shows a short description only. Which judge reviews and how it is billed, your rules, and a log of recent decisions live in [Permissions settings](/settings/permissions).
 
@@ -117,13 +117,13 @@ To give the agent files or folders:
 
 - Mention them with `@`. See [Mention context](/panels/agents/composer#mention-context).
 - Drag a file or folder from the **File Tree** into the composer. It becomes an inline `@` mention, just like one picked from the mention picker.
-- Paste or drop files from your computer. Traycer inserts each file's path, relative to the workspace when it can.
+- Paste or drop files from your computer. Planwise inserts each file's path, relative to the workspace when it can.
 
 <FeatureVideo src="https://assets.traycer.ai/docs/videos/dnd-file-to-composer.mp4" label="Drag a File Tree item into the composer" />
 
 Voice input turns speech into prompt text. It is useful for longer instructions, quick notes, or hands-free follow-up while reviewing code.
 
-Click the microphone in the composer, or press ⌃⇧M / Ctrl+Shift+M, to start dictating. Tap the shortcut to start and tap again to stop, or hold it to talk and release to stop. Speech is transcribed on the device; the first time, Traycer downloads the speech model. Finalized phrases are inserted as you pause. Click **Stop** to finish transcribing the remaining speech. **Cancel** or Esc discards only unfinished speech; text already inserted stays. Turn voice input off with **Voice input** in [General settings](/settings/general).
+Click the microphone in the composer, or press ⌃⇧M / Ctrl+Shift+M, to start dictating. Tap the shortcut to start and tap again to stop, or hold it to talk and release to stop. Speech is transcribed on the device; the first time, Planwise downloads the speech model. Finalized phrases are inserted as you pause. Click **Stop** to finish transcribing the remaining speech. **Cancel** or Esc discards only unfinished speech; text already inserted stays. Turn voice input off with **Voice input** in [General settings](/settings/general).
 
 <FeatureVideo src="https://assets.traycer.ai/docs/videos/voice-input.mp4" label="Dictate a prompt into the composer" />
 
@@ -148,7 +148,7 @@ Hover a message to show its actions. They are icons; hover one to see its name.
 
 **Edit** and **Delete** are unavailable while a turn is running.
 
-When you edit a message and that turn or a later one changed files, Traycer asks **Submit from a previous message?**:
+When you edit a message and that turn or a later one changed files, Planwise asks **Submit from a previous message?**:
 
 - **Revert** rolls files back to how they were before this message. Leave **Also revert N artifacts** checked to roll back artifacts too.
 - **Don't revert** keeps the files as they are.
@@ -177,7 +177,7 @@ When a coding agent delegates work to a native subagent, its activity appears in
 
 For a **Claude Code** or **Codex** subagent in your own chat, click **Continue as chat** in the subagent view to carry on its work yourself. The button is disabled while the subagent is still running. The chat's host must support this action. To create the independent chat for the first time, it must still be able to read the provider's record of the subagent.
 
-Traycer opens an independent chat with the subagent's conversation, nested beneath the parent in the same Task. It runs on the same host and shares the parent's workspace, including any worktree; it does not create a separate worktree. Messages you send there do not go to the original subagent or its parent. Choosing **Continue as chat** again opens the chat already created for that subagent.
+Planwise opens an independent chat with the subagent's conversation, nested beneath the parent in the same Task. It runs on the same host and shares the parent's workspace, including any worktree; it does not create a separate worktree. Messages you send there do not go to the original subagent or its parent. Choosing **Continue as chat** again opens the chat already created for that subagent.
 
 ## Undo A Turn
 
@@ -203,9 +203,9 @@ When a reply ends with suggested next steps, each one is a button. Click it to s
 
 An agent on the Terminal interface starts with a fixed launch setup that you choose in **Start a new agent**. What goes into it, and why it stays fixed, is covered in [Launch Setup](/concepts/terminal-agents-vs-terminals#launch-setup).
 
-Traycer stores the upstream coding-agent session id so the agent can resume the same underlying session on its original host.
+Planwise stores the upstream coding-agent session id so the agent can resume the same underlying session on its original host.
 
-Agents on the Terminal interface also receive Traycer's agent context: artifact guidance, skills, and agent-to-agent instructions. What other agents can do with them is covered in [Agent-to-Agent](/concepts/agent-to-agent).
+Agents on the Terminal interface also receive Planwise's agent context: artifact guidance, skills, and agent-to-agent instructions. What other agents can do with them is covered in [Agent-to-Agent](/concepts/agent-to-agent).
 
 Not every coding agent can back the Terminal interface. The supported set is listed in [Agents & Models](/agents-and-models/coding-agents).
 
@@ -278,7 +278,7 @@ The **Filter agents** menu controls what the tree shows and in what order.
 
 **Reset view** appears once anything differs from the defaults.
 
-Filtering does not change agent identity or the hierarchy. When a filter is active, Traycer keeps the relevant parent chain visible so a matching child agent does not appear detached from its context. An empty result means no agent matches the filter, not that the Task has no agents.
+Filtering does not change agent identity or the hierarchy. When a filter is active, Planwise keeps the relevant parent chain visible so a matching child agent does not appear detached from its context. An empty result means no agent matches the filter, not that the Task has no agents.
 
 ### Row Menu
 

@@ -1,16 +1,16 @@
 ---
 title: "Usage limits and model routing"
-description: "See how much of each provider's usage limit is left, switch accounts when one runs low, check what your agents cost, and let Traycer route a blocked chat to another account or model."
+description: "See how much of each provider's usage limit is left, switch accounts when one runs low, check what your agents cost, and let Planwise route a blocked chat to another account or model."
 keywords: ['usage limits', 'rate limits', 'quota', 'status bar', 'switch profile', 'codex manual reset', 'usage', 'cost', 'tokens', 'model routing', 'fallback', 'switch back']
 ---
 
-Most coding agents run on a subscription or an account with usage limits. Traycer reads those limits from each provider, shows them in the app, warns you in the composer when a chat's account is running low, and can move a blocked chat to another account or model for you.
+Most coding agents run on a subscription or an account with usage limits. Planwise reads those limits from each provider, shows them in the app, warns you in the composer when a chat's account is running low, and can move a blocked chat to another account or model for you.
 
 ## Which Providers Report Usage Limits
 
-Traycer shows usage for the providers that report it. Each provider reports its own kind of limit.
+Planwise shows usage for the providers that report it. Each provider reports its own kind of limit.
 
-| Provider | What Traycer shows |
+| Provider | What Planwise shows |
 | --- | --- |
 | **Claude Code** | Current session and weekly limits, weekly limits for particular models, and extra usage |
 | **Codex** | Session and weekly limits, limits for particular models, credits, and [manual resets](#codex-manual-resets) |
@@ -22,7 +22,7 @@ Traycer shows usage for the providers that report it. Each provider reports its 
 | **Kilo Code** | Credit balance |
 | **Antigravity** | Limits for each group of Google models, each with its own windows |
 
-Time-based limits are named by their length: **Current session** is a 5-hour window, and longer ones read **Daily**, **Weekly** or **Monthly**. Other providers don't report limits, so Traycer shows no usage for them.
+Time-based limits are named by their length: **Current session** is a 5-hour window, and longer ones read **Daily**, **Weekly** or **Monthly**. Other providers don't report limits, so Planwise shows no usage for them.
 
 Usage is read on the host that runs the provider, for each account you are signed in to there. While a host is offline, its usage limits can't be read.
 
@@ -44,7 +44,7 @@ Press **⌘⇧U / Ctrl+Shift+U** to open **Usage limits**, or click the usage re
 - The eye button on an account shows or hides it in the status bar.
 - **Manage provider** opens that provider in [Providers](/settings/providers).
 - The settings button at the bottom opens the status bar settings in [Layout](/settings/layout).
-- The **Traycer** tab shows your Traycer plan and usage, for your personal account and each team.
+- The **Planwise** tab shows your Planwise plan and usage, for your personal account and each team.
 
 If you use more than one host, pick the host at the top of the popover. You can resize the popover by dragging its edges.
 
@@ -56,9 +56,9 @@ When the account a chat uses is running low on usage, or has reached its limit, 
 
 | Control | What it does |
 | --- | --- |
-| **Switch to** _account_ | Switches this chat to the account Traycer recommends. |
+| **Switch to** _account_ | Switches this chat to the account Planwise recommends. |
 | **More profiles** | The arrow next to **Switch to**. Lists every account for that provider with its status, such as **Running low**, **Limited** or **Not checked**. Hover over an account, or move to it with the arrow keys, to see its usage. |
-| **Choose a profile** | Shown instead of **Switch to** when Traycer has no single account to recommend. |
+| **Choose a profile** | Shown instead of **Switch to** when Planwise has no single account to recommend. |
 | **View profile limits** | Shown when no other account can be used. The banner says "No other profile is currently available." |
 | **Also switch _N_ other chats in this task** | Switches the Task's other chats on the same account too. |
 
@@ -70,11 +70,11 @@ Switching accounts needs a second account on the same provider. Claude Code, Cod
 
 Codex can give you manual resets for a usage limit. When you have some, the Codex tab in **Usage limits** and the Codex **Profiles & Limits** tab show **Manual resets** with the number available.
 
-Click **Use reset**, then confirm in the "Use a Codex manual reset?" dialog. Traycer uses the reset that expires first, on the Codex limit you have currently reached. A used reset can't be returned or undone.
+Click **Use reset**, then confirm in the "Use a Codex manual reset?" dialog. Planwise uses the reset that expires first, on the Codex limit you have currently reached. A used reset can't be returned or undone.
 
 ## Cost and Token Usage
 
-Traycer also records what your agents spend in tokens and estimated cost.
+Planwise also records what your agents spend in tokens and estimated cost.
 
 - **A Task.** Click the **Usage** button (a chart icon) at the top right of the Task. The dialog shows cost and token usage for the Task over the last **7 days**, **30 days** or **90 days**. You can export it as an image, and **View full usage** opens Settings › Account › **Usage**.
 - **A chat.** Right-click a chat's tab and choose **Usage** to see cost and token usage for that chat's full history.
@@ -84,7 +84,7 @@ Costs are estimated from the providers' published prices, so they can differ fro
 
 ## Automatic Model Routing
 
-When a rate limit or another provider problem blocks a chat's turn, Traycer can recover for you. With **Route automatically** on, it works through your plan:
+When a rate limit or another provider problem blocks a chat's turn, Planwise can recover for you. With **Route automatically** on, it works through your plan:
 
 1. Try another account on the same provider.
 2. Try an equivalent model on another provider.
@@ -105,11 +105,11 @@ While routing is working on a chat, one card sits above the composer. It has the
 - **Count line**, only when there is something to count: "2 queued messages move with it", or "1 other chat in this task is also switching".
 - **Two buttons:** the step to take now, and the way to refuse it.
 
-The card has no close button. It goes away when you answer it or when routing finishes. A countdown that ends in a switch finishes routing; one that ends in a wait keeps the card up until the wait is over (see [Waiting for a Reset](#waiting-for-a-reset)). While the chat's connection is down its buttons are disabled and read **Reconnecting…**, and while Traycer is still working out the next step they read **Deciding…**.
+The card has no close button. It goes away when you answer it or when routing finishes. A countdown that ends in a switch finishes routing; one that ends in a wait keeps the card up until the wait is over (see [Waiting for a Reset](#waiting-for-a-reset)). While the chat's connection is down its buttons are disabled and read **Reconnecting…**, and while Planwise is still working out the next step they read **Deciding…**.
 
 ### The Switch Countdown
 
-Before Traycer switches or starts waiting, the headline counts down. The countdown is 15 seconds by default.
+Before Planwise switches or starts waiting, the headline counts down. The countdown is 15 seconds by default.
 
 | Next step | Headline | Buttons |
 | --- | --- | --- |
@@ -122,27 +122,27 @@ To go somewhere other than the planned destination, click the destination on the
 
 ### Waiting for a Reset
 
-When Traycer waits for a limit to reset, the headline says when the chat resumes, for example "Resuming at 3:00 PM · in about 2h 14m". The route line shows the account and model it resumes on. Messages waiting to run wait with it.
+When Planwise waits for a limit to reset, the headline says when the chat resumes, for example "Resuming at 3:00 PM · in about 2h 14m". The route line shows the account and model it resumes on. Messages waiting to run wait with it.
 
 - **Choose another model…** opens the [picker](#choosing-where-to-switch), to switch now instead of waiting.
 - **Stop waiting** stops the wait and keeps the error.
 
-Traycer waits only when the provider gives a reset time within your longest wait, which is 6 hours by default. As the wait ends, the headline reads "Resuming in 12s", and **Stop waiting** still stops it.
+Planwise waits only when the provider gives a reset time within your longest wait, which is 6 hours by default. As the wait ends, the headline reads "Resuming in 12s", and **Stop waiting** still stops it.
 
 ### Choosing Where to Switch
 
-**Choose another model…**, the destination on the route line, and **Switch to…** on a failed turn all open the composer's own model picker, with its providers, account menu, models and thinking effort. It opens on the account Traycer recommends.
+**Choose another model…**, the destination on the route line, and **Switch to…** on a failed turn all open the composer's own model picker, with its providers, account menu, models and thinking effort. It opens on the account Planwise recommends.
 
 Nothing changes while you browse. At the bottom, a line says where the message will run, for example "Replays on Sonnet 5 · Work in a new session", and **Switch** sends it there. **Switch** stays disabled until you pick something other than the account and model that failed. A pick made here doesn't change what the composer offers your next chat.
 
 ### Switching Back
 
-When the original account's limit resets, what happens depends on your setting. By default Traycer asks: the card's status line reads, for example, "Work's limit has reset", and the headline "Switch back to Work?". If the account the chat is on now is itself running low, the status line says that too.
+When the original account's limit resets, what happens depends on your setting. By default Planwise asks: the card's status line reads, for example, "Work's limit has reset", and the headline "Switch back to Work?". If the account the chat is on now is itself running low, the status line says that too.
 
 - **Switch back** moves the chat back from your next message on, along with messages waiting to run. It starts a new agent session from the chat's history.
 - **Stay on** _account_ keeps the chat where it is.
 
-You can make Traycer switch back automatically, or always stay, in [Model routing](/settings/model-routing#behavior).
+You can make Planwise switch back automatically, or always stay, in [Model routing](/settings/model-routing#behavior).
 
 ### When a Turn Fails
 
@@ -150,9 +150,9 @@ When a turn fails and no routing card is showing, the error in the chat offers s
 
 - **Retry** runs the message again on the same account and model.
 - **Switch to…** opens the [picker](#choosing-where-to-switch).
-- **Wait until** _time_ waits for the limit to reset, when the provider has said when and it is within your longest wait. When the reset is later than that, the card says so, for example "This limit resets at 5:00 PM — longer than Traycer is set to wait."
+- **Wait until** _time_ waits for the limit to reset, when the provider has said when and it is within your longest wait. When the reset is later than that, the card says so, for example "This limit resets at 5:00 PM — longer than Planwise is set to wait."
 
-The first button is the one most likely to help: **Switch to…** after a rate limit or a billing problem, and **Retry** after anything else. If Traycer can't do what you pressed, the card says why on the card itself, and keeps only the buttons that can still help, for example "That limit has reset. Retry instead." or "This chat is busy. The actions come back when the current turn ends."
+The first button is the one most likely to help: **Switch to…** after a rate limit or a billing problem, and **Retry** after anything else. If Planwise can't do what you pressed, the card says why on the card itself, and keeps only the buttons that can still help, for example "That limit has reset. Retry instead." or "This chat is busy. The actions come back when the current turn ends."
 
 These buttons appear only on the chat's latest failed turn. They aren't shown on a chat that belongs to someone else.
 
@@ -160,7 +160,7 @@ Messages waiting to run stay held after a failed turn, and the [Message Queue](/
 
 ### When Routing Runs Out of Steps
 
-If routing tries every step in your plan and none of them works, the failed turn's error becomes a single card. It shows what happened and a numbered list of what Traycer tried, such as "Switched to Sonnet 5 · Work" or "Waited until 3:00 PM for Personal", or "Nothing could be tried" when no step could run. The card offers the same **Retry**, **Switch to…** and **Wait until** buttons. Its gear opens Model routing settings, and its report button files a bug report with the full routing details.
+If routing tries every step in your plan and none of them works, the failed turn's error becomes a single card. It shows what happened and a numbered list of what Planwise tried, such as "Switched to Sonnet 5 · Work" or "Waited until 3:00 PM for Personal", or "Nothing could be tried" when no step could run. The card offers the same **Retry**, **Switch to…** and **Wait until** buttons. Its gear opens Model routing settings, and its report button files a bug report with the full routing details.
 
 <Note>
   Turning **Route automatically** off stops new switches and waits only. Chats

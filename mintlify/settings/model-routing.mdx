@@ -1,10 +1,10 @@
 ---
 title: "Model routing"
-description: "Choose what Traycer tries when a rate limit or another provider problem blocks a chat: another account, an equivalent model, waiting for the limit to reset, or notifying you."
+description: "Choose what Planwise tries when a rate limit or another provider problem blocks a chat: another account, an equivalent model, waiting for the limit to reset, or notifying you."
 keywords: ['model routing', 'fallback', 'failover', 'rate limit', 'usage limit', 'switch account', 'switch model', 'equivalent models', 'tiers', 'wait for reset', 'overrides']
 ---
 
-**Model routing** settings decide what Traycer does when a rate limit or another provider problem blocks a chat's turn. The page sits in the **Host** group of Settings.
+**Model routing** settings decide what Planwise does when a rate limit or another provider problem blocks a chat's turn. The page sits in the **Host** group of Settings.
 
 For what routing looks like in a chat, including the switch countdown and switching back, see [Usage Limits and Model Routing](/agents-and-models/usage-limits-and-routing).
 
@@ -21,11 +21,11 @@ Model routing settings belong to one host, and to your account on that host. Cho
 
 **Route automatically** is the switch at the top of the page. It is **off** by default.
 
-When it is on and a chat's turn is blocked, Traycer works through your [plan](#plan) until a step works or it reaches **Notify me**. When it is off, a blocked turn stops with an error, and you choose what to do from the chat.
+When it is on and a chat's turn is blocked, Planwise works through your [plan](#plan) until a step works or it reaches **Notify me**. When it is off, a blocked turn stops with an error, and you choose what to do from the chat.
 
-Turning it off stops Traycer starting new switches or waits. Chats that are already switching or waiting carry on; stop those from the card in the chat. While any are in progress, the row shows how many, for example "2 in progress right now."
+Turning it off stops Planwise starting new switches or waits. Chats that are already switching or waiting carry on; stop those from the card in the chat. While any are in progress, the row shows how many, for example "2 in progress right now."
 
-The switch covers only Traycer's routing. Your coding agent's own retries are separate and keep working either way.
+The switch covers only Planwise's routing. Your coding agent's own retries are separate and keep working either way.
 
 While the switch is off, you can still edit everything below it. The page says "Off - these settings take effect when you turn on Route automatically."
 
@@ -35,14 +35,14 @@ The rest of the page has three tabs: **Plan**, **Equivalent models** and **Overr
 
 ### Steps
 
-Under **Try these in order**, the page lists the steps Traycer can take. It tries them from the top and stops at the first one that works.
+Under **Try these in order**, the page lists the steps Planwise can take. It tries them from the top and stops at the first one that works.
 
 | Step | What it does |
 | --- | --- |
-| **Another account on the same provider** | Switches to a different account you're signed in to on the same provider. Traycer checks that account's usage first and skips an account that is already at its limit. |
+| **Another account on the same provider** | Switches to a different account you're signed in to on the same provider. Planwise checks that account's usage first and skips an account that is already at its limit. |
 | **An equivalent model on another provider** | Tries a backup model from the [Equivalent models](#equivalent-models) tab. |
-| **Wait for the limit to reset** | If the provider gives a reset time within your [longest wait](#behavior), Traycer waits until then and retries the message. |
-| **Notify me** | Traycer notifies you and stops trying. Later steps won't run. |
+| **Wait for the limit to reset** | If the provider gives a reset time within your [longest wait](#behavior), Planwise waits until then and retries the message. |
+| **Notify me** | Planwise notifies you and stops trying. Later steps won't run. |
 
 By default all four steps are on, in this order.
 
@@ -66,8 +66,8 @@ If your tiers give the model you last used nowhere to go, the equivalent-model s
 
 | Setting | What it controls | Options | Default |
 | --- | --- | --- | --- |
-| **Time to cancel a switch** | How long Traycer waits before switching, so you can cancel from the chat. Opening the model picker from the card pauses the countdown. | 10 to 15 seconds | 15 seconds |
-| **Longest wait for a usage limit to reset** | If the limit resets later than this, Traycer skips waiting and moves on to the next step. | 1 hour, 3 hours, 6 hours, 12 hours, 1 day, 3 days, 7 days | 6 hours |
+| **Time to cancel a switch** | How long Planwise waits before switching, so you can cancel from the chat. Opening the model picker from the card pauses the countdown. | 10 to 15 seconds | 15 seconds |
+| **Longest wait for a usage limit to reset** | If the limit resets later than this, Planwise skips waiting and moves on to the next step. | 1 hour, 3 hours, 6 hours, 12 hours, 1 day, 3 days, 7 days | 6 hours |
 | **When the original provider's limit resets** | What happens once the account or model the chat started on can be used again. | **Ask me**, **Switch back automatically**, **Stay where it switched to** | **Ask me** |
 
 Switching back also starts a new agent session using the chat's history. With **Switch back automatically**, messages waiting to run move back to the original account or model too.
@@ -82,17 +82,17 @@ Chats that are already waiting or switching keep the steps and timings they star
 
 ## Equivalent Models
 
-This tab lists the models you are happy to use in place of one another. Models that can stand in for each other go in the same **tier**. When one is blocked, Traycer tries the others in its tier, top to bottom.
+This tab lists the models you are happy to use in place of one another. Models that can stand in for each other go in the same **tier**. When one is blocked, Planwise tries the others in its tier, top to bottom.
 
-Traycer switches only between models in the same tier. A model that isn't in any tier uses the tier you choose under [For a model not in any tier](#models-not-in-any-tier).
+Planwise switches only between models in the same tier. A model that isn't in any tier uses the tier you choose under [For a model not in any tier](#models-not-in-any-tier).
 
 ### Default Tiers
 
-Traycer starts you with three tiers, **frontier**, **flagship** and **standard**, filled with Claude Code, Codex and Grok models. **flagship** is also the tier used for models not in any tier.
+Planwise starts you with three tiers, **frontier**, **flagship** and **standard**, filled with Claude Code, Codex and Grok models. **flagship** is also the tier used for models not in any tier.
 
-Traycer Inference isn't in the default tiers, because it uses your Traycer credits. You can add it to a tier yourself.
+Planwise Inference isn't in the default tiers, because it uses your Planwise credits. You can add it to a tier yourself.
 
-**Restore the default tiers** replaces your tiers with the defaults and sets the tier for other models back to **flagship**. Traycer asks you to confirm, and a restore can't be undone. If you delete every tier, the tab says the equivalent-model step has nothing to switch to, and offers the same button.
+**Restore the default tiers** replaces your tiers with the defaults and sets the tier for other models back to **flagship**. Planwise asks you to confirm, and a restore can't be undone. If you delete every tier, the tab says the equivalent-model step has nothing to switch to, and offers the same button.
 
 ### Rows
 
@@ -111,7 +111,7 @@ In **Model or pattern**, pick a model from the list, or type a pattern:
 - `*` on its own covers every model from that provider, shown as **Any _provider_ model**.
 - Text without `*` names one model exactly.
 
-Under each row, a line lists the models it would try, in order, for example "Tries A → B", and marks any that Traycer would skip.
+Under each row, a line lists the models it would try, in order, for example "Tries A → B", and marks any that Planwise would skip.
 
 A model can be in only one tier. In the picker, a model that another tier already covers is marked **in _tier_** and can't be picked. If your saved tiers overlap anyway, both rows show the conflict, and the tier listed first handles the model until you fix it with **Edit pattern** or **Change model**.
 
@@ -119,15 +119,15 @@ Use **Add model or pattern** to add a row, **Add tier** to add a tier, and **Del
 
 ### Models Not in Any Tier
 
-**For a model not in any tier** chooses the tier Traycer tries when the blocked model isn't in any tier. Choose **None - skip this step** to skip model switching for those models only.
+**For a model not in any tier** chooses the tier Planwise tries when the blocked model isn't in any tier. Choose **None - skip this step** to skip model switching for those models only.
 
 ### Test a Model
 
-**Test a model** opens a panel that shows what Traycer would do for a blocked model. Choose the provider, the model, and whether it was blocked by **a rate limit** or **another error**, then the account and permission mode. The panel names the tier Traycer would use, the model it would switch to, the models it would skip and why, and what happens if none of them work.
+**Test a model** opens a panel that shows what Planwise would do for a blocked model. Choose the provider, the model, and whether it was blocked by **a rate limit** or **another error**, then the account and permission mode. The panel names the tier Planwise would use, the model it would switch to, the models it would skip and why, and what happens if none of them work.
 
 ## Overrides
 
-**When a problem happens**, Traycer uses your main plan from the **Plan** tab. This tab lets you choose different steps for one kind of problem. The top of the tab shows **Your main plan** as a summary.
+**When a problem happens**, Planwise uses your main plan from the **Plan** tab. This tab lets you choose different steps for one kind of problem. The top of the tab shows **Your main plan** as a summary.
 
 Each problem shows **Main plan** or **Custom**. Expand a row to see its actions, then check or clear them.
 
@@ -143,9 +143,9 @@ Actions that can't help a problem aren't offered for it, and **Why aren't other 
 
 - **Use main plan** puts one problem back on the main plan.
 - **Reset all to main plan** removes every override, and offers **Undo**.
-- If you clear every action in a row, Traycer won't switch or wait for that problem. It notifies you instead, with no countdown to cancel.
+- If you clear every action in a row, Planwise won't switch or wait for that problem. It notifies you instead, with no countdown to cancel.
 
 Under **No actions to choose**:
 
-- **Connection failed** gets a brief retry, then Traycer notifies you.
-- Six other problems need your attention, and Traycer never switches or waits for them: **Context limit reached**, **Provider rejected the request**, **Provider did not start in time**, **Provider stopped responding**, **Background work stopped** and **Session limit reached**.
+- **Connection failed** gets a brief retry, then Planwise notifies you.
+- Six other problems need your attention, and Planwise never switches or waits for them: **Context limit reached**, **Provider rejected the request**, **Provider did not start in time**, **Provider stopped responding**, **Background work stopped** and **Session limit reached**.

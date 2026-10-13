@@ -17,7 +17,7 @@ Use this guide when you want several agents working on separate changes in the s
     In the workspace picker, on the start page or in **Start a new agent**, click the gear on the folder's row (**Repository settings**). Enter a **Setup script**, such as `bun install`, and click **Save**. With the folder's run location on **Local**, this writes `.traycer/environment.json` in your folder. Commit that file: a new worktree reads it from the branch it starts from. See [Setup and teardown scripts](/concepts/worktrees/scripts).
   </Step>
   <Step title="Start the first agent on a new worktree">
-    In the **Agents** panel, click **+** to open **Start a new agent**. In the workspace picker, set the folder's run location to **New worktree**. Traycer proposes a branch name, such as `traycer/swift-otter`; click the folder's branch control to change it or to pick a different **Source**. Write the prompt and click **Send**.
+    In the **Agents** panel, click **+** to open **Start a new agent**. In the workspace picker, set the folder's run location to **New worktree**. Planwise proposes a branch name, such as `traycer/swift-otter`; click the folder's branch control to change it or to pick a different **Source**. Write the prompt and click **Send**.
   </Step>
   <Step title="Let setup finish">
     The agent shows a setup card: **Creating worktree**, **Setting up worktree**, then **Worktree ready**. Its first message waits for setup. If setup fails, **Open terminal** shows the output and **Retry setup** runs it again.

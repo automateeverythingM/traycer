@@ -1,7 +1,7 @@
 ---
 title: "Host Changelog"
 sidebarTitle: "Host"
-description: "Track the latest updates and improvements to the Traycer Host."
+description: "Track the latest updates and improvements to the Planwise Host."
 rss: true
 ---
 
@@ -24,7 +24,7 @@ Fixes for provider sign-in, Copilot startup, Task renames, and background resour
 
 * **Provider sign-in** — failed account switches no longer report success by falling back to the old account. Refusals and account-verification links are surfaced.
 * **Antigravity** — sign-in can continue after the request that started it ends. Custom CLI paths are refused because the agent needs its managed ACP server.
-* **Copilot** — opening a session scans the managed skills folder instead of the whole Traycer data folder, avoiding startup timeouts on machines with many worktrees and chats.
+* **Copilot** — opening a session scans the managed skills folder instead of the whole Planwise data folder, avoiding startup timeouts on machines with many worktrees and chats.
 * **Task renames** — a rename interrupted by reconnecting storage is retried, and History metadata catches up after the connection returns.
 * **OpenCode and downloads** — finished event streams and abandoned downloads close their connections instead of leaving unread data accumulating in network memory.
 * **Background workers** — if the Host's working directory is removed while it runs, the Host recovers to an available home folder so replacement workers can start again.
@@ -37,7 +37,7 @@ See the [GitHub release](https://github.com/traycerai/traycer/releases/tag/host-
 Model routing, Auto mode, agents that work across your machines, Antigravity, and rebuilt storage.
 
 * **Model routing** — when a turn fails on a usage limit, a sign-out, a billing problem, or an unavailable provider or model, the Host can move the chat to a model in the same tier. For a usage limit, a sign-out or a billing problem it can also switch to another account for the same provider, and for a usage limit it can wait for the reset and retry. After a switch, it asks you, or switches back on its own if you choose, once your preferred account or model is available again. Tiers match models by name pattern.
-* **Auto mode** — a judge reviews commands before they run and asks you about the ones it won't approve; edits to sensitive files such as git config and hooks still ask you. By default the judge runs on Traycer Inference and falls back to the conversation's own provider and account, and Claude Code conversations can use Claude Code's own classifier instead. A repository's `.traycer/auto-policy.md` can add restrictions but never loosen yours, and the Host keeps a log of recent decisions.
+* **Auto mode** — a judge reviews commands before they run and asks you about the ones it won't approve; edits to sensitive files such as git config and hooks still ask you. By default the judge runs on Planwise Inference and falls back to the conversation's own provider and account, and Claude Code conversations can use Claude Code's own classifier instead. A repository's `.traycer/auto-policy.md` can add restrictions but never loosen yours, and the Host keeps a log of recent decisions.
 * **Your machines, working together** — agents can list your machines, create and message agents on them, run a command on another machine, copy files between machines, and forward a port between their own machine and another of yours. A remote agent's browser can open in the desktop app you messaged it from.
 * **Across Tasks** — agents can list your Tasks, message and manage agents in your other Tasks, and search your chat history on their machine.
 * **Chat search** — the Host indexes the prompts, agent replies, and notices of your chats on it, across Tasks, for full-text search. Terminal-agent chats, reasoning, and tool output are not indexed.
@@ -47,7 +47,7 @@ Model routing, Auto mode, agents that work across your machines, Antigravity, an
 * **Version history** — the Host keeps version history for specs, stories, tickets, and reviews. It is on by default and stored separately from checkpoint snapshots, so clearing those doesn't affect it.
 * **Labels** — Task labels are saved to the cloud, with edits queued across restarts and retried. Earlier imports the Host still has a record of also get the **Imported** label.
 * **Worktrees** — optional automatic cleanup, off by default: once a day the Host deletes worktrees that have been inactive longer than the limit you set and whose work is merged, pushed, or never moved from its starting commit, with no uncommitted changes, open PR, or active session. Anything it can't verify is skipped. Deleting a worktree also says why a busy agent is holding it.
-* **Grok** — editing or forking from an earlier message now continues Grok's own session instead of starting a new one, plus image attachments and permission prompts that go through Traycer.
+* **Grok** — editing or forking from an earlier message now continues Grok's own session instead of starting a new one, plus image attachments and permission prompts that go through Planwise.
 * **Fixes** — an open chat reconnects on its own through a planned Host restart, Stop can now end a turn whose provider has stopped answering, terminal agents' launch arguments on Windows keep their backslashes and quotes, shell commands agents run on a Windows Host actually run, and a terminal whose folder was deleted reopens in your home folder.
 </Update>
 
@@ -59,8 +59,8 @@ Model routing, Auto mode, agents that work across your machines, Antigravity, an
 Agent-controlled browsers, session import, and much faster Tasks.
 
 * **Browser sessions** — agents can open and drive browser sessions, with sign-ins stored encrypted and carried across Hosts.
-* **Session import** — bring Claude Code, Codex, and OpenCode sessions into Traycer.
-* **Mobile app** — the Host serves the Traycer mobile app.
+* **Session import** — bring Claude Code, Codex, and OpenCode sessions into Planwise.
+* **Mobile app** — the Host serves the Planwise mobile app.
 * **Faster Tasks** — Tasks open from local data in a fraction of the time, long chats load in windows, and memory use is reported accurately.
 * **Comments as files** — agents read comment threads as files beside each artifact and resolve them by editing their status.
 * **Worktrees** — deleting a worktree first stops whatever is using it, sweeps ask for consent before tearing anything down, and deletion rows say why they failed.
@@ -74,7 +74,7 @@ Agent-controlled browsers, session import, and much faster Tasks.
 <Update label="v1.2.0">
 Remote hosts, chats backed up to the cloud, and usage analytics.
 
-* **Remote hosts** — a Host can run on another machine and be reached through Traycer's relay.
+* **Remote hosts** — a Host can run on another machine and be reached through Planwise's relay.
 * **Chat sync** — chats live on the Host, are backed up to the cloud, sync across Hosts, and can be shared or kept private.
 * **Communication Graph** — messages between agents are recorded and streamed for each Task.
 * **Usage analytics** — cost, tokens, and tool calls are captured and priced per turn.
@@ -95,7 +95,7 @@ Remote hosts, chats backed up to the cloud, and usage analytics.
 <Update label="v1.1.10">
 Epic Mode removed, and a steadier Host under load.
 
-* **Epic Mode removed** — agents no longer carry an Epic or Regular mode, and the Traycer system prompt is shorter.
+* **Epic Mode removed** — agents no longer carry an Epic or Regular mode, and the Planwise system prompt is shorter.
 * **Agents** — archive an agent from another agent, stop an agent with `traycer_stop_agent`, and working agents can no longer be archived.
 * **Agent-to-agent** — agents created by other agents run with full access.
 * **Pull requests** — the PR view is back, fetches each PR once per Host, and finds PRs from the branch actually checked out.
@@ -159,7 +159,7 @@ Several accounts per provider, two new coding agents, and terminals that run out
 The Amp coding agent, Windows support, and per-process resource tracking.
 
 * **Amp** — the Amp coding agent from Sourcegraph is now available.
-* **Windows** — the Host runs on Windows, powering the new Windows builds of Traycer Desktop and the CLI.
+* **Windows** — the Host runs on Windows, powering the new Windows builds of Planwise Desktop and the CLI.
 * **Resource tracking** — CPU and memory for everything the Host runs, feeding the app's resource monitor.
 * **Nested agents** — Claude subagents and parallel groups are reported as a tree.
 * **Worktrees** — listings page as they grow, and show which worktrees are stale or already merged.
@@ -182,7 +182,7 @@ The Amp coding agent, Windows support, and per-process resource tracking.
 </Update>
 
 <Update label="v1.1.2">
-* **Model picker** — Traycer models being retired now carry a notice.
+* **Model picker** — Planwise models being retired now carry a notice.
 </Update>
 
 <Update label="v1.1.1">
@@ -200,14 +200,14 @@ Eight new coding agents, and providers that no longer hold up a fresh install.
 </Update>
 
 <Update label="v1.0.0">
-First public release of the Traycer Host — the local runtime that powers Traycer. It runs the coding agents, terminals, and Tasks behind Traycer Desktop, entirely on your machine. You do not install the Host directly; the Traycer CLI downloads, verifies, and supervises it for you.
+First public release of the Planwise Host — the local runtime that powers Planwise. It runs the coding agents, terminals, and Tasks behind Planwise Desktop, entirely on your machine. You do not install the Host directly; the Planwise CLI downloads, verifies, and supervises it for you.
 
 * **Runs agents locally** — executes your chosen coding agents directly on the repositories you are working in.
 * **Local storage** — stores Tasks, conversations, plans, and history in a local SQLite database.
-* **Terminals, files, and worktrees** — manages terminals, files, and git worktrees, and exposes a versioned protocol that Traycer Desktop connects to.
+* **Terminals, files, and worktrees** — manages terminals, files, and git worktrees, and exposes a versioned protocol that Planwise Desktop connects to.
 * **Managed service** — registers with your OS service manager (launchd on macOS, systemd user on Linux), starting with your session and supervised automatically.
-* **Agent backends** — Claude (Claude Code), OpenAI Codex (with reasoning depth and optional Fast tier), Cursor, OpenCode, and Traycer Inference, selectable per Task.
-* **Skills** — ships Traycer's versioned, integrity-checked workflows for brief, plan, breakdown, execution, and review.
+* **Agent backends** — Claude (Claude Code), OpenAI Codex (with reasoning depth and optional Fast tier), Cursor, OpenCode, and Planwise Inference, selectable per Task.
+* **Skills** — ships Planwise's versioned, integrity-checked workflows for brief, plan, breakdown, execution, and review.
 * **Privacy** — does not log secrets or source code.
 * **Platforms** — macOS (Apple Silicon and Intel) and Linux (x64), delivered as a signed single-file runtime with no separate Node or Bun install. Builds are verified by SHA-256 checksum and minisign signature before installation.
 </Update>

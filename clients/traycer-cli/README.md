@@ -1,8 +1,8 @@
 # @traycerai/cli
 
-The npm distribution of the Traycer command line tool.
+The npm distribution of the Planwise command line tool.
 
-Traycer Desktop already includes the CLI and runs it behind the scenes, so most people do not need to install this package directly. Install `@traycerai/cli` when you want to manage the local Traycer Host from a terminal, script Traycer workflows, or use the agent/workspace automation surface outside the desktop app.
+Planwise Desktop already includes the CLI and runs it behind the scenes, so most people do not need to install this package directly. Install `@traycerai/cli` when you want to manage the local Planwise Host from a terminal, script Planwise workflows, or use the agent/workspace automation surface outside the desktop app.
 
 The npm package is a fully bundled JavaScript build with no runtime npm dependencies. It runs on Node.js 22.13.0 or newer.
 
@@ -18,7 +18,7 @@ You can also run it without a global install:
 npx @traycerai/cli --help
 ```
 
-For the full desktop app, install Traycer from [traycer.ai/download](https://traycer.ai/download).
+For the full desktop app, install Planwise from [traycer.ai/download](https://traycer.ai/download).
 
 ## Quick Start
 
@@ -32,21 +32,21 @@ traycer host status
 
 ## What It Does
 
-- **Host lifecycle:** download, verify, install, start, stop, update, and supervise the local Traycer Host.
-- **Authentication:** sign in with OAuth PKCE and share credentials with Traycer Desktop.
+- **Host lifecycle:** download, verify, install, start, stop, update, and supervise the local Planwise Host.
+- **Authentication:** sign in with OAuth PKCE and share credentials with Planwise Desktop.
 - **Diagnostics:** inspect host status, logs, service registration, and setup problems.
 - **Configuration:** manage shell selection and environment overrides used by host and agent sessions.
-- **Workspaces:** list Traycer workspaces and create isolated Git worktrees.
-- **Agent automation:** list, create, message, and inspect agents from Traycer-managed sessions.
+- **Workspaces:** list Planwise workspaces and create isolated Git worktrees.
+- **Agent automation:** list, create, message, and inspect agents from Planwise-managed sessions.
 
 ## Common Commands
 
 | Command                        | Purpose                                                                |
 | ------------------------------ | ---------------------------------------------------------------------- |
-| `traycer login`                | Sign in to Traycer.                                                    |
+| `traycer login`                | Sign in to Planwise.                                                    |
 | `traycer logout`               | Sign out and delete locally cached published-chat content.             |
 | `traycer whoami`               | Validate the stored credentials and show the signed-in user.           |
-| `traycer host ensure`          | Install, register, and start the local Traycer Host if needed.         |
+| `traycer host ensure`          | Install, register, and start the local Planwise Host if needed.         |
 | `traycer host status`          | Show host process, endpoint, and activity status.                      |
 | `traycer host service start`   | Start the registered background host service and return.               |
 | `traycer host stop`            | Stop the running host.                                                 |
@@ -56,7 +56,7 @@ traycer host status
 | `traycer host available`       | List host versions available for this environment.                     |
 | `traycer cli upgrade`          | Upgrade the installed CLI binary when supported by the install source. |
 | `traycer config shell get`     | Show the shell used for host bootstrap and terminal tabs.              |
-| `traycer config env list`      | Show environment overrides used by Traycer.                            |
+| `traycer config env list`      | Show environment overrides used by Planwise.                            |
 | `traycer profile list`         | List provider profiles (accounts) and their sign-in state.             |
 
 `traycer host start` is the **foreground** supervisor - it runs the host in this
@@ -84,7 +84,7 @@ Most commands support `--json`, which emits structured NDJSON events suitable fo
 
 ## Provider Profiles
 
-A profile is an account a provider can run under: the provider's own CLI login (`ambient`), or a managed profile Traycer keeps separately so you can use more than one account. These commands manage the same profiles as the app's provider settings, so a change made in either shows in the other.
+A profile is an account a provider can run under: the provider's own CLI login (`ambient`), or a managed profile Planwise keeps separately so you can use more than one account. These commands manage the same profiles as the app's provider settings, so a change made in either shows in the other.
 
 ```sh
 traycer profile list                          # every provider that has profiles
@@ -100,7 +100,7 @@ traycer profile remove claude <profile-id>    # asks first; --yes to skip
 
 ## Agent and Workspace Commands
 
-Traycer-launched agent sessions receive environment variables such as `TRAYCER_AGENT_ID` and `TRAYCER_EPIC_ID`. In that context, the CLI can inspect the current Task, communicate with other agents, and create worktrees:
+Planwise-launched agent sessions receive environment variables such as `TRAYCER_AGENT_ID` and `TRAYCER_EPIC_ID`. In that context, the CLI can inspect the current Task, communicate with other agents, and create worktrees:
 
 ```sh
 traycer agent list
@@ -110,7 +110,7 @@ traycer workspace list
 traycer worktree create --workspace /path/to/repo --branch my-feature
 ```
 
-These commands are mainly intended for Traycer-managed automation, but they are regular CLI commands and can be scripted when the host is running and the required IDs are supplied.
+These commands are mainly intended for Planwise-managed automation, but they are regular CLI commands and can be scripted when the host is running and the required IDs are supplied.
 
 `traycer agent list` takes two flags that shorten its output:
 
@@ -123,15 +123,15 @@ With `--json`, each agent carries an `archived` field: `true`, `false`, or `null
 
 ## Host Security
 
-The npm package ships the CLI bundle only. The Traycer Host is a separate signed binary distributed through GitHub Releases. Before installation, host archives are verified by checksum and minisign signature against the trust root embedded in the CLI.
+The npm package ships the CLI bundle only. The Planwise Host is a separate signed binary distributed through GitHub Releases. Before installation, host archives are verified by checksum and minisign signature against the trust root embedded in the CLI.
 
 On supported platforms, the CLI supervises the host through the operating system service manager, including launchd on macOS and systemd user services on Linux.
 
 ## Authentication and Local Files
 
-Sign-in uses OAuth with PKCE on a local loopback callback. Credentials and CLI state are stored under your Traycer home directory, including shared auth state used by Traycer Desktop.
+Sign-in uses OAuth with PKCE on a local loopback callback. Credentials and CLI state are stored under your Planwise home directory, including shared auth state used by Planwise Desktop.
 
-Provider API keys are not configured through this CLI. Configure providers in Traycer Desktop under Settings > Providers.
+Provider API keys are not configured through this CLI. Configure providers in Planwise Desktop under Settings > Providers.
 
 ## Troubleshooting
 
@@ -154,7 +154,7 @@ If the service is registered but not responding, restart it:
 traycer host restart
 ```
 
-### Stopping the host from inside Traycer
+### Stopping the host from inside Planwise
 
 The commands that stop the host - `host update`, `host apply`, `host install`,
 `host ensure`, `host restart`, `host stop`, `host uninstall`,
@@ -189,7 +189,7 @@ Every way that can fail leaves the host running and reports
   checked again immediately before the host is stopped, so a scope that did not
   actually move the process is caught even if everything above appeared to work.
 
-In each case, run the command again from a shell outside Traycer.
+In each case, run the command again from a shell outside Planwise.
 
 On Windows there is no re-exec. The host's processes are terminated
 individually, and the CLI running the command, its children, and the shell that
