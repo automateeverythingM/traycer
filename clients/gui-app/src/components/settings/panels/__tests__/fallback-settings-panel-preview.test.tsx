@@ -406,7 +406,7 @@ describe("FallbackSettingsPanel - per-row preview verdicts render from the host'
     // reason this client cannot parse still surfaces the host's own label.
     expect(lines[1].textContent).toContain("No Claude Code model matches");
     expect(lines[1].textContent).toContain("ghost");
-    expect(lines[1].textContent).toContain("Traycer will skip this row");
+    expect(lines[1].textContent).toContain("Planwise will skip this row");
     expect(lines[2].textContent).toContain("Claude is unavailable");
     expect(lines[3].textContent).toContain("Held back by the provider");
   });

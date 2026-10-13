@@ -183,8 +183,8 @@ function setNotes(mode: HostLifecycleMode, view: LifecycleView): string[] {
   const notes: string[] = [];
   notes.push(
     mode === "none"
-      ? "Nothing was stopped: a running host keeps running. From now on this machine's unattended host starts are parked, and Traycer Desktop runs without a local host from its next launch."
-      : "Nothing was started or stopped: the mode applies to the next unattended host start and to how the host follows Traycer Desktop.",
+      ? "Nothing was stopped: a running host keeps running. From now on this machine's unattended host starts are parked, and Planwise Desktop runs without a local host from its next launch."
+      : "Nothing was started or stopped: the mode applies to the next unattended host start and to how the host follows Planwise Desktop.",
   );
   if (
     mode !== "background" &&

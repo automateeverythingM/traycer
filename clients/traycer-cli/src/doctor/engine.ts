@@ -251,8 +251,8 @@ export async function runDoctor(opts: RunDoctorOptions): Promise<DoctorResult> {
       issues.push({
         code: DOCTOR_ISSUE_CODES.SERVICE_EXTERNALLY_MANAGED,
         severity: "info",
-        title: "Service managed by Traycer Desktop",
-        message: `The OS service for '${label.id}' is registered by the Traycer Desktop app (SMAppService login item); the CLI manages the host's lifecycle cooperatively but not its registration. Use the Traycer app to repair or remove the host on this machine. If the app itself is the broken part, take registration over from the CLI with 'traycer host service install --takeover'.`,
+        title: "Service managed by Planwise Desktop",
+        message: `The OS service for '${label.id}' is registered by the Planwise Desktop app (SMAppService login item); the CLI manages the host's lifecycle cooperatively but not its registration. Use the Planwise app to repair or remove the host on this machine. If the app itself is the broken part, take registration over from the CLI with 'traycer host service install --takeover'.`,
         // No `fixAction`: taking over Desktop's registration is an ownership
         // change and must stay an explicit user act, not a button on an
         // informational card - which is exactly what `--takeover` encodes.
@@ -544,7 +544,7 @@ export async function runDoctor(opts: RunDoctorOptions): Promise<DoctorResult> {
         `The finalize helper's marker at ${cliPostFinalizeMarkerPath(opts.environment)} exists but could not be read: ` +
         `${finalizeMarker.errorMessage}. Doctor cannot tell whether a staged CLI swap completed, and neither can ` +
         "'traycer host restart' - its reconcile step reads the same file and will leave it in place. " +
-        "Check the ownership and permissions on that file and its directory; they should belong to the user Traycer runs as.",
+        "Check the ownership and permissions on that file and its directory; they should belong to the user Planwise runs as.",
       fixAction: null,
       terminalCommand: null,
       details: {
@@ -972,7 +972,7 @@ async function serviceTaskNotOwnedBestEffort(
 // issue and the same "no fix", but only the first is said to be another
 // user's. Running the checks again is this card's own retry.
 const SERVICE_TASK_OWNER_UNCONFIRMED_DOCTOR_MESSAGE =
-  "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Run the checks again.";
+  "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Run the checks again.";
 
 function serviceTaskNotOwnedIssue(
   reason: WindowsTaskNotOwnedReason,
@@ -1013,7 +1013,7 @@ async function serviceRegistrationIssues(
     {
       code: DOCTOR_ISSUE_CODES.HOST_SERVICE_REGISTRATION_DISABLED,
       severity: "error",
-      title: "Traycer Host task is disabled in Task Scheduler",
+      title: "Planwise Host task is disabled in Task Scheduler",
       message: `${SERVICE_REGISTRATION_DISABLED_MESSAGE}. Nothing starts the host while it is disabled; installing the service registers the task enabled again and restarts the host.`,
       fixAction: "service-install",
       terminalCommand: SERVICE_REINSTALL_COMMAND,
@@ -1066,7 +1066,7 @@ async function serviceDefinitionIssues(
         code: DOCTOR_ISSUE_CODES.HOST_SERVICE_DEFINITION_UNRECOGNIZED,
         severity: "warning",
         title: "Host service definition is not recognized",
-        message: `The lifecycle mode is '${mode}', but the registered host service could not be read as one Traycer wrote (${state.reason}), so it is left alone and cannot be relied on to park login starts. Re-registering the service replaces it; that restarts the host.`,
+        message: `The lifecycle mode is '${mode}', but the registered host service could not be read as one Planwise wrote (${state.reason}), so it is left alone and cannot be relied on to park login starts. Re-registering the service replaces it; that restarts the host.`,
         fixAction: "service-install",
         terminalCommand: SERVICE_REINSTALL_COMMAND,
         details: { mode, reason: state.reason },
@@ -1094,7 +1094,7 @@ function lifecycleIssues(
         policy.state === "invalid"
           ? "Host lifecycle policy file is corrupt"
           : "Host lifecycle policy file cannot be read",
-      message: `${policy.path} is ${policy.state === "invalid" ? "not a valid lifecycle policy" : "unreadable"}, so the host runs in Background mode: it starts at login and keeps running after the app quits, whatever mode was chosen. Choose the mode again in Traycer's settings, or with 'traycer host lifecycle set <mode>'.`,
+      message: `${policy.path} is ${policy.state === "invalid" ? "not a valid lifecycle policy" : "unreadable"}, so the host runs in Background mode: it starts at login and keeps running after the app quits, whatever mode was chosen. Choose the mode again in Planwise's settings, or with 'traycer host lifecycle set <mode>'.`,
       // No Desktop button: which mode to restore is the user's choice.
       fixAction: null,
       terminalCommand: "traycer host lifecycle set background",
@@ -1818,7 +1818,7 @@ async function probeHostCredentialNeedsReauth(
       message:
         `This host's own delegated credential was rejected in a way refreshing cannot repair (${reason}, recorded ${recordedAt}), ` +
         "so the host stopped using it. Until it is replaced, work the host does on your behalf - opening Tasks, notifications, shared artifacts - can fail with sign-in-looking errors that signing in again does not fix. " +
-        "To replace it, open the Traycer desktop app while signed in as this host's owner and let it connect: a connected owner client provisions a new credential on its own, with nothing to confirm and nothing to run here.",
+        "To replace it, open the Planwise desktop app while signed in as this host's owner and let it connect: a connected owner client provisions a new credential on its own, with nothing to confirm and nothing to run here.",
       // NEITHER a fix action NOR a terminal command, and for the same reason:
       // nothing on a command line repairs this. A connected owner client mints
       // the replacement silently, so the instruction has to live in the
@@ -2037,7 +2037,7 @@ async function probeHostIdentityNeedsReauth(
       title: "Host identity needs re-authorization",
       message:
         `The host identity in ${identityDirPath} is paused: a credential refresh was rejected without a revoke (${marker.reason}, since ${marker.since}), so the host stopped re-enrolling and its remote plane - relay attach, cloud-linked Tasks, anything that needs this machine reachable from outside - stays down until the pause lifts. ` +
-        "It lifts on its own as soon as a user bearer NEWER than that marker reaches the shared CLI credentials file: run `traycer login` on this machine, or sign in from the Traycer app here, and the host re-enrolls itself. " +
+        "It lifts on its own as soon as a user bearer NEWER than that marker reaches the shared CLI credentials file: run `traycer login` on this machine, or sign in from the Planwise app here, and the host re-enrolls itself. " +
         "This is NOT the host's own delegated credential (HOST_CREDENTIAL_NEEDS_REAUTH), which a connected owner client re-provisions and signing in again does not repair. If both are reported they are two separate faults, each needing its own repair. " +
         "Scope: this is the DEFAULT identity home. A host that acquired a dev-pool identity home resolves a different one in-process, so its own `host.doctor` is the authority on whether this marker is the one it is holding.",
       fixAction: null,
@@ -2118,7 +2118,7 @@ async function identityHomeUnverifiedIssue(
     return null;
   }
   const authority = hostProcessAlive
-    ? "A host process is running on this machine and resolves its own identity home, so its `host.doctor` answers this definitively - read that report (the Traycer app's host Doctor asks the host directly) rather than this line."
+    ? "A host process is running on this machine and resolves its own identity home, so its `host.doctor` answers this definitively - read that report (the Planwise app's host Doctor asks the host directly) rather than this line."
     : "No host process is running on this machine, so the authoritative check could not run at all. Start the host and re-run doctor through it for a definitive answer.";
   return {
     code: DOCTOR_ISSUE_CODES.HOST_IDENTITY_HOME_UNVERIFIED,
@@ -2248,7 +2248,7 @@ async function probeDanglingCliSlotBinary(
     const target = await readlink(manifest.binaryPath).catch(() => "unknown");
     const repairAdvice =
       manifest.source === "desktop"
-        ? "Launch the Traycer Desktop app to repair it (the app re-stages its bundled CLI at startup); if the app has been uninstalled, reinstall it, or remove the link and reinstall the CLI another way."
+        ? "Launch the Planwise Desktop app to repair it (the app re-stages its bundled CLI at startup); if the app has been uninstalled, reinstall it, or remove the link and reinstall the CLI another way."
         : "Reinstall the CLI, or remove the dangling link.";
     return {
       code: DOCTOR_ISSUE_CODES.CLI_SLOT_BINARY_DANGLING,

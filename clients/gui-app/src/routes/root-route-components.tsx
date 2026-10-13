@@ -83,7 +83,7 @@ export function RootComponent() {
     <>
       {/* Host-independent chrome: these are the ONLY surfaces pulled outside
           HostReadyGate so they keep working while the page is gated on host
-          readiness (the "Setting up Traycer Host…" screen). The menu command
+          readiness (the "Setting up Planwise Host…" screen). The menu command
           listener routes native menu items; the dialog host renders
           host-independent About/Logs dialogs; notification emission drains
           app-local persisted rows; the wake-retry bridge revives

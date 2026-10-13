@@ -623,7 +623,7 @@ describe("<HostSettingsPanel /> Overview ▸ Updates tab", () => {
       expect(
         within(card).getByTestId("host-overview-update-attempt-failed")
           .textContent,
-      ).toBe("host-a's Traycer CLI couldn't complete the request.");
+      ).toBe("host-a's Planwise CLI couldn't complete the request.");
     });
 
     // Now the check itself fails, with no catalog, and with a failure text
@@ -654,7 +654,7 @@ describe("<HostSettingsPanel /> Overview ▸ Updates tab", () => {
     expect(
       within(failedCard).getByTestId("host-overview-update-attempt-failed")
         .textContent,
-    ).toBe("host-a's Traycer CLI couldn't complete the request.");
+    ).toBe("host-a's Planwise CLI couldn't complete the request.");
   });
 
   it("Check now, with no list to show, runs the exact check the answer card uses, refreshing both from one request", async () => {
@@ -763,7 +763,7 @@ describe("<HostSettingsPanel /> Overview ▸ Updates tab", () => {
     await waitFor(() => {
       expect(
         updatesPane.getAllByText(
-          "host-a has no Traycer CLI installed to run this, so it can't be done over the connection.",
+          "host-a has no Planwise CLI installed to run this, so it can't be done over the connection.",
         ),
       ).toHaveLength(1);
     });

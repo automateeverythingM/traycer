@@ -9,8 +9,8 @@ export function configureNativeAboutPanel(
     applicationName: appName,
     applicationVersion: app.getVersion(),
     version: app.getVersion(),
-    copyright: `Copyright ${new Date().getFullYear()} Traycer AI`,
-    credits: "Traycer AI",
+    copyright: `Copyright ${new Date().getFullYear()} Planwise. Based on Traycer, copyright 2026 Traycer AI (MIT License).`,
+    credits: "Planwise",
     website: TRAYCER_WEBSITE_URL,
     ...(iconPath === null ? {} : { iconPath }),
   });

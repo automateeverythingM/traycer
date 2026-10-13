@@ -373,7 +373,7 @@ function CliBinaryMissingNotice({
   return (
     <div className="rounded-lg border border-border/60 bg-foreground/2 p-3 text-ui-sm text-muted-foreground">
       <p>
-        No {providerLabel} CLI was found on this machine, and Traycer ships no
+        No {providerLabel} CLI was found on this machine, and Planwise ships no
         bundled copy of it.{" "}
         {customPathSupported
           ? "Install it, or add its path below."
@@ -1324,7 +1324,7 @@ function rowStatusFor(args: {
   if (runningInstead !== null) {
     return {
       kind: "substituted",
-      text: `Not used right now — Traycer will start ${runningInstead} instead. Sessions already running keep the binary they started with.`,
+      text: `Not used right now — Planwise will start ${runningInstead} instead. Sessions already running keep the binary they started with.`,
     };
   }
   if (args.differingSessionCount > 0) {

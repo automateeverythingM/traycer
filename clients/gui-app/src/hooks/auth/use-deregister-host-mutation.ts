@@ -38,7 +38,7 @@ function unwrapDeregisterHostResult(result: DeregisterHostFetchResult): void {
   if (result.kind === "unauthorized") {
     throw new Error("Sign in again to try that.");
   }
-  throw new Error("Couldn't reach Traycer to remove this host.");
+  throw new Error("Couldn't reach Planwise to remove this host.");
 }
 
 /**

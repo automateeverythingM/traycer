@@ -571,7 +571,7 @@ describe("<RepoBranchPrefixSection />", () => {
       renderSection({ status: "absent" }, noop, null);
 
       expect(screen.getByTestId("repo-branch-prefix-unsupported")).toBeTruthy();
-      expect(screen.getByText(/require a newer Traycer host/i)).toBeTruthy();
+      expect(screen.getByText(/require a newer Planwise host/i)).toBeTruthy();
       expect(screen.getByText("Global default")).toBeTruthy();
       expect(effectiveBranchValue()).toBe(`traycer/${PREVIEW_SUFFIX}`);
       expect(

@@ -351,7 +351,7 @@ describe("catalogSupportedPermissionModes - unconstrained row poisons the union"
 // not a reason to send the user chasing a host update that would change
 // nothing.
 describe("unsupportedPermissionModeCopy - hostKnowsAutoMode veto", () => {
-  it("blames the provider, not a newer Traycer, once hostKnowsAutoMode is true even though auto is absent from the union", () => {
+  it("blames the provider, not a newer Planwise, once hostKnowsAutoMode is true even though auto is absent from the union", () => {
     const copy = unsupportedPermissionModeCopy({
       mode: "auto",
       harnessLabel: "Claude Code",

@@ -168,7 +168,7 @@ const RECENT_CRASH_MARKERS: HostDoctorIssue = {
 };
 
 const LANE_BUSY_INSTALL_MESSAGE =
-  "Traycer is installing an update on this host. Restart it once that finishes.";
+  "Planwise is installing an update on this host. Restart it once that finishes.";
 
 const HOST_CHANGED_MESSAGE =
   "This computer's host changed while that was open. Reopen Settings and try again.";

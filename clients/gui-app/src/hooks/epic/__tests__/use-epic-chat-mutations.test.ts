@@ -838,7 +838,7 @@ describe("useEpicArchiveChat", () => {
     // host-upgrade message (a version gap, not a failed archive), which is the
     // right actionable copy for this exact case, so the fallback never shows.
     expect(toast.error).toHaveBeenCalledWith(
-      "This needs a newer Traycer host. Update the host to continue.",
+      "This needs a newer Planwise host. Update the host to continue.",
     );
   });
 });

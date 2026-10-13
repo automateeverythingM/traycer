@@ -128,7 +128,7 @@ describe.runIf(process.platform !== "win32")(
       const binDir = join(workHome, ".traycer", "cli", "bin");
       mkdirSync(binDir, { recursive: true });
       const slotPath = join(binDir, "traycer");
-      const goneTarget = join(workHome, "Traycer.app-removed", "traycer");
+      const goneTarget = join(workHome, "Planwise.app-removed", "traycer");
       symlinkSync(goneTarget, slotPath);
       writeManifestFixture(slotPath, "desktop");
 
@@ -149,7 +149,7 @@ describe.runIf(process.platform !== "win32")(
       expect(issue?.message).toContain(goneTarget);
       expect(issue?.message).toContain("no such file or directory");
       // Desktop-staged slot: the working repair is relaunching the app.
-      expect(issue?.message).toContain("Traycer Desktop app");
+      expect(issue?.message).toContain("Planwise Desktop app");
       // No CLI subcommand repairs the slot - the app does. A fixAction
       // here would be a button that cannot work.
       expect(issue?.fixAction).toBeNull();
@@ -165,8 +165,8 @@ describe.runIf(process.platform !== "win32")(
       stageServiceMocks(stageHostExecutable());
       const binDir = join(workHome, ".traycer", "cli", "bin");
       mkdirSync(binDir, { recursive: true });
-      const realBinary = join(workHome, "Traycer.app", "traycer");
-      mkdirSync(join(workHome, "Traycer.app"), { recursive: true });
+      const realBinary = join(workHome, "Planwise.app", "traycer");
+      mkdirSync(join(workHome, "Planwise.app"), { recursive: true });
       writeFileSync(realBinary, "cli-bin");
       const slotPath = join(binDir, "traycer");
       symlinkSync(realBinary, slotPath);

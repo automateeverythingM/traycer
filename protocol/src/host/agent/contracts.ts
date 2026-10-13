@@ -145,7 +145,7 @@ export const agentCreateDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Creating an agent with the last-used provider profile requires a newer Traycer host. Choose a specific profile, or upgrade the host.",
+            "Creating an agent with the last-used provider profile requires a newer Planwise host. Choose a specific profile, or upgrade the host.",
         },
       };
     }
@@ -155,7 +155,7 @@ export const agentCreateDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Creating an agent with the ambient provider login requires a newer Traycer host - the frozen v1.0 wire cannot distinguish an explicit ambient choice from inheriting the sender's profile. Choose a specific profile, or upgrade the host.",
+            "Creating an agent with the ambient provider login requires a newer Planwise host - the frozen v1.0 wire cannot distinguish an explicit ambient choice from inheriting the sender's profile. Choose a specific profile, or upgrade the host.",
         },
       };
     }
@@ -199,7 +199,7 @@ export const agentCreateDowngradeV30ToV20 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before creating this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before creating this agent.",
     },
   }),
   downgradeResponse: (response) => ({ ok: true, value: response }),
@@ -216,7 +216,7 @@ export const agentCreateDowngradeV30ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before creating this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before creating this agent.",
     },
   }),
   downgradeResponse: (response) => ({ ok: true, value: response }),
@@ -296,7 +296,7 @@ export const agentListHarnessModelsDowngradeV2ToV1 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "agent.listHarnessModels without epic and sender agent context requires a newer Traycer host.",
+            "agent.listHarnessModels without epic and sender agent context requires a newer Planwise host.",
         },
       };
     }

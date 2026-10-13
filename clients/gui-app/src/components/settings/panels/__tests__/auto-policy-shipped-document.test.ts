@@ -8,7 +8,7 @@ import {
 // An inline fixture, not the host's real `defaults.md` - the OSS repo cannot
 // depend on the internal one, and a fixture written here is also what proves
 // the parser rather than something that happens to already be well-formed.
-const DOCUMENT = `# Traycer's shipped judge policy
+const DOCUMENT = `# Planwise's shipped judge policy
 
 ## Allow exceptions
 

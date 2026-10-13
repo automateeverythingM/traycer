@@ -160,7 +160,7 @@ describe("KeybindingsSettingsPanel - Global shortcuts (T2)", () => {
     renderPanel();
 
     expect(screen.getByText("Global shortcuts")).toBeTruthy();
-    expect(screen.getByText("Summon Traycer")).toBeTruthy();
+    expect(screen.getByText("Summon Planwise")).toBeTruthy();
   });
 
   // R1: a disabled/dormant summon chord doesn't reserve itself in the
@@ -393,7 +393,7 @@ describe("KeybindingsSettingsPanel - Global shortcuts (T2)", () => {
     );
     expect(
       screen.getByText(
-        "Already used by Summon Traycer (global shortcut). Pick a different chord.",
+        "Already used by Summon Planwise (global shortcut). Pick a different chord.",
       ),
     ).toBeTruthy();
   });

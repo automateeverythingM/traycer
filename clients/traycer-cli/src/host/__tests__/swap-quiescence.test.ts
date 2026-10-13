@@ -1059,7 +1059,7 @@ describe("macosServiceMayRespawn (field parsing, real launchctl-print classifica
   // here. Real sample shapes from a live machine's `launchctl print`.
   const label = {
     id: "ai.traycer.host",
-    displayName: "Traycer Host",
+    displayName: "Planwise Host",
     environment: "production" as Environment,
     devSlot: null,
   };
@@ -1238,7 +1238,7 @@ describe("macosServiceMayRespawn (field parsing, real launchctl-print classifica
 describe("macosServiceMayRespawn (one deadline across both labels)", () => {
   const label = {
     id: "ai.traycer.host",
-    displayName: "Traycer Host",
+    displayName: "Planwise Host",
     environment: "production" as Environment,
     devSlot: null,
   };
@@ -1318,7 +1318,7 @@ describe("linuxServiceMayRespawn (field parsing, real systemctl classification)"
   // than left to inspection, mirroring the macOS pair above.
   const label = {
     id: "ai.traycer.host",
-    displayName: "Traycer Host",
+    displayName: "Planwise Host",
     environment: "production" as Environment,
     devSlot: null,
   };

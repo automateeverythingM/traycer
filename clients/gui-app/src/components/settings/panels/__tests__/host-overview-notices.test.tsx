@@ -547,7 +547,7 @@ describe("<HostOverviewAnswerCard/> draws only an answer with something to say, 
         updatableVersion: null,
         description: "Couldn't check for updates on host-a.",
         failureDescription:
-          "host-a's Traycer CLI couldn't complete the request.",
+          "host-a's Planwise CLI couldn't complete the request.",
       }),
       inFlight: false,
     },
@@ -1590,7 +1590,7 @@ describe("a refused/failed attempt line shows while an update is in flight, even
           description: "Couldn't check for updates on host-a.",
           updatableVersion: null,
           failureDescription:
-            "host-a's Traycer CLI couldn't complete the request.",
+            "host-a's Planwise CLI couldn't complete the request.",
         })}
         inFlight={false}
       />,
@@ -1605,7 +1605,7 @@ describe("a refused/failed attempt line shows while an update is in flight, even
     expect(
       within(card).getByTestId("host-overview-update-attempt-failed")
         .textContent,
-    ).toBe("host-a's Traycer CLI couldn't complete the request.");
+    ).toBe("host-a's Planwise CLI couldn't complete the request.");
   });
 
   it("a failed check does not promote an earlier attempt's failure to its answer: the line is the check's own sentence and the install failure stays in the footer", () => {

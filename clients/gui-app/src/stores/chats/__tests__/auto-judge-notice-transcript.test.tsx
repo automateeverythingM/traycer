@@ -87,9 +87,9 @@ const CONTENT: JsonContent = {
 };
 
 const FALLBACK_TEXT =
-  "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.";
+  "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.";
 const UNAVAILABLE_TEXT =
-  "Traycer could not resolve an auto-mode judge, so commands are being sent to you for approval. Pick a judge in Settings → Permissions.";
+  "Planwise could not resolve an auto-mode judge, so commands are being sent to you for approval. Pick a judge in Settings → Permissions.";
 const POLICY_TEXT =
   "This repository's Auto mode rules can add restrictions but not permissions; only its Ask first and Never allow sections were applied.";
 

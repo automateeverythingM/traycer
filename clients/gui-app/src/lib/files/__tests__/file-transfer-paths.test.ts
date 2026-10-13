@@ -91,7 +91,7 @@ describe("dataTransferHasUsableClipboardData", () => {
     ["rich text", { "text/html": "<p>notes</p>" }, [], []],
     ["plain text", { "text/plain": "notes" }, [], []],
     [
-      "the Traycer composer payload",
+      "the Planwise composer payload",
       { "application/x-traycer-composer+json": '{"version":1}' },
       [],
       [],

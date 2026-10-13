@@ -639,7 +639,7 @@ function browserPeekStatus(args: {
     if (completeMeans === "native-elsewhere") {
       return {
         label: "Open natively",
-        overlay: `This tab is open in the Traycer desktop app on ${hostLabel}, so it can't be streamed here.`,
+        overlay: `This tab is open in the Planwise desktop app on ${hostLabel}, so it can't be streamed here.`,
         tone: "muted",
         Icon: Monitor,
       };

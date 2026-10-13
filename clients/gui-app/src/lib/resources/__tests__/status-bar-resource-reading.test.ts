@@ -182,7 +182,7 @@ describe("statusBarResourceMetricViews", () => {
 
     for (const view of rendered) {
       expect(view.value).toBeNull();
-      expect(view.unavailableReason).toContain("older Traycer host");
+      expect(view.unavailableReason).toContain("older Planwise host");
       expect(view.unavailableReason).toContain("Office Linux");
     }
   });
@@ -277,7 +277,7 @@ describe("statusBarResourceMetricViews · host attribution", () => {
     });
 
     for (const view of rendered) {
-      expect(view.unavailableReason).toContain("older Traycer host");
+      expect(view.unavailableReason).toContain("older Planwise host");
     }
   });
 

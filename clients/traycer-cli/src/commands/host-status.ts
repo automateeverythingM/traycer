@@ -216,7 +216,7 @@ function renderHumanStatus(
 
   if (output.running && output.pidMetadata !== null) {
     const m = output.pidMetadata;
-    lines.push(`${c.green("●")} ${c.bold("Traycer host is running")}`);
+    lines.push(`${c.green("●")} ${c.bold("Planwise host is running")}`);
     lines.push("");
     lines.push(
       ...kvBlock(c, [
@@ -230,7 +230,7 @@ function renderHumanStatus(
     );
   } else {
     const last = output.bootstrapMarkers.at(-1);
-    lines.push(`${c.gray("○")} ${c.bold("Traycer host is not running")}`);
+    lines.push(`${c.gray("○")} ${c.bold("Planwise host is not running")}`);
     lines.push("");
     const rows: [string, string][] = [
       ["Log", tildePath(output.bootstrapLogPath)],

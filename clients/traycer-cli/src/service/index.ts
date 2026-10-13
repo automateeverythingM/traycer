@@ -371,7 +371,7 @@ async function announceStop(
     : "on Windows that record is the only thing that stops the supervisor bringing the host back";
   throw cliError({
     code: CLI_ERROR_CODES.HOST_STOP_INTENT_UNWRITABLE,
-    message: `could not record the stop request, and ${why}. ${FAILED_STOP_CONSEQUENCE[reason]} Check that the Traycer host directory is writable, then try again.`,
+    message: `could not record the stop request, and ${why}. ${FAILED_STOP_CONSEQUENCE[reason]} Check that the Planwise host directory is writable, then try again.`,
     details: { environment, reason },
     exitCode: 1,
   });

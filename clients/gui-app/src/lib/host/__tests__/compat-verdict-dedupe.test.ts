@@ -69,7 +69,7 @@ function incompatible(
       method: "host.status",
       fatalDetails: {
         code: "INCOMPATIBLE",
-        reason: "This Traycer client is too old for this host.",
+        reason: "This Planwise client is too old for this host.",
         incompatibleMethods: null,
         upgradeGuidance: {
           clientShouldUpgrade: true,

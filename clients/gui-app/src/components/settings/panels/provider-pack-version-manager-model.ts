@@ -65,7 +65,7 @@ export function versionDownloadEligibility(
     case "host-ineligible":
       return {
         allowed: false,
-        reason: "This Traycer release cannot run this version",
+        reason: "This Planwise release cannot run this version",
       };
     case "uncertified":
       return {
@@ -424,7 +424,7 @@ export function certificationMetaLine(
     case "below-security-floor":
       return "Below the publisher's security minimum";
     case "host-ineligible":
-      return "This Traycer release cannot drive this version";
+      return "This Planwise release cannot drive this version";
     case "eligible":
       return null;
   }
@@ -491,7 +491,7 @@ export function installPackVersionRefusalMessage(
     case "below-security-floor":
       return "Below the publisher's security minimum — cannot download";
     case "host-ineligible":
-      return "This Traycer release cannot run this version";
+      return "This Planwise release cannot run this version";
     case "yanked":
       return "Withdrawn by the publisher — not available for download";
   }
@@ -513,7 +513,7 @@ export function packVersionUseRefusalMessage(
     case "below-security-floor":
       return "Below the publisher's security minimum — cannot select";
     case "host-ineligible":
-      return "This Traycer release cannot run this version";
+      return "This Planwise release cannot run this version";
   }
 }
 
@@ -679,11 +679,11 @@ export function managedVersionsUnavailableMessage(
     case "registry-unconfigured":
       return "This build has no provider registry configured, so there are no versions to manage. Waiting will not change it.";
     case "registry-unreachable":
-      return "Traycer could not verify the provider registry's signing keys — usually no network, or the registry is down. It keeps retrying in the background.";
+      return "Planwise could not verify the provider registry's signing keys — usually no network, or the registry is down. It keeps retrying in the background.";
     case "registry-not-yet-checked":
-      return "Traycer has not finished checking the provider registry yet. This should resolve on its own in a moment.";
+      return "Planwise has not finished checking the provider registry yet. This should resolve on its own in a moment.";
     case "install-manager-unavailable":
-      return "The registry was verified, but Traycer could not start its installer, so versions cannot be listed. Restarting the host usually clears this.";
+      return "The registry was verified, but Planwise could not start its installer, so versions cannot be listed. Restarting the host usually clears this.";
   }
 }
 
@@ -718,18 +718,18 @@ export function managedInstallFailureMessage(
     case "disk-full":
       return `Not enough disk space to install ${build}. Free some space, then retry.`;
     case "network":
-      return `Traycer could not download ${build}. That is usually a network problem, but it also happens when the registry carries no artifact for this version and platform - in which case retrying will not help.`;
+      return `Planwise could not download ${build}. That is usually a network problem, but it also happens when the registry carries no artifact for this version and platform - in which case retrying will not help.`;
     case "verification":
-      return `${build} failed its signature check and was discarded. Traycer will not run bytes it cannot verify.`;
+      return `${build} failed its signature check and was discarded. Planwise will not run bytes it cannot verify.`;
     case "live-owner-stalled":
-      return `Another Traycer host on this machine was installing ${build} and stalled. Retrying takes the download over.`;
+      return `Another Planwise host on this machine was installing ${build} and stalled. Retrying takes the download over.`;
     case "trust-unavailable":
-      return `Traycer cannot verify downloads on this host, so ${build} was not installed. Retrying will not help until the registry's signing keys load.`;
+      return `Planwise cannot verify downloads on this host, so ${build} was not installed. Retrying will not help until the registry's signing keys load.`;
     case "local-storage-mismatch":
-      return `The stored copy of ${build} does not match what Traycer expects, and it cannot be re-downloaded on this machine.`;
+      return `The stored copy of ${build} does not match what Planwise expects, and it cannot be re-downloaded on this machine.`;
     case "unrepairable":
       return `${build} cannot be installed on this machine, and retrying will not change that.`;
     case "unknown":
-      return `Traycer could not install ${build}.`;
+      return `Planwise could not install ${build}.`;
   }
 }

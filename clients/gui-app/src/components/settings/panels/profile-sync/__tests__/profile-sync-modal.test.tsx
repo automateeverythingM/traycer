@@ -388,7 +388,7 @@ describe("<ProfileSyncModalHost />", () => {
     ).toBeNull();
   });
 
-  it("reads Update Traycer on the device when every row is update-needed, and lists those rows only after Show all", async () => {
+  it("reads Update Planwise on the device when every row is update-needed, and lists those rows only after Show all", async () => {
     answerOverview(
       overview({
         sourceHostId: SOURCE_HOST_ID,
@@ -423,7 +423,7 @@ describe("<ProfileSyncModalHost />", () => {
 
     const office = await screen.findByRole("region", { name: "Office Linux" });
     expect(
-      within(office).getByText("Update Traycer on Office Linux"),
+      within(office).getByText("Update Planwise on Office Linux"),
     ).toBeTruthy();
     expect(within(office).queryByRole("listitem")).toBeNull();
 
@@ -982,7 +982,7 @@ describe("<ProfileSyncModalHost />", () => {
     expect(screen.queryByRole("region")).toBeNull();
   });
 
-  it("tells the user to update Traycer on the source for E_HOST_UNSUPPORTED", async () => {
+  it("tells the user to update Planwise on the source for E_HOST_UNSUPPORTED", async () => {
     testState.request.mockRejectedValue(
       new HostRpcError({
         code: "E_HOST_UNSUPPORTED",
@@ -996,7 +996,7 @@ describe("<ProfileSyncModalHost />", () => {
     await openDialog();
 
     expect(
-      await screen.findByText("Update Traycer on MacBook to sync profiles."),
+      await screen.findByText("Update Planwise on MacBook to sync profiles."),
     ).toBeTruthy();
     expect(screen.queryByRole("region")).toBeNull();
   });

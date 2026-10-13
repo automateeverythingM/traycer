@@ -477,7 +477,7 @@ describe("readonly-surface gate: traycer monitor is deliberately not gated", () 
     expect(monitor).not.toBeNull();
     const description = monitor?.description() ?? "";
     expect(description).toContain("acknowledged as delivered");
-    expect(description).toContain("stored Traycer credentials");
+    expect(description).toContain("stored Planwise credentials");
   });
 });
 

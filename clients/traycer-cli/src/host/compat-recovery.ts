@@ -32,7 +32,7 @@ import {
 export const CLIENT_UPGRADE_HINT_FOR_SOURCE: Record<CliInstallSource, string> =
   {
     desktop:
-      "Update the Traycer desktop app (it updates itself via its built-in updater), then relaunch.",
+      "Update the Planwise desktop app (it updates itself via its built-in updater), then relaunch.",
     manual:
       "Run 'npm update -g @traycerai/cli' if you installed via npm, otherwise re-download the latest standalone CLI.",
     ...PACKAGE_MANAGER_UPGRADE_HINT,
@@ -103,7 +103,7 @@ function summarize(
     return "The host is out of date. Reinstall the latest host with 'traycer host update'.";
   }
   if (clientUpgrade !== null) {
-    return `This Traycer client is out of date. ${clientUpgrade.hint}`;
+    return `This Planwise client is out of date. ${clientUpgrade.hint}`;
   }
   // No guidance on the frame (e.g. an older host, or a cross-major
   // DOWNGRADE_UNSUPPORTED): fall back to the conservative restart-then-update
@@ -143,7 +143,7 @@ export function clientCompatibilityRecoveryHint(
   requirement: ClientCompatibilityRequirement | null,
 ): string | null {
   if (requirement === null) return null;
-  return `${describeCompatibilityGap(requirement)} Install the latest Traycer CLI. ${COMPATIBILITY_REASSURANCE}`;
+  return `${describeCompatibilityGap(requirement)} Install the latest Planwise CLI. ${COMPATIBILITY_REASSURANCE}`;
 }
 
 /**
@@ -262,7 +262,7 @@ function manualVectorRemedy(
   // upgrade. Unstamped, insufficient, and unreachable are one answer here -
   // the action is identical for all three, and naming the internals of a
   // release feed to a blocked user is noise.
-  return "Download the latest Traycer CLI from https://github.com/traycerai/traycer/releases - the CLI feed could not verify a build new enough for this host, so it could not verify that 'traycer cli upgrade' will resolve it.";
+  return "Download the latest Planwise CLI from https://github.com/traycerai/traycer/releases - the CLI feed could not verify a build new enough for this host, so it could not verify that 'traycer cli upgrade' will resolve it.";
 }
 
 // Source-agnostic one-liner for callers that surface the verdict without an

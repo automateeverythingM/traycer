@@ -218,7 +218,7 @@ describe("<WorkspaceFileTile /> host-binding gate", () => {
     expect(useDesktopDialogStore.getState().reportIssueContext).toEqual({
       title: "Workspace file preview failed to load from the host",
       message:
-        "The app could not reach the Traycer host to load the file preview.",
+        "The app could not reach the Planwise host to load the file preview.",
       code: "UNAUTHORIZED",
       source: "Host",
     });
@@ -267,7 +267,7 @@ describe("<WorkspaceFileTile /> host-binding gate", () => {
     expect(useDesktopDialogStore.getState().reportIssueContext).toEqual({
       title: "Workspace file preview failed to load from the host",
       message:
-        "The app could not reach the Traycer host to load the file preview.",
+        "The app could not reach the Planwise host to load the file preview.",
       code: null,
       source: "Host",
     });

@@ -88,12 +88,12 @@ describe("DeleteAccountSettingsPanel", () => {
     expect(screen.getByText("Delete account")).toBeDefined();
     expect(
       screen.getByText(
-        "Permanently delete your Traycer account and all associated data.",
+        "Permanently delete your Planwise account and all associated data.",
       ),
     ).toBeDefined();
     expect(
       screen.getByText(
-        "Deleting your account removes your profile, sessions, epics, chats and generated documents from Traycer. This cannot be undone.",
+        "Deleting your account removes your profile, sessions, epics, chats and generated documents from Planwise. This cannot be undone.",
       ),
     ).toBeDefined();
     expect(

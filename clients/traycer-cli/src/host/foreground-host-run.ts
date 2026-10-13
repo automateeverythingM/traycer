@@ -79,7 +79,7 @@ function foregroundRunRemedy(
     return "stop it there with Ctrl-C, then register the service";
   }
   if (verb === "host uninstall") {
-    return "stop it there with Ctrl-C, then remove Traycer";
+    return "stop it there with Ctrl-C, then remove Planwise";
   }
   return "stop it there with Ctrl-C";
 }

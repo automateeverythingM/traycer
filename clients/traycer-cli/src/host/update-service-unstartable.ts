@@ -43,20 +43,20 @@ export const HOST_UPDATE_DEFERRED_SERVICE_DISABLED_MESSAGE = `Host update deferr
  * no account: the owner is "another Windows user", always.
  */
 export const HOST_UPDATE_DEFERRED_TASK_NOT_OWNED_MESSAGE =
-  "Host update deferred: the Traycer Host task on this PC is owned by another Windows user, so this account could not start the host again after stopping it. Nothing was stopped or installed; the update installs once that task is gone.";
+  "Host update deferred: the Planwise Host task on this PC is owned by another Windows user, so this account could not start the host again after stopping it. Nothing was stopped or installed; the update installs once that task is gone.";
 
 /** What an explicit `host apply` refused over another account's task reports. */
 export const HOST_APPLY_REFUSED_TASK_NOT_OWNED_MESSAGE =
-  "Host update not applied: the Traycer Host task on this PC is owned by another Windows user, so this account could not start the host again after stopping it. Nothing was stopped or installed.";
+  "Host update not applied: the Planwise Host task on this PC is owned by another Windows user, so this account could not start the host again after stopping it. Nothing was stopped or installed.";
 
 /**
  * The same two over a task whose owner could not be confirmed: refused the
  * same way, but never said to be another user's - nothing confirmed that.
  */
 export const HOST_UPDATE_DEFERRED_TASK_OWNER_UNCONFIRMED_MESSAGE =
-  "Host update deferred: Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Nothing was stopped or installed. Try again, or run `traycer host doctor`.";
+  "Host update deferred: Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Nothing was stopped or installed. Try again, or run `traycer host doctor`.";
 export const HOST_APPLY_REFUSED_TASK_OWNER_UNCONFIRMED_MESSAGE =
-  "Host update not applied: Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Nothing was stopped or installed. Try again, or run `traycer host doctor`.";
+  "Host update not applied: Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Nothing was stopped or installed. Try again, or run `traycer host doctor`.";
 
 /** Why the service an update would stop cannot be started again. */
 type UnstartableService = "disabled" | "not-owned";

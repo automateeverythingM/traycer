@@ -199,10 +199,10 @@ describe("describeWaitDisposition", () => {
 
   it("still explains a wait blocked by the cap, with and without a reset label", () => {
     expect(describeWaitDisposition("beyond_cap", "Mon 4:30 am")).toBe(
-      "This limit resets at Mon 4:30 am — longer than Traycer is set to wait.",
+      "This limit resets at Mon 4:30 am — longer than Planwise is set to wait.",
     );
     expect(describeWaitDisposition("beyond_cap", null)).toBe(
-      "This limit resets later than Traycer is set to wait.",
+      "This limit resets later than Planwise is set to wait.",
     );
   });
 

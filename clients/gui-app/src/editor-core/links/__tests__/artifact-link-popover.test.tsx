@@ -1596,7 +1596,7 @@ describe("ArtifactLinkPopover", () => {
   it("closes an open card when a plain click navigates a different editable link", async () => {
     vi.useFakeTimers();
     const editor = makeEditor(
-      '<p><a href="https://example.com">Example</a> <a href="https://traycer.ai">Traycer</a></p>',
+      '<p><a href="https://example.com">Example</a> <a href="https://traycer.ai">Planwise</a></p>',
     );
     editor.commands.setTextSelection(editor.state.doc.content.size - 2);
     const { openLink, onOpenChange } = renderPopover(editor, true);
@@ -1626,7 +1626,7 @@ describe("ArtifactLinkPopover", () => {
 
   it("commits a dirty edit before a plain click navigates a different link", async () => {
     const editor = makeEditor(
-      '<p><a href="https://example.com">Example</a> <a href="https://traycer.ai">Traycer</a></p>',
+      '<p><a href="https://example.com">Example</a> <a href="https://traycer.ai">Planwise</a></p>',
     );
     editor.commands.setTextSelection(2);
     const { openLink } = renderPopover(editor, true);

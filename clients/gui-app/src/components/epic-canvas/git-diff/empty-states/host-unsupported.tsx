@@ -19,7 +19,7 @@ export function HostUnsupported(props: { readonly reason: string }) {
         </div>
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" size="sm" className="w-fit" asChild>
-            <a href="#update-host">Update Traycer Host</a>
+            <a href="#update-host">Update Planwise Host</a>
           </Button>
           <ReportIssueAction
             context={createReportIssueContext({

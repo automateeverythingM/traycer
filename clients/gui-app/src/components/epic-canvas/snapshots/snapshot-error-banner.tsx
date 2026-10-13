@@ -71,7 +71,7 @@ export function SnapshotErrorBanner(props: SnapshotErrorBannerProps) {
         <p className="font-medium text-destructive">{title}</p>
         <p className="text-ui-xs text-muted-foreground">
           {clockOffsetMs !== null
-            ? `This computer's clock is ${describeClockOffset(clockOffsetMs)}, so Traycer's sign-in tokens are rejected. Correct the clock and this reconnects on its own.`
+            ? `This computer's clock is ${describeClockOffset(clockOffsetMs)}, so Planwise's sign-in tokens are rejected. Correct the clock and this reconnects on its own.`
             : props.error.message}
         </p>
         {props.error.code === "LOCAL_STORE_UNAVAILABLE" ? (
@@ -160,7 +160,7 @@ function LocalStoreRepair(props: { readonly error: SnapshotFetchError }) {
         open={confirmRepairOpen}
         onOpenChange={setConfirmRepairOpen}
         title="Rebind this local store?"
-        description="Confirm that no other Traycer host is using this data directory. Rebinding while another host is writing could put your local data at risk."
+        description="Confirm that no other Planwise host is using this data directory. Rebinding while another host is writing could put your local data at risk."
         cascadeSummary={null}
         blockedReason={null}
         actionLabel="I’ve stopped the other host"

@@ -97,11 +97,11 @@ const IDLE_SNAPSHOT: DesktopAppUpdateSnapshot = {
 };
 
 const READY_GUIDANCE: DesktopAppUpdateGuidance = {
-  summary: "Traycer downloaded v1.2.3, but this install needs one manual step.",
+  summary: "Planwise downloaded v1.2.3, but this install needs one manual step.",
   steps: [
     "Open a terminal.",
     "Run the command below to install the update.",
-    "Restart Traycer once it completes.",
+    "Restart Planwise once it completes.",
   ],
   command: 'sudo dpkg -i "/home/user/.cache/updater/pending/traycer.deb"',
   releaseUrl: "https://github.com/traycerai/traycer/releases",
@@ -223,7 +223,7 @@ function errorSnapshot(sequence: number): DesktopAppUpdateSnapshot {
   return {
     ...manualSnapshot(sequence, "error"),
     errorMessage:
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
   };
 }
 
@@ -445,7 +445,7 @@ describe("desktop app update UI", () => {
     const blockedBridge = new FakeAppUpdatesBridge({
       ...availableSnapshot(1),
       installBlockedReason:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
     });
     renderWithHost(<AppUpdateHeaderButton layout="row" />, blockedBridge);
     const blockedRow = await screen.findByTestId("app-update-row");
@@ -456,7 +456,7 @@ describe("desktop app update UI", () => {
     // label element carries no `truncate` class that would clip it.
     expect(blockedRow.hasAttribute("disabled")).toBe(true);
     expect(blockedRow.getAttribute("aria-label")).toBe(
-      "Move Traycer to your Applications folder to install updates.",
+      "Move Planwise to your Applications folder to install updates.",
     );
     expect(blockedRow.lastElementChild?.className).not.toContain("truncate");
     const blockedWrapper = blockedRow.parentElement;
@@ -471,7 +471,7 @@ describe("desktop app update UI", () => {
     const blockedIconBridge = new FakeAppUpdatesBridge({
       ...availableSnapshot(1),
       installBlockedReason:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
     });
     renderWithHost(<AppUpdateHeaderButton layout="icon" />, blockedIconBridge);
     const blockedButton = await screen.findByTestId("app-update-header-button");
@@ -489,12 +489,12 @@ describe("desktop app update UI", () => {
     const bridge = new FakeAppUpdatesBridge({
       ...availableSnapshot(1),
       installBlockedReason:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
     });
     renderWithHost(<AppUpdateHeaderButton layout="icon" />, bridge);
 
     const button = await screen.findByRole("button", {
-      name: /Move Traycer to your Applications folder/i,
+      name: /Move Planwise to your Applications folder/i,
     });
     expect(button.hasAttribute("disabled")).toBe(true);
 
@@ -506,12 +506,12 @@ describe("desktop app update UI", () => {
     const bridge = new FakeAppUpdatesBridge({
       ...readySnapshot(1),
       installBlockedReason:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
     });
     renderWithHost(<AppUpdateHeaderButton layout="icon" />, bridge);
 
     const button = await screen.findByRole("button", {
-      name: /Move Traycer to your Applications folder/i,
+      name: /Move Planwise to your Applications folder/i,
     });
     expect(button.hasAttribute("disabled")).toBe(true);
 
@@ -730,7 +730,7 @@ describe("desktop app update UI", () => {
     });
     await waitFor(() => {
       expect(toastMock.info).toHaveBeenCalledWith(
-        "Checking for Traycer updates...",
+        "Checking for Planwise updates...",
         {
           id: "traycer-app-update",
           description: null,
@@ -745,7 +745,7 @@ describe("desktop app update UI", () => {
     });
     await waitFor(() => {
       expect(toastMock.success).toHaveBeenCalledWith(
-        "Traycer is up to date",
+        "Planwise is up to date",
         expect.objectContaining({ id: "traycer-app-update" }),
       );
     });
@@ -801,7 +801,7 @@ describe("desktop app update UI", () => {
       bridge.emit({
         ...availableSnapshot(1),
         installBlockedReason:
-          "Move Traycer to your Applications folder to install updates.",
+          "Move Planwise to your Applications folder to install updates.",
       });
     });
     await waitFor(() => {
@@ -810,7 +810,7 @@ describe("desktop app update UI", () => {
         expect.objectContaining({
           id: "traycer-app-update",
           description:
-            "Move Traycer to your Applications folder to install updates.",
+            "Move Planwise to your Applications folder to install updates.",
         }),
       );
     });
@@ -952,7 +952,7 @@ describe("desktop app update UI", () => {
     expect(options.cancel).toBeNull();
     render(<>{message}</>);
     screen.getByText("Update ready to install");
-    screen.getByText("Restart Traycer to finish updating.");
+    screen.getByText("Restart Planwise to finish updating.");
 
     const track = vi.spyOn(Analytics.getInstance(), "track");
     const restart = screen.getByRole("button", { name: "Restart" });
@@ -990,7 +990,7 @@ describe("desktop app update UI", () => {
         "Restarting to install update…",
         expect.objectContaining({
           id: "traycer-app-update",
-          description: "Traycer will reopen once the update is applied.",
+          description: "Planwise will reopen once the update is applied.",
         }),
       );
     });
@@ -1046,7 +1046,7 @@ describe("desktop app update UI", () => {
 
     await waitFor(() => {
       expect(toastMock.error).toHaveBeenCalledWith(
-        "Couldn't update Traycer",
+        "Couldn't update Planwise",
         expect.objectContaining({
           id: "traycer-app-update",
         }),
@@ -1061,7 +1061,7 @@ describe("desktop app update UI", () => {
     expect(options.cancel).toBeNull();
     render(<>{options.description}</>);
     screen.getByText(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
     const reportButton = screen.getByRole("button", {
       name: "Report an issue",
@@ -1070,7 +1070,7 @@ describe("desktop app update UI", () => {
     fireEvent.click(reportButton);
     expect(useDesktopDialogStore.getState().activeDialog).toBe("report-issue");
     expect(useDesktopDialogStore.getState().reportIssueContext).toEqual({
-      title: "Could not update Traycer",
+      title: "Could not update Planwise",
       message: null,
       code: null,
       source: "App update",
@@ -1090,7 +1090,7 @@ describe("desktop app update UI", () => {
     });
     await waitFor(() => {
       expect(toastMock.error).toHaveBeenCalledWith(
-        "Couldn't update Traycer",
+        "Couldn't update Planwise",
         expect.objectContaining({ id: "traycer-app-update" }),
       );
     });
@@ -1136,7 +1136,7 @@ describe("desktop app update UI", () => {
     render(<>{options.description}</>);
 
     screen.getByText(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
     expect(
       screen.queryByRole("button", { name: "Report an issue" }),

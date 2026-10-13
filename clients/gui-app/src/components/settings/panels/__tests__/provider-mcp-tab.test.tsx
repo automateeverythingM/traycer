@@ -1448,7 +1448,7 @@ describe("<ProviderMcpTab />", () => {
    * tooltip keeps this a placement test; Radix renders the content into a
    * portal only while open.
    */
-  it("offers the Traycer-sessions-only caveat beside the bulk tool toggles", () => {
+  it("offers the Planwise-sessions-only caveat beside the bulk tool toggles", () => {
     mcpMocks.listResult.data = { servers: [connectedServer({})] };
     renderTab(
       {

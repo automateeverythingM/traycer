@@ -553,7 +553,7 @@ function PrDetailHostUpdateRequired(): ReactNode {
           Update required to view this pull request
         </p>
         <p className="text-ui-xs text-muted-foreground/50">
-          This host does not advertise the PR detail stream yet. Update Traycer
+          This host does not advertise the PR detail stream yet. Update Planwise
           Host to enable the full view.
         </p>
       </div>

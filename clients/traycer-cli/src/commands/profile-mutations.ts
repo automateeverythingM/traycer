@@ -126,7 +126,7 @@ export function buildProfileRemoveCommand(opts: {
       throw cliError({
         code: CLI_ERROR_CODES.INVALID_ARGUMENT,
         message:
-          "traycer: the ambient profile is the provider's own CLI login and cannot be removed - use 'traycer profile disable' to stop Traycer using it.",
+          "traycer: the ambient profile is the provider's own CLI login and cannot be removed - use 'traycer profile disable' to stop Planwise using it.",
         details: null,
         exitCode: 1,
       });

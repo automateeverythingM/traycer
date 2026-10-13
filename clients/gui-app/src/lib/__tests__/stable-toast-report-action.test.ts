@@ -8,10 +8,10 @@ import { useDesktopDialogStore } from "@/stores/dialogs/desktop-dialog-store";
 const PROGRESS_TOAST_ID = "report-action-error-to-progress";
 const SUCCESS_TOAST_PREFIX = "report-action-error-to-success";
 const REPORT_CONTEXT = {
-  title: "Traycer operation failed",
+  title: "Planwise operation failed",
   message: null,
   code: null,
-  source: "Traycer app",
+  source: "Planwise app",
 };
 
 afterEach(() => {

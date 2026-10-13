@@ -262,7 +262,7 @@ describe("whoami runner migration", () => {
 
   it.each([
     ["none", ""],
-    ["profile-refreshed", "Updated the stored profile from Traycer."],
+    ["profile-refreshed", "Updated the stored profile from Planwise."],
     ["profile-refresh-unconfirmed", "did not confirm"],
     ["token-rotated", "Refreshed the stored access token."],
     ["token-rotation-unconfirmed", "may be stale"],
@@ -478,7 +478,7 @@ describe("whoami --local (whoamiLocalCommand)", () => {
     const out = await runHumanCommand(whoamiLocalCommand);
     expect(out.terminal).toBeNull();
     expect(joined(stdoutChunks)).toContain(
-      "Logged in as user@example.com (stored credentials; not checked with Traycer).",
+      "Logged in as user@example.com (stored credentials; not checked with Planwise).",
     );
     expect(out.exitCode).toBe(0);
     vi.doUnmock("../../store/credentials");

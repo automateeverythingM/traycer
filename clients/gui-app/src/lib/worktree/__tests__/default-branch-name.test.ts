@@ -78,7 +78,7 @@ describe("buildDefaultBranchByPath", () => {
 
   it("inserts the repo slug between prefix and tail when multi-workspace prefixing is on", () => {
     const result = buildDefaultBranchByPath(
-      [summary({ repoIdentifier: { owner: "acme", repo: "Traycer GUI" } })],
+      [summary({ repoIdentifier: { owner: "acme", repo: "Planwise GUI" } })],
       true,
       "traycer/",
     );

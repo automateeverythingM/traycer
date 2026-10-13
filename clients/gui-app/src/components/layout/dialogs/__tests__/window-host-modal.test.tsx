@@ -19,7 +19,7 @@ afterEach(() => {
 
 function buildProgress(overrides: Partial<HostProgressView>): HostProgressView {
   return {
-    heading: "Setting up Traycer Host…",
+    heading: "Setting up Planwise Host…",
     shortLabel: "Setting up…",
     detail: null,
     stage: null,
@@ -215,7 +215,7 @@ describe("<WindowHostModal />", () => {
       baseProps({
         variant: { kind: "offline" },
         progress: buildProgress({
-          heading: "Setting up Traycer Host…",
+          heading: "Setting up Planwise Host…",
           percent: 42,
           transferLabel: "1.0 MB of 2.0 MB",
           detail: "extracting host archive into /Users/me/.traycer/staging",
@@ -224,7 +224,7 @@ describe("<WindowHostModal />", () => {
       }),
     );
     const progressBlock = screen.getByTestId("window-host-modal-progress");
-    expect(progressBlock.textContent).toContain("Setting up Traycer Host…");
+    expect(progressBlock.textContent).toContain("Setting up Planwise Host…");
     expect(progressBlock.textContent).toContain("42%");
     // The view carries both (supplied above); the launch card draws neither -
     // same rule as the boot body's bar, see `HostProgress`.
@@ -296,7 +296,7 @@ describe("<WindowHostModal /> update-client (epoch rejection)", () => {
   it("titles the app update and names the observed version plus the generic remedy", () => {
     renderModalWithProviders(updateClientProps({}));
     expect(screen.getByTestId("window-host-modal-title").textContent).toBe(
-      "Update Traycer to continue",
+      "Update Planwise to continue",
     );
     const description = screen.getByTestId(
       "window-host-modal-description",
@@ -316,7 +316,7 @@ describe("<WindowHostModal /> update-client (epoch rejection)", () => {
     expect(
       screen.getByTestId("window-host-modal-description").textContent,
     ).toBe(
-      "This Traycer installation is too old to identify a compatible generation. Install the latest Traycer app.",
+      "This Planwise installation is too old to identify a compatible generation. Install the latest Planwise app.",
     );
   });
 

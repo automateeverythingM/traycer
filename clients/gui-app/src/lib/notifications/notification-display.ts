@@ -751,7 +751,7 @@ function buildNotificationToastContent(
     };
   }
   return {
-    title: "Traycer",
+    title: "Planwise",
     body: `${rows.length} new notifications`,
     row: first,
     payload: first.payload,

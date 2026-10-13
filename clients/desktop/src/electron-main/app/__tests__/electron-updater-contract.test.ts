@@ -174,9 +174,9 @@ describe("electron-updater 6.8.9 vendored contracts", () => {
         "version: 1.2.0",
         "compatibilityEpoch: 2",
         "files:",
-        "  - url: Traycer-1.2.0.exe",
+        "  - url: Planwise-1.2.0.exe",
         "    sha512: abc",
-        "path: Traycer-1.2.0.exe",
+        "path: Planwise-1.2.0.exe",
         "sha512: abc",
         "releaseDate: '2026-01-01T00:00:00.000Z'",
       ].join("\n"),
@@ -219,14 +219,14 @@ describe("electron-updater 6.8.9 vendored contracts", () => {
     const pending = helper.cacheDirForPendingUpdate;
     mkdirSync(pending, { recursive: true });
 
-    const artifact = join(pending, "Traycer-1.1.11.exe");
+    const artifact = join(pending, "Planwise-1.1.11.exe");
     writeFileSync(artifact, "stale stable artifact bytes");
     const staleSha = createHash("sha512")
       .update(readFileSync(artifact))
       .digest("base64");
     writeFileSync(
       join(pending, "update-info.json"),
-      JSON.stringify({ fileName: "Traycer-1.1.11.exe", sha512: staleSha }),
+      JSON.stringify({ fileName: "Planwise-1.1.11.exe", sha512: staleSha }),
     );
 
     const logger = { info: () => undefined, warn: () => undefined };

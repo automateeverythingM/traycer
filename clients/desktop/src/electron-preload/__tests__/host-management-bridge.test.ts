@@ -61,7 +61,7 @@ describe("buildHostManagementBridge - restartHostServiceIfHostIdle", () => {
   it("resolves whatever the channel returns, unchanged", async () => {
     const results: HostServiceRestartResult[] = [
       { kind: "restarted" },
-      { kind: "declined", message: "Another Traycer process holds the lock." },
+      { kind: "declined", message: "Another Planwise process holds the lock." },
       { kind: "host-busy" },
     ];
     for (const result of results) {

@@ -410,7 +410,7 @@ function SavedLoginsToggleRow(props: {
         row={BROWSER.definitions.saveWebsiteSessions}
         status={
           props.enabled
-            ? "Keep session data from Traycer browser tabs so sites can stay signed in."
+            ? "Keep session data from Planwise browser tabs so sites can stay signed in."
             : "Saving is paused on this computer. Existing sessions stay available to manage."
         }
         control={
@@ -557,7 +557,7 @@ function SavedWebsiteSessionsRow(props: {
     return (
       <SavedWebsiteSessionsState
         status="Unavailable"
-        message="Update the connected Traycer host to view and manage saved website sessions."
+        message="Update the connected Planwise host to view and manage saved website sessions."
         onRetry={null}
         onRemoveAll={null}
       />
@@ -567,7 +567,7 @@ function SavedWebsiteSessionsRow(props: {
     return (
       <SavedWebsiteSessionsState
         status="Locked"
-        message="Connect this desktop to unlock saved website sessions. If this computer has no system keyring, Traycer cannot encrypt them here, so they stay locked and nothing new is saved."
+        message="Connect this desktop to unlock saved website sessions. If this computer has no system keyring, Planwise cannot encrypt them here, so they stay locked and nothing new is saved."
         onRetry={null}
         onRemoveAll={removeAll}
       />
@@ -742,7 +742,7 @@ function SavedWebsiteSessionsManager(props: {
         </SheetHeader>
         <p className="mx-4 mb-4 rounded-md bg-foreground/8 px-3 py-2 text-ui-sm text-muted-foreground">
           Shared collection · Removing a site may sign you out on connected
-          Traycer hosts.
+          Planwise hosts.
         </p>
         <div className="shrink-0 space-y-2 px-4 pb-4">
           <Label htmlFor={searchId}>Search saved sites</Label>

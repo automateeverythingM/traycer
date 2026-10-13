@@ -1303,7 +1303,7 @@ describe("HostOverviewPanel — the bound methods' cli-failed and dispatch-indet
 
     await waitFor(() => {
       expect(toast.error).toHaveBeenCalledWith(
-        "This computer's Traycer CLI is too old to resume the update. Update the CLI, then try again.",
+        "This computer's Planwise CLI is too old to resume the update. Update the CLI, then try again.",
       );
     });
     // The page-wide gate is not held by a refusal: `settleUpdateDispatch`'s

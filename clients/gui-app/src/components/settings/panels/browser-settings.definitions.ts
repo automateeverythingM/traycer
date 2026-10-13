@@ -76,7 +76,7 @@ export const BROWSER = defineSettingsSection("browser", {
     search: { contributesTo: "page" },
     label: "Let agents use the in-app browser",
     description:
-      "Agents get Traycer's browser as a tool and are told to use it for web pages. Turn off to let them use their own browser tooling.",
+      "Agents get Planwise's browser as a tool and are told to use it for web pages. Turn off to let them use their own browser tooling.",
     availableWhen: alwaysAvailable,
     keywords: ["agent", "browser", "playwright", "mcp"],
   },
@@ -144,7 +144,7 @@ export const BROWSER = defineSettingsSection("browser", {
     search: { contributesTo: "page" },
     label: "Saved website sessions",
     description:
-      "Shared with connected Traycer hosts. Removing a site may sign you out there.",
+      "Shared with connected Planwise hosts. Removing a site may sign you out there.",
     availableWhen: alwaysAvailable,
     keywords: [],
   },

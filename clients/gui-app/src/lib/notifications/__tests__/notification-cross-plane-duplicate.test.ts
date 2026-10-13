@@ -752,7 +752,7 @@ describe("cross-plane duplicate notification dedup (host emission + cloud relay)
     expect(toastCalls).toHaveLength(2);
     expect(target.playChime).toHaveBeenCalledTimes(2);
     const secondCall = target.showNotification.mock.calls[1][0];
-    expect(secondCall.title).not.toBe("Traycer");
+    expect(secondCall.title).not.toBe("Planwise");
     expect(secondCall.payload).toMatchObject({
       route: { kind: "chat", epicId: "epic-1", chatId: "chat-B" },
     });

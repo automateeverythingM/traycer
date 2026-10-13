@@ -9,7 +9,7 @@ export const SHELL = defineSettingsSection("shell", {
     availableWhen: alwaysAvailable,
     label: "Shell",
     description:
-      "How Traycer launches terminals, the host, and provider harnesses.",
+      "How Planwise launches terminals, the host, and provider harnesses.",
     keywords: [
       "terminal",
       "bash",

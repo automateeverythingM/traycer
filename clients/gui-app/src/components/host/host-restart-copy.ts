@@ -38,7 +38,7 @@ export const SERVICE_RESTART_BUSY_MESSAGE =
  * no id to fence it to - so nothing ran, and nothing is forced in its place.
  */
 export const SERVICE_RESTART_NO_LOCAL_HOST_MESSAGE =
-  "Traycer couldn't identify this computer's host, so nothing was " +
+  "Planwise couldn't identify this computer's host, so nothing was " +
   "restarted. Try again in a moment.";
 
 export interface DescribeHostBusyInput {

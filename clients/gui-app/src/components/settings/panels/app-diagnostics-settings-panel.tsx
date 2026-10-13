@@ -41,7 +41,7 @@ import { cn } from "@/lib/utils";
 import type { DesktopSupportBridge } from "@/lib/windows/types";
 
 const PANEL_DESCRIPTION =
-  "Logging and memory capture for the Traycer app itself - this window, whichever host it points at. The level defaults to Info; raise it to Debug when capturing a problem for support, then set it back.";
+  "Logging and memory capture for the Planwise app itself - this window, whichever host it points at. The level defaults to Info; raise it to Debug when capturing a problem for support, then set it back.";
 
 /**
  * Diagnostics for the APP, in the one place there is only ever one of it.

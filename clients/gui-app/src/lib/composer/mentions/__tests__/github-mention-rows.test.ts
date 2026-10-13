@@ -198,7 +198,7 @@ describe("githubMentionRowsWithinScope", () => {
     const rows = [row];
 
     const kept = githubMentionRowsWithinScope(rows, [
-      { githubHost: "GitHub.com", owner: "TraycerAI", repo: "Traycer" },
+      { githubHost: "GitHub.com", owner: "TraycerAI", repo: "Planwise" },
     ]);
 
     expect(kept).toEqual([row]);
@@ -914,7 +914,7 @@ describe("filterGithubMentionRows", () => {
       repository: {
         githubHost: "GitHub.com",
         owner: "TraycerAI",
-        repo: "Traycer",
+        repo: "Planwise",
       },
     });
 

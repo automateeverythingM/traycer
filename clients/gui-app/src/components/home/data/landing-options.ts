@@ -614,7 +614,7 @@ export function unsupportedPermissionModeCopy(input: {
     catalogSupportedModes !== null &&
     !catalogSupportedModes.includes(mode)
   ) {
-    return "Needs a newer Traycer on this machine.";
+    return "Needs a newer Planwise on this machine.";
   }
   return `Not supported by ${harnessLabel ?? "this provider"}.`;
 }

@@ -3047,7 +3047,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
   // card that names something for sale. App Store review guideline 3.1.1 says
   // the installed app may not present a subscription it cannot sell, so the
   // chip goes and the usage stays.
-  it("names the Traycer plan tier on desktop and drops the chip in the installed mobile app", () => {
+  it("names the Planwise plan tier on desktop and drops the chip in the installed mobile app", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: false }),
@@ -3072,7 +3072,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     expect(screen.queryByText(/\$/)).toBeNull();
   });
 
-  it("refetches Traycer when the synthetic Traycer entry is eligible", () => {
+  it("refetches Planwise when the synthetic Planwise entry is eligible", () => {
     mocks.configured = [];
     const authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: false }),
@@ -3087,7 +3087,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     expect(invalidateSpy).not.toHaveBeenCalled();
   });
 
-  it("invalidates the unscoped Traycer usage query for rate-limit-based Traycer plans", () => {
+  it("invalidates the unscoped Planwise usage query for rate-limit-based Planwise plans", () => {
     mocks.configured = [];
     const authUser = readyAuthUser(
       authUserFixture({ status: "PRO", withTeam: false }),
@@ -3105,7 +3105,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     });
   });
 
-  it("refreshes every rendered rate-limit-based Traycer account", () => {
+  it("refreshes every rendered rate-limit-based Planwise account", () => {
     mocks.configured = [];
     const fixture = authUserFixture({ status: "PRO", withTeam: true });
     const team = fixture.teamSubscriptions[0];
@@ -3128,7 +3128,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     });
   });
 
-  it("shows Refreshing and disables Refresh all while Traycer is fetching", () => {
+  it("shows Refreshing and disables Refresh all while Planwise is fetching", () => {
     mocks.configured = [];
     mocks.authUser = {
       ...readyAuthUser(authUserFixture({ status: "PRO_V3", withTeam: false })),
@@ -3144,7 +3144,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     expect(refreshAll.getAttribute("disabled")).not.toBeNull();
   });
 
-  it("keeps the Traycer card refreshing while account usage refetches", () => {
+  it("keeps the Planwise card refreshing while account usage refetches", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO", withTeam: false }),
@@ -3161,7 +3161,7 @@ describe("<RateLimitPopover /> Refresh all", () => {
     ).not.toBeNull();
   });
 
-  it("keeps rate-limit usage freshness scoped to its Traycer account", () => {
+  it("keeps rate-limit usage freshness scoped to its Planwise account", () => {
     mocks.configured = [];
     const fixture = authUserFixture({ status: "PRO", withTeam: true });
     const team = fixture.teamSubscriptions[0];
@@ -3606,8 +3606,8 @@ describe("<RateLimitPopover /> Overview block scoping", () => {
   });
 });
 
-describe("<RateLimitPopover /> Traycer tab", () => {
-  it("adds a Traycer tab for a paid account, even with no host-RPC providers", () => {
+describe("<RateLimitPopover /> Planwise tab", () => {
+  it("adds a Planwise tab for a paid account, even with no host-RPC providers", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: false }),
@@ -3620,11 +3620,11 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     const tabs = screen.getAllByRole("tab");
     expect(tabs.map((tab) => tab.getAttribute("aria-label"))).toEqual([
       "Overview",
-      "Traycer Inference",
+      "Planwise Inference",
     ]);
   });
 
-  it("omits the Traycer tab for a free, unbundled account", () => {
+  it("omits the Planwise tab for a free, unbundled account", () => {
     mocks.configured = [
       { providerId: "codex", lane: "ephemeralProcess", profiles: undefined },
     ];
@@ -3648,7 +3648,7 @@ describe("<RateLimitPopover /> Traycer tab", () => {
 
     renderPopover();
 
-    expect(screen.getByRole("tab", { name: "Traycer Inference" })).toBeTruthy();
+    expect(screen.getByRole("tab", { name: "Planwise Inference" })).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Use acme account" }));
     expect(useAccountContextStore.getState().accountContext).toEqual({
       type: "TEAM",
@@ -3656,7 +3656,7 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     });
   });
 
-  it("orders the Traycer tab per PROVIDER_ID_ORDER (after Codex, before Kilo Code)", () => {
+  it("orders the Planwise tab per PROVIDER_ID_ORDER (after Codex, before Kilo Code)", () => {
     mocks.configured = [
       { providerId: "kilocode", lane: "httpFetch", profiles: undefined },
       { providerId: "codex", lane: "ephemeralProcess", profiles: undefined },
@@ -3678,18 +3678,18 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     expect(tabs.map((tab) => tab.getAttribute("aria-label"))).toEqual([
       "Overview",
       "Codex",
-      "Traycer Inference",
+      "Planwise Inference",
       "Kilo Code",
     ]);
   });
 
-  it("shows one subscription card per Traycer account and marks the active one", () => {
+  it("shows one subscription card per Planwise account and marks the active one", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: true }),
     );
     renderPopover();
-    fireEvent.click(screen.getByRole("tab", { name: "Traycer Inference" }));
+    fireEvent.click(screen.getByRole("tab", { name: "Planwise Inference" }));
     // Shared subscription view: personal plan credit breakdown (30 of 100).
     expect(screen.getByText("$30.00 / $100.00")).toBeTruthy();
     expect(
@@ -3709,7 +3709,7 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     expect(screen.getByText("Ultra")).toBeTruthy();
   });
 
-  it("renders Traycer account cards with active state on Overview", () => {
+  it("renders Planwise account cards with active state on Overview", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: true }),
@@ -3743,7 +3743,7 @@ describe("<RateLimitPopover /> Traycer tab", () => {
       accountContext: { type: "TEAM", teamId: "team-1" },
     });
     renderPopover();
-    fireEvent.click(screen.getByRole("tab", { name: "Traycer Inference" }));
+    fireEvent.click(screen.getByRole("tab", { name: "Planwise Inference" }));
     const activeCards = document.querySelectorAll('[aria-current="true"]');
     expect(activeCards).toHaveLength(1);
     expect(activeCards[0].textContent).toContain("acme");
@@ -3751,13 +3751,13 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     expect(screen.getByText("Pro")).toBeTruthy();
   });
 
-  it("switches the active Traycer account from its profile card", () => {
+  it("switches the active Planwise account from its profile card", () => {
     mocks.configured = [];
     mocks.authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: true }),
     );
     renderPopover();
-    fireEvent.click(screen.getByRole("tab", { name: "Traycer Inference" }));
+    fireEvent.click(screen.getByRole("tab", { name: "Planwise Inference" }));
 
     fireEvent.click(screen.getByRole("button", { name: "Use acme account" }));
 
@@ -3770,16 +3770,16 @@ describe("<RateLimitPopover /> Traycer tab", () => {
     expect(activeCards[0].textContent).toContain("acme");
   });
 
-  it("refetches the subscription from the Traycer tab's refresh button", () => {
+  it("refetches the subscription from the Planwise tab's refresh button", () => {
     mocks.configured = [];
     const authUser = readyAuthUser(
       authUserFixture({ status: "PRO_V3", withTeam: false }),
     );
     mocks.authUser = authUser;
     renderPopover();
-    fireEvent.click(screen.getByRole("tab", { name: "Traycer Inference" }));
+    fireEvent.click(screen.getByRole("tab", { name: "Planwise Inference" }));
     fireEvent.click(
-      screen.getByRole("button", { name: "Refresh Traycer Inference" }),
+      screen.getByRole("button", { name: "Refresh Planwise Inference" }),
     );
     expect(authUser.refetch).toHaveBeenCalled();
   });

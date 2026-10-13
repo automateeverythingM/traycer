@@ -259,7 +259,7 @@ describe("chat find projection", () => {
   it("projects markdown links and code as rendered text, not markdown syntax", () => {
     const text = markdownToChatSearchText(
       [
-        "Read [Traycer docs](https://example.test/docs) and `inlineCode`.",
+        "Read [Planwise docs](https://example.test/docs) and `inlineCode`.",
         "",
         "```ts",
         "const answer = 42;",
@@ -267,12 +267,12 @@ describe("chat find projection", () => {
       ].join("\n"),
     );
 
-    expect(text).toContain("Traycer docs");
+    expect(text).toContain("Planwise docs");
     expect(text).toContain("inlineCode");
     expect(text).toContain("const answer = 42;");
     expect(text).not.toContain("https://example.test/docs");
     expect(text).not.toContain("```");
-    expect(text).not.toContain("[Traycer docs]");
+    expect(text).not.toContain("[Planwise docs]");
   });
 
   it("indexes every occurrence in a wireframe fence's raw source", () => {
@@ -1636,7 +1636,7 @@ describe("chat find projection", () => {
   // find hit could be painted onto, so it contributes no units at all.
   it("indexes nothing for a legacy auto-mode judge notice row", () => {
     const message =
-      "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.";
+      "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.";
     const synthesized: ChatMessageModel = {
       ...makeMessage(35, "system"),
       content: "",

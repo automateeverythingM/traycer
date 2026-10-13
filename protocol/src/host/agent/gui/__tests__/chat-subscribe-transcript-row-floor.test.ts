@@ -159,7 +159,7 @@ function autoJudgeNoticeEvent(
       type: "permission.blocked",
       metadata: { autoJudge: marker },
     }),
-    message: "Traycer's judge couldn't run on Traycer inference.",
+    message: "Planwise's judge couldn't run on Planwise inference.",
     severity: "warning",
     turnId,
     messageId: turnId === null ? null : "user-1",

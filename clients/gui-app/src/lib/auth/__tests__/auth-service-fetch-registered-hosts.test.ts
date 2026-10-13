@@ -227,7 +227,7 @@ describe("AuthService.fetchRegisteredHosts — in-flight coalescing", () => {
     // still clear once that rejection settles, not stay pinned to it.
     await expect(
       service.fetchRegisteredHosts(service.currentAuthEra()),
-    ).rejects.toThrow("Couldn't reach Traycer to load your hosts.");
+    ).rejects.toThrow("Couldn't reach Planwise to load your hosts.");
     expect(hostsCalls).toBe(1);
 
     const secondResult = await service.fetchRegisteredHosts(

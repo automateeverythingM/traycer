@@ -77,7 +77,7 @@ export function WindowsBridgeAuthSessionBridge(
           }
           if (result === "unavailable") {
             authSessionRefusedToast.warning(
-              "Traycer could not read your local session. Reload the window to try again.",
+              "Planwise could not read your local session. Reload the window to try again.",
             );
           }
         },
@@ -90,7 +90,7 @@ export function WindowsBridgeAuthSessionBridge(
             {},
           );
           authSessionRefusedToast.warning(
-            "Traycer could not restore your local session. Reload the window to try again.",
+            "Planwise could not restore your local session. Reload the window to try again.",
           );
         },
       );
@@ -290,7 +290,7 @@ const AUTH_SESSION_REFUSAL_COPY: Record<
 function describeAuthSessionRefusalReason(
   reason: DesktopAuthSessionRefusalReason,
 ): string {
-  return `Traycer could not verify this sign-in with the auth service (${AUTH_SESSION_REFUSAL_COPY[reason]}). Sign out and back in.`;
+  return `Planwise could not verify this sign-in with the auth service (${AUTH_SESSION_REFUSAL_COPY[reason]}). Sign out and back in.`;
 }
 
 function serializeDesktopSnapshot(

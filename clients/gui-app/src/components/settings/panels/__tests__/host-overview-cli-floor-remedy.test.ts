@@ -320,7 +320,7 @@ describe("describeCliFloorRemedy", () => {
         // under an RC floor usually reports nothing newer - a command that
         // does not reach the floor (see the route's comment).
         expect(result.sentence).toBe(
-          `Traycer CLI prereleases aren't published through ${testCase.row.source}. Install Traycer CLI ${testCase.requiredVersion} another way; this page rechecks while it is open.`,
+          `Planwise CLI prereleases aren't published through ${testCase.row.source}. Install Planwise CLI ${testCase.requiredVersion} another way; this page rechecks while it is open.`,
         );
         expect(result.actions).toEqual([
           { kind: "help", label: "Show installation help" },
@@ -355,7 +355,7 @@ describe("describeCliFloorRemedy", () => {
       // Removing the isValidHostVersion guard would interpolate shell text
       // into the npm command; these malformed-floor help pins must turn RED.
       expect(result.sentence).toBe(
-        "Traycer couldn't verify the required command-line tools version on build-host.",
+        "Planwise couldn't verify the required command-line tools version on build-host.",
       );
       expect(result.actions).toEqual([
         { kind: "help", label: "Show installation help" },
@@ -405,7 +405,7 @@ describe("describeCliFloorRemedy", () => {
         }),
       );
       expect(result.sentence).toBe(
-        "Traycer couldn't verify the required command-line tools version on build-host.",
+        "Planwise couldn't verify the required command-line tools version on build-host.",
       );
       expect(result.actions).toEqual([
         { kind: "help", label: "Show installation help" },
@@ -502,7 +502,7 @@ describe("describeCliFloorRemedy", () => {
         },
       ]);
       expect(result.sentence).toBe(
-        "Run the copied commands on build-host from a PowerShell window outside Traycer on that machine (a Windows Terminal tab there, or an SSH session that opens PowerShell). Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.",
+        "Run the copied commands on build-host from a PowerShell window outside Planwise on that machine (a Windows Terminal tab there, or an SSH session that opens PowerShell). Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.",
       );
     }
 
@@ -599,7 +599,7 @@ describe("describeCliFloorRemedy", () => {
           command: "traycer cli upgrade\ntraycer host restart",
         },
       ]);
-      expect(unknownEverything.sentence).toContain("terminal outside Traycer");
+      expect(unknownEverything.sentence).toContain("terminal outside Planwise");
       expect(unknownEverything.sentence).not.toContain("PowerShell");
     }
   });
@@ -650,7 +650,7 @@ describe("describeCliFloorRemedy", () => {
     // "null"/"undefined" in these natural versionless sentences; these
     // negative text pins must turn RED under that concrete ablation.
     expect(available.sentence).toBe(
-      "Update Traycer Desktop to install this host update.",
+      "Update Planwise Desktop to install this host update.",
     );
     expect(available.sentence).not.toContain("undefined");
     expect(available.sentence).not.toContain("null");
@@ -665,7 +665,7 @@ describe("describeCliFloorRemedy", () => {
       }),
     );
     expect(ready.sentence).toBe(
-      "Traycer Desktop is ready. Restart Traycer to finish, then this host update can install.",
+      "Planwise Desktop is ready. Restart Planwise to finish, then this host update can install.",
     );
     expect(ready.sentence).not.toContain("undefined");
     expect(ready.sentence).not.toContain("null");
@@ -683,7 +683,7 @@ describe("describeCliFloorRemedy", () => {
     );
     expect(result).toEqual({
       sentence:
-        "Traycer couldn't determine how its command-line tools were installed on build-host.",
+        "Planwise couldn't determine how its command-line tools were installed on build-host.",
       actions: [{ kind: "help", label: "Show installation help" }],
     });
   });
@@ -810,7 +810,7 @@ describe("describeCliFloorRemedy", () => {
           // Desktop action for this refusal; these fallback pins must turn RED
           // under the concrete D01 ablation.
           expect(result.sentence).toBe(
-            `Traycer v${candidate.version} is the latest on this update channel and its command-line tools are below 1.3.0-rc.4. Open a terminal on build-host and run the copied command; this page rechecks while it is open.`,
+            `Planwise v${candidate.version} is the latest on this update channel and its command-line tools are below 1.3.0-rc.4. Open a terminal on build-host and run the copied command; this page rechecks while it is open.`,
           );
           expect(result.actions).toEqual([
             {
@@ -923,7 +923,7 @@ describe("describeCliFloorRemedy", () => {
         // E09: removing the PowerShell/outside wording would lose the shell
         // guidance appended to the Desktop floor sentence.
         expect(result.sentence).toContain(
-          "PowerShell window outside Traycer on that machine",
+          "PowerShell window outside Planwise on that machine",
         );
       } else {
         // E06: bypassing the Windows no-path gate would guess PATH for an
@@ -950,7 +950,7 @@ describe("describeCliFloorRemedy", () => {
     );
     // Removing the up-to-date currentVersion fallback would lose a known
     // below-floor candidate; this negative fallback pin must turn RED.
-    expect(upToDate.sentence).toContain("Traycer Desktop v1.2.0 is installed");
+    expect(upToDate.sentence).toContain("Planwise Desktop v1.2.0 is installed");
 
     const installedVersionAheadOfFeed = describeCliFloorRemedy(
       input({
@@ -986,7 +986,7 @@ describe("describeCliFloorRemedy", () => {
       // Removing the unknown-candidate fallback would fabricate a normal
       // Desktop action; these negative missing/unparseable pins must RED.
       expect(unknown.sentence).toContain(
-        "couldn't verify that this Desktop update includes Traycer CLI 1.3.0 or newer",
+        "couldn't verify that this Desktop update includes Planwise CLI 1.3.0 or newer",
       );
       expect(unknown.actions.at(-1)).toEqual({
         kind: "help",
@@ -1005,7 +1005,7 @@ describe("describeCliFloorRemedy", () => {
       {
         status: "unavailable" as const,
         errorMessage: null,
-        sentence: "Traycer Desktop couldn't check for updates.",
+        sentence: "Planwise Desktop couldn't check for updates.",
       },
     ] as const;
     for (const failure of failures) {
@@ -1043,7 +1043,7 @@ describe("describeCliFloorRemedy", () => {
         overrides: {},
       }),
     );
-    expect(checking.sentence).toBe("Checking for a Traycer Desktop update…");
+    expect(checking.sentence).toBe("Checking for a Planwise Desktop update…");
     expect(checking.actions).toEqual([
       { kind: "desktop-check", label: null, checkOnMount: false },
     ]);
@@ -1061,7 +1061,7 @@ describe("describeCliFloorRemedy", () => {
     // The idle arm keeps a labelled button: the mount check publishes
     // nothing when it fails, so the updater can sit at `idle` AFTER that
     // check and a label-less arm would be a dead end.
-    expect(idle.sentence).toBe("Check for a Traycer Desktop update.");
+    expect(idle.sentence).toBe("Check for a Planwise Desktop update.");
     expect(idle.actions).toEqual([
       { kind: "desktop-check", label: "Check for updates", checkOnMount: true },
     ]);

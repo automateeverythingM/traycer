@@ -21,7 +21,7 @@ const EXPORT_DIRECTORY = "traycer-exports";
  * folder of the app's own so a phone's Documents root does not accumulate
  * loose Traycer files among everything else that writes there.
  */
-const DOWNLOAD_DIRECTORY = "Traycer";
+const DOWNLOAD_DIRECTORY = "Planwise";
 
 /**
  * How many numbered variants of a taken name are tried before falling back to

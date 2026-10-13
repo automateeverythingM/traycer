@@ -288,7 +288,7 @@ describe("DesktopPreferredHostStore", () => {
     });
   });
 
-  describe("a state file written by a NEWER Traycer (rollback)", () => {
+  describe("a state file written by a NEWER Planwise (rollback)", () => {
     // Not a read-failure seam: the file is perfectly readable and perfectly
     // valid - it is just in a format version this build does not know. That
     // used to fall through `version !== PREFERRED_HOST_STATE_VERSION` into an
@@ -323,7 +323,7 @@ describe("DesktopPreferredHostStore", () => {
       const activate = store.save("user-c", "host-3");
       expect(activate.ok).toBe(false);
       if (activate.ok) throw new Error("unreachable");
-      expect(activate.reason).toContain("newer Traycer");
+      expect(activate.reason).toContain("newer Planwise");
       expect(activate.reason).toContain("v2");
       expect(activate.reason).toContain(filePath);
       expect(calls).toContain(

@@ -44,9 +44,9 @@ import { runFixAction } from "@/components/settings/panels/host-doctor-actions";
 // text and the `none`-quiesce text, both plausible refusal reasons for a
 // free-port-and-restart repair.
 const FOREGROUND_REFUSAL_MESSAGE =
-  "A host you started in a terminal is running, and Traycer leaves it alone. Stop it there to continue.";
+  "A host you started in a terminal is running, and Planwise leaves it alone. Stop it there to continue.";
 const NONE_QUIESCE_MESSAGE =
-  "This app no longer starts a local host. Restart Traycer to apply the host lifecycle setting.";
+  "This app no longer starts a local host. Restart Planwise to apply the host lifecycle setting.";
 
 afterEach(() => {
   cleanup();

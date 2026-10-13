@@ -1151,7 +1151,7 @@ function ResourceMonitorHostIncompatibleNotice(props: {
         {scope.hostLabel} can&apos;t report its processes
       </p>
       <p className="max-w-[40ch] text-ui-sm text-muted-foreground">
-        It&apos;s running an older Traycer host, which doesn&apos;t stream
+        It&apos;s running an older Planwise host, which doesn&apos;t stream
         resource usage. Update it to see its processes here.
       </p>
       <button
@@ -1862,7 +1862,7 @@ function DesktopAppResourceSection(props: {
       ...(showOther ? [{ label: "Other", usage: props.app.other }] : []),
     ].filter((group) =>
       matchesResourceSearch(props.searchQuery, [
-        "Traycer Desktop",
+        "Planwise Desktop",
         group.label,
       ]),
     ),
@@ -1880,7 +1880,7 @@ function DesktopAppResourceSection(props: {
         <div className="flex min-w-0 items-center gap-1.5">
           <Monitor className="size-3.5 shrink-0 text-muted-foreground/80" />
           <span className="min-w-0 truncate text-ui-sm font-medium text-foreground">
-            Traycer Desktop
+            Planwise Desktop
           </span>
         </div>
         <div className="flex items-center">
@@ -1936,7 +1936,7 @@ function HostAppResourceSection(props: {
         <div className="flex min-w-0 items-center gap-1.5">
           <Server className="size-3.5 shrink-0 text-muted-foreground/80" />
           <span className="min-w-0 truncate text-ui-sm font-medium text-foreground">
-            Traycer Host
+            Planwise Host
           </span>
         </div>
         <div className="flex items-center">
@@ -4104,8 +4104,8 @@ function desktopAppMatchesSearch(
   searchQuery: string,
 ): boolean {
   if (
-    matchesResourceSearch(searchQuery, ["Traycer Desktop", "Main"]) ||
-    matchesResourceSearch(searchQuery, ["Traycer Desktop", "Renderer"])
+    matchesResourceSearch(searchQuery, ["Planwise Desktop", "Main"]) ||
+    matchesResourceSearch(searchQuery, ["Planwise Desktop", "Renderer"])
   ) {
     return true;
   }
@@ -4115,7 +4115,7 @@ function desktopAppMatchesSearch(
     app.other.processCount > 0;
   return (
     showOther &&
-    matchesResourceSearch(searchQuery, ["Traycer Desktop", "Other"])
+    matchesResourceSearch(searchQuery, ["Planwise Desktop", "Other"])
   );
 }
 
@@ -4123,11 +4123,11 @@ function hostAppMatchesSearch(
   app: AppResourceUsage,
   searchQuery: string,
 ): boolean {
-  if (matchesResourceSearch(searchQuery, ["Traycer Host"])) return true;
+  if (matchesResourceSearch(searchQuery, ["Planwise Host"])) return true;
   return (
     app.process !== null &&
     matchesResourceSearch(searchQuery, [
-      "Traycer Host",
+      "Planwise Host",
       ...processSearchTerms(app.process),
     ])
   );

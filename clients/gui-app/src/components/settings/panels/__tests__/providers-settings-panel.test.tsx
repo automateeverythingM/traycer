@@ -1977,7 +1977,7 @@ describe("<ProvidersSettingsPanel />", () => {
     expect(screen.queryByRole("button", { name: "Retry" })).toBeNull();
   });
 
-  it("lists OpenCode CLI candidates for Traycer and mutates Traycer selection", () => {
+  it("lists OpenCode CLI candidates for Planwise and mutates Planwise selection", () => {
     render(
       <TooltipProvider>
         <ProvidersSettingsPanel />
@@ -2038,7 +2038,7 @@ describe("<ProvidersSettingsPanel />", () => {
     selectTab("CLI & Args");
     expect(
       screen.getByText(
-        "No Amp CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Amp CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
     expect(
@@ -2176,7 +2176,7 @@ describe("<ProvidersSettingsPanel />", () => {
 
     expect(
       screen.getByText(
-        "No Hermes Agent CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Hermes Agent CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
     const guide = screen.getByRole("link", {
@@ -2438,7 +2438,7 @@ describe("<ProvidersSettingsPanel />", () => {
     expect(screen.getByText("Environment variables")).toBeDefined();
     expect(screen.getByDisplayValue("OPENAI_API_KEY")).toBeDefined();
     expect(
-      screen.getByText(/Applied when Traycer spawns the OpenCode/),
+      screen.getByText(/Applied when Planwise spawns the OpenCode/),
     ).toBeDefined();
   });
 

@@ -39,7 +39,7 @@ function toolInputFields(toolName: string, input: unknown) {
 }
 
 describe("chat activity grouping", () => {
-  it("summarizes the Traycer browser REPL as browser activity", () => {
+  it("summarizes the Planwise browser REPL as browser activity", () => {
     const timeline = buildCompleteTimeline([
       toolSegment("browser-1", "traycer-browser/repl", {
         title: "Inspect checkout",

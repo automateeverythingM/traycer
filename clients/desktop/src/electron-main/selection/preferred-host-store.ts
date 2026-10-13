@@ -26,7 +26,7 @@ function unreadableStateReason(filePath: string): string {
  * rolled back; the newer Traycer's host preferences are in this file".
  */
 function newerVersionStateReason(filePath: string, version: number): string {
-  return `preferred-host state file was written by a newer Traycer (format v${version}, this build reads v${PREFERRED_HOST_STATE_VERSION}) and is left untouched: ${filePath}`;
+  return `preferred-host state file was written by a newer Planwise (format v${version}, this build reads v${PREFERRED_HOST_STATE_VERSION}) and is left untouched: ${filePath}`;
 }
 
 interface PreferredHostStoreLogger {

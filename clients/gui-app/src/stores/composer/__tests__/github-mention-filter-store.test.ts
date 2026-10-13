@@ -294,7 +294,7 @@ describe("reconcileRepositorySelection", () => {
     const scopeEntry = {
       githubHost: "github.com",
       owner: "TraycerAI",
-      repo: "Traycer",
+      repo: "Planwise",
     };
     const filter = {
       ...DEFAULT_PULL_REQUEST_MENTION_FILTER,
@@ -334,7 +334,7 @@ describe("restoreUnrepresentedRepositorySelection", () => {
     const stored = {
       githubHost: "github.com",
       owner: "TraycerAI",
-      repo: "Traycer",
+      repo: "Planwise",
     };
     const next = DEFAULT_PULL_REQUEST_MENTION_FILTER;
     expect(

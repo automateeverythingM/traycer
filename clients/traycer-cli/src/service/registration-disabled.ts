@@ -20,7 +20,7 @@ export type ServiceRegistrationDisabled =
   | { readonly kind: "unknown"; readonly reason: string };
 
 /** What a start refused over a disabled registration reports, exactly. */
-export const SERVICE_REGISTRATION_DISABLED_MESSAGE = `the Traycer Host task is disabled in Task Scheduler; enable it or run \`${SERVICE_REINSTALL_COMMAND}\``;
+export const SERVICE_REGISTRATION_DISABLED_MESSAGE = `the Planwise Host task is disabled in Task Scheduler; enable it or run \`${SERVICE_REINSTALL_COMMAND}\``;
 
 /**
  * Read-only. Only Windows has a switch to read: a macOS or Linux

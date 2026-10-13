@@ -23,7 +23,7 @@ import {
 } from "@/stores/settings/settings-store";
 
 const LINK_OPEN_MODE_LABELS: Record<LinkOpenMode, string> = {
-  "in-app": "In Traycer",
+  "in-app": "In Planwise",
   external: "In default browser",
 };
 const LINK_OPEN_DEFAULT_LABELS: Record<LinkOpenSettings["default"], string> = {

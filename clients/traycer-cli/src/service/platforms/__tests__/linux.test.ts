@@ -121,7 +121,7 @@ const execFileAsync = promisify(execFile);
 function labelFor(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host (test)",
+    displayName: "Planwise Host (test)",
     environment: "dev",
     devSlot: null,
   };

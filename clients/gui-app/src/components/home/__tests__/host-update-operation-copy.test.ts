@@ -289,7 +289,7 @@ describe("describeUpdateOperation — a work park under an unmet CLI floor", () 
       cliFloorBlocked: true,
     });
     expect(copy.primary).toBe(
-      "Update waits for Traycer's command-line tools to be updated — see installation help",
+      "Update waits for Planwise's command-line tools to be updated — see installation help",
     );
     // The half that is the actual defect. A sentence naming the tools would
     // pass the assertion above even if it still also claimed a session count,
@@ -315,7 +315,7 @@ describe("describeUpdateOperation — a work park under an unmet CLI floor", () 
         cliFloorBlocked: true,
       }).primary,
     ).toBe(
-      "Update waits for Traycer's command-line tools to be updated — see installation help",
+      "Update waits for Planwise's command-line tools to be updated — see installation help",
     );
   });
 
@@ -375,7 +375,7 @@ describe("describeUpdateOperation — a work park under an unmet CLI floor", () 
         cliFloorBlocked: true,
       }).primary,
     ).toBe(
-      "Last seen: Update waits for Traycer's command-line tools to be updated — see installation help",
+      "Last seen: Update waits for Planwise's command-line tools to be updated — see installation help",
     );
   });
 });
@@ -487,7 +487,7 @@ describe("describeUpdateOperation — verification-refused", () => {
         cliFloorBlocked: false,
       }).primary,
     ).toBe(
-      "Installed v2.1.0. The host is running but refused Traycer's authenticated check, so the update was not verified — see Diagnostics",
+      "Installed v2.1.0. The host is running but refused Planwise's authenticated check, so the update was not verified — see Diagnostics",
     );
   });
 
@@ -505,7 +505,7 @@ describe("describeUpdateOperation — verification-refused", () => {
         cliFloorBlocked: false,
       }).primary,
     ).toBe(
-      "Installed. The host is running but refused Traycer's authenticated check, so the update was not verified — see Diagnostics",
+      "Installed. The host is running but refused Planwise's authenticated check, so the update was not verified — see Diagnostics",
     );
   });
 

@@ -285,7 +285,7 @@ describe("<DevicesSessionsPanel />", () => {
 
   it("shows an alert banner when a real revoke failure occurs", async () => {
     revokeMutateAsync.mockRejectedValueOnce(
-      new Error("Couldn't reach Traycer to sign out this session."),
+      new Error("Couldn't reach Planwise to sign out this session."),
     );
     render(<DevicesSessionsPanel />);
 
@@ -293,7 +293,7 @@ describe("<DevicesSessionsPanel />", () => {
 
     expect(await screen.findByRole("alert")).toBeDefined();
     expect(
-      screen.getByText("Couldn't reach Traycer to sign out this session."),
+      screen.getByText("Couldn't reach Planwise to sign out this session."),
     ).toBeDefined();
   });
 });

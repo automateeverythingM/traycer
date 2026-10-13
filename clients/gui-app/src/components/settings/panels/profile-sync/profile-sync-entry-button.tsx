@@ -30,7 +30,7 @@ function ProfileSyncAvailableEntry(props: {
     "providers.profileSync.overview",
   );
   const open = useProfileSyncModalStore((state) => state.open);
-  let label = "Update Traycer on this device to sync profiles.";
+  let label = "Update Planwise on this device to sync profiles.";
   if (supported === true)
     label = "Sync profiles from this device to your other devices.";
   if (supported === null) label = "Checking device support…";

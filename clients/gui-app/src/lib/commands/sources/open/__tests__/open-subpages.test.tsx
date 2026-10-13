@@ -543,7 +543,7 @@ vi.mock("@/hooks/harnesses/use-gui-harness-catalog", () => ({
         models: [{ harnessId: "claude", slug: "sonnet", label: "Sonnet" }],
       },
       // GUI-only provider must be filtered out of the TUI harness picker.
-      { id: "traycer", label: "Traycer", available: true, models: [] },
+      { id: "traycer", label: "Planwise", available: true, models: [] },
     ],
   }),
 }));

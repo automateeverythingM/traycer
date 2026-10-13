@@ -49,7 +49,7 @@ export const PERMISSIONS = defineSettingsSection("permissions", {
     kind: "group",
     search: { anchor: "permissions-tab-rules" },
     label: "Rules",
-    description: "Your Auto mode rules, on top of Traycer's built-in ones.",
+    description: "Your Auto mode rules, on top of Planwise's built-in ones.",
     breadcrumb: "Permissions",
     availableWhen: alwaysAvailable,
     keywords: ["rules", "policy", "auto mode policy"],
@@ -139,7 +139,7 @@ export const PERMISSIONS = defineSettingsSection("permissions", {
     search: { contributesTo: "rulesTab" },
     label: "Your rules",
     description:
-      "Your rules go on top of Traycer's built-in ones and apply to your account on every machine.",
+      "Your rules go on top of Planwise's built-in ones and apply to your account on every machine.",
     breadcrumb: "Rules",
     availableWhen: alwaysAvailable,
     keywords: [
@@ -160,7 +160,7 @@ export const PERMISSIONS = defineSettingsSection("permissions", {
     kind: "group",
     search: { contributesTo: "rulesTab" },
     label: "Built-in rules",
-    description: "Built-in rules come with each machine's Traycer version.",
+    description: "Built-in rules come with each machine's Planwise version.",
     breadcrumb: "Rules",
     availableWhen: alwaysAvailable,
     keywords: [

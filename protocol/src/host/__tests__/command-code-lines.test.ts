@@ -526,7 +526,7 @@ describe("row-dropping bridges that keep non-row fields", () => {
         1,
         response,
       ),
-      "Listing fallback targets for this chat requires a newer Traycer client.",
+      "Listing fallback targets for this chat requires a newer Planwise client.",
     );
     // Positive control: the same response with a representable tuple passes.
     const ok = downgradeResponseAcrossMajors(
@@ -594,7 +594,7 @@ describe("parse-or-refuse bridges", () => {
     {
       label: "agent.listProviderProfiles 7 -> 6",
       message:
-        "Listing this provider's profiles requires a newer Traycer client.",
+        "Listing this provider's profiles requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["agent.listProviderProfiles"],
@@ -609,7 +609,7 @@ describe("parse-or-refuse bridges", () => {
     {
       label: "agent.getProviderProfileRateLimits 7 -> 6",
       message:
-        "Reading this provider's rate limits requires a newer Traycer client.",
+        "Reading this provider's rate limits requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["agent.getProviderProfileRateLimits"],
@@ -624,7 +624,7 @@ describe("parse-or-refuse bridges", () => {
     {
       label: "agent.configure 7 -> 6",
       message:
-        "Configuring an agent on this harness requires a newer Traycer client.",
+        "Configuring an agent on this harness requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["agent.configure"],
@@ -647,7 +647,7 @@ describe("parse-or-refuse bridges", () => {
     {
       label: "providers.refreshProfileStatus 3 -> 2",
       message:
-        "Refreshing this provider's profile status requires a newer Traycer client.",
+        "Refreshing this provider's profile status requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.refreshProfileStatus"],
@@ -663,7 +663,7 @@ describe("parse-or-refuse bridges", () => {
     {
       label: "epic.getChatRunSettings 4 -> 3",
       message:
-        "Reading this chat's run settings requires a newer Traycer client.",
+        "Reading this chat's run settings requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["epic.getChatRunSettings"],
@@ -676,7 +676,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "drafts.upsert 2 -> 1",
-      message: "This draft requires a newer Traycer client.",
+      message: "This draft requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["drafts.upsert"],
@@ -689,7 +689,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "providers.fallbackPolicy.get 2 -> 1",
-      message: "This fallback policy requires a newer Traycer client.",
+      message: "This fallback policy requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.fallbackPolicy.get"],
@@ -704,7 +704,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "providers.fallbackPolicy.set 2 -> 1",
-      message: "This fallback policy requires a newer Traycer client.",
+      message: "This fallback policy requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.fallbackPolicy.set"],
@@ -719,7 +719,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "providers.fallbackPolicy.reset 2 -> 1",
-      message: "This fallback policy requires a newer Traycer client.",
+      message: "This fallback policy requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.fallbackPolicy.reset"],
@@ -734,7 +734,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "providers.fallbackPolicy.restoreTierGroups 2 -> 1",
-      message: "This fallback policy requires a newer Traycer client.",
+      message: "This fallback policy requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.fallbackPolicy.restoreTierGroups"],
@@ -749,7 +749,7 @@ describe("parse-or-refuse bridges", () => {
     },
     {
       label: "providers.fallbackPolicy.previewTierGroups 2 -> 1",
-      message: "This fallback policy requires a newer Traycer client.",
+      message: "This fallback policy requires a newer Planwise client.",
       run: (representable) =>
         downgradeResponseAcrossMajors(
           hostRpcRegistry["providers.fallbackPolicy.previewTierGroups"],

@@ -35,7 +35,7 @@ function rememberRelocationDeclined(): void {
 // running from a read-only location and declined to relocate - updates can't be
 // installed until the app lives in /Applications.
 export const UPDATE_BLOCKED_LOCATION_REASON =
-  "Move Traycer to your Applications folder to install updates.";
+  "Move Planwise to your Applications folder to install updates.";
 
 /**
  * True when the running macOS app can't apply auto-updates because it lives
@@ -88,9 +88,9 @@ export async function maybePromptRelocateToApplications(): Promise<void> {
     buttons: ["Move to Applications Folder", "Not Now"],
     defaultId: 0,
     cancelId: 1,
-    message: "Move Traycer to your Applications folder?",
+    message: "Move Planwise to your Applications folder?",
     detail:
-      "Traycer is running from a read-only location, so it can't install updates. Move it to the Applications folder to keep it up to date automatically.",
+      "Planwise is running from a read-only location, so it can't install updates. Move it to the Applications folder to keep it up to date automatically.",
   });
   if (response !== 0) {
     // Don't nag on every launch - the disabled in-app download button keeps the
@@ -119,7 +119,7 @@ export async function maybePromptRelocateToApplications(): Promise<void> {
           dialog.showMessageBoxSync({
             type: "warning",
             buttons: ["OK"],
-            message: "Traycer is already open from your Applications folder.",
+            message: "Planwise is already open from your Applications folder.",
             detail: "Quit that copy, then move this one again.",
           });
           return false;
@@ -131,7 +131,7 @@ export async function maybePromptRelocateToApplications(): Promise<void> {
           buttons: ["Replace", "Cancel"],
           defaultId: 0,
           cancelId: 1,
-          message: "Replace the existing Traycer in your Applications folder?",
+          message: "Replace the existing Planwise in your Applications folder?",
           detail:
             "An older copy is already there. Replacing it moves that copy to the Trash.",
         });

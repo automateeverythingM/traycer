@@ -103,7 +103,7 @@ export function refuseCreateWithoutCloudVerdict(input: {
  * dispatch-time re-check against the LIVE host) so the two say one thing.
  */
 export function createWithoutCloudVerdictMessage(hostLabel: string): string {
-  return `Traycer couldn't confirm your sign-in, and ${hostLabel} can't create epics on this device without it. Sign in again, or update the device and try again.`;
+  return `Planwise couldn't confirm your sign-in, and ${hostLabel} can't create epics on this device without it. Sign in again, or update the device and try again.`;
 }
 
 /**
@@ -154,7 +154,7 @@ export function resolveLandingPlacement(
   if (target.client === null) {
     return {
       kind: "refused",
-      message: `Traycer can't access ${target.hostLabel} for this account right now. Sign in again or pick another device.`,
+      message: `Planwise can't access ${target.hostLabel} for this account right now. Sign in again or pick another device.`,
     };
   }
   const clientWithOptionalActiveHost: {

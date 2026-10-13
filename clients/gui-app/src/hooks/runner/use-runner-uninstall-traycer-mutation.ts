@@ -25,7 +25,7 @@ export function useRunnerUninstallTraycer(): UseMutationResult<
     mutationFn: () => {
       if (hostManagement === null) {
         return Promise.reject(
-          new Error("Removing Traycer is not available on this platform."),
+          new Error("Removing Planwise is not available on this platform."),
         );
       }
       return hostManagement.uninstallTraycer();
@@ -36,10 +36,10 @@ export function useRunnerUninstallTraycer(): UseMutationResult<
     // than a failure, and the row stays on Remove Traycer.
     onSuccess: (result) => {
       if (result.kind === "declined") {
-        toastHostRepairDeclined("Remove Traycer", result.message);
+        toastHostRepairDeclined("Remove Planwise", result.message);
       }
     },
     onError: (error) =>
-      toastFromRunnerError(error, "Couldn't remove Traycer's components."),
+      toastFromRunnerError(error, "Couldn't remove Planwise's components."),
   });
 }

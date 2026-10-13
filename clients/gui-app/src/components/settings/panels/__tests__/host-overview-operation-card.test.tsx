@@ -466,7 +466,7 @@ function floorStagedManifest(version: string): HostAvailableManifest {
           ...entry.platforms["darwin-arm64"],
           available: false,
           unavailableReason:
-            "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+            "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
         },
       },
     })),
@@ -787,7 +787,7 @@ describe("HostOverviewOperationCard — a refused completion write is not a fail
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Installed v2.1.0. The host is running but refused Traycer's authenticated check, so the update was not verified — see Diagnostics",
+        "Installed v2.1.0. The host is running but refused Planwise's authenticated check, so the update was not verified — see Diagnostics",
       );
     });
     // On THIS surface the destructive treatment is the whole of the failure
@@ -1147,7 +1147,7 @@ describe("HostOverviewOperationCard — record-derived parks", () => {
     // every tab regardless.
     await selectHostOverviewTab("updates");
     await screen.findByText(
-      "Traycer couldn't determine how its command-line tools were installed on host-a.",
+      "Planwise couldn't determine how its command-line tools were installed on host-a.",
     );
     await screen.findByTestId("host-overview-operation-card");
     // The negatives below are half a pin on their own: a card rendered in some
@@ -1164,7 +1164,7 @@ describe("HostOverviewOperationCard — record-derived parks", () => {
     expect(
       screen.getByTestId("host-overview-operation-phase").textContent,
     ).toBe(
-      "Update waits for Traycer's command-line tools to be updated — see installation help",
+      "Update waits for Planwise's command-line tools to be updated — see installation help",
     );
     // Removing `!updates.stagedEntryOfferable` from the panel's Force gate
     // would expose Force update for this CLI-floor refusal (the floored
@@ -1302,7 +1302,7 @@ describe("HostOverviewOperationCard — record-derived parks", () => {
       expect(screen.queryByTestId("host-busy-force-defer-dialog")).toBeNull();
       expect(
         screen.getByTestId("host-overview-update-attempt-failed").textContent,
-      ).toContain("v1.3.0-rc.3 needs Traycer CLI 1.3.0 or newer on host-a.");
+      ).toContain("v1.3.0-rc.3 needs Planwise CLI 1.3.0 or newer on host-a.");
     });
   });
 
@@ -1360,7 +1360,7 @@ describe("HostOverviewOperationCard — record-derived parks", () => {
       expect(
         screen.getByTestId("host-overview-update-attempt-failed").textContent,
       ).toContain(
-        "Traycer couldn't verify that v1.3.0-rc.3 can be installed on host-a.",
+        "Planwise couldn't verify that v1.3.0-rc.3 can be installed on host-a.",
       );
       expect(screen.queryByTestId("host-busy-force-defer-dialog")).toBeNull();
     });
@@ -2300,13 +2300,13 @@ describe("HostOverviewOperationCard — a work park under an unmet CLI floor", (
     // help" button are the answer card's, on Updates.
     await selectHostOverviewTab("updates");
     await screen.findByText(
-      "Traycer couldn't determine how its command-line tools were installed on host-a.",
+      "Planwise couldn't determine how its command-line tools were installed on host-a.",
     );
     await waitFor(() => {
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Update waits for Traycer's command-line tools to be updated — see installation help",
+        "Update waits for Planwise's command-line tools to be updated — see installation help",
       );
     });
     // The affordance the sentence points at is genuinely on screen. Without
@@ -2452,7 +2452,7 @@ describe("HostOverviewOperationCard — the floor sentence and its affordance", 
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Update waits for Traycer's command-line tools to be updated — see installation help",
+        "Update waits for Planwise's command-line tools to be updated — see installation help",
       );
     });
     expect(
@@ -2551,7 +2551,7 @@ describe("HostOverviewOperationCard — the floor sentence and its affordance", 
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Update waits for Traycer's command-line tools to be updated — see installation help",
+        "Update waits for Planwise's command-line tools to be updated — see installation help",
       );
     });
   });
@@ -2633,7 +2633,7 @@ describe("HostOverviewOperationCard — the floor sentence and its affordance", 
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Update waits for Traycer's command-line tools to be updated — see installation help",
+        "Update waits for Planwise's command-line tools to be updated — see installation help",
       );
     });
     // The half that makes this cell different from (3b): the handler exists,
@@ -2676,7 +2676,7 @@ describe("HostOverviewOperationCard — the floor sentence and its affordance", 
       expect(
         screen.getByTestId("host-overview-operation-phase").textContent,
       ).toBe(
-        "Update waits for Traycer's command-line tools to be updated — see installation help",
+        "Update waits for Planwise's command-line tools to be updated — see installation help",
       );
     });
     expect(

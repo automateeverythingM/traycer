@@ -318,7 +318,7 @@ export const agentListProviderProfilesDowngradeV70ToV60 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -345,7 +345,7 @@ export const agentListProviderProfilesDowngradeV70ToV50 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -369,7 +369,7 @@ export const agentListProviderProfilesDowngradeV70ToV40 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -393,7 +393,7 @@ export const agentListProviderProfilesDowngradeV70ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -417,7 +417,7 @@ export const agentListProviderProfilesDowngradeV70ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -441,7 +441,7 @@ export const agentListProviderProfilesDowngradeV70ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -478,7 +478,7 @@ export const agentListProviderProfilesDowngradeV60ToV50 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -502,7 +502,7 @@ export const agentListProviderProfilesDowngradeV60ToV40 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -526,7 +526,7 @@ export const agentListProviderProfilesDowngradeV60ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -567,7 +567,7 @@ export const agentListProviderProfilesDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -609,7 +609,7 @@ export const agentListProviderProfilesDowngradeV30ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -635,7 +635,7 @@ export const agentListProviderProfilesDowngradeV30ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -678,7 +678,7 @@ export const agentListProviderProfilesDowngradeV40ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -704,7 +704,7 @@ export const agentListProviderProfilesDowngradeV40ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -730,7 +730,7 @@ export const agentListProviderProfilesDowngradeV40ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -773,7 +773,7 @@ export const agentListProviderProfilesDowngradeV50ToV40 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -800,7 +800,7 @@ export const agentListProviderProfilesDowngradeV50ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -826,7 +826,7 @@ export const agentListProviderProfilesDowngradeV50ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -853,7 +853,7 @@ export const agentListProviderProfilesDowngradeV50ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -877,7 +877,7 @@ export const agentListProviderProfilesDowngradeV60ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -901,7 +901,7 @@ export const agentListProviderProfilesDowngradeV60ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing this provider's profiles requires a newer Traycer client.",
+            "Listing this provider's profiles requires a newer Planwise client.",
         },
       };
     }
@@ -1169,7 +1169,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV60 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1197,7 +1197,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV50 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1222,7 +1222,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV40 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1247,7 +1247,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV30 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1272,7 +1272,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1297,7 +1297,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV70ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1338,7 +1338,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV60ToV50 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1363,7 +1363,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV60ToV40 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1388,7 +1388,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV60ToV30 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1413,7 +1413,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV60ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1438,7 +1438,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV60ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading this provider's rate limits requires a newer Traycer client.",
+              "Reading this provider's rate limits requires a newer Planwise client.",
           },
         };
       }
@@ -1490,7 +1490,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV20ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1532,7 +1532,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV30ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1566,7 +1566,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV30ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1619,7 +1619,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV40ToV30 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1653,7 +1653,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV40ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1692,7 +1692,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV40ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1740,7 +1740,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV50ToV40 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1773,7 +1773,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV50ToV30 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1807,7 +1807,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV50ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -1844,7 +1844,7 @@ export const agentGetProviderProfileRateLimitsDowngradeV50ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED",
             message:
-              "Reading rate limits for this provider requires a newer Traycer client.",
+              "Reading rate limits for this provider requires a newer Planwise client.",
           },
         };
       }
@@ -2249,7 +2249,7 @@ export const agentConfigureDowngradeV70ToV60 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2275,7 +2275,7 @@ export const agentConfigureDowngradeV70ToV50 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2298,7 +2298,7 @@ export const agentConfigureDowngradeV70ToV40 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2321,7 +2321,7 @@ export const agentConfigureDowngradeV70ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2344,7 +2344,7 @@ export const agentConfigureDowngradeV70ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2364,7 +2364,7 @@ export const agentConfigureDowngradeV70ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2375,7 +2375,7 @@ export const agentConfigureDowngradeV70ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2413,7 +2413,7 @@ export const agentConfigureDowngradeV60ToV50 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2436,7 +2436,7 @@ export const agentConfigureDowngradeV60ToV40 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2459,7 +2459,7 @@ export const agentConfigureDowngradeV60ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2567,7 +2567,7 @@ export const agentConfigureDowngradeV20ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2585,7 +2585,7 @@ export const agentConfigureDowngradeV20ToV10 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2628,7 +2628,7 @@ export const agentConfigureDowngradeV30ToV20 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2673,7 +2673,7 @@ export const agentConfigureDowngradeV40ToV30 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2697,7 +2697,7 @@ export const agentConfigureDowngradeV40ToV20 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2718,7 +2718,7 @@ export const agentConfigureDowngradeV40ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2729,7 +2729,7 @@ export const agentConfigureDowngradeV40ToV10 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2775,7 +2775,7 @@ export const agentConfigureDowngradeV50ToV40 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2799,7 +2799,7 @@ export const agentConfigureDowngradeV50ToV30 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2822,7 +2822,7 @@ export const agentConfigureDowngradeV60ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2842,7 +2842,7 @@ export const agentConfigureDowngradeV60ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2853,7 +2853,7 @@ export const agentConfigureDowngradeV60ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Configuring an agent on this harness requires a newer Traycer client.",
+            "Configuring an agent on this harness requires a newer Planwise client.",
         },
       };
     }
@@ -2877,7 +2877,7 @@ export const agentConfigureDowngradeV50ToV20 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2899,7 +2899,7 @@ export const agentConfigureDowngradeV50ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2911,7 +2911,7 @@ export const agentConfigureDowngradeV50ToV10 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }
@@ -2932,7 +2932,7 @@ export const agentConfigureDowngradeV30ToV10 = defineDowngradePath<
     error: {
       code: "DOWNGRADE_UNSUPPORTED",
       message:
-        "Selecting an agent permission mode requires a newer Traycer host. Upgrade the host before configuring this agent.",
+        "Selecting an agent permission mode requires a newer Planwise host. Upgrade the host before configuring this agent.",
     },
   }),
   downgradeResponse: (response) => {
@@ -2944,7 +2944,7 @@ export const agentConfigureDowngradeV30ToV10 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "Configuring this agent requires a newer Traycer client.",
+          message: "Configuring this agent requires a newer Planwise client.",
         },
       };
     }

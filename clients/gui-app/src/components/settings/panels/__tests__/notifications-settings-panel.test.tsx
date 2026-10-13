@@ -208,7 +208,7 @@ describe("<NotificationsSettingsPanel /> severity policy", () => {
       host: "smtp.example.com",
       port: 587,
       user: "me@example.com",
-      from: "Traycer <me@example.com>",
+      from: "Planwise <me@example.com>",
       password: { kind: "leaveUnchanged" },
     });
   });
@@ -976,7 +976,7 @@ function makeNotificationConfig(): NotificationConfig {
         host: "smtp.example.com",
         port: 587,
         user: "me@example.com",
-        from: "Traycer <me@example.com>",
+        from: "Planwise <me@example.com>",
         credentialConfigured: true,
         lastError: "previous email failed",
       },

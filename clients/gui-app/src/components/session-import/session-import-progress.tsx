@@ -295,7 +295,7 @@ function SessionImportSummary(props: {
           ) : null}
           {!onboarding && counts.skippedAlreadyImported > 0 ? (
             <p className={cn("text-ui-xs", tone.muted)}>
-              {counts.skippedAlreadyImported} already in Traycer
+              {counts.skippedAlreadyImported} already in Planwise
             </p>
           ) : null}
         </div>
@@ -380,7 +380,7 @@ function summaryBody(
       ? "Ready when you land in the app."
       : "Ready in your task list.";
   if (onboarding && noDetailLine && counts.skippedAlreadyImported > 0)
-    return "Everything you picked is already in Traycer.";
+    return "Everything you picked is already in Planwise.";
   return null;
 }
 
@@ -394,7 +394,7 @@ function SummaryChips(props: {
   return (
     <div className="flex flex-wrap items-center justify-center gap-1.5">
       {skipped > 0 ? (
-        <SummaryChip testId={null}>{skipped} already in Traycer</SummaryChip>
+        <SummaryChip testId={null}>{skipped} already in Planwise</SummaryChip>
       ) : null}
       {failed > 0 ? (
         <SummaryChip testId="session-import-not-imported">

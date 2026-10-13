@@ -212,7 +212,7 @@ function ActionCardBody(props: { readonly name: string }): ReactNode {
           Reflect.set(window, "__hoverCardLinkClicks", clicks + 1);
         }}
       >
-        Install Traycer in WSL
+        Install Planwise in WSL
       </a>
       <button type="button" data-testid={`${props.name}-action`}>
         Refresh

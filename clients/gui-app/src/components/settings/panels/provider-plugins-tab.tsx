@@ -51,7 +51,7 @@ const EMPTY_PLUGINS: readonly ProviderPlugin[] = [];
  * ["read-only"]` already renders on screen without being told.
  */
 const SESSION_TOOLS_NOTICE =
-  "Plugin tools may not appear in Traycer-launched sessions. They load for this provider's own CLI, but not for the session stream Traycer drives.";
+  "Plugin tools may not appear in Planwise-launched sessions. They load for this provider's own CLI, but not for the session stream Planwise drives.";
 
 export function ProviderPluginsTab({
   state,

@@ -196,7 +196,7 @@ export async function resolveBundledTraycerCliInvocation(): Promise<TraycerCliIn
     return { command: bundled, args: [] };
   }
   throw new Error(
-    `traycer CLI: no bundled CLI found (looked for ${cliBinaryName()} under app resources). This is a broken install - run \`traycer host doctor\` or reinstall Traycer.`,
+    `traycer CLI: no bundled CLI found (looked for ${cliBinaryName()} under app resources). This is a broken install - run \`traycer host doctor\` or reinstall Planwise.`,
   );
 }
 

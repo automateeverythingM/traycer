@@ -105,7 +105,7 @@ function LocalStoreRepairDialog(props: {
       description={`${repairRefusal?.message ?? refusal.message} ${shownRemedy}`}
       cascadeSummary={
         repairable
-          ? "Rebinding claims this data directory for this host. Confirm that no other Traycer host is using it — rebinding while another host is writing could put your local data at risk."
+          ? "Rebinding claims this data directory for this host. Confirm that no other Planwise host is using it — rebinding while another host is writing could put your local data at risk."
           : null
       }
       blockedReason={

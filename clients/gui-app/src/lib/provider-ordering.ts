@@ -140,7 +140,7 @@ export function providerCliIdForHarness(
 }
 
 export function providerDisplayName(providerId: ProviderId): string {
-  if (providerId === "traycer") return "Traycer Inference";
+  if (providerId === "traycer") return "Planwise Inference";
   return PROVIDER_DISPLAY_NAMES[providerId];
 }
 

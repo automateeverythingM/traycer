@@ -4,7 +4,7 @@ import type { HostControllerStatus } from "../../host/host-controller-types";
 const electronMock = vi.hoisted(() => ({
   app: {
     getPath: vi.fn(() => "/tmp"),
-    getName: vi.fn(() => "Traycer"),
+    getName: vi.fn(() => "Planwise"),
     getVersion: vi.fn(() => "0.0.0"),
     on: vi.fn(),
   },

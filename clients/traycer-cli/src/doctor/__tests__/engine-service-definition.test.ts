@@ -114,7 +114,7 @@ function stageQuietEnvironment(): void {
     }),
     serviceLabelFor: (environment: string) => ({
       id: `ai.traycer.host.${environment}`,
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -202,7 +202,7 @@ describe("runDoctor service-definition issues", () => {
     writePolicy("stop-if-idle");
     mocks.inspect.mockResolvedValue({
       kind: "unrecognized",
-      reason: "its ExecStart is not a Traycer host start",
+      reason: "its ExecStart is not a Planwise host start",
     });
 
     const result = await runDoctorHere();
@@ -216,7 +216,7 @@ describe("runDoctor service-definition issues", () => {
     expect(issue?.terminalCommand).toBe("traycer host service install");
     expect(issue?.details).toEqual({
       mode: "stop-if-idle",
-      reason: "its ExecStart is not a Traycer host start",
+      reason: "its ExecStart is not a Planwise host start",
     });
   });
 

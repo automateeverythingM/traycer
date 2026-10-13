@@ -282,7 +282,7 @@ afterEach(() => {
   useTabsStore.setState(useTabsStore.getInitialState(), true);
 });
 
-describe("Settings ▸ General ▸ When you quit Traycer - reachable signed out", () => {
+describe("Settings ▸ General ▸ When you quit Planwise - reachable signed out", () => {
   it("signed out, direct navigation to /when-you-quit renders the card and nothing else", async () => {
     const runnerHost = makeRunnerHost({
       menu: createMenu(),

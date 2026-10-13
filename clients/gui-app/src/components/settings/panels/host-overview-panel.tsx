@@ -2651,12 +2651,12 @@ function LocalHostDownActions(props: {
           onClick={() => {
             reinstall.mutate(undefined, {
               onSuccess: () => {
-                toast.success(`Reinstalling Traycer on ${props.hostName}…`);
+                toast.success(`Reinstalling Planwise on ${props.hostName}…`);
               },
               onError: (error) =>
                 toastFromRunnerError(
                   error,
-                  `Couldn't reinstall Traycer on ${props.hostName}.`,
+                  `Couldn't reinstall Planwise on ${props.hostName}.`,
                 ),
             });
           }}
@@ -2668,7 +2668,7 @@ function LocalHostDownActions(props: {
               variant={undefined}
             />
           ) : null}
-          Reinstall Traycer
+          Reinstall Planwise
         </Button>
       ) : null}
       <Button

@@ -123,7 +123,7 @@ export function AutomaticStatus(props: {
   }
   const copilotLine = props.copilotEnabled ? (
     <StatusSubLine testId="auto-judge-copilot-fallback">
-      Copilot conversations use premium requests when Traycer can&apos;t answer:{" "}
+      Copilot conversations use premium requests when Planwise can&apos;t answer:{" "}
       {COPILOT_PREMIUM_REQUESTS_PER_HOUR} per hour.
     </StatusSubLine>
   ) : null;
@@ -159,9 +159,9 @@ export function AutomaticStatus(props: {
               hostRunsEffort={props.hostRunsEffort}
             />
           )}{" "}
-          on Traycer
+          on Planwise
         </span>{" "}
-        · uses Traycer credits
+        · uses Planwise credits
       </StatusLine>
       {copilotLine}
     </>

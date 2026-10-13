@@ -94,7 +94,7 @@ import { DesktopDialogHost } from "@/components/layout/dialogs/desktop-dialog-ho
 import { ReportIssueDialogHost } from "@/components/layout/dialogs/report-issue-dialog-host";
 
 const snapshot: DesktopSupportSnapshot = {
-  appName: "Traycer",
+  appName: "Planwise",
   appVersion: "1.2.3",
   platform: "darwin",
   arch: "arm64",

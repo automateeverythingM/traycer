@@ -54,7 +54,7 @@ export function OpenEpicInNewWindowDialog(
             Open Epic in New Window
           </DialogTitle>
           <DialogDescription className="sr-only">
-            Select an Epic to move or focus in a Traycer window.
+            Select an Epic to move or focus in a Planwise window.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-2">

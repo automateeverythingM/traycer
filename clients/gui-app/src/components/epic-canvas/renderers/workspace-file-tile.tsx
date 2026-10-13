@@ -1252,7 +1252,7 @@ function readFileReportContext(
     return createReportIssueContext({
       title: "Workspace file preview failed to load from the host",
       message:
-        "The app could not reach the Traycer host to load the file preview.",
+        "The app could not reach the Planwise host to load the file preview.",
       // Narrowed, never asserted: TanStack's error generic is an unchecked
       // cast, so a bare `Error` can occupy this channel.
       code: error instanceof HostRpcError ? error.code : null,

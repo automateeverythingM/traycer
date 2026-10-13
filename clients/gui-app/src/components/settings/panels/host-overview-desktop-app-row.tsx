@@ -91,14 +91,14 @@ export function HostOverviewDesktopAppRow(
     <div
       ref={rowRef}
       role="group"
-      aria-label="Traycer Desktop"
+      aria-label="Planwise Desktop"
       tabIndex={-1}
       className="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-md border border-border/40 px-4 py-3 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       data-testid="host-overview-desktop-app-row"
     >
       <div className="min-w-0 flex-1">
         <p className="text-ui-sm font-medium text-foreground">
-          Traycer Desktop
+          Planwise Desktop
         </p>
         <p
           className="text-ui-xs text-foreground"

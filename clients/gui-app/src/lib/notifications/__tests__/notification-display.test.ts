@@ -283,7 +283,7 @@ describe("notification display", () => {
     );
 
     expect(showNotification).toHaveBeenCalledWith({
-      title: "Traycer",
+      title: "Planwise",
       body: "2 new notifications",
       payload: buildNotificationActivationEnvelope({
         route: {
@@ -306,7 +306,7 @@ describe("notification display", () => {
 
     renderActionableToast();
     fireEvent.click(
-      screen.getByRole("button", { name: "Traycer 2 new notifications" }),
+      screen.getByRole("button", { name: "Planwise 2 new notifications" }),
     );
 
     expect(onToastClick).toHaveBeenCalledWith(first);
@@ -1357,7 +1357,7 @@ describe("forwarded foreground display gate", () => {
     const playChime = vi.fn();
     displayForwardedForegroundNotification(
       {
-        title: "Traycer",
+        title: "Planwise",
         body: "2 new notifications",
         payload: null,
         replaceKey: "notification-batch",
@@ -1615,7 +1615,7 @@ describe("forwarded foreground display gate", () => {
 
     displayForwardedForegroundNotification(
       {
-        title: "Traycer",
+        title: "Planwise",
         body: "2 new notifications",
         payload: null,
         replaceKey: "notification-batch",

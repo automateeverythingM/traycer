@@ -107,13 +107,13 @@ describe("<HostOverviewDesktopAppRow />", () => {
       snapshotWith({
         status: "available",
         latestVersion: "1.5.0",
-        installBlockedReason: "Move Traycer to /Applications to update.",
+        installBlockedReason: "Move Planwise to /Applications to update.",
       }),
       bridge,
     );
     const action = screen.getByTestId("host-overview-desktop-app-action");
     expect(action.hasAttribute("disabled")).toBe(true);
-    screen.getByText("Move Traycer to /Applications to update.");
+    screen.getByText("Move Planwise to /Applications to update.");
     fireEvent.click(action);
     expect(bridge.downloadUpdate).not.toHaveBeenCalled();
   });
@@ -283,7 +283,7 @@ describe("<HostOverviewDesktopAppRow />", () => {
         latestVersion: "1.6.0",
         errorMessage: "download failed",
         installGuidance: {
-          summary: "Install Traycer 1.5.0",
+          summary: "Install Planwise 1.5.0",
           steps: ["Run the command"],
           command: "sudo dpkg -i traycer-1.5.0.deb",
           releaseUrl: "https://example.invalid/release",
@@ -333,9 +333,9 @@ describe("<HostOverviewDesktopAppRow />", () => {
     expect(bridge.installUpdate).not.toHaveBeenCalled();
   });
 
-  it("is exposed as a group named Traycer Desktop", () => {
+  it("is exposed as a group named Planwise Desktop", () => {
     renderRow(snapshotWith({}), new StubBridge());
-    screen.getByRole("group", { name: "Traycer Desktop" });
+    screen.getByRole("group", { name: "Planwise Desktop" });
   });
 
   it("keeps ONE button node from available through downloading to ready", () => {

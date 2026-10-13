@@ -442,14 +442,14 @@ describe("RulesTab", () => {
   });
 
   describe("section order", () => {
-    it("says a stored body in another order will be saved in Traycer's", () => {
+    it("says a stored body in another order will be saved in Planwise's", () => {
       policy.current = record({
         body: "## Allow\n\n- a\n\n## Environment\n\nenv\n",
       });
       render(tab({}));
 
       expect(screen.getByTestId("auto-policy-reorder-notice").textContent).toBe(
-        "Saved in Traycer's section order.",
+        "Saved in Planwise's section order.",
       );
     });
 
@@ -542,7 +542,7 @@ describe("RulesTab", () => {
       render(tab({}));
 
       expect(screen.getByTestId("auto-policy-banner").textContent).toBe(
-        "Traycer can't read your saved rules right now, so saving is off. Reopen Settings to try again.",
+        "Planwise can't read your saved rules right now, so saving is off. Reopen Settings to try again.",
       );
       expect(input("allow").disabled).toBe(true);
       expect((await settledSave()).disabled).toBe(true);

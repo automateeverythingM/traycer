@@ -435,5 +435,5 @@ export function clockSkewStreamReason(state: ServerClockState): string {
   const offsetMs = state.offsetMs;
   const magnitude =
     offsetMs === null ? "" : ` (${describeClockOffset(offsetMs)})`;
-  return `System clock is wrong${magnitude}; Traycer cannot authenticate until it is corrected`;
+  return `System clock is wrong${magnitude}; Planwise cannot authenticate until it is corrected`;
 }

@@ -881,7 +881,7 @@ describe("<MobileHistoryList /> (via <EpicsListPanel /> at a mobile viewport)", 
       renderPanel("page", "/");
 
       const pin = await screen.findByRole("button", {
-        name: "Pinning Local only epic needs a newer Traycer host",
+        name: "Pinning Local only epic needs a newer Planwise host",
       });
       expect(pin.getAttribute("aria-disabled")).toBe("true");
 

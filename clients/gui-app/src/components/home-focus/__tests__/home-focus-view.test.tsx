@@ -2435,9 +2435,9 @@ describe("<HomeFocusView /> degraded-host reason lines", () => {
     // unattributed line: that line is reserved for an EMPTY degradedHosts.
     expect(reasons).toEqual([
       "Lost connection to Alpha. Its tasks aren't shown.",
-      "Beta isn't connected to Traycer, so tasks from your other machines may be missing.",
+      "Beta isn't connected to Planwise, so tasks from your other machines may be missing.",
       "Reconnecting to Gamma…",
-      "Delta is reconnecting to Traycer, so tasks from your other machines may be missing.",
+      "Delta is reconnecting to Planwise, so tasks from your other machines may be missing.",
     ]);
   });
 
@@ -2469,7 +2469,7 @@ describe("<HomeFocusView /> degraded-host reason lines", () => {
       status: "unverified",
       cloudVerdictLoss: "unreachable",
       expected:
-        "Can't reach Traycer to confirm your sign-in, so running tasks may not load until it can.",
+        "Can't reach Planwise to confirm your sign-in, so running tasks may not load until it can.",
     },
     {
       name: "unverified + session-rejected",

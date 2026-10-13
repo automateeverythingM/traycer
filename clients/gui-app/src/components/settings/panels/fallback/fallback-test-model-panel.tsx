@@ -870,7 +870,7 @@ function TestPickers(props: {
       </div>
       <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-2 text-ui-xs text-muted-foreground">
         {/* Only a provider with accounts to choose between gets the control;
-            one with none (Traycer) runs on no account and sends `null`. */}
+            one with none (Planwise) runs on no account and sends `null`. */}
         {tuple.accounts.length === 0 ? null : (
           <span className="flex min-w-0 flex-wrap items-center gap-2">
             <span id={accountLabelId}>Account</span>
@@ -1014,7 +1014,7 @@ function TestVerdict(props: {
       return (
         <p className="text-ui-sm" data-testid="fallback-test-model-steps-off">
           Your steps are turned off for {TEST_FAILURE_PLURALS[verdict.failure]},
-          so Traycer doesn&apos;t try another model.
+          so Planwise doesn&apos;t try another model.
         </p>
       );
     case "tier-off":
@@ -1045,12 +1045,12 @@ function TierOffLine(props: {
       {steps === null ? (
         <>
           The equivalent-model step doesn&apos;t run for these errors, and what
-          Traycer does instead {DEPENDS_ON_THE_ERROR}.
+          Planwise does instead {DEPENDS_ON_THE_ERROR}.
         </>
       ) : (
         <>
           The equivalent-model step is off for {TEST_FAILURE_PLURALS[failure]},
-          so Traycer goes straight to <StepChain steps={steps} />.
+          so Planwise goes straight to <StepChain steps={steps} />.
         </>
       )}
     </p>
@@ -1157,13 +1157,13 @@ function RoutedAnswerView(props: {
     >
       {answer.walkedTierName === null ? (
         <span>
-          On this host, Traycer would route this model to no tier right now - it
+          On this host, Planwise would route this model to no tier right now - it
           reads {harnessLabel(blocked.harnessId)}&apos;s model names
           differently.
         </span>
       ) : (
         <>
-          <span>On this host, Traycer would use the</span>
+          <span>On this host, Planwise would use the</span>
           <TierPill name={answer.walkedTierName} />
           <span>
             tier right now - it reads {harnessLabel(blocked.harnessId)}&apos;s
@@ -1211,7 +1211,7 @@ function VerdictHeader(props: {
       className="flex flex-wrap items-center gap-x-2 gap-y-1 text-ui-sm"
       data-testid="fallback-test-model-header"
     >
-      <span>Traycer uses the</span>
+      <span>Planwise uses the</span>
       <TierPill name={tierName} />
       <span>tier</span>
       {routing.kind === "own-tier" ? (
@@ -1291,7 +1291,7 @@ function TestRowsView(props: {
             testId={undefined}
             variant="orbit"
           />
-          Checking what Traycer would try…
+          Checking what Planwise would try…
         </p>
       ) : null}
       {status === "failed" ? (

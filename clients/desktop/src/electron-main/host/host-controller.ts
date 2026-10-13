@@ -204,7 +204,7 @@ const HOST_NOT_SERVICE_RUN_CODE = "E_HOST_NOT_SERVICE_RUN";
 // `host service start` could not start the service: on a packaged Mac whose
 // job launchd no longer has loaded, the start that is left is a register.
 const SERVICE_CONTROL_FAILED_CODE = "E_SERVICE_CONTROL_FAILED";
-const LOCK_BUSY_MESSAGE = "Another Traycer process is managing the host.";
+const LOCK_BUSY_MESSAGE = "Another Planwise process is managing the host.";
 
 /**
  * Why the CLI refused an apply because this account cannot start the service
@@ -342,9 +342,9 @@ function sleep(ms: number): Promise<void> {
 // actionable copy can never drift into two texts that quietly diverge.
 function approvalRequiredMessage(): string {
   return (
-    "Traycer's background host is registered but disabled by macOS. " +
+    "Planwise's background host is registered but disabled by macOS. " +
     "Open System Settings → General → Login Items & Extensions and turn on " +
-    'Traycer under "Allow in the Background", then click Retry.'
+    'Planwise under "Allow in the Background", then click Retry.'
   );
 }
 
@@ -367,10 +367,10 @@ function approvalRequiredMessage(): string {
  */
 function staleLoginItemMessage(): string {
   return (
-    "Traycer's background host cannot be registered: an older Traycer login " +
+    "Planwise's background host cannot be registered: an older Planwise login " +
     "item is still registered with macOS under the same name, and it has to " +
     "be removed by hand. Open System Settings → General → Login Items & " +
-    'Extensions, remove every Traycer entry under "Allow in the Background", ' +
+    'Extensions, remove every Planwise entry under "Allow in the Background", ' +
     "then click Retry."
   );
 }
@@ -1960,7 +1960,7 @@ export class HostController {
     );
     if (!readiness.ready) {
       throw new HostReadinessError(
-        `Traycer Host did not become reachable after activation (${readiness.reason}) - run \`traycer host doctor\` to recover.`,
+        `Planwise Host did not become reachable after activation (${readiness.reason}) - run \`traycer host doctor\` to recover.`,
       );
     }
     if (
@@ -1968,7 +1968,7 @@ export class HostController {
       readiness.version !== expectedRuntimeVersion
     ) {
       throw new HostReadinessError(
-        `Traycer Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
+        `Planwise Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
       );
     }
     return readiness;
@@ -2016,7 +2016,7 @@ export class HostController {
       );
     }
     throw new Error(
-      "Traycer Host activation could not be confirmed - run `traycer host doctor` to recover.",
+      "Planwise Host activation could not be confirmed - run `traycer host doctor` to recover.",
     );
   }
 
@@ -2036,7 +2036,7 @@ export class HostController {
     await this.stampIfNullRuntime(expectedInstallGeneration, readiness);
     if (!(await this.publishReachableHostSnapshot())) {
       throw new HostReadinessError(
-        "Traycer Host became unavailable while activation was being published - run `traycer host doctor` to recover.",
+        "Planwise Host became unavailable while activation was being published - run `traycer host doctor` to recover.",
       );
     }
   }
@@ -2212,7 +2212,7 @@ export class HostController {
       message:
         `Failed to register the host login item (status=${failedStatus}), ` +
         `and the fallback service registration failed: ${outcome.message} ` +
-        `Run 'traycer host service uninstall' and relaunch Traycer, or run ` +
+        `Run 'traycer host service uninstall' and relaunch Planwise, or run ` +
         `'traycer host doctor' to recover.`,
     };
   }
@@ -2578,7 +2578,7 @@ export class HostController {
             loginItemStatus,
             refusal: takeover.refusal,
             doctorMessage:
-              "Traycer Host's login item could not be re-registered and no host is running to restart - run `traycer host doctor` to recover.",
+              "Planwise Host's login item could not be re-registered and no host is running to restart - run `traycer host doctor` to recover.",
           }),
         );
       }
@@ -2890,7 +2890,7 @@ export class HostController {
       // and this is the one card a locked-out user actually reads.
       return {
         kind: "retryable-readiness-timeout",
-        message: `Traycer Host did not start within ${HOST_READY_TIMEOUT_MS}ms (${readiness.reason}) - run \`traycer host doctor\` to recover.`,
+        message: `Planwise Host did not start within ${HOST_READY_TIMEOUT_MS}ms (${readiness.reason}) - run \`traycer host doctor\` to recover.`,
         prePid,
         expectedRuntimeVersion,
       };
@@ -2900,7 +2900,7 @@ export class HostController {
       readiness.version !== expectedRuntimeVersion
     ) {
       return this.failedAfterServiceCycle(
-        `Traycer Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
+        `Planwise Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
       );
     }
     try {
@@ -2913,7 +2913,7 @@ export class HostController {
     }
     if (!(await this.publishReachableHostSnapshot())) {
       return this.failedAfterServiceCycle(
-        "Traycer Host became unavailable while activation was being published - run `traycer host doctor` to recover.",
+        "Planwise Host became unavailable while activation was being published - run `traycer host doctor` to recover.",
       );
     }
     return { kind: "ok", value: { activated: true } };
@@ -3402,7 +3402,7 @@ export class HostController {
       readiness.version !== expectedRuntimeVersion
     ) {
       return this.failedAfterServiceCycle(
-        `Traycer Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
+        `Planwise Host published runtime ${readiness.version} after activation, but the committed installation expects ${expectedRuntimeVersion}. Run \`traycer host doctor\` to recover.`,
       );
     }
     try {
@@ -3416,7 +3416,7 @@ export class HostController {
     });
     if (!(await this.publishReachableHostSnapshot())) {
       return this.failedAfterServiceCycle(
-        "Traycer Host became unavailable while the pending LaunchAgent revision was being published - run `traycer host doctor` to recover.",
+        "Planwise Host became unavailable while the pending LaunchAgent revision was being published - run `traycer host doctor` to recover.",
       );
     }
     return {
@@ -3863,7 +3863,7 @@ export class HostController {
     }
     if (!(await this.publishReachableHostSnapshot())) {
       return this.failedAfterServiceCycle(
-        "Traycer Host became unavailable while ensure was being published - run `traycer host doctor` to recover.",
+        "Planwise Host became unavailable while ensure was being published - run `traycer host doctor` to recover.",
       );
     }
     return {
@@ -3936,7 +3936,7 @@ export class HostController {
     );
     if (version === null) {
       return this.failedAfterServiceCycle(
-        "Traycer Host became unavailable while ensure was being published - run `traycer host doctor` to recover.",
+        "Planwise Host became unavailable while ensure was being published - run `traycer host doctor` to recover.",
       );
     }
     return {
@@ -5124,7 +5124,7 @@ export class HostController {
             message: parkedWithNoHostMessage({
               loginItemStatus,
               refusal: takeover.refusal,
-              doctorMessage: `Traycer Host's login item could not be re-registered (status=${loginItemStatus}) - run \`traycer host doctor\` to recover.`,
+              doctorMessage: `Planwise Host's login item could not be re-registered (status=${loginItemStatus}) - run \`traycer host doctor\` to recover.`,
             }),
             errorCode: null,
           };
@@ -5634,7 +5634,7 @@ export class HostController {
             return {
               kind: "deferred",
               message:
-                "Traycer Host's login item could not be re-registered right now; the update is installed and will finish when the host restarts.",
+                "Planwise Host's login item could not be re-registered right now; the update is installed and will finish when the host restarts.",
             };
           }
           if (step.phase === "register-failed") {

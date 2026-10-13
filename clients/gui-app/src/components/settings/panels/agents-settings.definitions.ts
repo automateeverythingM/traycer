@@ -6,7 +6,7 @@ export const AGENT_SELECTION = defineSettingsSection("agents", {
     availableWhen: alwaysAvailable,
     label: "Agent selection",
     description:
-      "How Traycer picks a coding agent, model, and reasoning effort when it spawns child agents.",
+      "How Planwise picks a coding agent, model, and reasoning effort when it spawns child agents.",
     keywords: [
       "agents",
       "guide",

@@ -54,7 +54,7 @@ describe("messageTemplate", () => {
     loadedPath: string,
     rawLabelId: string,
   ): string =>
-    `service install: Traycer Desktop owns host registration on this machine (SMAppService agent '${agentLabelId}' loaded from ${loadedPath}); installing the raw '${rawLabelId}' LaunchAgent would run a second host beside it. If you only need the host running again, run 'traycer host restart' (it starts the Desktop-managed host). To move host management to the CLI instead, re-run with --takeover (the running host is stopped cooperatively first), or relaunch the Traycer app to let it repair its own host.`;
+    `service install: Planwise Desktop owns host registration on this machine (SMAppService agent '${agentLabelId}' loaded from ${loadedPath}); installing the raw '${rawLabelId}' LaunchAgent would run a second host beside it. If you only need the host running again, run 'traycer host restart' (it starts the Desktop-managed host). To move host management to the CLI instead, re-run with --takeover (the running host is stopped cooperatively first), or relaunch the Planwise app to let it repair its own host.`;
 
   it("folds two profile-removed messages that differ only in the uuid to the same template", () => {
     const a = profileRemoved("464ec16b-b0ad-48bc-bddc-843e059a5813");

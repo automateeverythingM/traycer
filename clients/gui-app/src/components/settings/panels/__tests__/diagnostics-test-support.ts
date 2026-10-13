@@ -226,7 +226,7 @@ export function clearRunnerHostBridges(): void {
  */
 export function readySupportSnapshot(): DesktopSupportSnapshot {
   return {
-    appName: "Traycer",
+    appName: "Planwise",
     appVersion: "1.0.0",
     platform: "darwin",
     arch: "arm64",

@@ -312,8 +312,8 @@ describe("DesktopTrayController menu structure", () => {
     const template = latestMenuTemplate();
     const labels = template.map((entry) => entry.label);
     expect(labels).toContain("No recent epics");
-    expect(labels).toContain("Open Traycer");
-    expect(labels).toContain("Quit Traycer");
+    expect(labels).toContain("Open Planwise");
+    expect(labels).toContain("Quit Planwise");
 
     const placeholder = template.find(
       (entry) => entry.label === "No recent epics",
@@ -336,10 +336,10 @@ describe("DesktopTrayController menu structure", () => {
     expect(statusRow).toBeUndefined();
 
     const tray = mostRecentTray();
-    expect(tray.toolTips[tray.toolTips.length - 1]).toBe("Traycer (attention)");
+    expect(tray.toolTips[tray.toolTips.length - 1]).toBe("Planwise (attention)");
   });
 
-  it("renders epic rows under separators alongside Open Traycer and Quit Traycer", () => {
+  it("renders epic rows under separators alongside Open Planwise and Quit Planwise", () => {
     const controller = new DesktopTrayController(makeWindow(), trayImage(), {
       onEpicSelected: null,
       onCommand: null,
@@ -353,10 +353,10 @@ describe("DesktopTrayController menu structure", () => {
     const template = latestMenuTemplate();
     const labels = template.map((entry) => entry.label ?? `<${entry.type}>`);
 
-    expect(labels[0]).toBe("Open Traycer");
+    expect(labels[0]).toBe("Open Planwise");
     expect(labels).toContain("First Epic");
     expect(labels).toContain("Second Epic");
-    expect(labels[labels.length - 1]).toBe("Quit Traycer");
+    expect(labels[labels.length - 1]).toBe("Quit Planwise");
 
     // Recency reads as native `sublabel` metadata beneath the epic title.
     expect(
@@ -422,10 +422,10 @@ describe("DesktopTrayController menu structure", () => {
 
     const firstTemplate = latestMenuTemplate();
     const openRow = firstTemplate.find(
-      (entry) => entry.label === "Open Traycer",
+      (entry) => entry.label === "Open Planwise",
     );
     if (openRow?.click === undefined) {
-      throw new Error("expected Open Traycer row to have a click handler");
+      throw new Error("expected Open Planwise row to have a click handler");
     }
 
     openRow.click();
@@ -487,7 +487,7 @@ describe("DesktopTrayController menu structure", () => {
 
     const template = latestMenuTemplate();
     const labels = template.map((entry) => entry.label ?? `<${entry.type}>`);
-    expect(labels[0]).toBe("Open Traycer");
+    expect(labels[0]).toBe("Open Planwise");
     // Identity shows as `Name (email)` and sits directly above Sign Out.
     expect(labels).toContain("Ada Lovelace (ada@example.com)");
     const identityIndex = labels.indexOf("Ada Lovelace (ada@example.com)");
@@ -496,7 +496,7 @@ describe("DesktopTrayController menu structure", () => {
     expect(labels.some((l) => l.startsWith("Host"))).toBe(false);
     expect(labels).toContain("Open Logs");
     expect(labels).toContain("No recent epics");
-    expect(labels[labels.length - 1]).toBe("Quit Traycer");
+    expect(labels[labels.length - 1]).toBe("Quit Planwise");
 
     template.find((entry) => entry.label === "Open Logs")?.click?.();
     template.find((entry) => entry.label === "Check for Updates")?.click?.();
@@ -663,28 +663,28 @@ describe("DesktopTrayController menu structure", () => {
   // the menu, only the global-shortcuts registry does. Deleting either the
   // `accelerator` assignment or the `registerAccelerator: false` line from
   // `rebuildMenu()` must fail this test, not just checking the method exists.
-  it("shows the live summon accelerator on Open Traycer as display-only, and none when disabled", () => {
+  it("shows the live summon accelerator on Open Planwise as display-only, and none when disabled", () => {
     const controller = new DesktopTrayController(makeWindow(), trayImage(), {
       onEpicSelected: null,
       onCommand: null,
     });
 
     const beforeSet = latestMenuTemplate().find(
-      (entry) => entry.label === "Open Traycer",
+      (entry) => entry.label === "Open Planwise",
     );
     expect(beforeSet?.accelerator).toBeUndefined();
     expect(beforeSet?.registerAccelerator).toBe(false);
 
     controller.setSummonAccelerator("CommandOrControl+Shift+Space");
     const withAccelerator = latestMenuTemplate().find(
-      (entry) => entry.label === "Open Traycer",
+      (entry) => entry.label === "Open Planwise",
     );
     expect(withAccelerator?.accelerator).toBe("CommandOrControl+Shift+Space");
     expect(withAccelerator?.registerAccelerator).toBe(false);
 
     controller.setSummonAccelerator(null);
     const afterDisable = latestMenuTemplate().find(
-      (entry) => entry.label === "Open Traycer",
+      (entry) => entry.label === "Open Planwise",
     );
     expect(afterDisable?.accelerator).toBeUndefined();
     expect(afterDisable?.registerAccelerator).toBe(false);
@@ -707,7 +707,7 @@ describe("DesktopTrayController menu structure", () => {
     expect(mockMenuState.lastBuiltMenu).not.toBeNull();
     const templateAfterChange = latestMenuTemplate();
     expect(
-      templateAfterChange.find((entry) => entry.label === "Open Traycer")
+      templateAfterChange.find((entry) => entry.label === "Open Planwise")
         ?.accelerator,
     ).toBe("CommandOrControl+Alt+X");
     expect(templateAfterFirstSet).not.toBe(templateAfterChange);
@@ -842,7 +842,7 @@ describe("DesktopTrayController host lifecycle", () => {
     expect(row?.click).toBeUndefined();
     const tray = mostRecentTray();
     expect(tray.toolTips.at(-1)).toBe(
-      "Traycer (attention)\nHost: running · stops with app",
+      "Planwise (attention)\nHost: running · stops with app",
     );
   });
 
@@ -859,10 +859,10 @@ describe("DesktopTrayController host lifecycle", () => {
       offerRestartHost: true,
     });
     expect(labels().some((label) => label?.startsWith("Host:"))).toBe(false);
-    expect(mostRecentTray().toolTips.at(-1)).toBe("Traycer (idle)");
+    expect(mostRecentTray().toolTips.at(-1)).toBe("Planwise (idle)");
   });
 
-  it("'Quit and Stop Host' appears only when offered, right above 'Quit Traycer' (which stays last), and runs its handler", () => {
+  it("'Quit and Stop Host' appears only when offered, right above 'Quit Planwise' (which stays last), and runs its handler", () => {
     const controller = newController();
     let ran = 0;
     controller.setQuitAndStopHostHandler(() => {
@@ -878,8 +878,8 @@ describe("DesktopTrayController host lifecycle", () => {
     const all = labels();
     const at = all.indexOf("Quit and Stop Host");
     expect(at).toBeGreaterThan(-1);
-    expect(all[at + 1]).toBe("Quit Traycer");
-    expect(all[all.length - 1]).toBe("Quit Traycer");
+    expect(all[at + 1]).toBe("Quit Planwise");
+    expect(all[all.length - 1]).toBe("Quit Planwise");
 
     latestMenuTemplate()[at].click?.();
     expect(ran).toBe(1);
@@ -921,7 +921,7 @@ describe("DesktopTrayController host lifecycle", () => {
 
     controller.setQuitStopping(true);
     const tray = mostRecentTray();
-    expect(tray.toolTips.at(-1)).toBe("Traycer (active)\nStopping host…");
+    expect(tray.toolTips.at(-1)).toBe("Planwise (active)\nStopping host…");
     const stopping = latestMenuTemplate().find(
       (entry) => entry.label === "Stopping host…",
     );
@@ -930,7 +930,7 @@ describe("DesktopTrayController host lifecycle", () => {
 
     controller.setQuitStopping(false);
     expect(tray.toolTips.at(-1)).toBe(
-      "Traycer (active)\nHost: running · stops with app",
+      "Planwise (active)\nHost: running · stops with app",
     );
     expect(labels()).toContain("Host: running · stops with app");
     expect(labels()).not.toContain("Stopping host…");

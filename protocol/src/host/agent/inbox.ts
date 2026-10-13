@@ -501,7 +501,7 @@ export const agentInboxReadDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Paginated inbox reads require a newer Traycer host. Upgrade the host before using --after.",
+            "Paginated inbox reads require a newer Planwise host. Upgrade the host before using --after.",
         },
       };
     }
@@ -517,7 +517,7 @@ export const agentInboxReadDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "This inbox has more messages than an older Traycer client can read safely. Upgrade the client to continue.",
+            "This inbox has more messages than an older Planwise client can read safely. Upgrade the client to continue.",
         },
       };
     }

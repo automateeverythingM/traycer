@@ -450,7 +450,7 @@ function PrHostUpdateRequired(): ReactNode {
           Update required to view pull requests
         </p>
         <p className="text-ui-xs text-muted-foreground/50">
-          This host does not advertise the PR list stream yet. Update Traycer
+          This host does not advertise the PR list stream yet. Update Planwise
           Host to enable the Pull Requests panel.
         </p>
       </div>

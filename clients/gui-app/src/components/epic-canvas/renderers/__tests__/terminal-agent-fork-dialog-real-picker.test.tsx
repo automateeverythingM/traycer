@@ -372,7 +372,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { TerminalAgentForkDialog } from "../terminal-agent-fork-dialog";
 
 const CAPABILITY_LOCK_REASON =
-  "Update Traycer host to continue this session under another profile.";
+  "Update Planwise host to continue this session under another profile.";
 const WORK_REJECTION_REASON = "some reason";
 // Host bulk preflight message shape for fork-before-first-turn (SOURCE_NOT_READY).
 // The dialog surfaces `verdict.message` on the row verbatim - not the client

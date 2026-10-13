@@ -59,7 +59,7 @@ import type { ServiceLabel } from "../../service/label";
 
 const LABEL: ServiceLabel = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production",
   devSlot: null,
 };
@@ -120,7 +120,7 @@ describe("describeServiceDefinitionRefresh", () => {
   it("every case names the label's own id, not a generic 'the service'", () => {
     const other: ServiceLabel = {
       id: "ai.traycer.host.dev.myslot",
-      displayName: "Traycer Host (Dev myslot)",
+      displayName: "Planwise Host (Dev myslot)",
       environment: "dev",
       devSlot: "myslot",
     };

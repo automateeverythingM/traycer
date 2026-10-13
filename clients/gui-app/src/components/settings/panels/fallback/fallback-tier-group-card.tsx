@@ -812,7 +812,7 @@ function RowStatus(props: {
           data-unmatched="true"
         >
           No {providerLabel} model matches{" "}
-          <code className="font-mono">{pattern}</code>. Traycer will skip this
+          <code className="font-mono">{pattern}</code>. Planwise will skip this
           row.{warnings === null ? null : <> {warnings}</>}
         </p>
         {canEdit ? (

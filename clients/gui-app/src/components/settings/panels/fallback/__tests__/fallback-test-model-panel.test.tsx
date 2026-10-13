@@ -925,7 +925,7 @@ describe("FallbackTestModelPanel - verdict announced", () => {
     expect(status.className).toContain("sr-only");
     // The verdict header and the switch target, as one sentence.
     expect(status.textContent).toBe(
-      "Traycer uses the flagship tier and switches to Default (Opus 5.5) on Personal 2.",
+      "Planwise uses the flagship tier and switches to Default (Opus 5.5) on Personal 2.",
     );
     // Only one live region: the visible rows and pills are not announced.
     const verdict = screen.getByTestId("fallback-test-model-verdict");
@@ -946,7 +946,7 @@ describe("FallbackTestModelPanel - verdict announced", () => {
     const statusAfter = screen.getByRole("status");
     expect(statusAfter).toBe(status);
     expect(statusAfter.textContent).toBe(
-      "The equivalent-model step is off for rate limits, so Traycer goes straight to Try another account, then Wait for the limit to reset, then Notify you.",
+      "The equivalent-model step is off for rate limits, so Planwise goes straight to Try another account, then Wait for the limit to reset, then Notify you.",
     );
   });
 });
@@ -956,7 +956,7 @@ describe("FallbackTestModelPanel - steps-off copy", () => {
     resetMocks();
   });
 
-  it('reads "Traycer goes straight to <steps>" when the ladder has no tier step, and sends no request', () => {
+  it('reads "Planwise goes straight to <steps>" when the ladder has no tier step, and sends no request', () => {
     resetMocks();
     const captured: Array<FallbackPolicyTestTierGroupsRequest | null> = [];
     mocks.testQuerySpy = (request) => captured.push(request);
@@ -966,12 +966,12 @@ describe("FallbackTestModelPanel - steps-off copy", () => {
     expect(line.textContent).toContain(
       "The equivalent-model step is off for rate limits",
     );
-    expect(line.textContent).toContain("Traycer goes straight to");
+    expect(line.textContent).toContain("Planwise goes straight to");
     expect(captured.length).toBeGreaterThan(0);
     expect(captured.every((request) => request === null)).toBe(true);
   });
 
-  it('reads "Traycer doesn\'t try another model" when the reason override is "off", and sends no request', () => {
+  it('reads "Planwise doesn\'t try another model" when the reason override is "off", and sends no request', () => {
     resetMocks();
     const captured: Array<FallbackPolicyTestTierGroupsRequest | null> = [];
     mocks.testQuerySpy = (request) => captured.push(request);
@@ -979,7 +979,7 @@ describe("FallbackTestModelPanel - steps-off copy", () => {
     renderPanel({ policy });
     const line = screen.getByTestId("fallback-test-model-steps-off");
     expect(line.textContent).toContain("Your steps are turned off");
-    expect(line.textContent).toContain("Traycer doesn't try");
+    expect(line.textContent).toContain("Planwise doesn't try");
     expect(captured.length).toBeGreaterThan(0);
     expect(captured.every((request) => request === null)).toBe(true);
   });

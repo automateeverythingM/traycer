@@ -123,7 +123,7 @@ describe("clientCompatibilityRecoveryHint", () => {
     expect(hint).toContain("running 1.1.10");
     expect(hint).toContain("declares compatibility generation 1");
     expect(hint).toContain("while the host requires 2");
-    expect(hint).toContain("Install the latest Traycer CLI");
+    expect(hint).toContain("Install the latest Planwise CLI");
     expect(hint).toContain(
       "Updating the host again will not help, and no data needs to be reset",
     );

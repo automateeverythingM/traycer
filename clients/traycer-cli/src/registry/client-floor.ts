@@ -117,7 +117,7 @@ export function hostClientFloorRefusalMessage(
   resolvedVersion: string,
 ): string {
   if (refusal.kind === "below-floor") {
-    return `host registry: version '${resolvedVersion}' requires Traycer CLI ${refusal.requiredCliVersion} or newer, and this is ${refusal.cliVersion}. Update Traycer first, then install the host.`;
+    return `host registry: version '${resolvedVersion}' requires Planwise CLI ${refusal.requiredCliVersion} or newer, and this is ${refusal.cliVersion}. Update Planwise first, then install the host.`;
   }
   return `host registry: version '${resolvedVersion}' declares requiredCliVersion ${JSON.stringify(refusal.requiredCliVersion)}, which is not a version this CLI can compare against. The manifest is wrong; do not work around it by installing a different version.`;
 }

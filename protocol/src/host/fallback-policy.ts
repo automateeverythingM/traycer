@@ -765,7 +765,7 @@ export type ProvidersFallbackPolicySetResponseV10 = z.infer<
  */
 const FALLBACK_POLICY_REQUIRES_NEWER_CLIENT = {
   code: "DOWNGRADE_UNSUPPORTED" as const,
-  message: "This fallback policy requires a newer Traycer client.",
+  message: "This fallback policy requires a newer Planwise client.",
 };
 
 /**

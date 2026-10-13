@@ -423,7 +423,7 @@ vi.mock("../../service", () => ({
   createServiceController: () => ({}),
   serviceLabelFor: (environment: string) => ({
     id: `ai.traycer.host.${environment}`,
-    displayName: "Traycer Host",
+    displayName: "Planwise Host",
     environment,
     devSlot: null,
   }),

@@ -47,12 +47,12 @@ export function DeleteAccountSettingsPanel(): ReactNode {
   return (
     <SettingsPanelShell
       title="Delete account"
-      description="Permanently delete your Traycer account and all associated data."
+      description="Permanently delete your Planwise account and all associated data."
     >
       <div className="flex flex-col items-start gap-4 px-5 py-5">
         <p className="max-w-[72ch] text-ui-sm text-muted-foreground">
           Deleting your account removes your profile, sessions, epics, chats and
-          generated documents from Traycer. This cannot be undone.
+          generated documents from Planwise. This cannot be undone.
         </p>
         <p className="max-w-[72ch] text-ui-sm text-muted-foreground">
           Requests are processed by our team within 30 days. You will receive a

@@ -153,7 +153,7 @@ export const whoamiLocalCommand: CommandFn = async (
     },
     human: ctx.runtime.json
       ? null
-      : `Logged in as ${identityOf(stored.user)} (stored credentials; not checked with Traycer).`,
+      : `Logged in as ${identityOf(stored.user)} (stored credentials; not checked with Planwise).`,
     exitCode: 0,
   };
 };
@@ -186,9 +186,9 @@ function humanEffectSuffix(effect: ValidationEffect): string {
     case "none":
       return "";
     case "profile-refreshed":
-      return " Updated the stored profile from Traycer.";
+      return " Updated the stored profile from Planwise.";
     case "profile-refresh-unconfirmed":
-      return " Tried to update the stored profile from Traycer; the local write did not confirm.";
+      return " Tried to update the stored profile from Planwise; the local write did not confirm.";
     case "token-rotated":
       return " Refreshed the stored access token.";
     case "token-rotation-unconfirmed":

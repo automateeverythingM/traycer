@@ -142,7 +142,7 @@ describe("<LocalHostLoadingContent />", () => {
       screen.getByTestId("brand-entrance-mark-shimmer").querySelector("svg"),
     ).not.toBeNull();
     const stage = screen.getByTestId("local-host-loading-stage");
-    expect(stage.textContent).toBe("Starting Traycer…");
+    expect(stage.textContent).toBe("Starting Planwise…");
 
     // No spinner: the heading is alone in its row. The spinner is an
     // aria-hidden, text-less span stacked in this same row, so the row's
@@ -210,7 +210,7 @@ describe("<LocalHostLoadingContent />", () => {
       }),
     );
 
-    expect(container.textContent).toContain("Downloading Traycer Host…");
+    expect(container.textContent).toContain("Downloading Planwise Host…");
     expect(container.textContent).toContain("42%");
     const progress = screen.getByRole("progressbar");
     expect(progress.getAttribute("aria-valuenow")).toBe("42");
@@ -273,7 +273,7 @@ describe("<LocalHostLoadingContent />", () => {
       }),
     );
 
-    expect(container.textContent).toContain("Setting up Traycer Host…");
+    expect(container.textContent).toContain("Setting up Planwise Host…");
     // The position survives - what goes is the restatement (and the lane's own
     // log line, which is not this surface's to draw; see the download test).
     expect(container.textContent).toContain("80%");
@@ -310,7 +310,7 @@ describe("<LocalHostLoadingContent />", () => {
       }),
     );
     const stage = screen.getByTestId("local-host-loading-stage");
-    expect(stage.textContent).toBe("Downloading Traycer Host…");
+    expect(stage.textContent).toBe("Downloading Planwise Host…");
     // No spinner on a progressing card either: the heading is alone in its row.
     expect(stage.parentElement?.childElementCount).toBe(1);
     expect(screen.getByRole("progressbar").getAttribute("aria-valuenow")).toBe(
@@ -340,7 +340,7 @@ describe("<LocalHostLoadingContent />", () => {
       }),
     );
     expect(screen.getByTestId("local-host-loading-stage").textContent).toBe(
-      "Setting up Traycer Host…",
+      "Setting up Planwise Host…",
     );
     expect(screen.queryByRole("progressbar")).toBeNull();
     expect(screen.queryByTestId("local-host-download-progress")).toBeNull();

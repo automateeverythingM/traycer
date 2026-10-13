@@ -56,7 +56,7 @@ import {
  */
 
 const REFUSAL =
-  "Traycer can't open this device's local store, so nothing was deleted. Quit the other Traycer on this machine, then rebind.";
+  "Planwise can't open this device's local store, so nothing was deleted. Quit the other Planwise on this machine, then rebind.";
 
 function failure(taskId: string, errorMessage: string | undefined) {
   const row: BatchDeleteItemResult = { taskId, success: false, errorMessage };

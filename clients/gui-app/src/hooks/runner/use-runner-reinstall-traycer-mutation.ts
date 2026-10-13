@@ -70,7 +70,7 @@ export function useRunnerReinstallTraycer(): UseMutationResult<
       }
       if (outcome.kind === "ok") {
         throw new Error(
-          "Traycer was reinstalled, but no host started on this computer. Run doctor to see why.",
+          "Planwise was reinstalled, but no host started on this computer. Run doctor to see why.",
         );
       }
       throw new Error(outcome.message);

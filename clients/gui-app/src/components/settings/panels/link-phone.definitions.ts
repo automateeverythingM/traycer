@@ -5,7 +5,7 @@ export const LINK_PHONE = defineSettingsSection("link-phone", {
   page: {
     availableWhen: alwaysAvailable,
     label: "Link mobile app",
-    description: "Sign the Traycer mobile app in by scanning this code.",
+    description: "Sign the Planwise mobile app in by scanning this code.",
     keywords: [
       "phone",
       "mobile",

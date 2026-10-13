@@ -131,7 +131,7 @@ vi.mock("../../service", async (importOriginal) => {
     },
     serviceLabelFor: (environment: Environment): ServiceLabel => ({
       id: "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -454,7 +454,7 @@ describe("host apply over a registration that is disabled, or another user's", (
     expect(outcome.postSwapWarning).toEqual({
       code: CLI_ERROR_CODES.SERVICE_TASK_NOT_OWNED,
       message:
-        "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
+        "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
       details: { reason: "unconfirmed" },
     });
     expect(outcome.runningActivated).toBe(false);

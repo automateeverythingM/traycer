@@ -75,7 +75,7 @@ const { withStopIntent } = await import("../index");
 // thing making these tests evidence about the real decorator.
 const label: ServiceLabel = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production",
   devSlot: null,
 };

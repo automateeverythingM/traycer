@@ -36,7 +36,7 @@ function unwrapRevokeUserSessionResult(
   if (result.kind === "unauthorized") {
     throw new Error("Sign in again to try that.");
   }
-  throw new Error("Couldn't reach Traycer to sign out this session.");
+  throw new Error("Couldn't reach Planwise to sign out this session.");
 }
 
 export function useAuthRevokeUserSession(

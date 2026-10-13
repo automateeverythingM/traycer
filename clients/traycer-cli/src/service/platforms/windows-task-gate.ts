@@ -96,14 +96,14 @@ export interface WindowsTaskOwnershipDeps {
  * old to know the code.
  */
 export const SERVICE_TASK_NOT_OWNED_MESSAGE =
-  "The Traycer Host task on this PC is owned by another Windows user, so Traycer left it alone and can't run a background host for you here. Connect to a remote host, or ask that user to remove Traycer from their account first.";
+  "The Planwise Host task on this PC is owned by another Windows user, so Planwise left it alone and can't run a background host for you here. Connect to a remote host, or ask that user to remove Planwise from their account first.";
 
 /**
  * The warning a command with its own work to do reports when it finished that
  * work and left another account's task in place (`host uninstall`).
  */
 export const SERVICE_TASK_LEFT_IN_PLACE_MESSAGE =
-  "The Traycer Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
+  "The Planwise Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
 
 /**
  * What a refused write says, by reason: a task whose owner could not be
@@ -382,7 +382,7 @@ export async function gateWindowsTaskVerb<V extends WindowsTaskVerb>(
           "-NoProfile",
           "-NonInteractive",
           "-Command",
-          "$s=New-Object -ComObject Schedule.Service;$s.Connect();$f=$s.GetFolder('\\Traycer');if((@($f.GetTasks(1)).Count -eq 0) -and (@($f.GetFolders(0)).Count -eq 0)){$s.GetFolder('\\').DeleteFolder('Traycer',0)}",
+          "$s=New-Object -ComObject Schedule.Service;$s.Connect();$f=$s.GetFolder('\\Traycer');if((@($f.GetTasks(1)).Count -eq 0) -and (@($f.GetFolders(0)).Count -eq 0)){$s.GetFolder('\\').DeleteFolder('Planwise',0)}",
         ],
         options,
       ),

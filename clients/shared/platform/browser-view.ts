@@ -510,10 +510,10 @@ export type BrowserSessionsLifecycle =
   | "unsupported";
 
 export const BROWSERS_UNSUPPORTED_MESSAGE =
-  "This host doesn't support browsers. Update Traycer Host to use browser tabs here.";
+  "This host doesn't support browsers. Update Planwise Host to use browser tabs here.";
 
 export const BROWSERS_APP_OUTDATED_MESSAGE =
-  "This app is too old for this host's browsers. Update the Traycer app to use browser tabs here.";
+  "This app is too old for this host's browsers. Update the Planwise app to use browser tabs here.";
 
 /**
  * Which side the INCOMPATIBLE close says to update. A host from before

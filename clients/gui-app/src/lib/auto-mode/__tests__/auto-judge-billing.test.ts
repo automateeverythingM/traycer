@@ -441,7 +441,7 @@ describe("autoJudgeTarget", () => {
   // is asked. `autoJudgeTarget` must recognise `runHarnessId === "traycer"`
   // under `source: "fallback"` and answer 'none' rather than naming a
   // traycer judge for a traycer-hosted run.
-  it("is 'none' under Automatic's fallback when the run itself is on the traycer harness - no second Traycer candidate exists", () => {
+  it("is 'none' under Automatic's fallback when the run itself is on the traycer harness - no second Planwise candidate exists", () => {
     expect(
       autoJudgeTarget({
         ...BASE_INPUT,
@@ -703,7 +703,7 @@ describe("autoModeMidTurnLock", () => {
         judgeBilling: PROVIDER_NATIVE_BILLING,
       }),
     ).toBe(
-      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Traycer's judge in Providers ▸ Claude Code ▸ Permissions.",
+      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Planwise's judge in Providers ▸ Claude Code ▸ Permissions.",
     );
   });
 

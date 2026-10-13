@@ -429,7 +429,7 @@ describe("buildHostInstallCommand", () => {
     });
     mocks.serviceLabelForMock.mockReturnValue({
       id: "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment: "production",
       devSlot: null,
     });
@@ -1554,7 +1554,7 @@ describe("buildHostInstallCommand", () => {
         warning: {
           code: "E_SERVICE_TASK_NOT_OWNED",
           message:
-            "The Traycer Host task on this PC is owned by another Windows user.",
+            "The Planwise Host task on this PC is owned by another Windows user.",
           details: { reason: "other-owner" },
         },
       },
@@ -1563,7 +1563,7 @@ describe("buildHostInstallCommand", () => {
         warning: {
           code: "E_SERVICE_REGISTRATION_DISABLED",
           message:
-            "The host is stopped because the Traycer Host task is disabled in Task Scheduler.",
+            "The host is stopped because the Planwise Host task is disabled in Task Scheduler.",
           details: null,
         },
       },

@@ -111,7 +111,7 @@ function buildService(hostLayout: HostFsLayout): DesktopSupportService {
     profile: null,
   };
   return new DesktopSupportService({
-    appName: "Traycer",
+    appName: "Planwise",
     host: { getSnapshot: () => null },
     authSession: { get: () => authSession },
     hostLayout,

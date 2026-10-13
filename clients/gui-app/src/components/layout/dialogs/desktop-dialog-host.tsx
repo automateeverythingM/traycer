@@ -178,15 +178,15 @@ function describeUnsyncableWork(
   otherWindowsUnknown: boolean,
 ): string {
   const unknownSuffix = otherWindowsUnknown
-    ? " Traycer could not check the other windows, which may hold more."
+    ? " Planwise could not check the other windows, which may hold more."
     : "";
   if (otherWindowsUnknown && epics.length === 0) {
-    return "Traycer could not check the other windows for changes that cannot be saved (changes kept when a host changed have nowhere left to sync to). Installing restarts Traycer and discards any such work in another window.";
+    return "Planwise could not check the other windows for changes that cannot be saved (changes kept when a host changed have nowhere left to sync to). Installing restarts Planwise and discards any such work in another window.";
   }
   const titles = epics.map((epic) => epic.title).join(", ");
   const subject =
     epics.length === 1
       ? "1 Epic has changes"
       : `${epics.length} Epics have changes`;
-  return `${subject} that cannot be saved - they were kept when their host changed and have nowhere left to sync to. Installing restarts Traycer and discards them: ${titles}.${unknownSuffix}`;
+  return `${subject} that cannot be saved - they were kept when their host changed and have nowhere left to sync to. Installing restarts Planwise and discards them: ${titles}.${unknownSuffix}`;
 }

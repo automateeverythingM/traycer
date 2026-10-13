@@ -393,7 +393,7 @@ describe("gateWindowsTaskVerb and the refusal", () => {
     const error = serviceTaskNotOwnedError(label, "run", "unconfirmed");
     expect(error.code).toBe("E_SERVICE_TASK_NOT_OWNED");
     expect(error.message).toBe(
-      "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
+      "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
     );
     expect(error.message).not.toContain("another Windows user");
     expect(error.details).toEqual({

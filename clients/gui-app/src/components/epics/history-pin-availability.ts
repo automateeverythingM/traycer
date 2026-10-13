@@ -109,7 +109,7 @@ export function historyPinControlLabel(input: {
   // `historyPinUnavailableReason`), and copy that sent the user to the cloud
   // named a fix that changes nothing.
   if (input.unavailableReason === "local-home") {
-    return `Pinning ${input.displayTitle} needs a newer Traycer host`;
+    return `Pinning ${input.displayTitle} needs a newer Planwise host`;
   }
   if (input.unavailableReason === "phase") {
     return `Pinning ${input.displayTitle} is unavailable for phases`;
@@ -129,7 +129,7 @@ export function historyPinUnavailableTooltip(
     return "This task was deleted. Its unsynced edits are kept, but it can't be pinned.";
   }
   if (reason === "local-home") {
-    return "Pinning this task needs a newer Traycer host version. Update the host that serves it.";
+    return "Pinning this task needs a newer Planwise host version. Update the host that serves it.";
   }
   if (reason === "unverified-session") {
     return "Your sign-in couldn't be confirmed. Pinning will work again once it is.";

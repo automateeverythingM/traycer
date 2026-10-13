@@ -1487,7 +1487,7 @@ export function ArtifactLinkPopover(props: ArtifactLinkPopoverProps) {
           </div>
           {unusualScheme ? (
             <p role="status" className="text-ui-xs text-warning-foreground">
-              This scheme can be saved, but Traycer will not open it.
+              This scheme can be saved, but Planwise will not open it.
             </p>
           ) : null}
           <div className="flex flex-col gap-1.5">

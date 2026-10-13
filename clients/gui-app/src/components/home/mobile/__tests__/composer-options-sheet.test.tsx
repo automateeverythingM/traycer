@@ -290,7 +290,7 @@ describe("ComposerOptionsSheet - mid-turn lock", () => {
     const auto = screen.getByTestId("composer-options-permission-auto");
     expect(auto.hasAttribute("disabled")).toBe(true);
     expect(auto.textContent).toContain(
-      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Traycer's judge in Providers ▸ Claude Code ▸ Permissions.",
+      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Planwise's judge in Providers ▸ Claude Code ▸ Permissions.",
     );
     expect(
       screen.queryByTestId("composer-options-permission-mid-turn-notice"),

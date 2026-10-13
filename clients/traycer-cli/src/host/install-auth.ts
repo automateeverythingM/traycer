@@ -296,7 +296,7 @@ export function formatCredentialProvisionNote(
   if (outcome === null) {
     return null;
   }
-  const selfHeal = "it will be provisioned when a Traycer client next connects";
+  const selfHeal = "it will be provisioned when a Planwise client next connects";
   switch (outcome.kind) {
     case "active":
       return outcome.minted ? "host credential provisioned" : null;

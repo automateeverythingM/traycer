@@ -16,7 +16,7 @@ const MULTI_WORKSPACE_WITH_GLOBAL_PARAGRAPH = `Workspace instructions apply only
 const MULTI_WORKSPACE_PARAGRAPH = `Multiple workspaces provide instructions below. For each file you touch, use the instructions for the workspace that contains it. If more than one workspace contains the file, use the most specific workspace.`;
 
 export const AGENT_SELECTION_GUIDE_SCOPE_INSTRUCTION =
-  "The agent selection guide provides instructions for choosing Traycer agents' harnesses, models, and reasoning effort when creating or reconfiguring them. It does not automatically configure provider-native subagents. Those follow their provider's settings: OpenCode's native task uses the named agent's configured model, or inherits the parent model when no model is configured. Native subagents do not have their own Traycer agent IDs.";
+  "The agent selection guide provides instructions for choosing Planwise agents' harnesses, models, and reasoning effort when creating or reconfiguring them. It does not automatically configure provider-native subagents. Those follow their provider's settings: OpenCode's native task uses the named agent's configured model, or inherits the parent model when no model is configured. Native subagents do not have their own Planwise agent IDs.";
 
 // Byte-parity-locked to the host's copy in
 // `traycer-host/src/domain/agent/a2a-tool-catalog.ts`, which a host test

@@ -82,7 +82,7 @@ describe("buildAgentActivityFromHookCommand - start edge (promptSubmitted)", () 
   it("emits the UserPromptSubmit additionalContext envelope when pendingPromptContext is non-null", async () => {
     rpcMock.mockResolvedValue({
       accepted: true,
-      pendingPromptContext: "Traycer role registry update:\n- role= scope=",
+      pendingPromptContext: "Planwise role registry update:\n- role= scope=",
     });
     stubStdin({
       isTTY: false,
@@ -103,7 +103,7 @@ describe("buildAgentActivityFromHookCommand - start edge (promptSubmitted)", () 
       JSON.stringify({
         hookSpecificOutput: {
           hookEventName: "UserPromptSubmit",
-          additionalContext: "Traycer role registry update:\n- role= scope=",
+          additionalContext: "Planwise role registry update:\n- role= scope=",
         },
       }),
     );

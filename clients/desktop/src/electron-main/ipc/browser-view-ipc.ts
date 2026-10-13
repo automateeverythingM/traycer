@@ -1402,7 +1402,7 @@ const FORGET_ALL_LOGINS_CONFIRMATION: MainConfirmation = {
   title: "Remove all website sessions?",
   message: "Remove every saved website session?",
   detail:
-    "Open Traycer browser tabs reload signed out, and agent sessions using them may be interrupted. This cannot be undone.",
+    "Open Planwise browser tabs reload signed out, and agent sessions using them may be interrupted. This cannot be undone.",
   confirmLabel: "Remove all",
 };
 
@@ -1411,7 +1411,7 @@ function clearSiteConfirmation(domain: string): MainConfirmation {
     title: "Remove this website session?",
     message: `Remove the saved session for ${domain}?`,
     detail:
-      "Traycer removes its session data from the shared collection. You may be signed out on connected Traycer hosts. Other sites are untouched.",
+      "Planwise removes its session data from the shared collection. You may be signed out on connected Planwise hosts. Other sites are untouched.",
     confirmLabel: "Remove",
   };
 }

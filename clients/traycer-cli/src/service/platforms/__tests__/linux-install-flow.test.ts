@@ -160,7 +160,7 @@ vi.mock("../../label", async (importOriginal) => {
 
 const label: ServiceLabel = {
   id: "ai.traycer.host.dev",
-  displayName: "Traycer Host (test)",
+  displayName: "Planwise Host (test)",
   environment: "dev",
   devSlot: null,
 };

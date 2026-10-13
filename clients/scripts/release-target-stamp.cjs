@@ -97,12 +97,12 @@ const REQUIRED_INSTALL_IDENTITY = {
 const REQUIRED_DESKTOP_IDENTITY = {
   production: {
     appId: "ai.traycer.desktop",
-    productName: "Traycer",
+    productName: "Planwise",
     protocolScheme: "traycer",
   },
   staging: {
     appId: "ai.traycer.desktop.staging",
-    productName: "Traycer Staging",
+    productName: "Planwise Staging",
     protocolScheme: "traycer-staging",
   },
 };

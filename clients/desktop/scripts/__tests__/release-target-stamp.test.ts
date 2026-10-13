@@ -64,18 +64,18 @@ function desktopStamp(): Stamp {
   return {
     ...cliStamp(),
     appId: "ai.traycer.desktop.staging",
-    productName: "Traycer Staging",
+    productName: "Planwise Staging",
     protocolScheme: "traycer-staging",
     releaseChannel: "staging",
     mac: {
-      bundleName: "Traycer Staging",
+      bundleName: "Planwise Staging",
       helperBundleId: "ai.traycer.desktop.staging.host",
       launchAgentLabel: "ai.traycer.host.staging.agent",
     },
     windows: {
       appUserModelId: "ai.traycer.desktop.staging",
-      executableName: "Traycer-Staging",
-      installerDisplayName: "Traycer Staging",
+      executableName: "Planwise-Staging",
+      installerDisplayName: "Planwise Staging",
     },
     linux: {
       deb: { packageName: "traycer-staging" },
@@ -112,7 +112,7 @@ describe("readClientTargetStamp", () => {
         "staging",
         "desktop",
       ),
-    ).toMatchObject({ target: "staging", productName: "Traycer Staging" });
+    ).toMatchObject({ target: "staging", productName: "Planwise Staging" });
   });
 
   it.each([
@@ -587,11 +587,11 @@ function productionDesktopStamp(): Stamp {
 // with it, or the fixture trips the mirror check instead of the pin.
 function toProductionDesktopIdentity(stamp: Stamp): Stamp {
   stamp.appId = "ai.traycer.desktop";
-  stamp.productName = "Traycer";
+  stamp.productName = "Planwise";
   stamp.protocolScheme = "traycer";
   if (stamp.windows !== undefined) {
     (stamp.windows as Stamp).appUserModelId = "ai.traycer.desktop";
-    (stamp.windows as Stamp).installerDisplayName = "Traycer";
+    (stamp.windows as Stamp).installerDisplayName = "Planwise";
   }
   return stamp;
 }
@@ -625,8 +625,8 @@ describe("the desktop runtime identity is pinned per target", () => {
     [
       "productName",
       (stamp: Stamp) => {
-        stamp.productName = "Traycer Other";
-        (stamp.windows as Stamp).installerDisplayName = "Traycer Other";
+        stamp.productName = "Planwise Other";
+        (stamp.windows as Stamp).installerDisplayName = "Planwise Other";
       },
     ],
     [
@@ -1096,7 +1096,7 @@ describe("stamped values that duplicate a neighbour are pinned to it", () => {
 
   it("rejects a windows.installerDisplayName that does not equal productName", () => {
     const stamp = desktopStamp();
-    (stamp.windows as Stamp).installerDisplayName = "Traycer";
+    (stamp.windows as Stamp).installerDisplayName = "Planwise";
     expect(() =>
       stampModule.readClientTargetStamp(
         writeStamp(stamp),
@@ -1132,11 +1132,11 @@ describe("stamped values that duplicate a neighbour are pinned to it", () => {
       ),
     ).toMatchObject({
       appId: "ai.traycer.desktop.staging",
-      productName: "Traycer Staging",
+      productName: "Planwise Staging",
       updaterChannel: "latest",
       windows: {
         appUserModelId: "ai.traycer.desktop.staging",
-        installerDisplayName: "Traycer Staging",
+        installerDisplayName: "Planwise Staging",
       },
     });
   });

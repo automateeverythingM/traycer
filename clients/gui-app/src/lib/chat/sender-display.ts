@@ -139,7 +139,7 @@ const AGENT_PROVIDER_LABEL: Record<GuiHarnessId, string> = {
   claude: "Claude Code",
   codex: "Codex",
   opencode: "OpenCode",
-  traycer: "Traycer",
+  traycer: "Planwise",
   openrouter: "OpenRouter",
   huggingface: "Hugging Face",
   cursor: "Cursor",

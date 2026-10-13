@@ -328,7 +328,7 @@ function SwitcherArtifactSearchBody(props: {
       <SidebarPanelEmptyState
         icon={SearchX}
         title="Search isn't available on this host."
-        description="Update this device's Traycer host to search artifacts."
+        description="Update this device's Planwise host to search artifacts."
         testId="epic-artifact-search-unsupported"
       />
     );

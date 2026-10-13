@@ -1615,7 +1615,7 @@ export const epicGetChatRunSettingsDowngradeV40ToV30 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }
@@ -1638,7 +1638,7 @@ export const epicGetChatRunSettingsDowngradeV40ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }
@@ -1661,7 +1661,7 @@ export const epicGetChatRunSettingsDowngradeV40ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }
@@ -1698,7 +1698,7 @@ export const epicGetChatRunSettingsDowngradeV30ToV20 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }
@@ -1721,7 +1721,7 @@ export const epicGetChatRunSettingsDowngradeV30ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }
@@ -1776,7 +1776,7 @@ export const epicGetChatRunSettingsDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Reading this chat's run settings requires a newer Traycer client.",
+            "Reading this chat's run settings requires a newer Planwise client.",
         },
       };
     }

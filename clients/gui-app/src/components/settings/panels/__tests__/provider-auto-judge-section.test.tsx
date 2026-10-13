@@ -219,7 +219,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     });
   });
 
-  it("renders a read-only Traycer's judge line, and no select, when the harness row reports nativeAutoJudge: false", () => {
+  it("renders a read-only Planwise's judge line, and no select, when the harness row reports nativeAutoJudge: false", () => {
     guiHarnessesQueryMock.data = {
       harnesses: [harnessRow({ nativeAutoJudge: false })],
     };
@@ -232,7 +232,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     expect(headingParagraph()).toBeTruthy();
     const readonly = screen.getByTestId("provider-auto-judge-readonly");
     expect(readonly.textContent).toBe(
-      "Reviewed by Traycer's judge. Change it under Permissions.",
+      "Reviewed by Planwise's judge. Change it under Permissions.",
     );
     expect(screen.queryByRole("combobox")).toBeNull();
   });
@@ -252,7 +252,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     expect(headingParagraph()).toBeTruthy();
   });
 
-  it("renders Traycer's judge selected when the stored state has no autoJudge key", () => {
+  it("renders Planwise's judge selected when the stored state has no autoJudge key", () => {
     guiHarnessesQueryMock.data = {
       harnesses: [harnessRow({ nativeAutoJudge: true })],
     };
@@ -263,7 +263,7 @@ describe("<ProviderAutoJudgeSection />", () => {
       />,
     );
 
-    expect(screen.getByRole("combobox").textContent).toMatch("Traycer's judge");
+    expect(screen.getByRole("combobox").textContent).toMatch("Planwise's judge");
   });
 
   it("renders the provider's classifier selected when the stored state carries autoJudge: 'provider'", () => {
@@ -342,7 +342,7 @@ describe("<ProviderAutoJudgeSection />", () => {
       setAutoJudgeMutateMock.mock.calls[0][1].onError();
     });
 
-    expect(screen.getByRole("combobox").textContent).toMatch("Traycer's judge");
+    expect(screen.getByRole("combobox").textContent).toMatch("Planwise's judge");
   });
 
   it("disables the Select trigger while setAutoJudge is pending, so a click cannot change the value", () => {
@@ -365,7 +365,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     // option at all - the value must stay exactly where it started.
     fireEvent.click(trigger);
     expect(screen.queryByRole("option")).toBeNull();
-    expect(trigger.textContent).toMatch("Traycer's judge");
+    expect(trigger.textContent).toMatch("Planwise's judge");
     expect(setAutoJudgeMutateMock).not.toHaveBeenCalled();
   });
 
@@ -461,7 +461,7 @@ describe("<ProviderAutoJudgeSection />", () => {
       />,
     );
 
-    expect(screen.getByRole("combobox").textContent).toMatch("Traycer's judge");
+    expect(screen.getByRole("combobox").textContent).toMatch("Planwise's judge");
   });
 
   // CONTROL for the case above: without advancing `dataUpdatedAt`, the echo
@@ -475,7 +475,7 @@ describe("<ProviderAutoJudgeSection />", () => {
   // some OTHER method and omits the write, which is what a real host that
   // predates the write looks like - `getNegotiatedHostMethods` then returns a
   // set not containing it, i.e. `false`, not `null`.
-  it("renders the read-only 'can't change' panel (not the select) when the host answers the catalog but not the write, stored: Traycer's judge", () => {
+  it("renders the read-only 'can't change' panel (not the select) when the host answers the catalog but not the write, stored: Planwise's judge", () => {
     // The read half present, the WRITE half absent - which is what this case is
     // about. Without `providers.list@9.1` the section lands on the unreadable
     // panel instead, since it will not present a stored value it cannot read.
@@ -496,7 +496,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     expect(headingParagraph()).toBeTruthy();
     const unsupported = screen.getByTestId("provider-auto-judge-unsupported");
     expect(unsupported.textContent).toBe(
-      "Traycer's judge. This machine's host can't change it; update it to choose.",
+      "Planwise's judge. This machine's host can't change it; update it to choose.",
     );
     expect(screen.queryByRole("combobox")).toBeNull();
   });
@@ -554,7 +554,7 @@ describe("<ProviderAutoJudgeSection />", () => {
     expect(screen.queryByRole("combobox")).toBeNull();
     // The important part: no fabricated echo of either possible value,
     // anywhere in the document - not just absent from this panel's own text.
-    expect(screen.queryByText("Traycer's judge")).toBeNull();
+    expect(screen.queryByText("Planwise's judge")).toBeNull();
     expect(screen.queryByText("Claude Code's classifier")).toBeNull();
   });
 
@@ -609,7 +609,7 @@ describe("<ProviderAutoJudgeSection />", () => {
   // `nativeAutoJudge: false` takes the ORIGINAL "has no classifier of its
   // own" line even when the write is also unsupported - the missing write is
   // irrelevant when there is nothing native to switch to in the first place.
-  it("keeps the read-only 'Reviewed by Traycer's judge' line for nativeAutoJudge: false, even when the write is also unsupported", () => {
+  it("keeps the read-only 'Reviewed by Planwise's judge' line for nativeAutoJudge: false, even when the write is also unsupported", () => {
     recordNegotiatedHostManifest(HOST_ID, {
       "agent.gui.listHarnesses": { major: 9, minor: 1 },
     });
@@ -620,13 +620,13 @@ describe("<ProviderAutoJudgeSection />", () => {
     render(<ProviderAutoJudgeSection state={providerState({})} />);
 
     const readonly = screen.getByTestId("provider-auto-judge-readonly");
-    expect(readonly.textContent).toContain("Reviewed by Traycer's judge");
+    expect(readonly.textContent).toContain("Reviewed by Planwise's judge");
     expect(screen.queryByTestId("provider-auto-judge-unsupported")).toBeNull();
     expect(screen.queryByRole("combobox")).toBeNull();
   });
 
   const CLASSIFIER_WARNING =
-    "Faster and free, but your rules don't apply to it, and it replaces Traycer's judge for this provider's conversations.";
+    "Faster and free, but your rules don't apply to it, and it replaces Planwise's judge for this provider's conversations.";
 
   it("shows the classifier-cost warning under the Select for a native provider", () => {
     guiHarnessesQueryMock.data = {

@@ -2623,7 +2623,7 @@ describe("service manifests never leak a flag `host start` does not have", () =>
     const xml = buildLaunchAgentPlist({
       label: {
         id: "ai.traycer.host.prod",
-        displayName: "Traycer Host",
+        displayName: "Planwise Host",
         environment: "production",
       } as never,
       cli: {
@@ -2644,7 +2644,7 @@ describe("service manifests never leak a flag `host start` does not have", () =>
     const unit = buildSystemdUnit({
       label: {
         id: "ai.traycer.host.dev",
-        displayName: "Traycer Host (dev)",
+        displayName: "Planwise Host (dev)",
         environment: "dev",
       } as never,
       cli: {
@@ -2664,7 +2664,7 @@ describe("service manifests never leak a flag `host start` does not have", () =>
     };
     const label = {
       id: "ai.traycer.host.prod",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment: "production" as const,
       devSlot: null,
     };

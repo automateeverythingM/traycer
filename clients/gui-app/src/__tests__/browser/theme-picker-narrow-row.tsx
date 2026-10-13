@@ -33,7 +33,7 @@ import "@/index.css";
  * have: an open draft, which disables both pencils, and a library error, which
  * puts an alert under the card.
  */
-const BUILTIN = "Traycer Green";
+const BUILTIN = "Planwise Green";
 const NAMES = [
   BUILTIN,
   "Midnight Harbour Contrast High",

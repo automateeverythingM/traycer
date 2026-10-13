@@ -476,7 +476,7 @@ function ThemeImportDialogBody({
                       Drop your theme files here
                     </p>
                     <p className="max-w-prose text-ui-xs text-muted-foreground">
-                      Traycer and VS Code themes, including entire extension
+                      Planwise and VS Code themes, including entire extension
                       packs.
                     </p>
                     <p className="font-mono text-ui-xs text-muted-foreground">
@@ -520,7 +520,7 @@ function ThemeImportDialogBody({
                       id="theme-json"
                       value={json}
                       onChange={(event) => setJson(event.target.value)}
-                      placeholder="Paste exported Traycer theme JSON or a VS Code color theme…"
+                      placeholder="Paste exported Planwise theme JSON or a VS Code color theme…"
                       rows={7}
                       className="bg-foreground/3"
                       font="mono"

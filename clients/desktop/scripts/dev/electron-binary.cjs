@@ -195,7 +195,7 @@ function prepareMacDevBundle(
     "icon.icns",
   );
   const outputRoot = path.resolve(workspaceRoot, "dist", "dev-macos");
-  const devAppPath = path.join(outputRoot, "Traycer.app");
+  const devAppPath = path.join(outputRoot, "Planwise.app");
   const devExecutablePath = path.join(
     devAppPath,
     "Contents",
@@ -203,7 +203,7 @@ function prepareMacDevBundle(
     "Electron",
   );
   const metadataPath = path.join(outputRoot, "bundle-state.json");
-  const bundleDisplayName = devDesktopDisplayName ?? "Traycer";
+  const bundleDisplayName = devDesktopDisplayName ?? "Planwise";
   const nextState = createDevBundleState({
     devBundleId,
     bundleDisplayName,

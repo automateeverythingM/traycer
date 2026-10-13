@@ -139,7 +139,7 @@ const UNANSWERED_RESTART_MESSAGE =
  * of the flow taking it on their behalf.
  */
 const UNREACHABLE_CLIENT_MESSAGE =
-  "Traycer couldn't open a connection to ask this host to stop cleanly - you " +
+  "Planwise couldn't open a connection to ask this host to stop cleanly - you " +
   "may be signed out, or its credentials may be refreshing. Force restart " +
   "kills the host process and relaunches it, ending whatever it is running.";
 

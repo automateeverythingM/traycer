@@ -37,7 +37,7 @@ export function FallbackCrossLinkRow(): ReactNode {
             Being on Profiles & Limits does not mean they already know which
             problems this setting covers. */}
         When a rate limit, outage, billing problem or signed-out account
-        interrupts your chat, Traycer can carry it on to another account or an
+        interrupts your chat, Planwise can carry it on to another account or an
         equivalent model instead of ending it.
       </p>
       <Button

@@ -59,7 +59,7 @@ export function ProviderEnvOverridesSection({
             </p>
           ) : (
             <p className="text-ui-xs text-muted-foreground">
-              Applied when Traycer spawns the {providerName} harness. Use Unset
+              Applied when Planwise spawns the {providerName} harness. Use Unset
               to drop a variable inherited from your shell.
             </p>
           )}

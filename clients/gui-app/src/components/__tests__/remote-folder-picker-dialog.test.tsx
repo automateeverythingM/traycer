@@ -455,7 +455,7 @@ describe("<RemoteFolderPickerDialog />", () => {
     void useRemoteFolderPickerStore.getState().requestPick(makeClient());
     expect(
       (await screen.findByTestId("remote-folder-picker-error")).textContent,
-    ).toContain("update Traycer on the host");
+    ).toContain("update Planwise on the host");
     expect(screen.queryByRole("button", { name: "Retry" })).toBeNull();
   });
 

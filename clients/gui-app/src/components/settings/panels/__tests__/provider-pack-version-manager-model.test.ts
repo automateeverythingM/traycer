@@ -399,11 +399,11 @@ describe("copy and label rules with no coverage before this", () => {
       "Shared by OpenCode",
     );
     expect(formatSharedWithProvidersLine(["opencode", "traycer"])).toBe(
-      "Shared by OpenCode and Traycer",
+      "Shared by OpenCode and Planwise",
     );
     expect(
       formatSharedWithProvidersLine(["opencode", "traycer", "openrouter"]),
-    ).toBe("Shared by OpenCode, Traycer, and OpenRouter");
+    ).toBe("Shared by OpenCode, Planwise, and OpenRouter");
   });
 });
 

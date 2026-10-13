@@ -383,7 +383,7 @@ describe("preload foreground-notification buffering", () => {
       sendSyncFn: undefined,
     });
     const display: DesktopNotificationForegroundDisplay = {
-      title: "Traycer",
+      title: "Planwise",
       body: "Background agent failed",
       payload: null,
       replaceKey: "app-local:host.error:failure-1",
@@ -426,7 +426,7 @@ describe("preload foreground-notification buffering", () => {
 
     for (let index = 0; index < 21; index++) {
       fakeElectron.emit(RunnerHostEvent.notificationForegroundDisplay, {
-        title: "Traycer",
+        title: "Planwise",
         body: `Background agent ${index} failed`,
         payload: null,
         replaceKey: null,
@@ -747,7 +747,7 @@ describe("preload new-capability wiring", () => {
         return undefined;
       }
       if (channel === RunnerHostInvoke.supportSnapshotGet) {
-        return { appName: "Traycer", logs: [] };
+        return { appName: "Planwise", logs: [] };
       }
       if (channel === RunnerHostInvoke.supportRevealLog) {
         return { target: args[0], path: "/tmp/log" };
@@ -804,7 +804,7 @@ describe("preload new-capability wiring", () => {
     });
 
     await expect(bridge.support.getSnapshot()).resolves.toEqual({
-      appName: "Traycer",
+      appName: "Planwise",
       logs: [],
     });
     await expect(bridge.support.revealLog("host")).resolves.toEqual({
@@ -836,7 +836,7 @@ describe("preload new-capability wiring", () => {
   it("exposes desktop windows, ownership, per-window state, and auth-session bridge calls", async () => {
     const invokeFn = vi.fn(async (channel: string) => {
       if (channel === RunnerHostInvoke.windowsList) {
-        return [{ windowId: "preload-window", title: "Traycer" }];
+        return [{ windowId: "preload-window", title: "Planwise" }];
       }
       if (channel === RunnerHostInvoke.ownershipSnapshot) {
         return [
@@ -876,7 +876,7 @@ describe("preload new-capability wiring", () => {
 
     expect(bridge.windows.windowId).toBe("preload-window");
     await expect(bridge.windows.list()).resolves.toEqual([
-      { windowId: "preload-window", title: "Traycer" },
+      { windowId: "preload-window", title: "Planwise" },
     ]);
     await bridge.windows.requestFocus("other-window");
     await expect(

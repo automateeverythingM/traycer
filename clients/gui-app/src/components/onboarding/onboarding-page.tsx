@@ -542,7 +542,7 @@ function OnboardingTour(props: {
           onSkip={() => finish("skipped")}
         />
         <section
-          aria-label="Your introduction to Traycer"
+          aria-label="Your introduction to Planwise"
           className="onboarding-stage relative flex min-h-0 w-full flex-1 flex-col"
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -674,7 +674,7 @@ function WelcomeLayer(props: {
   if (phase === "ready") return null;
   return (
     <section
-      aria-label="Welcome to Traycer"
+      aria-label="Welcome to Planwise"
       data-leaving={phase === "leaving"}
       className="onboarding-welcome absolute inset-0 z-20 flex flex-col items-center justify-center gap-[clamp(1.2rem,2.8vh,2rem)] pt-safe-top pr-safe-right pb-safe-bottom pl-safe-left"
     >
@@ -682,7 +682,7 @@ function WelcomeLayer(props: {
         <BrandMark className="brand-entrance-mark h-auto w-[clamp(3.75rem,8vw,5.4rem)] text-foreground [&_g>path]:fill-current" />
       </m.div>
       <h1 className="brand-entrance-copy text-3xl font-medium tracking-tight">
-        Welcome to Traycer.
+        Welcome to Planwise.
       </h1>
       <button
         type="button"

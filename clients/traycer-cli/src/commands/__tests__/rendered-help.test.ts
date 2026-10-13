@@ -1695,10 +1695,10 @@ describe("rendered root/parent/leaf --help (CLI command audit regression suite)"
     it("the root and named-parent descriptions use the new user-language wording", () => {
       const program = freshProgram();
       expect(program.description()).toContain(
-        "sign in, run the Traycer host on this machine",
+        "sign in, run the Planwise host on this machine",
       );
       expect(findByPath(program, ["host"]).description()).toContain(
-        "Install, run, update, and troubleshoot the Traycer host",
+        "Install, run, update, and troubleshoot the Planwise host",
       );
       expect(findByPath(program, ["host", "service"]).description()).toContain(
         "background registration that keeps the host running",
@@ -1707,13 +1707,13 @@ describe("rendered root/parent/leaf --help (CLI command audit regression suite)"
         "Update the 'traycer' command itself",
       );
       expect(findByPath(program, ["config"]).description()).toContain(
-        "Read or change the Traycer settings stored on this machine",
+        "Read or change the Planwise settings stored on this machine",
       );
       expect(findByPath(program, ["config", "shell"]).description()).toContain(
-        "Choose the shell Traycer uses",
+        "Choose the shell Planwise uses",
       );
       expect(findByPath(program, ["config", "env"]).description()).toContain(
-        "Environment variables Traycer adds",
+        "Environment variables Planwise adds",
       );
       expect(findByPath(program, ["workspace"]).description()).toContain(
         "Show the folders an agent in this Task can work in",

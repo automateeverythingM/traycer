@@ -106,7 +106,7 @@ describe("host start - foreground console wiring", () => {
       .filter((entry) => entry.startsWith("write:"))
       .join("");
     expect(banner.length).toBeGreaterThan(0);
-    expect(banner).toContain("Running the Traycer host in the foreground");
+    expect(banner).toContain("Running the Planwise host in the foreground");
     expect(banner).toContain("Ctrl-C");
     expect(banner).toContain("traycer host service start");
     expect(banner).toContain("traycer host logs --follow");
@@ -136,7 +136,7 @@ describe("host start - foreground console wiring", () => {
 
     expect(mocks.startTailCalls).toHaveLength(0);
     expect(
-      mocks.order.some((entry) => entry.includes("Running the Traycer host")),
+      mocks.order.some((entry) => entry.includes("Running the Planwise host")),
     ).toBe(false);
   });
 
@@ -149,7 +149,7 @@ describe("host start - foreground console wiring", () => {
 
     expect(mocks.startTailCalls).toHaveLength(0);
     expect(
-      mocks.order.some((entry) => entry.includes("Running the Traycer host")),
+      mocks.order.some((entry) => entry.includes("Running the Planwise host")),
     ).toBe(false);
   });
 });

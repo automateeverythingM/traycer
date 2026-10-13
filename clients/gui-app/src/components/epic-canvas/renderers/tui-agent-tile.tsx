@@ -1145,7 +1145,7 @@ function continueUnderProfileDisabledReasonFor(
   forkDisabled: boolean,
 ): string | undefined {
   if (!continueUnderProfileSupported) {
-    return "Update Traycer host to continue this session under another profile.";
+    return "Update Planwise host to continue this session under another profile.";
   }
   if (forkDisabled) {
     return "Fork is available after the terminal agent session and workspace binding are ready.";

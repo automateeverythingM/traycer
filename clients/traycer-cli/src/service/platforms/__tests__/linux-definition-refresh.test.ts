@@ -100,7 +100,7 @@ import type { CliInvocation } from "../../cli-binary";
 function labelFor(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host (test)",
+    displayName: "Planwise Host (test)",
     environment: "dev",
     devSlot: null,
   };
@@ -336,7 +336,7 @@ describe("unrecognized ExecStart", () => {
 
     expect(state).toEqual({
       kind: "unrecognized",
-      reason: "its ExecStart is not a Traycer host start",
+      reason: "its ExecStart is not a Planwise host start",
     });
   });
 

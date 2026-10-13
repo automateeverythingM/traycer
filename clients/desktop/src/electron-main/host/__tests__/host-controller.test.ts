@@ -4059,7 +4059,7 @@ describe("platform matrix", () => {
       expect(outcome.kind).toBe("failed");
       if (outcome.kind === "failed") {
         expect(outcome.message).toContain("Login Items & Extensions");
-        expect(outcome.message).toContain("older Traycer login item");
+        expect(outcome.message).toContain("older Planwise login item");
         // The remedy REPLACES the doctor routing rather than joining it: two
         // instructions, one of which cannot work, is what sent this machine
         // round the same command.
@@ -4448,9 +4448,9 @@ describe("platform matrix", () => {
         // running" message text (a substring match would let through) is
         // provably absent, not merely unmatched.
         expect(outcome.message).toBe(
-          "Traycer's background host is registered but disabled by macOS. " +
+          "Planwise's background host is registered but disabled by macOS. " +
             "Open System Settings → General → Login Items & Extensions and turn on " +
-            'Traycer under "Allow in the Background", then click Retry.',
+            'Planwise under "Allow in the Background", then click Retry.',
         );
         expect(outcome.message).not.toContain("host doctor");
       }
@@ -5736,7 +5736,7 @@ describe("platform matrix", () => {
   });
 });
 
-describe("RM: Remove Traycer and uninstall --all refuse first over a terminal-started host", () => {
+describe("RM: Remove Planwise and uninstall --all refuse first over a terminal-started host", () => {
   function uninstallSpawnCount(): number {
     return vi
       .mocked(streamBundledTraycerCliJson)
@@ -9725,7 +9725,7 @@ describe("F3: routeForceRestartContinuation via respawn", () => {
         );
         expect(outcome).toEqual({
           kind: "deferred",
-          message: "Another Traycer process is managing the host.",
+          message: "Another Planwise process is managing the host.",
         });
       } finally {
         if (held.kind === "acquired") await held.handle.release();
@@ -10584,7 +10584,7 @@ describe("recoverIfDown", () => {
     const outcome = await controller.recoverIfDown();
     expect(outcome).toEqual({
       kind: "deferred",
-      message: "Another Traycer process is managing the host.",
+      message: "Another Planwise process is managing the host.",
     });
   });
 
@@ -12552,9 +12552,9 @@ describe("service-registration states: disabled task and another user's task", (
   // T08 ruling 13's sentences, spelled out rather than imported so a copy
   // change is a visible test change.
   const UNCONFIRMED =
-    "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
+    "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
   const UNCONFIRMED_LEFT_IN_PLACE =
-    "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.";
+    "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.";
 
   function stageOverInstalled(controller: HostController): HostController {
     writeInstallRecord("production", {

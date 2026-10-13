@@ -979,7 +979,7 @@ describe("runTraycerCliJson preserves successful envelopes on non-zero exit", ()
         code: "HOST_NOT_RUNNING",
         severity: "error" as const,
         title: "Host is not running",
-        message: "Start the host to use Traycer.",
+        message: "Start the host to use Planwise.",
         fixAction: "host-start",
         terminalCommand: "traycer host start",
         details: null,

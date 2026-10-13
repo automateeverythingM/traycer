@@ -192,7 +192,7 @@ function PickStep(props: {
       <Frame.Header>
         <Frame.Title>Import logins from another browser</Frame.Title>
         <Frame.Description>
-          Choose a browser profile. Traycer reads which sites it has logins for;
+          Choose a browser profile. Planwise reads which sites it has logins for;
           nothing is imported until you confirm.
         </Frame.Description>
       </Frame.Header>
@@ -365,7 +365,7 @@ function ChooseStep(props: {
           {props.source.profileLabel}
         </Frame.Title>
         <Frame.Description>
-          Traycer signs its browser into the sites you keep. A site already
+          Planwise signs its browser into the sites you keep. A site already
           signed in here is replaced by the imported login.
         </Frame.Description>
       </Frame.Header>
@@ -465,12 +465,12 @@ function SiteChecklist(props: {
           {props.scan.protectedCookieCount === 1 ? "login is" : "logins are"}{" "}
           protected by the browser on Windows and can't be imported. Export them
           with a cookie extension and import the file, or sign in once inside
-          Traycer.
+          Planwise.
         </Notice>
       ) : null}
       {sites.length === 0 && props.scan.excluded.length === 0 ? (
         <p className="py-2 text-muted-foreground">
-          This profile has no logins Traycer can import.
+          This profile has no logins Planwise can import.
         </p>
       ) : (
         <>
@@ -652,12 +652,12 @@ function DeviceBoundOptIn(props: {
           Google binds sign-ins to the device they were made on. An imported
           Google login can stop working at any moment, and may also sign you out
           of Google in the browser it came from. If it does, sign in to Google
-          inside Traycer instead.
+          inside Planwise instead.
         </Notice>
       ) : (
         <p className="text-ui-xs text-muted-foreground">
           Google accounts are left out: Google binds sign-ins to the device they
-          were made on. Sign in to Google inside Traycer once, or import them
+          were made on. Sign in to Google inside Planwise once, or import them
           anyway and accept that they can stop working.
         </p>
       )}
@@ -746,7 +746,7 @@ function UnlockExplainer(props: {
   if (props.unlock === "linux-keyring") {
     return (
       <Notice tone="info">
-        Your keyring may ask to be unlocked so Traycer can read{" "}
+        Your keyring may ask to be unlocked so Planwise can read{" "}
         {BROWSER_LABELS[props.browser]}'s key.
       </Notice>
     );
@@ -875,9 +875,9 @@ function BlockedExplainer(props: {
       return (
         <Notice tone="warning">
           <p>
-            Safari's cookies are protected by macOS. Grant Traycer Full Disk
+            Safari's cookies are protected by macOS. Grant Planwise Full Disk
             Access under System Settings › Privacy &amp; Security, then try
-            again. If Traycer isn't listed, add it with the + button.
+            again. If Planwise isn't listed, add it with the + button.
           </p>
           <Button
             type="button"
@@ -912,7 +912,7 @@ function BlockedExplainer(props: {
     case "keychain-denied":
       return (
         <Notice tone="warning">
-          macOS didn't let Traycer read the browser's key. Try again and click
+          macOS didn't let Planwise read the browser's key. Try again and click
           Allow in the Keychain prompt.
         </Notice>
       );
@@ -926,14 +926,14 @@ function BlockedExplainer(props: {
     case "unreadable":
       return (
         <Notice tone="warning">
-          Traycer couldn't read this source. Try another profile, or export the
+          Planwise couldn't read this source. Try another profile, or export the
           cookies with an extension and import the file.
         </Notice>
       );
     case "source-changed":
       return (
         <Notice tone="warning">
-          This profile's cookies changed after Traycer read them, and importing
+          This profile's cookies changed after Planwise read them, and importing
           them now would need a keystore you weren't told about. Nothing was
           imported; try again to read the profile afresh.
         </Notice>
@@ -941,7 +941,7 @@ function BlockedExplainer(props: {
     case "file-too-large":
       return (
         <Notice tone="warning">
-          This source is larger than Traycer reads in one go. A cookie export is
+          This source is larger than Planwise reads in one go. A cookie export is
           normally a few kilobytes; check that you picked the right file, or
           export only the sites you need and import that.
         </Notice>
@@ -950,7 +950,7 @@ function BlockedExplainer(props: {
       return (
         <Notice tone="warning">
           This profile's cookie database is far larger than a browser normally
-          keeps, so Traycer won't read it. Clear old cookies in that browser and
+          keeps, so Planwise won't read it. Clear old cookies in that browser and
           try again, or export the sites you need with a cookie extension and
           import the file.
         </Notice>
@@ -958,14 +958,14 @@ function BlockedExplainer(props: {
     case "incomplete":
       return (
         <Notice tone="warning">
-          Traycer stopped before every site was written. The logins it did
+          Planwise stopped before every site was written. The logins it did
           import are kept on this machine; import again to finish the rest.
         </Notice>
       );
     case "too-many-sites":
       return (
         <Notice tone="warning">
-          That is more sites than Traycer can replace in one go. Choose fewer
+          That is more sites than Planwise can replace in one go. Choose fewer
           sites and import the rest in another pass.
         </Notice>
       );

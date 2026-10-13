@@ -28,8 +28,8 @@ const APP_UPDATE = createReportIssueContext({
 });
 
 const HOST_STARTUP = createReportIssueContext({
-  title: "Could not start Traycer Host",
-  message: "Traycer Host could not start.",
+  title: "Could not start Planwise Host",
+  message: "Planwise Host could not start.",
   code: "HOST_PROVISIONING_FAILED",
   source: "Host startup",
 });

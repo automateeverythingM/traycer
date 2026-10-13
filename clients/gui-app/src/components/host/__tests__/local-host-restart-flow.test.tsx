@@ -158,7 +158,7 @@ function nonDialableLocalEntry(hostId: string): HostDirectoryEntry {
 // exported) so a change to the production copy breaks these assertions
 // instead of silently drifting from what the user actually sees.
 const UNREACHABLE_CLIENT_MESSAGE =
-  "Traycer couldn't open a connection to ask this host to stop cleanly - you " +
+  "Planwise couldn't open a connection to ask this host to stop cleanly - you " +
   "may be signed out, or its credentials may be refreshing. Force restart " +
   "kills the host process and relaunches it, ending whatever it is running.";
 const HOST_CHANGED_DESCRIPTION =
@@ -261,7 +261,7 @@ describe("<LocalHostRestartFlow /> - no host runtime binding (ForceOnly arm)", (
     const requestHostRespawn = vi.fn(() =>
       Promise.resolve({
         kind: "declined" as const,
-        message: "Another Traycer process holds the management lock.",
+        message: "Another Planwise process holds the management lock.",
       }),
     );
     const runnerHost = createFakeRunnerHost({ requestHostRespawn });
@@ -273,7 +273,7 @@ describe("<LocalHostRestartFlow /> - no host runtime binding (ForceOnly arm)", (
       expect(toast.info).toHaveBeenCalledWith(
         "Host not restarted",
         expect.objectContaining({
-          description: "Another Traycer process holds the management lock.",
+          description: "Another Planwise process holds the management lock.",
         }),
       );
     });
@@ -697,7 +697,7 @@ describe("<LocalHostRestartFlow /> - host runtime binding present, local host re
     const requestHostRespawn = vi.fn(() =>
       Promise.resolve({
         kind: "declined" as const,
-        message: "Another Traycer process holds the management lock.",
+        message: "Another Planwise process holds the management lock.",
       }),
     );
     const runnerHost = createFakeRunnerHost({ requestHostRespawn });
@@ -1322,7 +1322,7 @@ describe('<LocalHostRestartFlow /> - firstLeg="service" (the lifecycle card idle
     const restartHostServiceIfHostIdle = vi.fn(() =>
       Promise.resolve({
         kind: "declined" as const,
-        message: "Another Traycer process holds the management lock.",
+        message: "Another Planwise process holds the management lock.",
       }),
     );
     const runnerHost = createFakeRunnerHost({
@@ -1338,7 +1338,7 @@ describe('<LocalHostRestartFlow /> - firstLeg="service" (the lifecycle card idle
       expect(toast.info).toHaveBeenCalledWith(
         "Host not restarted",
         expect.objectContaining({
-          description: "Another Traycer process holds the management lock.",
+          description: "Another Planwise process holds the management lock.",
         }),
       );
     });

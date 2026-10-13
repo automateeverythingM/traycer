@@ -131,7 +131,7 @@ function profileSyncDeviceRows(
 /** A failed read as a sentence about the source. Never the host's own text. */
 function overviewErrorText(error: HostRpcError, sourceName: string): string {
   return error.code === "E_HOST_UNSUPPORTED"
-    ? `Update Traycer on ${sourceName} to sync profiles.`
+    ? `Update Planwise on ${sourceName} to sync profiles.`
     : `Couldn't reach ${sourceName} right now. This retries on its own.`;
 }
 

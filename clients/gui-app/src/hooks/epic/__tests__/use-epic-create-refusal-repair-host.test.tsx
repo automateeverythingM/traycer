@@ -77,8 +77,8 @@ const CONTEXT = { userId: USER_ID, username: USER_ID };
 const REFUSAL: EpicCreateRefusal = {
   kind: "local-store-unavailable",
   message:
-    "Traycer can't open this device's local store, so nothing was created.",
-  remedy: "Quit the other Traycer running on this machine, then rebind.",
+    "Planwise can't open this device's local store, so nothing was created.",
+  remedy: "Quit the other Planwise running on this machine, then rebind.",
 };
 
 const CREATE_VARIABLES: CreateEpicRequestV12 = {
@@ -387,7 +387,7 @@ describe("a second refusal for the same host while the dialog is mounted", () =>
 describe("a missing-attachment-bytes refusal retries once under the same idempotency key", () => {
   const MISSING_BYTES_REFUSAL: EpicCreateRefusalV12 = {
     kind: "missing-attachment-bytes",
-    message: "Traycer couldn't find the bytes for one of these images.",
+    message: "Planwise couldn't find the bytes for one of these images.",
     remedy: "Re-upload the image and try again.",
   };
 

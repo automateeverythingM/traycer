@@ -549,7 +549,7 @@ describe("WorktreesSettingsPanel host-scoped states", () => {
     ).toBeGreaterThan(0);
     expect(agentChip.parentElement).toBe(cleanupChip.parentElement);
     expect(
-      screen.queryByText("Traycer-created worktrees on this host."),
+      screen.queryByText("Planwise-created worktrees on this host."),
     ).toBeNull();
     // Same as the no-host empty state - host-scoped UI carries no
     // branch-prefix strip; that control lives in General settings now.

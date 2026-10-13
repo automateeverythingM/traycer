@@ -42,7 +42,7 @@ vi.mock("../../service", async (importOriginal) => {
     }),
     serviceLabelFor: (environment: "dev" | "production") => ({
       id: "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -173,7 +173,7 @@ describe("host service uninstall over a task another Windows user owns", () => {
     );
     if (!(caught instanceof Error)) throw new Error("unreachable");
     expect(caught.message).toBe(
-      "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
+      "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
     );
     expect(caught.message).not.toContain("another Windows user");
   });

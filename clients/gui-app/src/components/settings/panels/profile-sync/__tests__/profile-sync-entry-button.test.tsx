@@ -66,7 +66,7 @@ describe("<ProfileSyncEntryButton />", () => {
       throw new Error("expected a tooltip trigger around the button");
     fireEvent.focus(trigger);
     expect(screen.getByRole("tooltip").textContent).toBe(
-      "Update Traycer on this device to sync profiles.",
+      "Update Planwise on this device to sync profiles.",
     );
     expect(screen.queryByRole("button", { name: /copy/i })).toBeNull();
   });

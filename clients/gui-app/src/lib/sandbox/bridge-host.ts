@@ -561,7 +561,7 @@ export class SandboxBridgeHost {
     if (method === "ui/initialize") {
       this.respond(id, {
         protocolVersion: MCP_APPS_PROTOCOL_VERSION,
-        hostInfo: { name: "Traycer", version: this.options.hostVersion },
+        hostInfo: { name: "Planwise", version: this.options.hostVersion },
         hostCapabilities: this.hostCapabilities(),
         hostContext: this.hostContext,
       });

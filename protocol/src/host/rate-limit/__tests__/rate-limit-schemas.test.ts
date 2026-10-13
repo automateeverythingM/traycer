@@ -1601,7 +1601,7 @@ describe("host.getRateLimitUsage v5.0 antigravity arm + downgrade bridges", () =
   const DOWNGRADE_UNSUPPORTED_ERROR = {
     code: "DOWNGRADE_UNSUPPORTED" as const,
     message:
-      "Reading this provider's rate limits requires a newer Traycer client.",
+      "Reading this provider's rate limits requires a newer Planwise client.",
   };
 
   it("parses an antigravity arm on the live union and on the live 5.0 line, and rejects it on the frozen 4.0 line", () => {

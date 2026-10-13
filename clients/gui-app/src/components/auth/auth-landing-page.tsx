@@ -37,7 +37,7 @@ const SIGN_IN_LANE_CLASS =
  */
 const REFUSAL_MESSAGES: Record<ShellAdmissionRefusal, string> = {
   "unverified-relay-only":
-    "Your sign-in couldn't be confirmed, and this device has no Traycer host of its own — everything here is served from another device over the network. Sign in again to reconnect.",
+    "Your sign-in couldn't be confirmed, and this device has no Planwise host of its own — everything here is served from another device over the network. Sign in again to reconnect.",
 };
 
 function refusalMessage(refusal: ShellAdmissionRefusal): string {
@@ -90,7 +90,7 @@ export function AuthLandingPage(props: {
         <div className="flex w-full max-w-[min(88vw,31rem)] flex-col items-center gap-[clamp(1.2rem,2.8vh,2rem)]">
           <BrandMark className="h-auto w-[clamp(3.75rem,8vw,5.4rem)] drop-shadow-[0_1.5rem_2.5rem_rgba(0,0,0,0.42)]" />
           <h1 className="mb-2 text-[clamp(2rem,5vw,2.75rem)] font-semibold leading-[clamp(2.25rem,5.5vw,3rem)] tracking-tight">
-            Welcome to Traycer
+            Welcome to Planwise
           </h1>
           {/* Above the button, not below it: this is the reason the button is
               being shown at all, and a reader who has already pressed it has

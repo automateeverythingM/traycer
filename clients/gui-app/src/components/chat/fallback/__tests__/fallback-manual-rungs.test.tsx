@@ -819,11 +819,11 @@ describe("FallbackManualRungActions", () => {
     // `describeWaitDisposition`'s `beyond_cap` arm - this goes red for a
     // failure with no verified reset time in hand.
     expect(
-      screen.getByText("This limit resets later than Traycer is set to wait."),
+      screen.getByText("This limit resets later than Planwise is set to wait."),
     ).toBeDefined();
     // Exactly that one sentence: nothing else about resets or waiting.
     expect(container.textContent).toBe(
-      "This limit resets later than Traycer is set to wait.Retry",
+      "This limit resets later than Planwise is set to wait.Retry",
     );
     unmount();
 
@@ -840,7 +840,7 @@ describe("FallbackManualRungActions", () => {
     renderActions(TURN_ID);
     expect(
       screen.getByText(
-        `This limit resets at ${formatClockTime(RESETS_AT)} — longer than Traycer is set to wait.`,
+        `This limit resets at ${formatClockTime(RESETS_AT)} — longer than Planwise is set to wait.`,
       ),
     ).toBeDefined();
   });
@@ -866,7 +866,7 @@ describe("FallbackManualRungActions", () => {
     // this reads the bare clock time instead of the weekday-qualified form.
     expect(
       screen.getByText(
-        `This limit resets at ${resetsAtLabel} — longer than Traycer is set to wait.`,
+        `This limit resets at ${resetsAtLabel} — longer than Planwise is set to wait.`,
       ),
     ).toBeDefined();
   });

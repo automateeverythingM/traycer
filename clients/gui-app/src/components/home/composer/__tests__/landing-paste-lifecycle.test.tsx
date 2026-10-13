@@ -487,7 +487,7 @@ describe("landing paste lifecycle (real draft-runtime registry + keyed LandingCo
     await waitForEditorReady();
 
     const editorBefore = screen.getByRole("textbox", {
-      name: "Ask Traycer anything. @ mention for context",
+      name: "Ask Planwise anything. @ mention for context",
     });
 
     const bytes = bytesOf([8, 8, 8]);
@@ -498,7 +498,7 @@ describe("landing paste lifecycle (real draft-runtime registry + keyed LandingCo
     });
 
     const editorAfter = screen.getByRole("textbox", {
-      name: "Ask Traycer anything. @ mention for context",
+      name: "Ask Planwise anything. @ mention for context",
     });
     expect(editorAfter).toBe(editorBefore);
   });

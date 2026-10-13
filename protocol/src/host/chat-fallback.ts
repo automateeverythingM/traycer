@@ -961,7 +961,7 @@ export const chatFallbackListTargetsDowngradeV20ToV10 = defineDowngradePath<
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
           message:
-            "Listing fallback targets for this chat requires a newer Traycer client.",
+            "Listing fallback targets for this chat requires a newer Planwise client.",
         },
       };
     }

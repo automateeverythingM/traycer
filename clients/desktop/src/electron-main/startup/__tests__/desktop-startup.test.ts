@@ -29,7 +29,7 @@ import {
 
 vi.mock("electron", () => ({
   app: {
-    getName: () => "Traycer",
+    getName: () => "Planwise",
     getPath: () => "/tmp",
     on: () => undefined,
     whenReady: () => Promise.resolve(),
@@ -270,7 +270,7 @@ vi.mock("../../app/host-login-item", () => ({
   hostManagesHostLoginItem: () => Promise.resolve(false),
 }));
 vi.mock("../../../config", () => ({
-  DESKTOP_APP_NAME: "Traycer",
+  DESKTOP_APP_NAME: "Planwise",
 }));
 vi.mock("../../app/update-preferences", () => ({
   hydrateUpdatePreferences: () => Promise.resolve({}),

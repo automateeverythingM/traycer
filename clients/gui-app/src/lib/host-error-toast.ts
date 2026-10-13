@@ -181,13 +181,13 @@ function transportNoticeToast(error: HostRpcError): void {
   // error of the two. Narrating the connection is the session-level
   // affordance's job; this toast's job is the gesture's outcome.
   if (error instanceof RetryableTransportError) {
-    toast("That didn't go through — the Traycer host never received it.", {
+    toast("That didn't go through — the Planwise host never received it.", {
       id: TRANSPORT_NOTICE_TOAST_ID,
     });
     return;
   }
   toast(
-    "No reply came back from the Traycer host, so this may or may not have gone through.",
+    "No reply came back from the Planwise host, so this may or may not have gone through.",
     { id: TRANSPORT_UNKNOWN_OUTCOME_TOAST_ID },
   );
 }
@@ -398,7 +398,7 @@ function hostErrorToastMessage(error: HostRpcError, fallback: string) {
   // unsupported`). This is a version gap, not a failed operation, so the copy
   // points at the fix rather than restating the operation name.
   if (error.code === "E_HOST_UNSUPPORTED") {
-    return "This needs a newer Traycer host. Update the host to continue.";
+    return "This needs a newer Planwise host. Update the host to continue.";
   }
   // BEFORE the `FORBIDDEN` arm, and that ordering is the fix -
   // `s5-status-truthfulness` instance 5. An owner's refused share used to

@@ -454,7 +454,7 @@ describe("runLinkPhoneFlow", () => {
     expect(output).toContain(
       "▲ A phone scanned this code but showed NO sign-in code · iPhone",
     );
-    expect(output).toContain("An up-to-date Traycer app always shows one.");
+    expect(output).toContain("An up-to-date Planwise app always shows one.");
     expect(output).toContain("otherwise reject and update the app");
     expect(output).not.toContain("●");
     expect(answer.lastPrompt).toBe(

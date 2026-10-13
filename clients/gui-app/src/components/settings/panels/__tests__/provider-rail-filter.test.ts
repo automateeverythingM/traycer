@@ -98,7 +98,7 @@ describe("filterProviderRail", () => {
     expect(idsFor(view({ query: "claude-code" }))).toEqual(["claude-code"]);
   });
 
-  it("matches the words the rail RENDERS for Traycer, not the protocol name", () => {
+  it("matches the words the rail RENDERS for Planwise, not the protocol name", () => {
     // `providerDisplayName` overrides this one provider to "Traycer Inference".
     // Searching the protocol's `PROVIDER_DISPLAY_NAMES` instead would leave the
     // second word visible in the rail and unsearchable.

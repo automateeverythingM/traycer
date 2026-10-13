@@ -84,7 +84,7 @@ const production = {
     relayAttachUrl: "wss://relay.traycer.ai/attach",
   },
   appId: "ai.traycer.desktop",
-  productName: "Traycer",
+  productName: "Planwise",
   protocolScheme: "traycer",
   releaseChannel: "stable",
 };
@@ -96,7 +96,7 @@ runConfigTargetCli({
     // lock, the OAuth scheme, and the Windows AppUserModelId). Source holds the
     // dev values; a production build stamps the shipped identity.
     appName: {
-      dev: "Traycer Dev",
+      dev: "Planwise Dev",
       staging: targetInput === null ? "" : targetInput.productName,
       production: production.productName,
     },

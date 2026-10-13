@@ -76,7 +76,7 @@ afterEach(() => {
 });
 
 describe("composer rich clipboard paste", () => {
-  it("pastes Traycer composer clipboard HTML as structured editor content", () => {
+  it("pastes Planwise composer clipboard HTML as structured editor content", () => {
     const editor = makeEditor(KNOWN_SLASH_NAMES);
     const html = buildComposerClipboardHtml(
       STRUCTURED_CONTENT,

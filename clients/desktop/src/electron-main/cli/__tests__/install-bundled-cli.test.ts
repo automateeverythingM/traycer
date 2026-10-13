@@ -115,7 +115,7 @@ afterEach(() => {
 function stageBundled(content: string): string {
   const bundleCliDir = join(
     work,
-    "Traycer.app",
+    "Planwise.app",
     "Contents",
     "Resources",
     "cli",
@@ -158,7 +158,7 @@ describe("installBundledCli stages a copy that outlives the bundle", () => {
       source: "desktop",
     });
 
-    rmSync(join(work, "Traycer.app"), { recursive: true, force: true });
+    rmSync(join(work, "Planwise.app"), { recursive: true, force: true });
 
     // `stat` FOLLOWS links: with the old symlink staging this is exactly
     // where ENOENT surfaced while lstat (and `ls`) kept succeeding.

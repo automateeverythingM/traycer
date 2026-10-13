@@ -363,7 +363,7 @@ describe("host method poll policy table", () => {
           latest: "1.3.0",
           floorVersion: "1.3.0",
           floorReason:
-            "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+            "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
           yanked: false,
           floorSha256: "",
         }),
@@ -375,7 +375,7 @@ describe("host method poll policy table", () => {
           latest: "1.2.0",
           floorVersion: "1.4.0-rc.1",
           floorReason:
-            "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+            "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
           yanked: false,
           floorSha256: "",
         }),

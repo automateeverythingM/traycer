@@ -468,7 +468,7 @@ function useLocalDoctorFixMutation(
     mutationKey: runnerMutationKeys.hostRunDoctor(),
     mutationFn: async (issue) => {
       if (management === null) {
-        throw new Error("This shell has no local Traycer CLI to run that fix.");
+        throw new Error("This shell has no local Planwise CLI to run that fix.");
       }
       // No conversion: the two `HostDoctorIssue` declarations are the same
       // seven fields with the same severity union, because they describe the

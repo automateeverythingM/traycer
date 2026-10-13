@@ -134,7 +134,7 @@ describe("attestTraycerRegistration", () => {
     expect(result.kind).toBe("attested");
   });
 
-  it("rejects a label outside the Traycer namespace when known labels are supplied", () => {
+  it("rejects a label outside the Planwise namespace when known labels are supplied", () => {
     const result = attestTraycerRegistration({
       labelId: "com.apple.finder",
       knownLabels: KNOWN,
@@ -144,7 +144,7 @@ describe("attestTraycerRegistration", () => {
     });
     expect(result).toEqual({
       kind: "not-traycer",
-      reason: "label 'com.apple.finder' is outside the Traycer host namespace",
+      reason: "label 'com.apple.finder' is outside the Planwise host namespace",
     });
   });
 
@@ -269,7 +269,7 @@ describe("attestTraycerRegistration", () => {
     });
     expect(result).toEqual({
       kind: "indeterminate",
-      cause: "no positive Traycer identity signals found",
+      cause: "no positive Planwise identity signals found",
     });
   });
 
@@ -283,7 +283,7 @@ describe("attestTraycerRegistration", () => {
     });
     expect(result).toEqual({
       kind: "indeterminate",
-      cause: "no positive Traycer identity signals found",
+      cause: "no positive Planwise identity signals found",
     });
   });
 
@@ -330,7 +330,7 @@ describe("isEvictableTraycerIdentity", () => {
 describe("identity attestation over real launchd bytes (annex §2.1.2)", () => {
   const KNOWN_LABELS = traycerLabelIdsForBase("ai.traycer.host");
 
-  it("attests the live Traycer agent on its real, bare ProgramArguments", () => {
+  it("attests the live Planwise agent on its real, bare ProgramArguments", () => {
     const args = extractProgramArgumentsFromPrint(HEALTHY_TRAYCER_AGENT_PRINT);
     expect(args).not.toBeNull();
 

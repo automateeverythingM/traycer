@@ -55,7 +55,7 @@ vi.mock("sonner", () => ({
 }));
 
 const baseSnapshot: DesktopSupportSnapshot = {
-  appName: "Traycer",
+  appName: "Planwise",
   appVersion: "1.2.3",
   platform: "darwin",
   arch: "arm64",
@@ -1846,7 +1846,7 @@ describe("Report issue capture dialog (deep interactions)", () => {
       ).not.toBeNull();
       expect(screen.queryByRole("heading", { name: "Report sent" })).toBeNull();
       expect(
-        screen.queryByText("Sent privately to the Traycer team."),
+        screen.queryByText("Sent privately to the Planwise team."),
       ).toBeNull();
       expect(harness.openedLinks).toHaveLength(1);
     });

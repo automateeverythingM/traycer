@@ -433,7 +433,7 @@ describe("<HostTrayCommandListener /> - mounted in __root", () => {
       .mockResolvedValueOnce({
         kind: "busy" as const,
         continuation: "retry-with-force" as const,
-        message: "Another Traycer process is applying an update.",
+        message: "Another Planwise process is applying an update.",
       })
       .mockResolvedValueOnce({
         kind: "ok" as const,
@@ -463,7 +463,7 @@ describe("<HostTrayCommandListener /> - mounted in __root", () => {
     // its restart command confirms through `LocalHostRestartFlow`.
     expect(busyDialog.dataset.purpose).toBe("update");
     expect(busyDialog.textContent).toContain(
-      "Another Traycer process is applying an update.",
+      "Another Planwise process is applying an update.",
     );
 
     fireEvent.click(screen.getByTestId("host-busy-force"));
@@ -477,7 +477,7 @@ describe("<HostTrayCommandListener /> - mounted in __root", () => {
     const applyStaged = vi.fn(() =>
       Promise.resolve({
         kind: "deferred" as const,
-        message: "Another Traycer process is managing the host.",
+        message: "Another Planwise process is managing the host.",
       }),
     );
     const management = makeManagement({ status: READY_STATUS, applyStaged });
@@ -495,7 +495,7 @@ describe("<HostTrayCommandListener /> - mounted in __root", () => {
 
     await waitFor(() => {
       expect(toastErrorMock).toHaveBeenCalledWith(
-        "Another Traycer process is managing the host.",
+        "Another Planwise process is managing the host.",
       );
     });
     expect(screen.queryByTestId("host-busy-force-defer-dialog")).toBeNull();

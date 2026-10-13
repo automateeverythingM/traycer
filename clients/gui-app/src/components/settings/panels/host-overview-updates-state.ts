@@ -878,7 +878,7 @@ function describeInstallRefusal(
 ): string | null {
   if (storeFloor !== null) return describeHostStoreFloorRpcRefusal(storeFloor);
   if (reason === "cli-too-old") {
-    return "This device's Traycer CLI is too old to start the update. Update the CLI, then try again.";
+    return "This device's Planwise CLI is too old to start the update. Update the CLI, then try again.";
   }
   if (reason === null) return null;
   return `${describeCliShellFailure("cli-failed", hostName)} (${reason})`;
@@ -1658,7 +1658,7 @@ function describeForceUpdateRefusal(input: {
   if (entry === undefined) {
     // An absent entry, failed check, or incomplete refusal cannot name a
     // floor.
-    return `Traycer couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
+    return `Planwise couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
   }
   if (entry.yanked) {
     return `v${input.version} has been withdrawn and can't be installed on ${input.hostName}. Select Check now for the current catalog.`;
@@ -1667,7 +1667,7 @@ function describeForceUpdateRefusal(input: {
     // No asset RESOLVED - an unknown platform key against a multi-platform
     // entry, or a key the entry does not carry. Not proof the release is
     // unavailable here, only that this page cannot read a floor for it.
-    return `Traycer couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
+    return `Planwise couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
   }
   // The catalog ENTRY's own floor, read apart from the asset's authored
   // reason: staged bytes install whatever the asset's availability says
@@ -1683,13 +1683,13 @@ function describeForceUpdateRefusal(input: {
   // an upgrade the record has not re-read yet).
   const declaredFloor = entry.requiredCliVersion;
   if (declaredFloor !== null && !isValidHostVersion(declaredFloor)) {
-    return `Traycer couldn't verify the command-line tools version v${input.version} needs on ${input.hostName}: its catalog entry declares a requirement this page cannot read.`;
+    return `Planwise couldn't verify the command-line tools version v${input.version} needs on ${input.hostName}: its catalog entry declares a requirement this page cannot read.`;
   }
   const floor = readCliFloor(entry, input.platformKey);
   if (floor !== null) {
     return floor.repairable && floor.requiredCliVersion !== null
-      ? `v${input.version} needs Traycer CLI ${floor.requiredCliVersion} or newer on ${input.hostName}. Update the command-line tools first.`
-      : `Traycer couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
+      ? `v${input.version} needs Planwise CLI ${floor.requiredCliVersion} or newer on ${input.hostName}. Update the command-line tools first.`
+      : `Planwise couldn't verify that v${input.version} can be installed on ${input.hostName}. Select Check now and try again.`;
   }
   return null;
 }
@@ -1936,7 +1936,7 @@ function handleInstallOutcome(input: {
  * of retrying this button changes anything until the CLI is updated.
  */
 const CLI_TOO_OLD_MESSAGE =
-  "This computer's Traycer CLI is too old to resume the update. Update the CLI, then try again.";
+  "This computer's Planwise CLI is too old to resume the update. Update the CLI, then try again.";
 
 /**
  * What a `dispatch-indeterminate` reason means to a person (D18).

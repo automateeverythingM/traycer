@@ -349,8 +349,8 @@ export function describeUnknownVariant(
         ? "content"
         : "activity";
   return variant.length === 0
-    ? `Unsupported ${noun} — this chat needs a newer version of Traycer`
-    : `Unsupported ${noun} (${variant}) — this chat needs a newer version of Traycer`;
+    ? `Unsupported ${noun} — this chat needs a newer version of Planwise`
+    : `Unsupported ${noun} (${variant}) — this chat needs a newer version of Planwise`;
 }
 
 /**

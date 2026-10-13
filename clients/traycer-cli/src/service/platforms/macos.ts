@@ -341,7 +341,7 @@ async function takeoverDesktopRegistration(
   if (agentProbe.ownership.kind !== "smappservice") {
     throw cliError({
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-      message: `service install --takeover: launchd has '${agentLabelId}' loaded from ${agentProbe.ownership.path ?? "an unknown path"}, which is not Traycer Desktop's registration; this command does not manage that job and will not register the CLI label beside it. Unload it (launchctl bootout gui/<uid>/${agentLabelId}) and re-run this command.`,
+      message: `service install --takeover: launchd has '${agentLabelId}' loaded from ${agentProbe.ownership.path ?? "an unknown path"}, which is not Planwise Desktop's registration; this command does not manage that job and will not register the CLI label beside it. Unload it (launchctl bootout gui/<uid>/${agentLabelId}) and re-run this command.`,
       details: {
         label: label.id,
         agentLabel: agentLabelId,
@@ -461,8 +461,8 @@ async function takeoverDesktopRegistration(
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
       message:
         postBootout === "still-loaded"
-          ? `service install --takeover: launchctl bootout of '${desktopAgent.agentLabelId}' did not take effect (the agent is still loaded). Use the Traycer app to remove the host, or run 'traycer host service uninstall'.`
-          : `service install --takeover: could not confirm that '${desktopAgent.agentLabelId}' was booted out (launchctl did not answer), so the takeover was stopped rather than risk running two hosts. Re-run the command, or use the Traycer app to remove the host, or run 'traycer host service uninstall'.`,
+          ? `service install --takeover: launchctl bootout of '${desktopAgent.agentLabelId}' did not take effect (the agent is still loaded). Use the Planwise app to remove the host, or run 'traycer host service uninstall'.`
+          : `service install --takeover: could not confirm that '${desktopAgent.agentLabelId}' was booted out (launchctl did not answer), so the takeover was stopped rather than risk running two hosts. Re-run the command, or use the Planwise app to remove the host, or run 'traycer host service uninstall'.`,
       details: {
         label: label.id,
         agentLabel: desktopAgent.agentLabelId,
@@ -483,7 +483,7 @@ async function takeoverDesktopRegistration(
   if (await processMayLiveOn(agentProbe, agentBootout.exitCode)) {
     throw cliError({
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-      message: `service install --takeover: launchctl bootout unloaded '${desktopAgent.agentLabelId}', but ${agentProbe.pid !== null ? `its process (pid ${agentProbe.pid}) is still running after the wait` : "launchd had reported it running with no pid to check and the wait did not end with its exit"}, so the takeover was stopped rather than start a replacement beside it. Re-run the command once it has exited, or use the Traycer app to remove the host, or run 'traycer host service uninstall'.`,
+      message: `service install --takeover: launchctl bootout unloaded '${desktopAgent.agentLabelId}', but ${agentProbe.pid !== null ? `its process (pid ${agentProbe.pid}) is still running after the wait` : "launchd had reported it running with no pid to check and the wait did not end with its exit"}, so the takeover was stopped rather than start a replacement beside it. Re-run the command once it has exited, or use the Planwise app to remove the host, or run 'traycer host service uninstall'.`,
       details: {
         label: label.id,
         agentLabel: desktopAgent.agentLabelId,
@@ -532,7 +532,7 @@ async function takeoverDesktopRegistration(
   );
   await refuseIfPublishedHostAlive(label, desktopAgent.agentLabelId);
   logger.info(
-    "Takeover: booted out Traycer Desktop's SMAppService agent; the CLI now owns host registration. Launching the Desktop app again may re-register its agent - uninstall or update the app to make the takeover permanent.",
+    "Takeover: booted out Planwise Desktop's SMAppService agent; the CLI now owns host registration. Launching the Desktop app again may re-register its agent - uninstall or update the app to make the takeover permanent.",
     {
       label: label.id,
       agentLabel: desktopAgent.agentLabelId,
@@ -583,7 +583,7 @@ async function refuseIfPublishedHostAlive(
   if (record.kind === "unreadable") {
     throw cliError({
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-      message: `service install --takeover: the published host record ${hostPidMetadataPath(label.environment)} could not be read (${record.cause}), so whether a host is still running could not be judged and the reload was stopped rather than register a replacement beside one. Re-run the command; if it persists and no Traycer host is running, remove that record first. ${takeoverRerunRouting(retiredAgentLabelId)}`,
+      message: `service install --takeover: the published host record ${hostPidMetadataPath(label.environment)} could not be read (${record.cause}), so whether a host is still running could not be judged and the reload was stopped rather than register a replacement beside one. Re-run the command; if it persists and no Planwise host is running, remove that record first. ${takeoverRerunRouting(retiredAgentLabelId)}`,
       details: {
         label: label.id,
         record: hostPidMetadataPath(label.environment),
@@ -788,7 +788,7 @@ async function refuseWhenNeitherLabelIsLoaded(
   if ((await probeLabelLoaded(agentLabelId, run)) !== "absent") return;
   throw cliError({
     code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
-    message: `Cannot ${operation} the host: launchd has no job loaded under either host label - neither '${agentLabelId}' (registered by the Traycer app) nor '${label.id}' (registered by 'traycer host service install') - so there is nothing to ${operation}. Quit and reopen the Traycer app, which registers its agent again, or run 'traycer host service install' to register the CLI's own.`,
+    message: `Cannot ${operation} the host: launchd has no job loaded under either host label - neither '${agentLabelId}' (registered by the Planwise app) nor '${label.id}' (registered by 'traycer host service install') - so there is nothing to ${operation}. Quit and reopen the Planwise app, which registers its agent again, or run 'traycer host service install' to register the CLI's own.`,
     details: { label: label.id, agentLabel: agentLabelId },
     exitCode: 1,
   });
@@ -839,7 +839,7 @@ function preSplitCliLabelRefusal(
 ): Error {
   return cliError({
     code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-    message: `service install --takeover: label '${label.id}' is Desktop's own SMAppService registration (pre-label-split machine, loaded from ${loadedPath}); takeover cannot bootout this label without corrupting the login-item state the app manages.${retiredAgentLabelId === null ? "" : ` Traycer Desktop's agent '${retiredAgentLabelId}' is already deregistered.`} Run 'traycer host service uninstall', then re-run 'traycer host service install'.`,
+    message: `service install --takeover: label '${label.id}' is Desktop's own SMAppService registration (pre-label-split machine, loaded from ${loadedPath}); takeover cannot bootout this label without corrupting the login-item state the app manages.${retiredAgentLabelId === null ? "" : ` Planwise Desktop's agent '${retiredAgentLabelId}' is already deregistered.`} Run 'traycer host service uninstall', then re-run 'traycer host service install'.`,
     details: { label: label.id, loadedPath, agentLabel: retiredAgentLabelId },
     exitCode: 1,
   });
@@ -852,7 +852,7 @@ function preSplitCliLabelRefusal(
 function takeoverRerunRouting(retiredAgentLabelId: string | null): string {
   return retiredAgentLabelId === null
     ? "Re-run the command, or run 'traycer host service uninstall' first."
-    : `Traycer Desktop's agent '${retiredAgentLabelId}' is already deregistered; re-run the command to finish the takeover, or run 'traycer host service uninstall' first.`;
+    : `Planwise Desktop's agent '${retiredAgentLabelId}' is already deregistered; re-run the command to finish the takeover, or run 'traycer host service uninstall' first.`;
 }
 
 function takeoverProbeIndeterminate(
@@ -951,7 +951,7 @@ async function standDownLiveCliLabelHost(
   if (outcome.kind === "busy") {
     throw cliError({
       code: CLI_ERROR_CODES.HOST_BUSY,
-      message: `service install --takeover: the host running under the CLI label has work in progress and denied the shutdown claim; retry once the work completes.${retiredAgentLabelId === null ? "" : ` Traycer Desktop's agent '${retiredAgentLabelId}' is already deregistered; the re-run finishes the takeover.`}`,
+      message: `service install --takeover: the host running under the CLI label has work in progress and denied the shutdown claim; retry once the work completes.${retiredAgentLabelId === null ? "" : ` Planwise Desktop's agent '${retiredAgentLabelId}' is already deregistered; the re-run finishes the takeover.`}`,
       details: { label: label.id, pid, agentLabel: retiredAgentLabelId },
       exitCode: 1,
     });
@@ -1014,7 +1014,7 @@ function unaskableHost(
   const routing =
     retiredAgentLabelId === null
       ? "Retry in a moment, or run 'traycer host service uninstall' first if it never comes up."
-      : `Traycer Desktop's agent '${retiredAgentLabelId}' is already deregistered; re-run the command in a moment to finish the takeover, or run 'traycer host service uninstall' first if it never comes up.`;
+      : `Planwise Desktop's agent '${retiredAgentLabelId}' is already deregistered; re-run the command in a moment to finish the takeover, or run 'traycer host service uninstall' first if it never comes up.`;
   return cliError({
     code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
     message: `service install --takeover: ${state} ${routing}`,
@@ -1121,7 +1121,7 @@ async function installService(
   if (ownership.kind === "smappservice") {
     throw cliError({
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-      message: `service install: label '${options.label.id}' is owned by SMAppService (loaded from ${ownership.path}); the CLI must not bootout/bootstrap this label. If the Desktop-managed host is broken, run 'traycer host service uninstall' to remove its registration and re-run this command; otherwise relaunch the Traycer app to let it repair its own host.`,
+      message: `service install: label '${options.label.id}' is owned by SMAppService (loaded from ${ownership.path}); the CLI must not bootout/bootstrap this label. If the Desktop-managed host is broken, run 'traycer host service uninstall' to remove its registration and re-run this command; otherwise relaunch the Planwise app to let it repair its own host.`,
       details: {
         label: options.label.id,
         loadedPath: ownership.path,
@@ -1142,7 +1142,7 @@ async function installService(
   if (agentOwnership.kind === "smappservice") {
     throw cliError({
       code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
-      message: `service install: Traycer Desktop owns host registration on this machine (SMAppService agent '${agentLabelId}' loaded from ${agentOwnership.path}); installing the raw '${options.label.id}' LaunchAgent would run a second host beside it. If you only need the host running again, run 'traycer host restart' (it starts the Desktop-managed host). To move host management to the CLI instead, re-run with --takeover (the running host is stopped cooperatively first), or relaunch the Traycer app to let it repair its own host.`,
+      message: `service install: Planwise Desktop owns host registration on this machine (SMAppService agent '${agentLabelId}' loaded from ${agentOwnership.path}); installing the raw '${options.label.id}' LaunchAgent would run a second host beside it. If you only need the host running again, run 'traycer host restart' (it starts the Desktop-managed host). To move host management to the CLI instead, re-run with --takeover (the running host is stopped cooperatively first), or relaunch the Planwise app to let it repair its own host.`,
       details: {
         label: options.label.id,
         agentLabel: agentLabelId,
@@ -1688,7 +1688,7 @@ async function uninstallService(
   );
   if (ownership.kind === "smappservice") {
     createCliLogger(options.label.environment).warn(
-      "Service uninstall: label is registered by Traycer Desktop's login item (SMAppService); booting it out now, but macOS may keep the login-item record. If the host reappears at next login, remove Traycer in the Desktop app or System Settings -> Login Items.",
+      "Service uninstall: label is registered by Planwise Desktop's login item (SMAppService); booting it out now, but macOS may keep the login-item record. If the host reappears at next login, remove Planwise in the Desktop app or System Settings -> Login Items.",
       { label: options.label.id, loadedPath: ownership.path },
     );
   }
@@ -1708,7 +1708,7 @@ async function uninstallService(
   }
   if (agentOwnership.kind === "smappservice") {
     createCliLogger(options.label.environment).warn(
-      "Service uninstall: Traycer Desktop's SMAppService agent is registered for this environment; booting it out now, but macOS may keep the login-item record. If the host reappears at next login, remove Traycer in the Desktop app or System Settings -> Login Items.",
+      "Service uninstall: Planwise Desktop's SMAppService agent is registered for this environment; booting it out now, but macOS may keep the login-item record. If the host reappears at next login, remove Planwise in the Desktop app or System Settings -> Login Items.",
       { label: agentLabelId, loadedPath: agentOwnership.path },
     );
   }
@@ -1913,7 +1913,7 @@ async function stopDesktopManagedHost(
       // host is mid-boot, so say exactly what is known.
       throw cliError({
         code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
-        message: `host stop: no host endpoint is published for '${label.id}' (pid metadata is missing or unreadable), so the running host - if any - cannot be asked to stand down. If the host is starting, retry in a moment; if it is wedged, run 'traycer host service uninstall' and relaunch the Traycer app, or take over with 'traycer host service install --takeover'.`,
+        message: `host stop: no host endpoint is published for '${label.id}' (pid metadata is missing or unreadable), so the running host - if any - cannot be asked to stand down. If the host is starting, retry in a moment; if it is wedged, run 'traycer host service uninstall' and relaunch the Planwise app, or take over with 'traycer host service install --takeover'.`,
         details: { label: label.id, agentLabel: agent.agentLabelId },
         exitCode: 1,
       });
@@ -1939,7 +1939,7 @@ async function stopDesktopManagedHost(
     case "unreachable":
       throw cliError({
         code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
-        message: `host stop: Traycer Desktop owns host registration on this machine (SMAppService agent '${agent.agentLabelId}' loaded from ${agent.loadedPath}) and the running host's RPC endpoint is unreachable (${outcome.cause}); stopping it from the CLI would deregister Desktop's agent. Use the Traycer app to stop it, or take over management with 'traycer host service uninstall' followed by 'traycer host service install', then retry.`,
+        message: `host stop: Planwise Desktop owns host registration on this machine (SMAppService agent '${agent.agentLabelId}' loaded from ${agent.loadedPath}) and the running host's RPC endpoint is unreachable (${outcome.cause}); stopping it from the CLI would deregister Desktop's agent. Use the Planwise app to stop it, or take over management with 'traycer host service uninstall' followed by 'traycer host service install', then retry.`,
         details: {
           label: label.id,
           agentLabel: agent.agentLabelId,
@@ -1976,14 +1976,14 @@ async function forceStopDesktopManagedHost(
     case "no-metadata":
       throw cliError({
         code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
-        message: `host stop --force: no host endpoint is published for '${label.id}' (pid metadata is missing or unreadable), so there is no process to kill. If the host is starting, retry in a moment; if it is wedged, run 'traycer host service uninstall' and relaunch the Traycer app.`,
+        message: `host stop --force: no host endpoint is published for '${label.id}' (pid metadata is missing or unreadable), so there is no process to kill. If the host is starting, retry in a moment; if it is wedged, run 'traycer host service uninstall' and relaunch the Planwise app.`,
         details: { label: label.id, agentLabel: agent.agentLabelId },
         exitCode: 1,
       });
     case "identity-unverified":
       throw cliError({
         code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
-        message: `host stop --force: could not verify that pid=${outcome.pid} is still the host process pid.json describes (the pid may have been recycled), so refusing to signal it. Retry in a moment; if the host is wedged, run 'traycer host service uninstall' and relaunch the Traycer app.`,
+        message: `host stop --force: could not verify that pid=${outcome.pid} is still the host process pid.json describes (the pid may have been recycled), so refusing to signal it. Retry in a moment; if the host is wedged, run 'traycer host service uninstall' and relaunch the Planwise app.`,
         details: {
           label: label.id,
           agentLabel: agent.agentLabelId,
@@ -2376,7 +2376,7 @@ async function retireCompetingRegistration(
   );
   if (agentWedge !== "not-wedged") {
     createCliLogger(label.environment).warn(
-      "Service repair: the Traycer Desktop agent may not be spawnable, so the competing CLI registration was kept - it may be the only host that starts on this machine.",
+      "Service repair: the Planwise Desktop agent may not be spawnable, so the competing CLI registration was kept - it may be the only host that starts on this machine.",
       { label: label.id, agentLabel: agentLabelId, probe: agentWedge },
     );
     return { kind: "kept-agent-possibly-wedged", probe: agentWedge };
@@ -2432,7 +2432,7 @@ async function retireCompetingRegistration(
     // registration is loaded from inside the .app bundle.
     bootoutFailed = true;
     logger.warn(
-      "Service repair: could not read who owns the competing CLI label, so it was not evicted; if the host is unreachable, open Traycer or log out and back in.",
+      "Service repair: could not read who owns the competing CLI label, so it was not evicted; if the host is unreachable, open Planwise or log out and back in.",
       { label: label.id, agentLabel: agentLabelId },
     );
   } else if (ownership.kind !== "not-loaded") {
@@ -2478,7 +2478,7 @@ async function retireCompetingRegistration(
         // branch runs neither the kickstart nor the eviction log and is
         // therefore the user's only signal.
         logger.warn(
-          "Service repair: could not confirm the competing CLI-label host was evicted; if the host is unreachable, open Traycer or log out and back in.",
+          "Service repair: could not confirm the competing CLI-label host was evicted; if the host is unreachable, open Planwise or log out and back in.",
           {
             label: label.id,
             agentLabel: agentLabelId,
@@ -2496,7 +2496,7 @@ async function retireCompetingRegistration(
     // early below, so recording the eviction only in the success line would
     // hide exactly the case worth reading about.
     logger.info(
-      "Service repair: evicted the competing CLI-label host - Traycer Desktop's SMAppService agent owns the host on this machine.",
+      "Service repair: evicted the competing CLI-label host - Planwise Desktop's SMAppService agent owns the host on this machine.",
       { label: label.id, agentLabel: agentLabelId },
     );
   }
@@ -2560,7 +2560,7 @@ async function retireCompetingRegistration(
     } catch (cause) {
       if (isServiceMutationAuthorityError(cause)) throw cause;
       logger.warn(
-        "Service repair: evicted the competing CLI-label host but could not start Traycer Desktop's agent; open Traycer or log out and back in if the host is unreachable.",
+        "Service repair: evicted the competing CLI-label host but could not start Planwise Desktop's agent; open Planwise or log out and back in if the host is unreachable.",
         {
           label: label.id,
           agentLabel: agentLabelId,
@@ -3224,7 +3224,7 @@ async function planMacosDefinition(
   if (registered === null) {
     return {
       kind: "unrecognized",
-      reason: "its ProgramArguments are not a Traycer host start",
+      reason: "its ProgramArguments are not a Planwise host start",
     };
   }
   if (registered.form === "launcher-file") {

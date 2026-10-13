@@ -543,7 +543,7 @@ export class HostLifecycleService {
           kind: "failed",
           reason: "confirmation-required",
           message:
-            "Turning off the local host stops Traycer Host. Confirm the stop to continue.",
+            "Turning off the local host stops Planwise Host. Confirm the stop to continue.",
           view: await this.getView(),
         };
       }

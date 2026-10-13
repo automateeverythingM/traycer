@@ -68,7 +68,7 @@ export function DeviceCodeProgress(props: {
             Approve in your browser
           </h2>
           <p className="mx-auto max-w-[32ch] leading-5 text-ui-sm text-muted-foreground">
-            After you approve, Traycer will continue here.
+            After you approve, Planwise will continue here.
           </p>
         </div>
 

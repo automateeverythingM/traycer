@@ -252,7 +252,7 @@ export function providerPackErrorDetail(
       // that makes this reason common (a `~/.traycer` shared across machines)
       // "on this device" is flatly false. See the host's matching arm and
       // docs/provider-pack-store-support-boundary.md.
-      return "another Traycer process using this Traycer folder stopped making progress on the download. Retry to pick it up here.";
+      return "another Planwise process using this Planwise folder stopped making progress on the download. Retry to pick it up here.";
     case "unrepairable":
       // The one terminal reason. Re-downloading fetches the byte-identical
       // blob and fails in the same place, fleet-wide, so this copy must not
@@ -288,7 +288,7 @@ export function providerPackErrorDetail(
       //
       // What it names now is what exists, and it still never says "retry",
       // because the allow-list deliberately draws no button here.
-      return "this device could not verify the provider registry's signing keys, so managed downloads are unavailable here. Traycer re-checks periodically; restarting Traycer checks straight away. A CLI you install yourself keeps working in the meantime.";
+      return "this device could not verify the provider registry's signing keys, so managed downloads are unavailable here. Planwise re-checks periodically; restarting Planwise checks straight away. A CLI you install yourself keeps working in the meantime.";
     default:
       return "retry to try again.";
   }

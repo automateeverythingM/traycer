@@ -260,7 +260,7 @@ function assertArgvSurvivesSystemdRun(
     message:
       `refusing to relocate '${commandPath}' out of the ${inside.unit} cgroup: ` +
       "an argument contains '$', which systemd-run can rewrite; " +
-      "run this from a shell outside the Traycer host.",
+      "run this from a shell outside the Planwise host.",
     details: {
       command: commandPath,
       argument: expandable,
@@ -285,7 +285,7 @@ export async function assertNotInsideHostUnit(): Promise<void> {
     code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
     message:
       `refusing to stop ${inside.unit} from inside its own cgroup; ` +
-      "run this from a shell outside the Traycer host, or update the Traycer CLI",
+      "run this from a shell outside the Planwise host, or update the Planwise CLI",
     details: { cgroup: inside.path, unit: inside.unit },
     exitCode: 1,
   });
@@ -388,8 +388,8 @@ async function readHostUnitCgroup(): Promise<HostUnitCgroup | null> {
         (absent
           ? `${PROC_SELF_CGROUP} is absent in this environment`
           : `could not read ${PROC_SELF_CGROUP}`) +
-        ", so this command cannot tell whether stopping the Traycer host " +
-        "would also kill it. Run it again from a shell outside the Traycer host.",
+        ", so this command cannot tell whether stopping the Planwise host " +
+        "would also kill it. Run it again from a shell outside the Planwise host.",
       details: { path: PROC_SELF_CGROUP, absent },
       exitCode: 1,
     });
@@ -720,7 +720,7 @@ function relocationNeverStarted(
       `could not move '${commandPath}' out of the ${inside.unit} cgroup: ` +
       "systemd-run exited before the command started, so there is no user " +
       "manager or the transient scope was refused. " +
-      "Run it again from a shell outside the Traycer host.",
+      "Run it again from a shell outside the Planwise host.",
     details: {
       command: commandPath,
       cgroup: inside.path,
@@ -749,7 +749,7 @@ function relocationFailed(
     message:
       `could not move '${commandPath}' out of the ${inside.unit} cgroup with ${SYSTEMD_RUN}, ` +
       "and running it here would stop this process along with the host. " +
-      "Run it again from a shell outside the Traycer host.",
+      "Run it again from a shell outside the Planwise host.",
     details: { command: commandPath, cgroup: inside.path, unit: inside.unit },
     exitCode: 1,
   });

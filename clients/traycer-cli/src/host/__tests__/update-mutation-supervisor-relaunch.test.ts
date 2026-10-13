@@ -135,7 +135,7 @@ async function writePairedRecords(
 
 const label: ServiceLabel = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production",
   devSlot: null,
 };

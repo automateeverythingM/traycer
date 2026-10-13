@@ -2,7 +2,7 @@
   "name": "@traycer-clients/traycer-cli",
   "version": "0.1.0",
   "private": true,
-  "description": "Traycer CLI - host supervisor, auth, and config surface",
+  "description": "Planwise CLI - host supervisor, auth, and config surface",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -203,7 +203,7 @@ describe("<BrowserTileToolbar /> capability gating", () => {
     ).toBeNull();
     expect(screen.queryByRole("button", { name: "Try again" })).toBeNull();
     expect(
-      screen.queryByRole("button", { name: "Restart Traycer" }),
+      screen.queryByRole("button", { name: "Restart Planwise" }),
     ).toBeNull();
     expect(screen.queryByRole("link", { name: /Settings/ })).toBeNull();
   });

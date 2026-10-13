@@ -73,7 +73,7 @@ export function registerHostIpc(bridge: RunnerIpcBridge): void {
         return {
           kind: "declined",
           message:
-            "This app runs no local host. Change the host lifecycle setting and restart Traycer to use one.",
+            "This app runs no local host. Change the host lifecycle setting and restart Planwise to use one.",
         };
       }
       // `background` = no identity guard, not "not user-initiated": this

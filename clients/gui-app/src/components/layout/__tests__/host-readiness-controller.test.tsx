@@ -438,7 +438,7 @@ describe("local-plane admission for the removal-sentinel read", () => {
     // setup.
     await waitFor(() => {
       expect(
-        screen.queryByRole("heading", { name: "Traycer was removed" }),
+        screen.queryByRole("heading", { name: "Planwise was removed" }),
       ).not.toBeNull();
     });
     expect(useAuthStore.getState().status).toBe("unverified");
@@ -635,7 +635,7 @@ describe("SurfaceReadinessFallback - desktop no-local-host card", () => {
     });
   });
 
-  it("shows the applied note and 'Quit Traycer' instead of the run-here button once desired.mode is no longer none", async () => {
+  it("shows the applied note and 'Quit Planwise' instead of the run-here button once desired.mode is no longer none", async () => {
     const { host } = createFakeHostLifecycleHost("background", null, true);
     const runnerHost = createFakeRunnerHost({
       hasLocalHost: false,
@@ -648,7 +648,7 @@ describe("SurfaceReadinessFallback - desktop no-local-host card", () => {
         NO_LOCAL_HOST_RUN_HERE_APPLIED,
       );
     });
-    expect(screen.getByRole("button", { name: "Quit Traycer" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Quit Planwise" })).toBeTruthy();
     expect(
       screen.queryByRole("button", { name: NO_LOCAL_HOST_RUN_HERE_LABEL }),
     ).toBeNull();
@@ -738,7 +738,7 @@ describe("SurfaceReadinessFallback - desktop no-local-host card", () => {
     );
   });
 
-  it("a 'superseded' result whose view has desired.mode 'linked' switches the card to the applied note and Quit Traycer, driven by the result's view", async () => {
+  it("a 'superseded' result whose view has desired.mode 'linked' switches the card to the applied note and Quit Planwise, driven by the result's view", async () => {
     const { host } = createFakeHostLifecycleHost(
       "none",
       (_request, currentView) => ({
@@ -775,7 +775,7 @@ describe("SurfaceReadinessFallback - desktop no-local-host card", () => {
         NO_LOCAL_HOST_RUN_HERE_APPLIED,
       );
     });
-    expect(screen.getByRole("button", { name: "Quit Traycer" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Quit Planwise" })).toBeTruthy();
   });
 
   // `stop-refused` is unreachable from this card: it always sends

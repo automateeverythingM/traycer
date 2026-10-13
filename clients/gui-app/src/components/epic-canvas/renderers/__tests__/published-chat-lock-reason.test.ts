@@ -124,7 +124,7 @@ describe("publishedChatLockReason", () => {
       `Published ${formatAbsoluteDateTime(publishedAt)}.`,
     );
     expect(reason).toContain(
-      "2 items need a newer version of Traycer to render.",
+      "2 items need a newer version of Planwise to render.",
     );
   });
 
@@ -143,7 +143,7 @@ describe("publishedChatLockReason", () => {
         publishedAt: null,
         refresh: { kind: "idle" },
       }),
-    ).toContain("2 items need a newer version of Traycer to render.");
+    ).toContain("2 items need a newer version of Planwise to render.");
     expect(
       publishedChatLockReason({
         ownerIsReachable: true,
@@ -221,7 +221,7 @@ describe("publishedChatLockReason", () => {
         `Published ${formatAbsoluteDateTime(publishedAt)}.`,
       );
       const unreadableIndex = reason.indexOf(
-        "2 items need a newer version of Traycer to render.",
+        "2 items need a newer version of Planwise to render.",
       );
       expect(freshnessIndex).toBeGreaterThanOrEqual(0);
       expect(unreadableIndex).toBeGreaterThan(freshnessIndex);
@@ -333,7 +333,7 @@ describe("publishedChatLockReason", () => {
       );
       const refreshIndex = reason.indexOf("A newer copy is being fetched.");
       const unreadableIndex = reason.indexOf(
-        "2 items need a newer version of Traycer to render.",
+        "2 items need a newer version of Planwise to render.",
       );
       expect(publishedIndex).toBeGreaterThanOrEqual(0);
       expect(refreshIndex).toBeGreaterThan(publishedIndex);

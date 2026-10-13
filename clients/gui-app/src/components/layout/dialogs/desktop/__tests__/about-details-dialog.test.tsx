@@ -47,7 +47,7 @@ function readySupport(): DesktopSupportBridge {
     ...createDesktopSupportBridgeStub(),
     getSnapshot: () =>
       Promise.resolve({
-        appName: "Traycer",
+        appName: "Planwise",
         appVersion: "1.1.8",
         supportEmail: "support@traycer.ai",
         privateDeliveryAvailable: true,
@@ -177,7 +177,7 @@ describe("<AboutDetailsDialog />", () => {
         title: "Couldn't load desktop details",
         message: null,
         code: null,
-        source: "About Traycer",
+        source: "About Planwise",
       },
     });
   });
@@ -196,7 +196,7 @@ describe("<AboutDetailsDialog />", () => {
       title: "Couldn't load desktop details",
       message: null,
       code: null,
-      source: "About Traycer",
+      source: "About Planwise",
     });
   });
 });

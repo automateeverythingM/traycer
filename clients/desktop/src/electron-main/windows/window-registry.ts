@@ -316,5 +316,5 @@ export class WindowRegistry<
 
 function readWindowTitle(window: RegistryManagedWindow): string {
   const title = window.getTitle();
-  return title.length === 0 ? "Traycer" : title;
+  return title.length === 0 ? "Planwise" : title;
 }

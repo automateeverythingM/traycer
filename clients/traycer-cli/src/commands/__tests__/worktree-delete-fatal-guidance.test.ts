@@ -17,9 +17,9 @@ import { fatalCloseToCliError } from "../worktree-delete";
  */
 
 const EPOCH_REASON =
-  "This Traycer client is too old for this host. Update the Traycer app or " +
+  "This Planwise client is too old for this host. Update the Planwise app or " +
   "CLI to the latest version. Updating the host again will not help. Do not " +
-  "reset Traycer; your agents and history remain stored.";
+  "reset Planwise; your agents and history remain stored.";
 
 function epochFatal(): FatalErrorDetails {
   return {
@@ -72,7 +72,7 @@ describe("worktree-delete fatal close -> CLI guidance", () => {
     expect(error.message).toContain("1.1.10");
     expect(error.message).toContain("generation 1");
     expect(error.message).toContain("requires 2");
-    expect(error.message).toContain("Install the latest Traycer CLI");
+    expect(error.message).toContain("Install the latest Planwise CLI");
     expect(error.message).toContain(
       "Updating the host again will not help, and no data needs to be reset",
     );

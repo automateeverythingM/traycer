@@ -154,7 +154,7 @@ try {
   const readEdges = `(() => {
     const modal = document.querySelector('[data-testid="window-host-modal"]');
     const byTestId = (id) => document.querySelector('[data-testid="' + id + '"]');
-    const headingText = ${JSON.stringify("Downloading Traycer Host…")};
+    const headingText = ${JSON.stringify("Downloading Planwise Host…")};
     const heading = modal === null
       ? null
       : Array.from(modal.querySelectorAll('p')).find(

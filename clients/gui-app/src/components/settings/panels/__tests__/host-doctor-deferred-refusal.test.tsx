@@ -105,12 +105,12 @@ const OVERVIEW_METHODS = [
 
 // Exact wording reused by the Install-fix and Free-port-fix declined-notice tests below.
 const NONE_QUIESCE_MESSAGE =
-  "This app no longer starts a local host. Restart Traycer to apply the host lifecycle setting.";
+  "This app no longer starts a local host. Restart Planwise to apply the host lifecycle setting.";
 
 // The confirmed not-service-run text — named so it can be swapped in
 // one place if that wording changes again.
 const FOREGROUND_NOT_SERVICE_RUN_MESSAGE =
-  "A host you started in a terminal is running, and Traycer leaves it alone. Stop it there to continue.";
+  "A host you started in a terminal is running, and Planwise leaves it alone. Stop it there to continue.";
 
 afterEach(() => {
   cleanup();

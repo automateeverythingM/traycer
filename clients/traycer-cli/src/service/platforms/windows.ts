@@ -1138,7 +1138,7 @@ async function killVerifiedProcessTree(
         code: CLI_ERROR_CODES.SERVICE_CONTROL_FAILED,
         message:
           `could not enumerate the ${label.id} host process tree: the PowerShell process scan failed or timed out. ` +
-          "Refusing to report the host stopped. Retry, or end the Traycer host processes from Task Manager.",
+          "Refusing to report the host stopped. Retry, or end the Planwise host processes from Task Manager.",
         details: { label: label.id, killRoundsCompleted: round },
         exitCode: 1,
       });
@@ -3978,7 +3978,7 @@ async function readWindowsDefinition(
   if (!launcherAction && !directAction) {
     return {
       kind: "unrecognized",
-      reason: "its action is not a Traycer host start",
+      reason: "its action is not a Planwise host start",
     };
   }
   let previous: Buffer | null;

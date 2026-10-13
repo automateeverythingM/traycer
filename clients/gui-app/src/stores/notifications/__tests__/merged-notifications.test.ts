@@ -665,7 +665,7 @@ describe("merged notifications feed", () => {
       createdAt: 10,
       readAt: null,
       title: "Agent stream closed unexpectedly",
-      body: "Traycer notification",
+      body: "Planwise notification",
       payload: { kind: "chat", epicId: "epic-1", chatId: "chat-1" },
       hostKind: null,
       appLocalKind: "stream.transport.error",

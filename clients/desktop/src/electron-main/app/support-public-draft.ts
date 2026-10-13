@@ -22,7 +22,7 @@ import { scrubSupportText } from "./support-scrubber";
  */
 
 const COMPONENT_DESKTOP_APP = "Desktop app";
-const GENERIC_FALLBACK_TITLE = "Traycer desktop issue";
+const GENERIC_FALLBACK_TITLE = "Planwise desktop issue";
 // Titles are meant to stay short; a raw error message or intent sentence can
 // run to a full paragraph, so both are capped independently of the overall
 // URL budget below.
@@ -207,7 +207,7 @@ function composeEnvironmentSummary(input: {
       ? `${harness} / ${model}`
       : (harness ?? model);
   const parts = [
-    `Traycer ${input.appVersion}`,
+    `Planwise ${input.appVersion}`,
     `${input.platform} ${input.arch}`,
     input.hostVersion !== null ? `host ${input.hostVersion}` : null,
     harnessModel,

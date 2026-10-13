@@ -215,7 +215,7 @@ export const HOST_REMOVED_BY_USER_MESSAGE = "Host was removed by the user.";
 // retires instead; a HELD one is inside a stop that may still be refused or
 // cancelled, so it retries on its own pacing. Neither is a failure to report.
 export const AUTOMATIC_INTENTS_QUIESCED_MESSAGE =
-  "This app no longer starts a local host. Restart Traycer to apply the host lifecycle setting.";
+  "This app no longer starts a local host. Restart Planwise to apply the host lifecycle setting.";
 export const AUTOMATIC_INTENTS_HELD_MESSAGE =
   "Host starts are paused while the host is being stopped.";
 
@@ -228,7 +228,7 @@ export const AUTOMATIC_INTENTS_HELD_MESSAGE =
 // monitor's recovery (`respawnIfDown`) matches on it to leave that run alone
 // until it is gone, and a surface shows it as it is.
 export const HOST_NOT_SERVICE_RUN_MESSAGE =
-  "A host you started in a terminal is running, and Traycer leaves it alone. Stop it there to continue.";
+  "A host you started in a terminal is running, and Planwise leaves it alone. Stop it there to continue.";
 
 // Who asked for a local-host mutation. Three methods take it -
 // `convergeReady`, `registerService` and `freePortAndRestart` - and they use

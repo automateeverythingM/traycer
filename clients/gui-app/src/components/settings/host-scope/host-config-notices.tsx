@@ -104,7 +104,7 @@ export function NoConfigSourceNotice(props: {
         </div>
         <p className="text-muted-foreground">
           It can&apos;t answer for its own configuration right now, and this
-          shell has no local Traycer CLI to read that configuration from disk.
+          shell has no local Planwise CLI to read that configuration from disk.
         </p>
       </div>
     </div>

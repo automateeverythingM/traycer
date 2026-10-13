@@ -911,7 +911,7 @@ describe("providers.listModelProviders payloads", () => {
     }
   });
 
-  it("gates the request on a known Traycer provider id", () => {
+  it("gates the request on a known Planwise provider id", () => {
     expect(
       providersListModelProvidersRequestSchema.safeParse({
         providerId: "opencode",

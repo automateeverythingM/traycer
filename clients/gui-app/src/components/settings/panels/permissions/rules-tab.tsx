@@ -458,7 +458,7 @@ function RulesEditor(props: {
           </Badge>
         </h2>
         <p className="text-ui-sm text-muted-foreground">
-          Your rules go on top of Traycer&apos;s built-in ones and apply to your
+          Your rules go on top of Planwise&apos;s built-in ones and apply to your
           account on every machine. A repository with{" "}
           <code className="font-mono">.traycer/auto-policy.md</code> adds its
           own restrictions on top.
@@ -478,7 +478,7 @@ function RulesEditor(props: {
           className="px-1 text-ui-xs text-muted-foreground"
           data-testid="auto-policy-reorder-notice"
         >
-          Saved in Traycer&apos;s section order.
+          Saved in Planwise&apos;s section order.
         </p>
       ) : null}
       {RULES_SECTION_ORDER.map((key) =>
@@ -514,7 +514,7 @@ function RulesEditor(props: {
       )}
       {hasShippedAutoPolicySections(shipped) ? (
         <p className="px-1 text-ui-xs text-muted-foreground">
-          Built-in rules come with each machine&apos;s Traycer version.
+          Built-in rules come with each machine&apos;s Planwise version.
         </p>
       ) : null}
       <RulesFooter
@@ -613,16 +613,16 @@ function RulesBanner(props: {
 }): ReactNode {
   const sentences = [
     props.readState === "unreadable"
-      ? "Traycer can't read your saved rules right now, so saving is off. Reopen Settings to try again."
+      ? "Planwise can't read your saved rules right now, so saving is off. Reopen Settings to try again."
       : null,
     props.readState === "stale"
-      ? "Traycer is showing a copy of your rules it couldn't refresh, so saving is off. Reopen Settings to try again."
+      ? "Planwise is showing a copy of your rules it couldn't refresh, so saving is off. Reopen Settings to try again."
       : null,
     props.canWrite
       ? null
       : "This machine's host can't save rules, so saving is off. Update it to make changes.",
     props.openingRead === "failed"
-      ? "Traycer couldn't check whether another device changed your rules, so saving is off. Reopen Settings to try again."
+      ? "Planwise couldn't check whether another device changed your rules, so saving is off. Reopen Settings to try again."
       : null,
     props.changedSinceLoad
       ? "Your rules were saved somewhere else since you started editing. Saving now replaces that version."

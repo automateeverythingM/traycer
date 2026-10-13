@@ -228,7 +228,7 @@ function unavailableReason(input: {
   readonly hostLabel: string;
 }): string {
   if (input.globalStreamUnsupported) {
-    return `${input.hostLabel} is running an older Traycer host, which doesn't stream resource usage. Update it to see its processes here.`;
+    return `${input.hostLabel} is running an older Planwise host, which doesn't stream resource usage. Update it to see its processes here.`;
   }
   if (input.hasSample) {
     if (input.metric === "ramShare" && !input.hostTotalMemoryKnown) {

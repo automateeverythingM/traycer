@@ -148,7 +148,7 @@ function classifyMicOpenFailure(error: unknown): {
     return {
       denied: true,
       failureClass: "permission_denied_browser",
-      message: "Microphone access is blocked for Traycer.",
+      message: "Microphone access is blocked for Planwise.",
     };
   }
   return {
@@ -453,8 +453,8 @@ export function useVoiceDictation(
         fail(
           "permission_denied_os",
           {},
-          "Microphone access is blocked for Traycer.",
-          "Microphone access is blocked for Traycer.",
+          "Microphone access is blocked for Planwise.",
+          "Microphone access is blocked for Planwise.",
         );
         return null;
       }

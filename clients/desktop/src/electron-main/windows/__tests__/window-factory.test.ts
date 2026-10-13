@@ -181,7 +181,7 @@ function createMainWindowForTest(
   options: Omit<MainWindowOptions, "devWindowTitle">,
 ): void {
   createMainWindow({
-    devWindowTitle: "Traycer Dev — spry-panda",
+    devWindowTitle: "Planwise Dev — spry-panda",
     ...options,
   });
 }
@@ -271,7 +271,7 @@ describe("loadMainWindow", () => {
     });
 
     expect(electronState.browserWindowOptions).toEqual([
-      expect.objectContaining({ title: "Traycer Dev — spry-panda" }),
+      expect.objectContaining({ title: "Planwise Dev — spry-panda" }),
     ]);
 
     electronState.browserWindows[0].pageTitleUpdated();
@@ -280,7 +280,7 @@ describe("loadMainWindow", () => {
       electronState.browserWindows[0].preventDefault,
     ).toHaveBeenCalledOnce();
     expect(electronState.browserWindows[0].setTitleCalls).toEqual([
-      "Traycer Dev — spry-panda",
+      "Planwise Dev — spry-panda",
     ]);
   });
 

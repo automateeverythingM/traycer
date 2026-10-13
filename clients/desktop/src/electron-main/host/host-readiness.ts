@@ -218,7 +218,7 @@ export function categorizeHostCliError(err: unknown): HostEnsureError {
       return {
         kind: "offline",
         message:
-          "Traycer needs to download the host to finish setting up. Check your network connection and try again.",
+          "Planwise needs to download the host to finish setting up. Check your network connection and try again.",
         code: err.code,
       };
     }
@@ -230,7 +230,7 @@ export function categorizeHostCliError(err: unknown): HostEnsureError {
       return {
         kind: "signature",
         message:
-          "The downloaded host failed verification (signature, checksum, or size mismatch). This is a security check - please reinstall Traycer or contact support.",
+          "The downloaded host failed verification (signature, checksum, or size mismatch). This is a security check - please reinstall Planwise or contact support.",
         code: err.code,
       };
     }

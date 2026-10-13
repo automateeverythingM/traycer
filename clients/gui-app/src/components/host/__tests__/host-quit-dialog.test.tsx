@@ -481,7 +481,7 @@ describe("<HostQuitDialog /> - the terminals-in-use round", () => {
     expect(screen.getByText("2 terminals are still in use")).not.toBeNull();
     expect(
       screen.getByText(
-        "Stopping the host ends them. Quitting Traycer can keep the host running so they carry on, or stop it now.",
+        "Stopping the host ends them. Quitting Planwise can keep the host running so they carry on, or stop it now.",
       ),
     ).not.toBeNull();
     expect(screen.queryByTestId("host-quit-counts")).toBeNull();

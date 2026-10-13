@@ -59,11 +59,11 @@ describe("serviceRestartResultFromOutcome", () => {
   it("deferred maps to declined with the outcome's message", () => {
     expect(
       serviceRestartResultFromOutcome(
-        outcome("deferred", "Another Traycer process holds the lock."),
+        outcome("deferred", "Another Planwise process holds the lock."),
       ),
     ).toEqual({
       kind: "declined",
-      message: "Another Traycer process holds the lock.",
+      message: "Another Planwise process holds the lock.",
     });
   });
 
@@ -79,9 +79,9 @@ describe("serviceRestartResultFromOutcome", () => {
   it("failed throws the outcome's message", () => {
     expect(() =>
       serviceRestartResultFromOutcome(
-        outcome("failed", "Traycer needs approval in System Settings."),
+        outcome("failed", "Planwise needs approval in System Settings."),
       ),
-    ).toThrow("Traycer needs approval in System Settings.");
+    ).toThrow("Planwise needs approval in System Settings.");
   });
 });
 

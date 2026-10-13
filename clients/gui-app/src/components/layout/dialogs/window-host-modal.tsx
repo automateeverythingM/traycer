@@ -251,7 +251,7 @@ export function WindowHostStartupCard(props: WindowHostModalProps): ReactNode {
               className="font-heading text-lg leading-none font-medium"
             >
               {props.cause === "cold-start"
-                ? "Traycer Host didn't start"
+                ? "Planwise Host didn't start"
                 : copy.title}
             </h2>
             {props.cause === "cold-start" ? null : (
@@ -549,16 +549,16 @@ function modalCopy(
   if (variant.kind === "update-client") {
     const { requirement } = variant;
     return {
-      title: "Update Traycer to continue",
+      title: "Update Planwise to continue",
       // Two bodies, split on whether the host could identify what this app is
       // running. Naming the observed version is what makes the instruction
       // checkable ("am I on 1.1.10?"); when the host could not read it, saying
       // so is more honest than a sentence with a blank in it.
       description:
         requirement.observedClientAppVersion === null
-          ? "This Traycer installation is too old to identify a compatible generation. Install the latest Traycer app."
-          : `This host needs a newer Traycer generation. You are running ${requirement.observedClientAppVersion}; install the latest version.`,
-      reportTitle: "Traycer app update required",
+          ? "This Planwise installation is too old to identify a compatible generation. Install the latest Planwise app."
+          : `This host needs a newer Planwise generation. You are running ${requirement.observedClientAppVersion}; install the latest version.`,
+      reportTitle: "Planwise app update required",
       reportMessage:
         "The host refused this app at its client-compatibility epoch gate.",
       reportCode: "CLIENT_INCOMPATIBLE",
@@ -576,28 +576,28 @@ function modalCopy(
       // continue" beside no button is an unexplained gap; naming the machine
       // and saying where it can be updated is an honest absence.
       description: variant.isTargetHost
-        ? "Traycer Host is running a version this app can't talk to. Update the host to continue - your agents and history are untouched."
-        : "Another host on this account is running a version this app can't talk to, and it can't be updated from here. Update Traycer on that machine, or switch to a host this one can reach.",
+        ? "Planwise Host is running a version this app can't talk to. Update the host to continue - your agents and history are untouched."
+        : "Another host on this account is running a version this app can't talk to, and it can't be updated from here. Update Planwise on that machine, or switch to a host this one can reach.",
       reportTitle: "Host update required",
-      reportMessage: "Traycer Host requires an update.",
+      reportMessage: "Planwise Host requires an update.",
       reportCode: "HOST_INCOMPATIBLE",
     };
   }
   if (cause === "cold-start") {
     return {
-      title: "Setting up Traycer",
+      title: "Setting up Planwise",
       description:
-        "Traycer is getting this machine's host ready. This runs once, and the app opens as soon as it's done.",
-      reportTitle: "Traycer Host did not start",
-      reportMessage: "Traycer Host did not become available at launch.",
+        "Planwise is getting this machine's host ready. This runs once, and the app opens as soon as it's done.",
+      reportTitle: "Planwise Host did not start",
+      reportMessage: "Planwise Host did not become available at launch.",
       reportCode: "HOST_COLD_START_FAILED",
     };
   }
   return {
     title: "No host is available",
     description:
-      "Traycer can't reach any of this account's hosts right now. It will connect again on its own as soon as one comes back.",
-    reportTitle: "No Traycer Host is reachable",
+      "Planwise can't reach any of this account's hosts right now. It will connect again on its own as soon as one comes back.",
+    reportTitle: "No Planwise Host is reachable",
     reportMessage: "No host on this account could be reached.",
     reportCode: "HOST_NONE_USABLE",
   };

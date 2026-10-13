@@ -309,7 +309,7 @@ beforeEach(() => {
   serviceLabelForMock.mockImplementation(
     (environment: "production" | "dev") => ({
       id: environment === "dev" ? "ai.traycer.host.dev" : "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -1138,14 +1138,14 @@ describe("ensureHost", () => {
       await expect(ensureHost(makeOpts({}))).rejects.toMatchObject({
         code: CLI_ERROR_CODES.SERVICE_REGISTRATION_DISABLED,
         message:
-          "the Traycer Host task is disabled in Task Scheduler; enable it or run `traycer host service install`",
+          "the Planwise Host task is disabled in Task Scheduler; enable it or run `traycer host service install`",
       });
       expect(controller.start).toHaveBeenCalledTimes(1);
       expect(controller.install).not.toHaveBeenCalled();
       expect(readServiceRegistrationDisabledMock).toHaveBeenCalledWith(
         {
           id: "ai.traycer.host",
-          displayName: "Traycer Host",
+          displayName: "Planwise Host",
           environment: "production",
           devSlot: null,
         },
@@ -1353,7 +1353,7 @@ describe("ensureHost over a service registration that is another user's, or kept
   // user's task, and its message is the unconfirmed copy verbatim.
   it("the install branch over a task whose owner could not be confirmed: E_SERVICE_TASK_NOT_OWNED with details.reason unconfirmed and the unconfirmed copy", async () => {
     const UNCONFIRMED =
-      "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
+      "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
     readHostInstallRecordMock.mockResolvedValue(null);
     const controller = makeController("not-installed");
     createServiceControllerMock.mockReturnValue(controller);

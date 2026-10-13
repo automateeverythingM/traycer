@@ -49,7 +49,7 @@ export function prSourceNoticeMessageFor(
         : `GitHub's rate limit was reached. ${what} are not refreshing; this resumes in about ${countdown}.`;
     case "backing-off":
       return countdown === null
-        ? `Could not reach GitHub. ${what} are not refreshing; Traycer keeps retrying in the background.`
+        ? `Could not reach GitHub. ${what} are not refreshing; Planwise keeps retrying in the background.`
         : `Could not reach GitHub. ${what} are not refreshing; retrying in about ${countdown}.`;
     default: {
       const unhandled: never = notice.kind;

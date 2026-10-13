@@ -137,7 +137,7 @@ function stageQuietEnvironment(): void {
     }),
     serviceLabelFor: (environment: string) => ({
       id: `ai.traycer.host.${environment}`,
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -254,7 +254,7 @@ describe("runDoctor over a service registration another Windows user owns", () =
     expect(issue?.severity).toBe("error");
     expect(issue?.fixAction).toBeNull();
     expect(issue?.message).toBe(
-      "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Run the checks again.",
+      "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Run the checks again.",
     );
     expect(JSON.stringify(issue)).not.toMatch(/another (Windows )?user/);
   });

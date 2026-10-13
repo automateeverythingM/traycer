@@ -370,7 +370,7 @@ function BrowserTileToolbarTrailing(props: {
           open={clearSiteConfirmOpen}
           onOpenChange={setClearSiteConfirmOpen}
           title={`Clear cookies for ${clearSite.site}?`}
-          description={`You will be signed out of ${clearSite.site} in Traycer, everywhere this account is signed in. Other sites are untouched.`}
+          description={`You will be signed out of ${clearSite.site} in Planwise, everywhere this account is signed in. Other sites are untouched.`}
           cascadeSummary={null}
           actionLabel="Clear cookies"
           isPending={false}

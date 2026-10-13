@@ -28,7 +28,7 @@ import type { ComposerToolbarStore } from "@/stores/composer/composer-toolbar-st
 import type { ProviderTerminalLoginSurface } from "@/lib/providers/provider-terminal-login-surface";
 import { cn } from "@/lib/utils";
 
-const COMPOSER_PLACEHOLDER = "Ask Traycer anything. @ mention for context";
+const COMPOSER_PLACEHOLDER = "Ask Planwise anything. @ mention for context";
 
 export interface ComposerBodyProps {
   readonly pickerStore: ComposerPickerStore;

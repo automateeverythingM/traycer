@@ -91,7 +91,7 @@ export function AppErrorScreen(props: AppErrorScreenProps): ReactNode {
                 // this is the public GitHub-issue prefill.
                 message: "The app hit an unexpected error.",
                 code: null,
-                source: "Traycer app",
+                source: "Planwise app",
                 capture: props.capture,
               })}
               presentation="text"

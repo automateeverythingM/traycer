@@ -830,17 +830,17 @@ function fallbackContent(
       return provisioningErrorFallback(presentation);
     case "removed-host":
       return {
-        title: "Traycer was removed",
+        title: "Planwise was removed",
         // The original card named the actual next step. "Reinstall to start
         // the host again" answered a question the user was not asking: they
         // removed it on purpose and need to know how to finish.
         message:
-          "You removed Traycer's background components from this device, so the host won't start. Your agents and history are preserved. To finish, quit Traycer and drag it from Applications to the Trash.",
+          "You removed Planwise's background components from this device, so the host won't start. Your agents and history are preserved. To finish, quit Planwise and drag it from Applications to the Trash.",
         body: null,
         footer: null,
         actions: [
           {
-            label: "Quit Traycer",
+            label: "Quit Planwise",
             testId: "local-host-removed-quit",
             variant: "destructive",
             disabled: false,
@@ -933,7 +933,7 @@ function DesktopNoLocalHostFallback(props: {
     actions: switchedOn
       ? [
           {
-            label: "Quit Traycer",
+            label: "Quit Planwise",
             testId: "no-local-host-quit",
             variant: "default",
             disabled: false,
@@ -986,7 +986,7 @@ function provisioningErrorFallback(
   return {
     // The same heading the narrator's settled cold-start face uses: both cards
     // say "this machine's host didn't start", and they say it identically.
-    title: "Traycer Host didn't start",
+    title: "Planwise Host didn't start",
     // The failure's own words, in the body with the narrator's settled arm's
     // clamp rather than the card's message slot: a CLI message can run long.
     // Main's record first - it is the same failure when this card's Retry
@@ -1008,7 +1008,7 @@ function provisioningErrorFallback(
           message={
             presentation.ensureFailure?.message ??
             presentation.provisioningError?.message ??
-            "Could not start Traycer Host."
+            "Could not start Planwise Host."
           }
           code={presentation.ensureFailure?.code ?? null}
         />
@@ -1020,8 +1020,8 @@ function provisioningErrorFallback(
       </LocalHostBodyShell>
     ),
     footer: hostFailureReportIssueAction({
-      title: "Could not start Traycer Host",
-      message: "Traycer Host could not start.",
+      title: "Could not start Planwise Host",
+      message: "Planwise Host could not start.",
       code: "HOST_PROVISIONING_FAILED",
       source: "Host startup",
       presentation,

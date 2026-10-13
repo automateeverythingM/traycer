@@ -54,31 +54,31 @@ export function hostLifecycleOptionCopy(
     {
       mode: "background",
       label: "Keep the host running in the background",
-      description: `Agents keep working after you quit Traycer. You can still connect to this ${machine} from your other devices. The host starts when you log in.`,
+      description: `Agents keep working after you quit Planwise. You can still connect to this ${machine} from your other devices. The host starts when you log in.`,
     },
     {
       mode: "ask",
       label: "Ask me each time",
       description:
-        "The host starts when you open Traycer. When you quit, choose whether to keep work running or stop it. A host you started in a terminal keeps running.",
+        "The host starts when you open Planwise. When you quit, choose whether to keep work running or stop it. A host you started in a terminal keeps running.",
     },
     {
       mode: "stop-if-idle",
       label: "Stop the host if nothing is running, otherwise ask",
       description:
-        "The host starts when you open Traycer. When you quit, it stops if nothing is running; otherwise, you choose whether to keep work running or stop it. A host you started in a terminal keeps running.",
+        "The host starts when you open Planwise. When you quit, it stops if nothing is running; otherwise, you choose whether to keep work running or stop it. A host you started in a terminal keeps running.",
     },
     {
       mode: "linked",
       label: "Stop the host with the app",
       description:
-        "The host starts when you open Traycer and stops when you quit, ending work running on it. A host you started in a terminal keeps running.",
+        "The host starts when you open Planwise and stops when you quit, ending work running on it. A host you started in a terminal keeps running.",
     },
     {
       mode: "none",
       label: `Don't run a host on this ${machine}`,
       description:
-        "Traycer connects only to remote hosts, where your agents and terminals run. No host starts when you open Traycer on this machine.",
+        "Planwise connects only to remote hosts, where your agents and terminals run. No host starts when you open Planwise on this machine.",
     },
   ];
 }
@@ -89,7 +89,7 @@ export function hostLifecycleCardSubtitle(machine: string): string {
 
 /** Why the `none` option is disabled while signed out. */
 export const HOST_LIFECYCLE_NONE_SIGNED_OUT_REASON =
-  "Sign in to use remote hosts. Until then, Traycer needs a host on this machine.";
+  "Sign in to use remote hosts. Until then, Planwise needs a host on this machine.";
 
 /**
  * Why the modes that run a host here are held while the host's Scheduled Task
@@ -99,7 +99,7 @@ export const HOST_LIFECYCLE_NONE_SIGNED_OUT_REASON =
  * owner; the card's notice above says which.
  */
 export const HOST_LIFECYCLE_TASK_NOT_OWNED_REASON =
-  "Unavailable while the Traycer Host task on this PC isn't confirmed as yours.";
+  "Unavailable while the Planwise Host task on this PC isn't confirmed as yours.";
 
 /** Short name of a mode, for the "Set to X" desired/applied line. */
 export function hostLifecycleModeName(mode: HostLifecycleMode): string {
@@ -223,7 +223,7 @@ export const HOST_FOREGROUND_REGISTER_SERVICE_REASON =
  * (`E_HOST_NOT_SERVICE_RUN`) and the person stops that run first.
  */
 export const HOST_FOREGROUND_REMOVE_TRAYCER_REASON =
-  "A host you started in a terminal is running; stop it, then remove Traycer.";
+  "A host you started in a terminal is running; stop it, then remove Planwise.";
 
 /**
  * The no-local-host card, on a desktop launched in `none`: "This machine runs
@@ -238,7 +238,7 @@ export const NO_LOCAL_HOST_DESKTOP_TAIL =
   "on the machine that should host your work (for WSL, inside the distro).";
 export const NO_LOCAL_HOST_RUN_HERE_LABEL = "Run a host here instead";
 export const NO_LOCAL_HOST_RUN_HERE_APPLIED =
-  "A host will run on this machine from the next launch. Quit and reopen Traycer to start it.";
+  "A host will run on this machine from the next launch. Quit and reopen Planwise to start it.";
 
 // ---------------------------------------------------------------------------
 // Quit modal
@@ -251,11 +251,11 @@ export const HOST_QUIT_TITLE_CHECKING = "Checking the host…";
 export const HOST_QUIT_TITLE_STOPPING = "Stopping the host";
 
 export const HOST_QUIT_DESCRIPTION_BUSY =
-  "Quitting Traycer can keep the host running so this work continues, or stop it now.";
+  "Quitting Planwise can keep the host running so this work continues, or stop it now.";
 export const HOST_QUIT_DESCRIPTION_BUSY_RETRY =
   "Something started on the host while it was stopping, so it was left running. Keep it running, or stop it now and end this work.";
 export const HOST_QUIT_DESCRIPTION_IDLE =
-  "Quitting Traycer can keep the host running so your phone can still reach it, or stop it now.";
+  "Quitting Planwise can keep the host running so your phone can still reach it, or stop it now.";
 /**
  * Stop-if-idle's "terminals in use" round: the host answered idle while
  * `count` terminals with a live shell have had a line entered in them. A
@@ -272,8 +272,8 @@ export function hostQuitTerminalsInUseTitle(count: number): string {
 
 export function hostQuitTerminalsInUseDescription(count: number): string {
   return count === 1
-    ? "Stopping the host ends it. Quitting Traycer can keep the host running so it carries on, or stop it now."
-    : "Stopping the host ends them. Quitting Traycer can keep the host running so they carry on, or stop it now.";
+    ? "Stopping the host ends it. Quitting Planwise can keep the host running so it carries on, or stop it now."
+    : "Stopping the host ends them. Quitting Planwise can keep the host running so they carry on, or stop it now.";
 }
 
 /**
@@ -283,9 +283,9 @@ export function hostQuitTerminalsInUseDescription(count: number): string {
  * nothing about the host either way.
  */
 export const HOST_QUIT_DESCRIPTION_STOPPING =
-  "Traycer quits once the stop has run.";
+  "Planwise quits once the stop has run.";
 export const HOST_QUIT_DESCRIPTION_CHECKING =
-  "Traycer is asking this machine's host what it is running.";
+  "Planwise is asking this machine's host what it is running.";
 
 /** Why the modal could not read the host, one sentence per cause. */
 export type HostQuitUnknownReason = "unreachable" | "no-connection";
@@ -295,9 +295,9 @@ export function hostQuitUnknownDescription(
 ): string {
   switch (reason) {
     case "unreachable":
-      return "The host didn't answer, so Traycer can't list what it is running. Stopping it may end work in progress.";
+      return "The host didn't answer, so Planwise can't list what it is running. Stopping it may end work in progress.";
     case "no-connection":
-      return "Traycer couldn't open a connection to this machine's host - you may be signed out, or its credentials may be refreshing. Stopping it may end work in progress.";
+      return "Planwise couldn't open a connection to this machine's host - you may be signed out, or its credentials may be refreshing. Stopping it may end work in progress.";
   }
 }
 
@@ -317,7 +317,7 @@ export const HOST_QUIT_REMEMBER_LABEL =
 export const HOST_NONE_CONFIRM_TITLE_BUSY = "The host is still working";
 export const HOST_NONE_CONFIRM_TITLE_IDLE = "Stop the host on this machine?";
 export const HOST_NONE_CONFIRM_DESCRIPTION =
-  "Traycer will stop this machine's host and connect only to remote hosts from the next launch.";
+  "Planwise will stop this machine's host and connect only to remote hosts from the next launch.";
 export const HOST_NONE_CONFIRM_STOP_LABEL = "Stop host";
 /**
  * The `→ none` confirm during a foreground run. Main commits `none` then and
@@ -326,7 +326,7 @@ export const HOST_NONE_CONFIRM_STOP_LABEL = "Stop host";
  */
 export const HOST_NONE_CONFIRM_TITLE_FOREGROUND = "Switch to No local host?";
 export const HOST_NONE_CONFIRM_DESCRIPTION_FOREGROUND =
-  "A host started in a terminal is running. Traycer won't stop it: it keeps running until you stop it there. From the next launch, Traycer connects only to remote hosts.";
+  "A host started in a terminal is running. Planwise won't stop it: it keeps running until you stop it there. From the next launch, Planwise connects only to remote hosts.";
 export const HOST_NONE_CONFIRM_SWITCH_LABEL = "Switch";
 export const HOST_LIFECYCLE_SUPERSEDED_TITLE = "Nothing was changed";
 export const HOST_LIFECYCLE_SUPERSEDED_DESCRIPTION =
@@ -351,7 +351,7 @@ export function hostLifecycleSetRefusalCopy(
     case "host-busy":
       return "The host has work in progress, so it was left running. Stop host again to end that work.";
     case "lock-busy":
-      return "Another Traycer process is managing the host right now, so nothing was changed. Try again in a moment.";
+      return "Another Planwise process is managing the host right now, so nothing was changed. Try again in a moment.";
     case "update-active":
       return "The host is installing an update, so nothing was changed. Try again once it finishes.";
     case "stop-failed":
@@ -359,7 +359,7 @@ export function hostLifecycleSetRefusalCopy(
     case "write-failed":
       return "Couldn't save this setting. Try again, or change it from the command line with `traycer host lifecycle set <mode>`.";
     case "confirmation-required":
-      return "Turning off the local host stops Traycer Host. Confirm the stop to continue.";
+      return "Turning off the local host stops Planwise Host. Confirm the stop to continue.";
   }
 }
 export const HOST_LIFECYCLE_RESTART_HOST_LABEL = "Restart host";

@@ -198,7 +198,7 @@ export function FallbackOverridesMatrix(
                 ) : null}
               </summary>
               <p className="mb-2 text-ui-xs text-muted-foreground">
-                Traycer won’t switch or wait for these problems because
+                Planwise won’t switch or wait for these problems because
                 automatic routing cannot resolve them.
               </p>
               <ul className="space-y-2">

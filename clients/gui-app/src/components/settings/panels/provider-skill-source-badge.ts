@@ -37,4 +37,4 @@ export const SKILL_CONFLICT_TONE =
   "border-warning/40 bg-warning/10 text-warning-foreground";
 
 export const SKILL_CONFLICT_TOOLTIP =
-  "A folder already occupies this provider's link for this skill. Traycer did not adopt or overwrite it.";
+  "A folder already occupies this provider's link for this skill. Planwise did not adopt or overwrite it.";

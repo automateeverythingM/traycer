@@ -67,7 +67,7 @@ const SETUP_GUIDES = {
       {
         section: "agents",
         selector: "[data-agent-selection-guide-editor-shell]",
-        title: "How Traycer picks agents",
+        title: "How Planwise picks agents",
         content:
           "These instructions decide the harness, model, and effort for every delegated task.",
       },

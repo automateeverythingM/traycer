@@ -35,7 +35,7 @@ export function SignOutConfirmDialog(
       open={props.open}
       onOpenChange={props.onOpenChange}
       title="Sign out?"
-      description="You'll need to sign in again to use Traycer on this device."
+      description="You'll need to sign in again to use Planwise on this device."
       cascadeSummary={null}
       actionLabel="Sign out"
       isPending={false}

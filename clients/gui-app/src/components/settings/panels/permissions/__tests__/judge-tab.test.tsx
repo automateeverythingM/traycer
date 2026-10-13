@@ -769,8 +769,8 @@ describe("JudgeTab", () => {
       );
     });
 
-    it("names the model on Traycer, with credits, for the hosted default", () => {
-      judgeCatalog.harnesses = [harness({ id: "traycer", label: "Traycer" })];
+    it("names the model on Planwise, with credits, for the hosted default", () => {
+      judgeCatalog.harnesses = [harness({ id: "traycer", label: "Planwise" })];
       setModels("traycer", {
         kind: "ready",
         models: [model("traycer", "haiku", "Claude Haiku", {})],
@@ -782,7 +782,7 @@ describe("JudgeTab", () => {
       renderTab();
 
       expect(screen.getByTestId("auto-judge-effective").textContent).toBe(
-        "Now: Claude Haiku on Traycer · uses Traycer credits",
+        "Now: Claude Haiku on Planwise · uses Planwise credits",
       );
     });
 
@@ -1149,7 +1149,7 @@ describe("JudgeTab", () => {
       expect(screen.queryByTestId("auto-judge-reviewer-pointer")).toBeNull();
     });
 
-    it("is hidden when the native provider is set to Traycer's judge", () => {
+    it("is hidden when the native provider is set to Planwise's judge", () => {
       judgeCatalog.providers = [
         claudeWithJudge("traycer"),
         provider("codex", [profile("ambient", "ambient")]),
@@ -2401,7 +2401,7 @@ describe("JudgeTab", () => {
     });
 
     it('names the effort in the "Now:" line when autoJudge.get runs one, and omits it below 1.3', () => {
-      judgeCatalog.harnesses = [harness({ id: "traycer", label: "Traycer" })];
+      judgeCatalog.harnesses = [harness({ id: "traycer", label: "Planwise" })];
       setModels("traycer", {
         kind: "ready",
         models: [
@@ -2422,7 +2422,7 @@ describe("JudgeTab", () => {
       renderTab();
 
       expect(screen.getByTestId("auto-judge-effective").textContent).toBe(
-        "Now: Claude Haiku (Low) on Traycer · uses Traycer credits",
+        "Now: Claude Haiku (Low) on Planwise · uses Planwise credits",
       );
       cleanup();
 
@@ -2430,7 +2430,7 @@ describe("JudgeTab", () => {
       renderTab();
 
       expect(screen.getByTestId("auto-judge-effective").textContent).toBe(
-        "Now: Claude Haiku on Traycer · uses Traycer credits",
+        "Now: Claude Haiku on Planwise · uses Planwise credits",
       );
     });
 

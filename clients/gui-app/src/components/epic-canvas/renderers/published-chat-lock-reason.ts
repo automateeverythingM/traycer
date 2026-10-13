@@ -248,6 +248,6 @@ function replicaCopySentence(input: {
  */
 function unreadableItemsSentence(count: number): string {
   return count === 1
-    ? "1 item needs a newer version of Traycer to render."
-    : `${count} items need a newer version of Traycer to render.`;
+    ? "1 item needs a newer version of Planwise to render."
+    : `${count} items need a newer version of Planwise to render.`;
 }

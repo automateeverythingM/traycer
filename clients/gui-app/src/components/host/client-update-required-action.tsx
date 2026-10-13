@@ -172,11 +172,11 @@ export function ClientUpdateRequiredAction(props: {
           data-testid="client-update-required-staged-note"
         >
           {recovery.data.stagedVersion === null
-            ? "An update is already downloaded and will install the next time you quit Traycer - but it is still too old for this host. "
-            : `Traycer ${recovery.data.stagedVersion} is already downloaded and will install the next time you quit - but it is still too old for this host. `}
-          Quit and reopen Traycer to let it apply, then this dialog will offer
+            ? "An update is already downloaded and will install the next time you quit Planwise - but it is still too old for this host. "
+            : `Planwise ${recovery.data.stagedVersion} is already downloaded and will install the next time you quit - but it is still too old for this host. `}
+          Quit and reopen Planwise to let it apply, then this dialog will offer
           the next step. If you would rather install a newer build by hand, quit
-          Traycer first.
+          Planwise first.
         </p>
         <ReleasesPageButton />
       </>
@@ -331,12 +331,12 @@ function renderCachedUpdateAction(input: {
  */
 function mobileStoreUpdateNote(platform: MobileAppPlatform | null): string {
   if (platform === "ios") {
-    return "Update the Traycer app in TestFlight or the App Store, then reopen it.";
+    return "Update the Planwise app in TestFlight or the App Store, then reopen it.";
   }
   if (platform === "android") {
-    return "Update the Traycer app in Google Play, then reopen it.";
+    return "Update the Planwise app in Google Play, then reopen it.";
   }
-  return "Update the Traycer app from the store you installed it from, then reopen it.";
+  return "Update the Planwise app from the store you installed it from, then reopen it.";
 }
 
 function ReleasesPageButton(): ReactNode {
@@ -355,7 +355,7 @@ function ReleasesPageButton(): ReactNode {
         void openLink(traycerInfo.releasesPage, "docs", null);
       }}
     >
-      <span>Get the latest Traycer</span>
+      <span>Get the latest Planwise</span>
     </Button>
   );
 }

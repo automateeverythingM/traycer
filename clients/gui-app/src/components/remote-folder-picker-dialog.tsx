@@ -1010,7 +1010,7 @@ function RemoteFolderPickerListingStatus(props: {
           data-testid="remote-folder-picker-error"
           role="alert"
         >
-          This host app is too old for remote browsing - update Traycer on the
+          This host app is too old for remote browsing - update Planwise on the
           host machine.
         </p>
       );

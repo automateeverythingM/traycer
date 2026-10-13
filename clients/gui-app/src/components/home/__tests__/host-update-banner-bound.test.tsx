@@ -923,7 +923,7 @@ describe("HostUpdateBanner — bound arm (Ticket 06 subject E)", () => {
       });
       renderBanner(undefined);
       expect(await findPhaseText()).toContain(
-        "refused Traycer's authenticated check",
+        "refused Planwise's authenticated check",
       );
       await screen.findByTestId("host-update-banner-operation-diagnostics");
       expect(

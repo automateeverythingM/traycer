@@ -232,7 +232,7 @@ const PHASE_SENTENCE: Record<
   // `versionLabel`, not `to`: this sentence reads "Installed v2.1.0", never
   // "Installed to v2.1.0".
   "verification-refused": ({ target }) =>
-    `Installed${versionLabel(target)}. The host is running but refused Traycer's authenticated check, so the update was not verified — see Diagnostics`,
+    `Installed${versionLabel(target)}. The host is running but refused Planwise's authenticated check, so the update was not verified — see Diagnostics`,
   // Deliberately not "failed". The record could not be read; the update may be
   // fine. This wording points at the repair path Diagnostics offers.
   unavailable: () => "Update status unavailable — see Diagnostics",
@@ -362,7 +362,7 @@ function waitingForWorkSentence(
   // into bytes that are already placed is not something a CLI upgrade unblocks;
   // substituting there would trade one wrong sentence for another.
   if (cliFloorBlocked) {
-    return "Update waits for Traycer's command-line tools to be updated — see installation help";
+    return "Update waits for Planwise's command-line tools to be updated — see installation help";
   }
   // "Waits", not "will continue": the park is a fact about the stage, and
   // what resumes it is the next update run - a host's own automatic check

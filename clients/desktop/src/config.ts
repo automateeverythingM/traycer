@@ -76,7 +76,7 @@ const bakedConfig = {
   // script stamps the shipped values for a packaged build. Keeping each slot's
   // identity distinct is what lets separate builds coexist without stealing one
   // another's lock/state.
-  appName: "Traycer Dev",
+  appName: "Planwise Dev",
   protocolScheme: "traycer-dev",
   appId: "ai.traycer.desktop",
   // Release routing is baked alongside the native identity. Production keeps

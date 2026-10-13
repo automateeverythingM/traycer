@@ -231,7 +231,7 @@ function defaultArgs(controller: StubController): RestartArgsBaseline {
     controller,
     label: {
       id: "ai.traycer.host.production",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment: "production",
     } as never,
     parentPid: 4242,

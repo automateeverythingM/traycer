@@ -119,7 +119,7 @@ function stageQuietEnvironment(): void {
     }),
     serviceLabelFor: (environment: string) => ({
       id: `ai.traycer.host.${environment}`,
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -180,11 +180,11 @@ describe("runDoctor service-registration issues", () => {
     const issue = matches[0];
     expect(issue?.severity).toBe("error");
     expect(issue?.title).toBe(
-      "Traycer Host task is disabled in Task Scheduler",
+      "Planwise Host task is disabled in Task Scheduler",
     );
     expect(
       issue?.message.startsWith(
-        "the Traycer Host task is disabled in Task Scheduler; enable it or run `traycer host service install`",
+        "the Planwise Host task is disabled in Task Scheduler; enable it or run `traycer host service install`",
       ),
     ).toBe(true);
     expect(issue?.fixAction).toBe("service-install");

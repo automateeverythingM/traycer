@@ -86,7 +86,7 @@ vi.mock("@/hooks/providers/use-providers-plugin-icon-query", () => ({
 }));
 
 const SESSION_NOTICE =
-  "Plugin tools may not appear in Traycer-launched sessions. They load for this provider's own CLI, but not for the session stream Traycer drives.";
+  "Plugin tools may not appear in Planwise-launched sessions. They load for this provider's own CLI, but not for the session stream Planwise drives.";
 
 function pluginsState(
   providerId: ProviderCliState["providerId"],

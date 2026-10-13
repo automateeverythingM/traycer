@@ -551,7 +551,7 @@ export function ProviderPackVersionManagerPanel(
         className="w-full px-4 py-3 text-ui-sm text-muted-foreground"
         role="status"
       >
-        Managing managed CLI versions requires a newer Traycer host. The
+        Managing managed CLI versions requires a newer Planwise host. The
         provider table still works; update this host to download, switch, or
         delete individual versions.
       </div>

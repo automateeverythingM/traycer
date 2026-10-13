@@ -382,7 +382,7 @@ describe("local-boot intent", () => {
                 <DefaultHostReadyGate>
                   <main>app</main>
                 </DefaultHostReadyGate>
-                {/* The gate no longer draws "Connecting to Traycer Host…"
+                {/* The gate no longer draws "Connecting to Planwise Host…"
                     itself for this kind (the window narrator, D10, owns it
                     now) - see default-host-ready-gate.test.tsx deliverable D.
                     Mounted here as the settle anchor: the modal appearing
@@ -485,6 +485,6 @@ describe("local-boot intent", () => {
     expect(spy.convergeReadyCalls()).toBe(0);
     // Still the local surface rather than the remote one - the window knows
     // this is a local boot, it simply is not the thing booting it.
-    expect(screen.queryByText("Connecting to Traycer Host…")).toBeNull();
+    expect(screen.queryByText("Connecting to Planwise Host…")).toBeNull();
   });
 });

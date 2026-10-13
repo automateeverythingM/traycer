@@ -29,7 +29,7 @@ afterEach(() => {
 
 function readySnapshot(): DesktopSupportSnapshot {
   return {
-    appName: "Traycer",
+    appName: "Planwise",
     appVersion: "1.0.0",
     platform: "darwin",
     arch: "arm64",

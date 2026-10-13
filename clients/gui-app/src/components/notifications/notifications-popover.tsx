@@ -971,7 +971,7 @@ function notificationFeedStatus(input: {
   if (input.feedMode === "upgrade-required") {
     return {
       title: "Cloud notifications unavailable",
-      detail: "Update Traycer to reconnect to your notification feed.",
+      detail: "Update Planwise to reconnect to your notification feed.",
       isPending: false,
       tone: "degraded",
     };

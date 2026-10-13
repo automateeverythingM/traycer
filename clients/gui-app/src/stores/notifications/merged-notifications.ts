@@ -1754,7 +1754,7 @@ export function rowFromAppLocalEntry(
     createdAt: entry.updatedAt,
     readAt: entry.readAt,
     title: entry.message,
-    body: entry.detail ?? "Traycer notification",
+    body: entry.detail ?? "Planwise notification",
     payload: entry.payload,
     hostKind: null,
     appLocalKind: entry.kind,

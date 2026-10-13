@@ -290,7 +290,7 @@ describe("MobileAppHeader", () => {
     await screen.findByRole("button", { name: "Open menu" });
 
     expect(screen.queryByTestId("mobile-header-title")).toBeNull();
-    expect(screen.queryByText("Traycer")).toBeNull();
+    expect(screen.queryByText("Planwise")).toBeNull();
     // The spacer still has to hold the right cluster against the right edge.
     expect(screen.getByRole("button", { name: "Usage limits" })).not.toBeNull();
 

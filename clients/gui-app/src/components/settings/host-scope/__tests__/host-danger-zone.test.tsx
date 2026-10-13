@@ -192,7 +192,7 @@ describe("HostDangerZone", () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it("keeps Remove Traycer reachable while this computer's host is down", () => {
+  it("keeps Remove Planwise reachable while this computer's host is down", () => {
     // The regression, and the one that mattered most: `RemoveTraycerRow` calls
     // `hostManagement.uninstallTraycer()` over the LOCAL CLI bridge, not host
     // RPC. Gating the whole zone on a dialable route took the only way to
@@ -233,13 +233,13 @@ describe("HostDangerZone", () => {
 
     render(<LocalRecoveryDangerZone />);
 
-    expect(screen.getByText("Traycer removal incomplete")).not.toBeNull();
+    expect(screen.getByText("Planwise removal incomplete")).not.toBeNull();
     expect(
       screen.getByText("The background service is still registered", {
         exact: false,
       }),
     ).not.toBeNull();
-    expect(screen.queryByText("Traycer removed")).toBeNull();
+    expect(screen.queryByText("Planwise removed")).toBeNull();
     expect(screen.queryByTestId("settings-quit-after-uninstall")).toBeNull();
     screen.getByTestId("settings-retry-uninstall").click();
     expect(uninstallMock.mutate).toHaveBeenCalledOnce();
@@ -256,11 +256,11 @@ describe("HostDangerZone", () => {
 
     render(<LocalRecoveryDangerZone />);
 
-    expect(screen.getByText("Traycer removal unverified")).not.toBeNull();
+    expect(screen.getByText("Planwise removal unverified")).not.toBeNull();
     expect(
       screen.getByText("traycer host service status", { exact: false }),
     ).not.toBeNull();
-    expect(screen.queryByText("Traycer removed")).toBeNull();
+    expect(screen.queryByText("Planwise removed")).toBeNull();
     expect(screen.queryByTestId("settings-quit-after-uninstall")).toBeNull();
     expect(screen.queryByTestId("settings-retry-uninstall")).toBeNull();
   });
@@ -272,7 +272,7 @@ describe("HostDangerZone", () => {
     runnerHostMock.hostManagement = { uninstallTraycer: vi.fn() };
     uninstallMock.isSuccess = true;
     const warning =
-      "The Traycer Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
+      "The Planwise Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
     uninstallMock.data = {
       kind: "removed",
       serviceRegistrationRetained: true,
@@ -286,8 +286,8 @@ describe("HostDangerZone", () => {
     ).toBe(warning);
     expect(screen.getByTestId("settings-quit-after-uninstall")).not.toBeNull();
     expect(screen.queryByTestId("settings-retry-uninstall")).toBeNull();
-    expect(screen.queryByText("Traycer removal incomplete")).toBeNull();
-    expect(screen.queryByText("Traycer removal unverified")).toBeNull();
+    expect(screen.queryByText("Planwise removal incomplete")).toBeNull();
+    expect(screen.queryByText("Planwise removal unverified")).toBeNull();
   });
 
   it("keeps remote account removal available while the host is unreachable", () => {
@@ -331,7 +331,7 @@ describe("HostDangerZone", () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it("offers Remove Traycer only for this computer's host", () => {
+  it("offers Remove Planwise only for this computer's host", () => {
     // The bridge must be present: without it the row is withheld for a reason
     // unrelated to locality, and this absence assertion would pass vacuously.
     runnerHostMock.hostManagement = { uninstallTraycer: vi.fn() };
@@ -344,7 +344,7 @@ describe("HostDangerZone", () => {
         })}
       />,
     );
-    expect(screen.queryByText(/Remove Traycer/)).toBeNull();
+    expect(screen.queryByText(/Remove Planwise/)).toBeNull();
   });
 
   it("offers Remove from account for a remote host, and never the word deregister", () => {

@@ -49,18 +49,18 @@ function stamp(): Record<string, unknown> {
     serviceLabelId: "ai.traycer.host.staging",
     windowsTaskName: "\\Traycer\\Host-Staging",
     appId: "ai.traycer.desktop.staging",
-    productName: "Traycer Staging",
+    productName: "Planwise Staging",
     protocolScheme: "traycer-staging",
     releaseChannel: "staging",
     mac: {
-      bundleName: "Traycer Staging",
+      bundleName: "Planwise Staging",
       helperBundleId: "ai.traycer.desktop.staging.host",
       launchAgentLabel: "ai.traycer.host.staging.agent",
     },
     windows: {
       appUserModelId: "ai.traycer.desktop.staging",
-      executableName: "Traycer-Staging",
-      installerDisplayName: "Traycer Staging",
+      executableName: "Planwise-Staging",
+      installerDisplayName: "Planwise Staging",
     },
     linux: {
       deb: { packageName: "traycer-staging" },
@@ -189,7 +189,7 @@ describe("set-deploy-target scripts", () => {
     expect(existsSync(fixture.stampPath)).toBe(true);
     const source = readFileSync(fixture.configPath, "utf8");
     expect(source).toContain('environment: "staging"');
-    expect(source).toContain('appName: "Traycer Staging"');
+    expect(source).toContain('appName: "Planwise Staging"');
     expect(source).toContain('protocolScheme: "traycer-staging"');
     expect(source).toContain('appId: "ai.traycer.desktop.staging"');
     expect(source).toContain('authnBaseUrl: "https://authn.staging.example"');

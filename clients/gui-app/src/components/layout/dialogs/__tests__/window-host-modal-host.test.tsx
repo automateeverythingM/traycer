@@ -325,7 +325,7 @@ describe("<WindowHostModalHost />", () => {
 
     // Nothing is starting, so nothing narrates a start.
     expect(screen.queryByTestId("local-host-loading-stage")).toBeNull();
-    expect(screen.queryByText("Starting Traycer…")).toBeNull();
+    expect(screen.queryByText("Starting Planwise…")).toBeNull();
 
     // The attempt panel is what explains this state, and it is present...
     expect(
@@ -351,7 +351,7 @@ describe("<WindowHostModalHost />", () => {
   // `ensureFailure` itself.
   it("the settled ∅ narrator shows the ensure failure's own message verbatim", async () => {
     const SENTENCE =
-      "the Traycer Host task is disabled in Task Scheduler; enable it or run `traycer host service install`";
+      "the Planwise Host task is disabled in Task Scheduler; enable it or run `traycer host service install`";
     hostStatus.data = BOOTSTRAP_MARKERS;
     applySnapshot({
       attached: true,
@@ -482,7 +482,7 @@ describe("<WindowHostModalHost />", () => {
     // machine has been named that a lane could describe) and no bar, since
     // nothing has a measured position.
     expect(screen.getByTestId("local-host-loading-stage").textContent).toBe(
-      "Starting Traycer…",
+      "Starting Planwise…",
     );
     expect(screen.queryByRole("progressbar")).toBeNull();
     // The footer pair, exactly as the two surfaces before this one draw it:
@@ -546,7 +546,7 @@ describe("<WindowHostModalHost />", () => {
       expect(screen.getByTestId("window-host-startup-card")).toBeTruthy();
     });
     expect(screen.getByTestId("local-host-loading-stage").textContent).toBe(
-      "Setting up Traycer Host…",
+      "Setting up Planwise Host…",
     );
     // The lane has reported no percentage yet, so there is no bar to draw.
     expect(screen.queryByRole("progressbar")).toBeNull();
@@ -637,7 +637,7 @@ describe("<WindowHostModalHost />", () => {
     expect(screen.queryByTestId("window-host-modal-open-settings")).toBeNull();
 
     expect(screen.getByTestId("local-host-loading-stage").textContent).toBe(
-      "Starting Traycer…",
+      "Starting Planwise…",
     );
     expect(screen.queryByTestId("local-host-bootstrap-details")).toBeNull();
 
@@ -745,7 +745,7 @@ describe("<WindowHostModalHost />", () => {
     // reads as debris. This is the one cold-start face that is titled.
     expect(
       screen.getByTestId("window-host-startup-card-title").textContent,
-    ).toContain("Traycer Host didn't start");
+    ).toContain("Planwise Host didn't start");
 
     expect(screen.getByTestId("window-host-modal-retry")).toBeTruthy();
     expect(screen.getByRole("button", { name: "Report issue" })).toBeTruthy();
@@ -770,7 +770,7 @@ describe("<WindowHostModalHost />", () => {
     // The copy itself, not just the node: the stage line's fallback is the exact
     // sentence this arm must not say, and asserting the testid alone would pass
     // if the same string were reintroduced anywhere else in the card.
-    expect(document.body.textContent).not.toContain("Starting Traycer…");
+    expect(document.body.textContent).not.toContain("Starting Planwise…");
   });
 
   it("bypassed: true renders nothing at all", () => {
@@ -917,7 +917,7 @@ describe("<WindowHostModalHost />", () => {
     });
     expect(
       screen.getByTestId("window-host-modal-progress").textContent,
-    ).toContain("Restarting Traycer Host…");
+    ).toContain("Restarting Planwise Host…");
   });
 
   it("update-host: offers Update host when the HOST is the outdated leg", async () => {

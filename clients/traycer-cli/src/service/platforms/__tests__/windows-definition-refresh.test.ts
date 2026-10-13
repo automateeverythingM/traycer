@@ -147,7 +147,7 @@ import type { CliInvocation } from "../../cli-binary";
 function labelFor(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host (test)",
+    displayName: "Planwise Host (test)",
     // Unique per test, not just "dev": `hostHomeDir`/`cliInstallHomeDir` are
     // keyed by environment, and the invocation-record state directory
     // (`ensureCliInvocationStateDir`) is created 0700 on FIRST use and
@@ -561,7 +561,7 @@ describe("not-registered and unrecognized", () => {
     expect(calls).toEqual([]);
   });
 
-  it("an action that is not a Traycer host start: unrecognized; refresh throws naming 'traycer host service install', zero writes", async () => {
+  it("an action that is not a Planwise host start: unrecognized; refresh throws naming 'traycer host service install', zero writes", async () => {
     const label = labelFor("w-unrecognized");
     setWindowsDefinitionDepsForTests({
       queryTaskXml: async () => ({
@@ -579,7 +579,7 @@ describe("not-registered and unrecognized", () => {
     const state = await inspectWindowsServiceDefinition(label);
     expect(state).toEqual({
       kind: "unrecognized",
-      reason: "its action is not a Traycer host start",
+      reason: "its action is not a Planwise host start",
     });
 
     const { CLI_ERROR_CODES, CliError } =
@@ -865,7 +865,7 @@ describe("schtasks /Query /XML decode (reachable without the queryTaskXml seam)"
 
       expect(state).toEqual({
         kind: "unrecognized",
-        reason: "its action is not a Traycer host start",
+        reason: "its action is not a Planwise host start",
       });
     },
   );

@@ -2888,8 +2888,8 @@ describe("useLandingComposerActions", () => {
             roomInfo: null,
             refusal: {
               kind: "local-store-unavailable",
-              message: "Traycer can't open this device's local store.",
-              remedy: "Quit the other Traycer on this machine, then rebind.",
+              message: "Planwise can't open this device's local store.",
+              remedy: "Quit the other Planwise on this machine, then rebind.",
             },
           })
         : Promise.resolve({}),
@@ -3048,8 +3048,8 @@ describe("useLandingComposerActions", () => {
             roomInfo: null,
             refusal: {
               kind: "local-store-unavailable",
-              message: "Traycer can't open this device's local store.",
-              remedy: "Quit the other Traycer on this machine, then rebind.",
+              message: "Planwise can't open this device's local store.",
+              remedy: "Quit the other Planwise on this machine, then rebind.",
             },
           })
         : Promise.resolve({}),
@@ -3778,7 +3778,7 @@ describe("useLandingComposerActions", () => {
                   refusal: {
                     kind: "missing-attachment-bytes",
                     message:
-                      "Traycer couldn't find the bytes for one of these images.",
+                      "Planwise couldn't find the bytes for one of these images.",
                     remedy: "Re-upload the image and try again.",
                   },
                 }

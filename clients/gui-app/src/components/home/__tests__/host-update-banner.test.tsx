@@ -557,7 +557,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
       .mockResolvedValueOnce({
         kind: "busy" as const,
         continuation: "retry-with-force" as const,
-        message: "Another Traycer process is applying an update.",
+        message: "Another Planwise process is applying an update.",
       })
       .mockResolvedValueOnce({
         kind: "ok" as const,
@@ -577,7 +577,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
     // the one thing that distinguishes the two on a page rendering both.
     expect(dialog.dataset.purpose).toBe("update");
     expect(dialog.textContent).toContain(
-      "Another Traycer process is applying an update.",
+      "Another Planwise process is applying an update.",
     );
     fireEvent.click(screen.getByTestId("host-busy-force"));
     await waitFor(() => {
@@ -621,7 +621,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
       Promise.resolve({
         kind: "busy" as const,
         continuation: "retry-with-force" as const,
-        message: "Another Traycer process is applying an update.",
+        message: "Another Planwise process is applying an update.",
       }),
     );
     const management = makeManagement({ status: READY_STATUS, applyStaged });
@@ -642,7 +642,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
       .fn()
       .mockResolvedValueOnce({
         kind: "deferred" as const,
-        message: "Another Traycer process is managing the host.",
+        message: "Another Planwise process is managing the host.",
       })
       .mockResolvedValueOnce({
         kind: "ok" as const,
@@ -659,7 +659,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
 
     const deferred = await screen.findByTestId("host-update-banner-deferred");
     expect(deferred.textContent).toContain(
-      "Another Traycer process is managing the host.",
+      "Another Planwise process is managing the host.",
     );
 
     fireEvent.click(screen.getByTestId("host-update-banner-retry"));
@@ -748,7 +748,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
   it("G6(i) — a controller-lane terminal outcome is aria-live: assertive even though the local rich view has nothing to say", async () => {
     const applyStaged = vi.fn().mockResolvedValueOnce({
       kind: "deferred" as const,
-      message: "Another Traycer process is managing the host.",
+      message: "Another Planwise process is managing the host.",
     });
     const management = makeManagement({ status: READY_STATUS, applyStaged });
     renderBanner(makeHost(management));
@@ -1010,7 +1010,7 @@ describe("HostUpdateBanner (Host Update Layer Redesign, D4)", () => {
 // user's task).
 // T08 ruling 13's sentence, spelled out so a copy change is a test change.
 const UNCONFIRMED =
-  "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
+  "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
 
 describe("HostUpdateBanner: service-registration notices are not failures", () => {
   beforeEach(() => {
@@ -1080,7 +1080,7 @@ describe("HostUpdateBanner: service-registration notices are not failures", () =
     const applyStaged = vi.fn(() =>
       Promise.resolve<MutationOutcome<ApplyStagedOk>>({
         kind: "deferred",
-        message: "Another Traycer process is managing the host.",
+        message: "Another Planwise process is managing the host.",
       }),
     );
     renderBanner(

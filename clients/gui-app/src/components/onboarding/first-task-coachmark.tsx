@@ -12,7 +12,7 @@ const STEPS = {
   folder: {
     progress: { step: 1, total: 3 },
     title: "Pick a project",
-    content: "Add the folder Traycer should work in.",
+    content: "Add the folder Planwise should work in.",
     action: "Add folder",
   },
   workspace: {

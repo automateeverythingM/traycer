@@ -263,7 +263,7 @@ describe("what each row lets the face and picker do", () => {
 });
 
 describe("judgeUnpickedSeed and judgeSeedSelection", () => {
-  it("seeds Traycer on the model Automatic resolves to when the host names one", () => {
+  it("seeds Planwise on the model Automatic resolves to when the host names one", () => {
     expect(
       judgeUnpickedSeed(
         { source: "default", harnessId: "traycer", model: "fast" },
@@ -272,7 +272,7 @@ describe("judgeUnpickedSeed and judgeSeedSelection", () => {
     ).toEqual({ harnessId: "traycer", modelSlug: "fast", profileId: null });
   });
 
-  it("otherwise seeds the first provider that can run, with an empty model, else Traycer", () => {
+  it("otherwise seeds the first provider that can run, with an empty model, else Planwise", () => {
     expect(judgeUnpickedSeed(null, HARNESSES)).toEqual({
       harnessId: sortGuiHarnessesByProviderOrder(HARNESSES)[0].id,
       modelSlug: "",

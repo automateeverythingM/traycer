@@ -57,7 +57,7 @@ function desktopStamp(
     cliInstallRoot: staging ? "~/.traycer/cli/staging" : "~/.traycer/cli",
     windowsTaskName: staging ? "\\Traycer\\Host-Staging" : "\\Traycer\\Host",
     appId: staging ? "ai.traycer.desktop.staging" : "ai.traycer.desktop",
-    productName: staging ? "Traycer Staging" : "Traycer",
+    productName: staging ? "Planwise Staging" : "Planwise",
     protocolScheme: staging ? "traycer-staging" : "traycer",
     // NOT `target`: the production line's channel is `stable`, and only
     // staging's channel happens to share its target's name. Spelling it
@@ -65,7 +65,7 @@ function desktopStamp(
     // which is exactly what `readClientTargetStamp`'s channel check refuses.
     releaseChannel: staging ? "staging" : "stable",
     mac: {
-      bundleName: staging ? "Traycer Staging" : "Traycer",
+      bundleName: staging ? "Planwise Staging" : "Planwise",
       // Same fabrication the `releaseChannel` note above describes, twice more:
       // `ai.traycer.<target>.host` interpolates the TARGET NAME into an id the
       // descriptor derives from the app id, so it matched neither row. The real
@@ -83,12 +83,12 @@ function desktopStamp(
       appUserModelId: staging
         ? "ai.traycer.desktop.staging"
         : "ai.traycer.desktop",
-      executableName: staging ? "Traycer-Staging" : "Traycer",
-      installerDisplayName: staging ? "Traycer Staging" : "Traycer",
+      executableName: staging ? "Planwise-Staging" : "Planwise",
+      installerDisplayName: staging ? "Planwise Staging" : "Planwise",
     },
     linux: {
       deb: { packageName: staging ? "traycer-staging" : "traycer" },
-      rpm: { packageName: staging ? "traycer-staging" : "Traycer" },
+      rpm: { packageName: staging ? "traycer-staging" : "Planwise" },
       executableName: staging ? "traycer-staging" : "traycer",
       // WITH the `.desktop` suffix, as the generator emits and as
       // package.json's `desktopName` carries - it is the installed filename,
@@ -137,7 +137,7 @@ function createProject(target: "production" | "staging" | "unstamped"): {
     JSON.stringify({
       build: {
         appId: "old.app",
-        productName: "Old Traycer",
+        productName: "Old Planwise",
         mac: { executableName: "OldTraycer" },
         win: { executableName: "OldTraycer" },
         linux: { executableName: "old-traycer" },
@@ -202,8 +202,8 @@ describe("release-target-electron-builder", () => {
     const config = run(fixture.projectDir);
     expect(config).toMatchObject({
       appId: "ai.traycer.desktop.staging",
-      productName: "Traycer Staging",
-      protocols: [{ name: "Traycer Staging", schemes: ["traycer-staging"] }],
+      productName: "Planwise Staging",
+      protocols: [{ name: "Planwise Staging", schemes: ["traycer-staging"] }],
       // `desktopName` alongside `name`: with `linux.syncDesktopName` true,
       // electron-builder takes the installed .desktop FILENAME from this key
       // and only falls back to `executableName` when it is absent - and
@@ -226,8 +226,8 @@ describe("release-target-electron-builder", () => {
       ],
       nsis: { include: ".release-target-uninstall-host-autostart.nsh" },
     });
-    expect(config.mac).toMatchObject({ executableName: "Traycer Staging" });
-    expect(config.win).toMatchObject({ executableName: "Traycer-Staging" });
+    expect(config.mac).toMatchObject({ executableName: "Planwise Staging" });
+    expect(config.win).toMatchObject({ executableName: "Planwise-Staging" });
     expect(config.linux).toMatchObject({ executableName: "traycer-staging" });
     const nsis = readFileSync(fixture.generatedPath, "utf8");
     expect(nsis).toContain(
@@ -245,7 +245,7 @@ describe("release-target-electron-builder", () => {
     const config = run(fixture.projectDir);
     expect(config).toMatchObject({
       deb: { packageName: "traycer" },
-      rpm: { packageName: "Traycer" },
+      rpm: { packageName: "Planwise" },
     });
     expect(readFileSync(fixture.generatedPath, "utf8")).toContain(
       '!define TRAYCER_WINDOWS_TASK_NAME "\\Traycer\\Host"',

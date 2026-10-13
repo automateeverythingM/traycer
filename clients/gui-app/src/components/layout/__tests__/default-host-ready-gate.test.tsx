@@ -652,12 +652,12 @@ describe("<HostReadyGate />", () => {
     ).toBe(true);
   });
 
-  it("tells a user who removed Traycer how to finish", () => {
+  it("tells a user who removed Planwise how to finish", () => {
     // "Reinstall to start the host again" answered a question they were not
     // asking - they removed it deliberately and need the next step.
     renderGate({ kind: "removed-host" }, PRESENTATION);
     expect(screen.getByTestId("local-host-removed-quit").textContent).toContain(
-      "Quit Traycer",
+      "Quit Planwise",
     );
     expect(
       screen.getByText(/drag it from Applications to the Trash/),
@@ -755,7 +755,7 @@ describe("<HostReadyGate />", () => {
     expect(card).toBeTruthy();
     // The same heading the narrator's settled cold-start face draws.
     expect(
-      screen.getByRole("heading", { name: "Traycer Host didn't start" }),
+      screen.getByRole("heading", { name: "Planwise Host didn't start" }),
     ).toBeTruthy();
     expect(screen.getByText("boom")).toBeTruthy();
     // The attempt panel, with the log path IN THE OPEN (not behind the toggle).
@@ -774,7 +774,7 @@ describe("<HostReadyGate />", () => {
     ).toHaveLength(1);
     // Nothing is starting: no boot headline.
     expect(screen.queryByTestId("local-host-loading-stage")).toBeNull();
-    expect(screen.queryByText("Starting Traycer…")).toBeNull();
+    expect(screen.queryByText("Starting Planwise…")).toBeNull();
   });
 
   it("draws restoring-request-context as the shared boot surface: idle heading, no bar, Show details and Open settings", () => {
@@ -797,7 +797,7 @@ describe("<HostReadyGate />", () => {
     );
     expect(card.getAttribute("data-surface")).toBe(HOST_BOOT_CARD_SURFACE);
     expect(screen.getByTestId("local-host-loading-stage").textContent).toBe(
-      "Starting Traycer…",
+      "Starting Planwise…",
     );
     // No lane, so no measured position and no bar.
     expect(screen.queryByRole("progressbar")).toBeNull();
@@ -853,7 +853,7 @@ describe("<HostReadyGate />", () => {
     // Per-kind, not "no Card anywhere" - see the loading-host pin above for
     // why the attach-pending cover is deliberately exempt.
     expect(screen.queryByTestId("host-ready-gate-unavailable-host")).toBeNull();
-    expect(screen.queryByText("Traycer Host is unavailable")).toBeNull();
+    expect(screen.queryByText("Planwise Host is unavailable")).toBeNull();
     expect(screen.queryByText("This tab's host is unavailable.")).toBeNull();
     expect(screen.queryByTestId("local-host-retry")).toBeNull();
   });
@@ -904,12 +904,12 @@ describe("<HostReadyGate />", () => {
 
     expect(
       screen.queryByText(
-        "Traycer can't reach this host right now, and no other host in the directory is reachable either.",
+        "Planwise can't reach this host right now, and no other host in the directory is reachable either.",
       ),
     ).toBeNull();
     expect(
       screen.queryByText(
-        "Traycer can't reach this host right now. Another host is available - switch to it, or retry.",
+        "Planwise can't reach this host right now. Another host is available - switch to it, or retry.",
       ),
     ).toBeNull();
     expect(screen.queryByRole("button", { name: "Report issue" })).toBeNull();
@@ -930,12 +930,12 @@ describe("<HostReadyGate />", () => {
 
     expect(
       screen.queryByText(
-        "Traycer can't reach this host right now. Another host is available - switch to it, or retry.",
+        "Planwise can't reach this host right now. Another host is available - switch to it, or retry.",
       ),
     ).toBeNull();
     expect(
       screen.queryByText(
-        "Traycer can't reach this host right now, and no other host in the directory is reachable either.",
+        "Planwise can't reach this host right now, and no other host in the directory is reachable either.",
       ),
     ).toBeNull();
     expect(screen.queryByRole("button", { name: "Report issue" })).toBeNull();

@@ -49,7 +49,7 @@ function PausedRemedies() {
       artifacts,
       format: "markdown",
       archive: true,
-      archiveTitle: meta?.epicLight?.title ?? "Traycer",
+      archiveTitle: meta?.epicLight?.title ?? "Planwise",
     });
   };
   return (

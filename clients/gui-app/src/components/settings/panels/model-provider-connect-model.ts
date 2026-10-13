@@ -73,11 +73,11 @@ export function sourceBadgeHint(
     case "api":
       return `This key is stored in ${providerLabel}'s own credential store, shared with its CLI, and can be removed from here.`;
     case "env":
-      return "This credential comes from an environment variable, so it's managed outside Traycer.";
+      return "This credential comes from an environment variable, so it's managed outside Planwise.";
     case "config":
       return configDeclaredCustom
         ? `You declared this provider in ${providerLabel}'s config file, with its own base URL and models.`
-        : `This credential comes from a ${providerLabel} config file, so it's managed outside Traycer.`;
+        : `This credential comes from a ${providerLabel} config file, so it's managed outside Planwise.`;
     case "custom":
       return `This provider is loaded by a custom ${providerLabel} loader.`;
   }

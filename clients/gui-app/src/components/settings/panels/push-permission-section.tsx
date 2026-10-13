@@ -26,7 +26,7 @@ type PushPermissionView =
 const STATE_DESCRIPTIONS: { readonly [K in PushPermissionState]: string } = {
   granted: "Delivered to this phone when an agent needs you.",
   denied:
-    "Turned off for Traycer in system Settings. Turn them on to get buzzed when an agent needs you.",
+    "Turned off for Planwise in system Settings. Turn them on to get buzzed when an agent needs you.",
   prompt: "Get buzzed when an agent needs you.",
 };
 

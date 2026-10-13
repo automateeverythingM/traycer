@@ -760,7 +760,7 @@ function RateLimitPopoverBody({
         {header}
         <div className="flex min-h-0 flex-1 flex-col items-stretch gap-3 overflow-y-auto p-3">
           <RateLimitHostUnavailableNotice scope={scope} />
-          {/* The ACCOUNT-scoped half survives the host being down: Traycer
+          {/* The ACCOUNT-scoped half survives the host being down: Planwise
               Inference usage comes through the AuthService with no host
               binding involved, so only the host-RPC provider panes go with
               the route. Hiding this too both took working data away and had
@@ -2990,9 +2990,9 @@ function TraycerRateLimitBody({
     case "error":
       return (
         <RateLimitErrorMessage
-          message="Couldn't load your Traycer subscription right now."
+          message="Couldn't load your Planwise subscription right now."
           reportContext={createReportIssueContext({
-            title: "Couldn't load your Traycer subscription",
+            title: "Couldn't load your Planwise subscription",
             message: null,
             code: null,
             source: "Subscription",

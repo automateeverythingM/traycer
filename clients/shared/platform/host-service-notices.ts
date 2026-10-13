@@ -26,21 +26,21 @@ export type ServiceTaskNotOwnedReason = "other-owner" | "unconfirmed";
 
 /** Another account's task. */
 export const SERVICE_TASK_NOT_OWNED_MESSAGE =
-  "The Traycer Host task on this PC is owned by another Windows user, so Traycer can't run a background host for you here. Connect to a remote host, or ask that user to remove Traycer from their account first.";
+  "The Planwise Host task on this PC is owned by another Windows user, so Planwise can't run a background host for you here. Connect to a remote host, or ask that user to remove Planwise from their account first.";
 /**
  * A task whose owner could not be confirmed. It names no owner, because none
  * was found. The CLI's refusal says this same sentence, so a desktop that
  * relays the CLI's text verbatim shows it too.
  */
 export const SERVICE_TASK_OWNER_UNCONFIRMED_MESSAGE =
-  "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
+  "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
 
 /** A removal that finished this account's teardown beside another's task. */
 export const SERVICE_TASK_LEFT_IN_PLACE_MESSAGE =
-  "The Traycer Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
+  "The Planwise Host task on this PC is owned by another Windows user, so it was left in place; everything of yours was removed.";
 /** The same, beside a task whose owner could not be confirmed. */
 export const SERVICE_TASK_OWNER_UNCONFIRMED_LEFT_IN_PLACE_MESSAGE =
-  "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.";
+  "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.";
 
 /**
  * The reason a CLI payload's `details` carries. Anything but an explicit
@@ -92,9 +92,9 @@ export const SERVICE_REGISTRATION_DISABLED_CODE =
   "E_SERVICE_REGISTRATION_DISABLED";
 /** The launch apply left the stage in place over it: the update is waiting. */
 export const HOST_UPDATE_SERVICE_DISABLED_MESSAGE =
-  "This update is waiting because the Traycer Host task is disabled in Task Scheduler. Enable the background service to install it.";
+  "This update is waiting because the Planwise Host task is disabled in Task Scheduler. Enable the background service to install it.";
 /** A person's Update now applied the bytes and left the task off. */
 export const HOST_UPDATED_SERVICE_DISABLED_MESSAGE =
-  "The host was updated, but the Traycer Host task is disabled in Task Scheduler, so the host was not started. Enable the background service to start it.";
+  "The host was updated, but the Planwise Host task is disabled in Task Scheduler, so the host was not started. Enable the background service to start it.";
 /** The action that turns the task back on (`host service install`). */
 export const ENABLE_BACKGROUND_SERVICE_LABEL = "Enable background service";

@@ -137,7 +137,7 @@ describe("judgeFailureFamily", () => {
     expect(judgeFailureFamily("auto: judge failed")).toBe("did-not-run");
     expect(
       judgeFailureFamily(
-        "auto: judge unavailable (Traycer is still checking whether the judge provider is available on this machine)",
+        "auto: judge unavailable (Planwise is still checking whether the judge provider is available on this machine)",
       ),
     ).toBe("did-not-run");
     expect(

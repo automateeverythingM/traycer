@@ -143,7 +143,7 @@ function makeGuiOnlyToolbarStore() {
     harnesses: [
       {
         id: "traycer",
-        label: "Traycer",
+        label: "Planwise",
         enabled: true,
         available: true,
         error: null,

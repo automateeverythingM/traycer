@@ -167,8 +167,8 @@ function accountLineFor(state: ProviderCliState): AccountLine {
   if (state.providerId === "traycer") {
     return {
       text: state.enabled
-        ? "Ready with your Traycer subscription"
-        : "Available with your Traycer subscription",
+        ? "Ready with your Planwise subscription"
+        : "Available with your Planwise subscription",
       tone: "good",
       title: null,
     };

@@ -337,7 +337,7 @@ describe("clientCompatibilityRequirement on the fatal envelope", () => {
   const fatal = {
     code: "INCOMPATIBLE",
     reason:
-      "This Traycer client is too old for this host. Update the Traycer app or CLI to the latest version. Updating the host again will not help. Do not reset Traycer; your agents and history remain stored.",
+      "This Planwise client is too old for this host. Update the Planwise app or CLI to the latest version. Updating the host again will not help. Do not reset Planwise; your agents and history remain stored.",
     incompatibleMethods: null,
     upgradeGuidance: { clientShouldUpgrade: true, hostShouldUpgrade: false },
     retryable: false,
@@ -365,10 +365,10 @@ describe("clientCompatibilityRequirement on the fatal envelope", () => {
     // Generic on purpose: a versioned "install 1.2.0" was only ever true for
     // one client family, and this sentence reaches desktop, CLI, and anything
     // later whose version chains have nothing to do with each other.
-    expect(parsed.reason).toContain("Update the Traycer app or CLI");
+    expect(parsed.reason).toContain("Update the Planwise app or CLI");
     expect(parsed.reason).toContain("the latest version");
     expect(parsed.reason).toContain("Updating the host again will not help");
-    expect(parsed.reason).toContain("Do not reset Traycer");
+    expect(parsed.reason).toContain("Do not reset Planwise");
   });
 
   it("rejects a requirement whose minimum epoch is not a positive integer", () => {

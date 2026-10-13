@@ -41,8 +41,8 @@ function nativeQuitCopy(prompt: HostQuitPrompt): NativeQuitCopy {
           ? "1 terminal is still in use"
           : `${prompt.terminalsInUse} terminals are still in use`,
         detail: one
-          ? "Stopping the host ends it. Quitting Traycer can keep the host running so it carries on, or stop it now."
-          : "Stopping the host ends them. Quitting Traycer can keep the host running so they carry on, or stop it now.",
+          ? "Stopping the host ends it. Quitting Planwise can keep the host running so it carries on, or stop it now."
+          : "Stopping the host ends them. Quitting Planwise can keep the host running so they carry on, or stop it now.",
         stopLabel: "Stop Host and Quit",
         stopForce: false,
       };
@@ -67,7 +67,7 @@ function nativeQuitCopy(prompt: HostQuitPrompt): NativeQuitCopy {
       return {
         message: "Can't tell what's running on the host",
         detail:
-          "Traycer can't check the host right now. Keep it running so any agents, terminals and shells carry on, or stop it, which ends anything still running.",
+          "Planwise can't check the host right now. Keep it running so any agents, terminals and shells carry on, or stop it, which ends anything still running.",
         stopLabel: "Stop Host Anyway and Quit",
         stopForce: true,
       };
@@ -97,7 +97,7 @@ export async function askHostQuitNatively(
   try {
     ({ response } = await showMessageBox({
       type: "question",
-      title: "Quit Traycer",
+      title: "Quit Planwise",
       message: copy.message,
       detail: copy.detail,
       buttons: ["Keep Running and Quit", copy.stopLabel, "Cancel"],
@@ -142,7 +142,7 @@ export async function confirmQuitAndStopHost(
     const answer = await showMessageBox({
       type: "warning",
       title: "Quit and Stop Host",
-      message: "Stop the host and quit Traycer?",
+      message: "Stop the host and quit Planwise?",
       detail:
         "Everything running on the host ends now - agents, terminals and shells - without asking again.",
       buttons: ["Cancel", "Stop Host and Quit"],

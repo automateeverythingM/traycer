@@ -128,7 +128,7 @@ export function profileSyncItemDetail(
   names: ProfileSyncNames,
 ): string | null {
   if (item.status === "update-needed") {
-    return `Update Traycer on ${names.device}`;
+    return `Update Planwise on ${names.device}`;
   }
   if (item.reason !== null) {
     return profileSyncReasonSentence(item.reason, item.providerId, names);
@@ -279,7 +279,7 @@ function deviceOfflineSummary(
 function updateRequiredSummary(
   deviceName: string,
 ): readonly ProfileSyncSummaryPart[] {
-  return [{ text: `Update Traycer on ${deviceName}`, tone: "warning" }];
+  return [{ text: `Update Planwise on ${deviceName}`, tone: "warning" }];
 }
 
 /** A device's one-line summary, as the parts a " · " joins. */

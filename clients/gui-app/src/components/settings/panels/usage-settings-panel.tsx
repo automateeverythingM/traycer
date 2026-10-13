@@ -143,7 +143,7 @@ function UsageSettingsPanelBody(props: {
     return (
       <UsageNotice
         title="No host connected"
-        detail="Install the Traycer host on a computer and sign in — your usage appears here on its own."
+        detail="Install the Planwise host on a computer and sign in — your usage appears here on its own."
         testId="usage-no-host-notice"
       />
     );
@@ -268,7 +268,7 @@ function UsageUnverifiedNotice(): ReactNode {
   return (
     <UsageNotice
       title="Usage needs a verified sign-in"
-      detail="Traycer couldn't confirm your session with the account service. Usage reads account-wide data, so it stays hidden until you're signed in again."
+      detail="Planwise couldn't confirm your session with the account service. Usage reads account-wide data, so it stays hidden until you're signed in again."
       testId="usage-unverified-notice"
     />
   );

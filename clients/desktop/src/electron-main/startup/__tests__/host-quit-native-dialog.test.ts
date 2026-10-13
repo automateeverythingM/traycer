@@ -129,9 +129,9 @@ describe("askHostQuitNatively", () => {
 
 describe("askHostQuitNatively: the terminals-in-use round", () => {
   const SINGULAR_DETAIL =
-    "Stopping the host ends it. Quitting Traycer can keep the host running so it carries on, or stop it now.";
+    "Stopping the host ends it. Quitting Planwise can keep the host running so it carries on, or stop it now.";
   const PLURAL_DETAIL =
-    "Stopping the host ends them. Quitting Traycer can keep the host running so they carry on, or stop it now.";
+    "Stopping the host ends them. Quitting Planwise can keep the host running so they carry on, or stop it now.";
 
   it("says what the host counted: singular for one terminal", async () => {
     const box = boxReturning(0, false);

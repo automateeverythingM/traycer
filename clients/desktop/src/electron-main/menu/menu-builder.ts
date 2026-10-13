@@ -329,7 +329,7 @@ function buildHelpMenu(
       checkForUpdatesItem(state, actions),
       { type: "separator" },
       {
-        label: "About Traycer",
+        label: "About Planwise",
         click: (_item, browserWindow) =>
           actions.command("app.aboutDetails", browserWindow ?? null),
       },

@@ -460,7 +460,7 @@ describe("MobileFileSave.downloadFile", () => {
     );
 
     expect(writtenFile(0)).toMatchObject({
-      path: "Traycer/traycer-usage-30d.png",
+      path: "Planwise/traycer-usage-30d.png",
       directory: "DOCUMENTS",
       recursive: true,
     });
@@ -485,13 +485,13 @@ describe("MobileFileSave.downloadFile", () => {
   it("numbers a name that is already taken rather than overwriting it", async () => {
     // Two exports of the same usage window suggest the same name; replacing
     // the first would lose a file the user believes they still have.
-    occupyDocuments(["Traycer/traycer-usage-30d.png"]);
+    occupyDocuments(["Planwise/traycer-usage-30d.png"]);
 
     const saved = await directDownload()(
       request("traycer-usage-30d.png", new Uint8Array([1])),
     );
 
-    expect(writtenFile(0).path).toBe("Traycer/traycer-usage-30d (2).png");
+    expect(writtenFile(0).path).toBe("Planwise/traycer-usage-30d (2).png");
     // The confirmation names the file the user actually got, not the one that
     // was asked for.
     expect(saved.name).toBe("traycer-usage-30d (2).png");
@@ -499,14 +499,14 @@ describe("MobileFileSave.downloadFile", () => {
 
   it("keeps counting past the first free-looking number", async () => {
     occupyDocuments([
-      "Traycer/usage.png",
-      "Traycer/usage (2).png",
-      "Traycer/usage (3).png",
+      "Planwise/usage.png",
+      "Planwise/usage (2).png",
+      "Planwise/usage (3).png",
     ]);
 
     await directDownload()(request("usage.png", new Uint8Array([1])));
 
-    expect(writtenFile(0).path).toBe("Traycer/usage (4).png");
+    expect(writtenFile(0).path).toBe("Planwise/usage (4).png");
   });
 
   it("still writes something unique when every numbered name is taken", async () => {
@@ -518,10 +518,10 @@ describe("MobileFileSave.downloadFile", () => {
     await directDownload()(request("usage.png", new Uint8Array([1])));
 
     const path = writtenFile(0).path;
-    expect(path.startsWith("Traycer/usage")).toBe(true);
+    expect(path.startsWith("Planwise/usage")).toBe(true);
     expect(path.endsWith(".png")).toBe(true);
-    expect(path).not.toBe("Traycer/usage.png");
-    expect(path).not.toBe("Traycer/usage (2).png");
+    expect(path).not.toBe("Planwise/usage.png");
+    expect(path).not.toBe("Planwise/usage (2).png");
   });
 
   it("keeps the collision suffix on a name already at the byte limit", async () => {
@@ -532,13 +532,13 @@ describe("MobileFileSave.downloadFile", () => {
     const stem = "a".repeat(MAX_FILE_NAME_BYTES - ".png".length);
     const name = `${stem}.png`;
     expect(new TextEncoder().encode(name).length).toBe(MAX_FILE_NAME_BYTES);
-    occupyDocuments([`Traycer/${name}`]);
+    occupyDocuments([`Planwise/${name}`]);
 
     await directDownload()(request(name, new Uint8Array([1])));
 
     const written = writtenFile(0).path;
     const basename = written.split("/").at(-1) ?? "";
-    expect(written).not.toBe(`Traycer/${name}`);
+    expect(written).not.toBe(`Planwise/${name}`);
     expect(basename).toContain(" (2)");
     expect(basename.endsWith(".png")).toBe(true);
     expect(new TextEncoder().encode(basename).length).toBeLessThanOrEqual(
@@ -560,8 +560,8 @@ describe("MobileFileSave.downloadFile", () => {
 
     const paths = [writtenFile(0).path, writtenFile(1).path];
     expect(new Set(paths).size).toBe(2);
-    expect(paths).toContain("Traycer/usage.png");
-    expect(paths).toContain("Traycer/usage (2).png");
+    expect(paths).toContain("Planwise/usage.png");
+    expect(paths).toContain("Planwise/usage (2).png");
   });
 
   it("keeps serving later downloads after a stat throws outright", async () => {
@@ -578,7 +578,7 @@ describe("MobileFileSave.downloadFile", () => {
     await expect(
       host(request("later.png", new Uint8Array([1]))),
     ).resolves.toBeTruthy();
-    expect(writtenFile(1).path).toBe("Traycer/later.png");
+    expect(writtenFile(1).path).toBe("Planwise/later.png");
   });
 
   it("frees a claimed path again when its write fails", async () => {
@@ -592,7 +592,7 @@ describe("MobileFileSave.downloadFile", () => {
     ).rejects.toThrow("Disk full");
     await host(request("usage.png", new Uint8Array([1])));
 
-    expect(writtenFile(1).path).toBe("Traycer/usage.png");
+    expect(writtenFile(1).path).toBe("Planwise/usage.png");
   });
 
   it("takes a confirmed not-found as the name being free", async () => {
@@ -600,7 +600,7 @@ describe("MobileFileSave.downloadFile", () => {
     // there, so the download keeps the name it asked for.
     await directDownload()(request("usage.png", new Uint8Array([1])));
 
-    expect(writtenFile(0).path).toBe("Traycer/usage.png");
+    expect(writtenFile(0).path).toBe("Planwise/usage.png");
   });
 
   it("treats a stat that failed for any other reason as occupied", async () => {
@@ -612,8 +612,8 @@ describe("MobileFileSave.downloadFile", () => {
 
     await directDownload()(request("usage.png", new Uint8Array([1])));
 
-    expect(writtenFile(0).path).not.toBe("Traycer/usage.png");
-    expect(writtenFile(0).path.startsWith("Traycer/usage")).toBe(true);
+    expect(writtenFile(0).path).not.toBe("Planwise/usage.png");
+    expect(writtenFile(0).path.startsWith("Planwise/usage")).toBe(true);
   });
 
   it("normalises the suggested name the same way the share leg does", async () => {
@@ -623,7 +623,7 @@ describe("MobileFileSave.downloadFile", () => {
       requestOfType("../../escape/a1b2c3d4", new Uint8Array([1]), "image/png"),
     );
 
-    expect(writtenFile(0).path).toBe("Traycer/a1b2c3d4.png");
+    expect(writtenFile(0).path).toBe("Planwise/a1b2c3d4.png");
   });
 
   it("propagates a failed write so the caller can toast it", async () => {

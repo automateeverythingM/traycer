@@ -2507,7 +2507,7 @@ export class AuthService {
     // `network-error`: a transient outage that did NOT sign the user out. Throw
     // so TanStack Query surfaces a retryable error on the panel (refresh button)
     // instead of a misleading "no subscription" empty state.
-    throw new Error("Couldn't reach Traycer to load your subscription.");
+    throw new Error("Couldn't reach Planwise to load your subscription.");
   }
 
   /**
@@ -2647,7 +2647,7 @@ export class AuthService {
       return null;
     }
     if (result.kind === "network-error") {
-      throw new Error("Couldn't reach Traycer to load your hosts.");
+      throw new Error("Couldn't reach Planwise to load your hosts.");
     }
     return result.response;
   }
@@ -2707,7 +2707,7 @@ export class AuthService {
       return null;
     }
     if (initial.kind === "network-error") {
-      throw new Error("Couldn't reach Traycer to load your sessions.");
+      throw new Error("Couldn't reach Planwise to load your sessions.");
     }
     if (
       initial.kind === "ok" &&
@@ -2752,7 +2752,7 @@ export class AuthService {
       return null;
     }
     if (repaired.kind === "network-error") {
-      throw new Error("Couldn't reach Traycer to load your sessions.");
+      throw new Error("Couldn't reach Planwise to load your sessions.");
     }
     if (repaired.kind === "unauthorized") {
       if (useAuthStore.getState().status === "signed-in") {

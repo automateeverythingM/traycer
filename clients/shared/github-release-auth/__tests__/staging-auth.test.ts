@@ -192,7 +192,7 @@ describe("staging GitHub release credentials", () => {
     });
   });
 
-  it("traycer-and-gh-cli-tokens removes the Traycer token and both gh CLI tokens, leaving unrelated vars", () => {
+  it("traycer-and-gh-cli-tokens removes the Planwise token and both gh CLI tokens, leaving unrelated vars", () => {
     const input = {
       PATH: "/bin",
       [STAGING_RELEASE_TOKEN_ENV]: "traycer-secret",

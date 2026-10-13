@@ -81,7 +81,7 @@ import { BrowserViewWindowAttachment } from "./manager/browser-view-window-attac
 import { BrowserViewDebugSessions } from "./manager/debug-session-for";
 import { BrowserViewViewport } from "./manager/browser-view-viewport";
 
-const DEVTOOLS_TITLE = "Traycer Browser DevTools";
+const DEVTOOLS_TITLE = "Planwise Browser DevTools";
 
 interface BrowserViewManagerOptions {
   readonly attachRendererGuest: (

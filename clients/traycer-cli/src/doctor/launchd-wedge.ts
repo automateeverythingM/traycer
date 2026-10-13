@@ -123,7 +123,7 @@ export async function probeMacosWedgedJob(
       message: desktopOwned
         ? `launchd has '${labelId}' loaded but the job cannot run (${summary}). ` +
           "The host will not start until the job is re-registered. Relaunch the " +
-          "Traycer Desktop app to repair it; if that does not help, run " +
+          "Planwise Desktop app to repair it; if that does not help, run " +
           "'traycer host service uninstall' and then relaunch the app (or run " +
           "'traycer host service install' to switch to CLI management)."
         : `launchd has '${labelId}' loaded but the job cannot run (${summary}). ` +

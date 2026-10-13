@@ -19,7 +19,7 @@ import type { HostAvailableManifest } from "@traycer/protocol/host/maintenance/s
  * repairs it, and a reader keyed on the prefix would otherwise keep asking
  * for one.
  */
-export const HOST_CLIENT_FLOOR_REASON_PREFIX = "Needs Traycer CLI ";
+export const HOST_CLIENT_FLOOR_REASON_PREFIX = "Needs Planwise CLI ";
 
 /** The wire asset's availability fields - what the predicate reads. */
 export type HostClientFloorAsset = Pick<

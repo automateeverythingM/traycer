@@ -345,7 +345,7 @@ function describeServiceState(input: {
         // The registration EXISTS — this is the normal state of a
         // Desktop-managed machine — it just is not the CLI's to change, so the
         // verbs below are withheld rather than offered-and-refused.
-        return "Registered and managed by Traycer Desktop, which owns this host's service registration.";
+        return "Registered and managed by Planwise Desktop, which owns this host's service registration.";
       }
       return input.status.state === "running"
         ? "Registered and running. The OS service manifest starts the host at user login."
@@ -357,7 +357,7 @@ function describeServiceState(input: {
       // show — the supervising unit is outside the CLI's sight.
       return `${input.hostName}'s service is managed by an external supervisor, which owns its registration.`;
     case "cli-unavailable":
-      return `${input.hostName} has no Traycer CLI, so its service registration can't be read from here.`;
+      return `${input.hostName} has no Planwise CLI, so its service registration can't be read from here.`;
     default:
       return `${input.hostName} couldn't read its own service registration.`;
   }
@@ -374,7 +374,7 @@ function describeServiceRegisterFailure(
     return `${hostName}'s service is managed by an external supervisor, so it can't be re-registered from here.`;
   }
   if (response.outcome === "cli-unavailable") {
-    return `${hostName} has no Traycer CLI to register its service with.`;
+    return `${hostName} has no Planwise CLI to register its service with.`;
   }
   if (response.outcome === "invalid-output") {
     return `${hostName}'s CLI returned something unreadable while registering.`;
@@ -397,7 +397,7 @@ function describeServiceDeregisterFailure(
     case "externally-managed":
       return `${hostName}'s service is managed by an external supervisor, so it can't be deregistered from here.`;
     case "cli-unavailable":
-      return `${hostName} has no Traycer CLI to deregister its service with.`;
+      return `${hostName} has no Planwise CLI to deregister its service with.`;
     case "cli-failed":
       return `${hostName} couldn't run the deregister command.`;
   }

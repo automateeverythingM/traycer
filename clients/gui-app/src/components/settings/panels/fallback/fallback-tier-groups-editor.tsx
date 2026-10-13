@@ -341,7 +341,7 @@ export function FallbackTierGroupsEditor(
                 pattern - on an older host they would teach a syntax it
                 ignores. */}
             Put models you&apos;re happy to use in place of one another into the
-            same tier. When one is blocked, Traycer tries the others in its
+            same tier. When one is blocked, Planwise tries the others in its
             tier, top to bottom.
             {patternsSupported ? (
               <>
@@ -619,7 +619,7 @@ function DefaultGroupSelect(props: {
             when that section moved behind a tab.
             What this owes the reader is the CONSEQUENCE of the choice, which no
             version of it has ever given: which models actually get tried. */}
-        Traycer tries the models in the tier you pick here. Choose &ldquo;None -
+        Planwise tries the models in the tier you pick here. Choose &ldquo;None -
         skip this step&rdquo; to skip model switching only for models not in a
         tier.
       </span>

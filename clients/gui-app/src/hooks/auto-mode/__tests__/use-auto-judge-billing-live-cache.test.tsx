@@ -249,7 +249,7 @@ function createFixture() {
           }),
           harnessRow({
             id: "traycer",
-            label: "Traycer",
+            label: "Planwise",
             available: traycerGreen,
             availabilityPending: !traycerGreen,
             nativeAutoJudge: false,
@@ -655,7 +655,7 @@ describe("useAutoJudgeBilling against the real query cache", () => {
     });
   });
 
-  it("E2b: the reverse transition while the FIRST read is in flight never renders the older Traycer verdict", async () => {
+  it("E2b: the reverse transition while the FIRST read is in flight never renders the older Planwise verdict", async () => {
     const fixture = createFixture();
     fixture.setTraycerGreen(true);
     prewarmModelCatalogs(fixture);
@@ -723,7 +723,7 @@ describe("useAutoJudgeBilling against the real query cache", () => {
     });
   });
 
-  it("E5: a save reply held across a Traycer outage does not overwrite the refreshed fallback verdict, and the verdict is re-asked", async () => {
+  it("E5: a save reply held across a Planwise outage does not overwrite the refreshed fallback verdict, and the verdict is re-asked", async () => {
     const fixture = createFixture();
     fixture.setTraycerGreen(true);
     prewarmModelCatalogs(fixture);

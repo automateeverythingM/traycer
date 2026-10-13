@@ -57,7 +57,7 @@ import { useSettingsDensity } from "@/providers/settings-density-context";
 import { useRunnerHost } from "@/providers/use-runner-host";
 
 const PANEL_DESCRIPTION =
-  "How Traycer launches terminals, the host, and provider harnesses. New terminals pick up shell changes immediately; host env changes apply on restart.";
+  "How Planwise launches terminals, the host, and provider harnesses. New terminals pick up shell changes immediately; host env changes apply on restart.";
 const SAVED_FLASH_MS = 1600;
 type ShellSaveTarget = "program" | "flags";
 
@@ -709,7 +709,7 @@ function WslAgentCaption() {
           />
           WSL applies to terminal tabs only
           <WslInstallDocsLink
-            ariaLabel="Install Traycer in WSL"
+            ariaLabel="Install Planwise in WSL"
             className="rounded transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
           >
             <Info className="size-3" />
@@ -720,13 +720,13 @@ function WslAgentCaption() {
         <>
           <p className="text-muted-foreground">
             Choosing WSL here changes the shell for new terminal tabs. It does
-            not move the Traycer host or agents into WSL.
+            not move the Planwise host or agents into WSL.
           </p>
           <WslInstallDocsLink
             ariaLabel={undefined}
             className="inline-block font-medium text-foreground underline underline-offset-4 hover:opacity-80"
           >
-            Install Traycer in WSL
+            Install Planwise in WSL
           </WslInstallDocsLink>
         </>
       }
@@ -816,7 +816,7 @@ function WslUnavailableCaption(props: { readonly health: WslHealthValue }) {
             ? "WSL isn't installed — terminals won't start"
             : "WSL has no Linux distribution — terminals won't start"}
           <WslInstallDocsLink
-            ariaLabel="Install Traycer in WSL"
+            ariaLabel="Install Planwise in WSL"
             className="rounded transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
           >
             <Info className="size-3" />
@@ -837,7 +837,7 @@ function WslUnavailableCaption(props: { readonly health: WslHealthValue }) {
             ariaLabel={undefined}
             className="inline-block font-medium text-foreground underline underline-offset-4 hover:opacity-80"
           >
-            Install Traycer in WSL
+            Install Planwise in WSL
           </WslInstallDocsLink>
         </>
       }

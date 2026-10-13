@@ -983,7 +983,7 @@ describe("Overview ▸ Installation — when the host can't answer", () => {
     );
   });
 
-  it("keeps Remove Traycer available on this computer's stopped host", async () => {
+  it("keeps Remove Planwise available on this computer's stopped host", async () => {
     setRoutelessScope({
       status: "unreachable",
       isLocalMachine: true,
@@ -996,7 +996,7 @@ describe("Overview ▸ Installation — when the host can't answer", () => {
     const remove = await within(danger).findByRole<HTMLButtonElement>(
       "button",
       {
-        name: "Remove Traycer",
+        name: "Remove Planwise",
       },
     );
     expect(remove.disabled).toBe(false);

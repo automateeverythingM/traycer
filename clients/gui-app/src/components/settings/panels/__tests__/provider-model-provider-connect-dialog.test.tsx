@@ -533,7 +533,7 @@ describe("credential precedence", () => {
     ).toBeTruthy();
   });
 
-  it("says nothing for a provider Traycer itself holds the key for", () => {
+  it("says nothing for a provider Planwise itself holds the key for", () => {
     renderDialog({
       entry: entry({ connected: true, source: "api" }),
       capabilities: FULL_CAPS,

@@ -121,7 +121,7 @@ describe("hostClientFloorRefusalMessage", () => {
     expect(message).toContain("1.2.0");
     expect(message).toContain("1.1.8");
     expect(message).toContain("1.9.0");
-    expect(message).toMatch(/update traycer/iu);
+    expect(message).toMatch(/update planwise/iu);
   });
 
   it("quotes an unreadable floor so whitespace is visible", () => {

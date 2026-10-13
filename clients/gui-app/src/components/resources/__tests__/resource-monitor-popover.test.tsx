@@ -1380,7 +1380,7 @@ describe("ResourceMonitorPopover", () => {
       { target: { value: "Host traycer-host" } },
     );
 
-    expect(screen.getByText("Traycer Host")).not.toBeNull();
+    expect(screen.getByText("Planwise Host")).not.toBeNull();
   });
 
   it("reveals matching descendants beneath a matching process", () => {
@@ -2393,10 +2393,10 @@ describe("ResourceMonitorPopover", () => {
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
 
     expect(screen.getByText("Resources")).not.toBeNull();
-    expect(await screen.findByText("Traycer Desktop")).not.toBeNull();
+    expect(await screen.findByText("Planwise Desktop")).not.toBeNull();
     expect(screen.getByText("Renderer")).not.toBeNull();
     expect(getDesktopMetrics).toHaveBeenCalled();
-    expect(screen.getByText("Traycer Host")).not.toBeNull();
+    expect(screen.getByText("Planwise Host")).not.toBeNull();
     expect(screen.getByText("Resource Task")).not.toBeNull();
     expect(screen.getByText("Background Task")).not.toBeNull();
     expect(screen.getByText("Terminal Alpha")).not.toBeNull();
@@ -3789,7 +3789,7 @@ describe("ResourceMonitorPopover", () => {
     });
 
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
-    expect(await screen.findByText("Traycer Host")).not.toBeNull();
+    expect(await screen.findByText("Planwise Host")).not.toBeNull();
 
     fireEvent.pointerDown(
       screen.getByRole("button", { name: "Sort resource rows" }),
@@ -3801,20 +3801,20 @@ describe("ResourceMonitorPopover", () => {
     );
     expect(screen.getByRole("menuitemradio", { name: "CPU" })).not.toBeNull();
 
-    fireEvent.pointerDown(screen.getByText("Traycer Host"), {
+    fireEvent.pointerDown(screen.getByText("Planwise Host"), {
       button: 0,
       pointerType: "mouse",
     });
-    fireEvent.mouseDown(screen.getByText("Traycer Host"), { button: 0 });
-    fireEvent.pointerUp(screen.getByText("Traycer Host"), {
+    fireEvent.mouseDown(screen.getByText("Planwise Host"), { button: 0 });
+    fireEvent.pointerUp(screen.getByText("Planwise Host"), {
       button: 0,
       pointerType: "mouse",
     });
-    fireEvent.click(screen.getByText("Traycer Host"));
+    fireEvent.click(screen.getByText("Planwise Host"));
 
     expect(screen.queryByRole("menuitemradio", { name: "CPU" })).toBeNull();
     expect(screen.getByRole("dialog", { name: "Resources" })).not.toBeNull();
-    expect(screen.getByText("Traycer Host")).not.toBeNull();
+    expect(screen.getByText("Planwise Host")).not.toBeNull();
 
     fireEvent.pointerDown(
       screen.getByRole("button", { name: "Sort resource rows" }),
@@ -3864,7 +3864,7 @@ describe("ResourceMonitorPopover", () => {
     });
 
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
-    expect(await screen.findByText("Traycer Host")).not.toBeNull();
+    expect(await screen.findByText("Planwise Host")).not.toBeNull();
 
     fireEvent.pointerDown(
       screen.getByRole("button", { name: "Sort resource rows" }),
@@ -3878,7 +3878,7 @@ describe("ResourceMonitorPopover", () => {
 
     expect(screen.queryByRole("menuitemradio", { name: "CPU" })).toBeNull();
     expect(screen.getByRole("dialog", { name: "Resources" })).not.toBeNull();
-    expect(screen.getByText("Traycer Host")).not.toBeNull();
+    expect(screen.getByText("Planwise Host")).not.toBeNull();
     expect(
       screen.getByRole("button", { name: "Sort resource rows" }).textContent,
     ).toContain("CPU");
@@ -3910,7 +3910,7 @@ describe("ResourceMonitorPopover", () => {
     });
 
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
-    expect(await screen.findByText("Traycer Host")).not.toBeNull();
+    expect(await screen.findByText("Planwise Host")).not.toBeNull();
 
     // A task finishing load autofocuses its content: focus lands on an element
     // outside the popover, which Radix reports as a focus-outside dismissal.
@@ -3920,7 +3920,7 @@ describe("ResourceMonitorPopover", () => {
     });
 
     expect(screen.getByRole("dialog", { name: "Resources" })).not.toBeNull();
-    expect(screen.getByText("Traycer Host")).not.toBeNull();
+    expect(screen.getByText("Planwise Host")).not.toBeNull();
 
     outside.remove();
   });
@@ -4905,7 +4905,7 @@ describe("ResourceMonitorPopover · host picker", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
 
-    expect(await screen.findByText("Traycer Desktop")).not.toBeNull();
+    expect(await screen.findByText("Planwise Desktop")).not.toBeNull();
   });
 
   it("hides the Desktop section while following an active host that is remote", () => {
@@ -4932,7 +4932,7 @@ describe("ResourceMonitorPopover · host picker", () => {
     // Gated on machine identity, not fetch timing - `readingShowsLocalDesktop`
     // forces `desktopApp: null` for this scope regardless of whether the
     // metrics promise above has settled yet, so this holds without an await.
-    expect(screen.queryByText("Traycer Desktop")).toBeNull();
+    expect(screen.queryByText("Planwise Desktop")).toBeNull();
   });
 
   // `isViewingActive` is `isFollowing`, which REQUIRES a resolved host, so
@@ -4958,7 +4958,7 @@ describe("ResourceMonitorPopover · host picker", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Resources" }));
 
-    expect(screen.queryByText("Traycer Desktop")).toBeNull();
+    expect(screen.queryByText("Planwise Desktop")).toBeNull();
   });
 
   it("shows a terminal notice, not a spinner, for a pick too old to stream resources", () => {

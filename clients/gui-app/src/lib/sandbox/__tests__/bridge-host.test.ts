@@ -284,7 +284,7 @@ describe("page requests", () => {
     harness.host.receive(request(1, "ui/initialize", {}));
     expect(harness.responseTo(1)?.result).toMatchObject({
       protocolVersion: "2026-01-26",
-      hostInfo: { name: "Traycer", version: "9.9.9" },
+      hostInfo: { name: "Planwise", version: "9.9.9" },
       hostCapabilities: { openLinks: {} },
       hostContext: HOST_CONTEXT,
     });

@@ -147,7 +147,7 @@ function readPolicyModeFromDisk(): string {
 
 const FAKE_REFRESH_LABEL = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production" as const,
   devSlot: null,
 };

@@ -309,13 +309,13 @@ async function withDarwinCodesignIdentity<T>(
 async function withTestBundleRevision<T>(fn: () => Promise<T>): Promise<T> {
   const previous = Object.getOwnPropertyDescriptor(process, "resourcesPath");
   Object.defineProperty(process, "resourcesPath", {
-    value: join(workHome, "Traycer.app", "Contents", "Resources"),
+    value: join(workHome, "Planwise.app", "Contents", "Resources"),
     writable: true,
     configurable: true,
   });
   const bundleAgents = join(
     workHome,
-    "Traycer.app",
+    "Planwise.app",
     "Contents",
     "Library",
     "LaunchAgents",
@@ -2278,13 +2278,13 @@ describe("retireCompetingCliRegistrationAtLaunch", () => {
     // fixed path, so `hostManagesHostLoginItem`'s in-bundle plist probe is
     // hermetic per test.
     Object.defineProperty(process, "resourcesPath", {
-      value: join(workHome, "Traycer.app", "Contents", "Resources"),
+      value: join(workHome, "Planwise.app", "Contents", "Resources"),
       writable: true,
       configurable: true,
     });
     const bundleAgents = join(
       workHome,
-      "Traycer.app",
+      "Planwise.app",
       "Contents",
       "Library",
       "LaunchAgents",
@@ -2448,7 +2448,7 @@ describe("retireCompetingCliRegistrationAtLaunch", () => {
     rmSync(
       join(
         workHome,
-        "Traycer.app",
+        "Planwise.app",
         "Contents",
         "Library",
         "LaunchAgents",

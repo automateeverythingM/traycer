@@ -109,7 +109,7 @@ describe("parseWorktreeListLimit", () => {
 describe("formatWorktreeListTable", () => {
   it("returns an explicit empty-state line when there are no worktrees", () => {
     expect(formatWorktreeListTable([], true, null)).toBe(
-      "No Traycer-managed worktrees found.",
+      "No Planwise-managed worktrees found.",
     );
   });
 

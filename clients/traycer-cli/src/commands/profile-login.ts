@@ -554,7 +554,7 @@ function notStartedMessage(
     }
     // A defective release, or storage that keeps corrupting the download:
     // running the command again cannot move either.
-    return `The provider's first-time setup did not install (${reason}), and running this command again will not fix it. Install the provider's CLI yourself and select it in Settings > Providers in the Traycer app.`;
+    return `The provider's first-time setup did not install (${reason}), and running this command again will not fix it. Install the provider's CLI yourself and select it in Settings > Providers in the Planwise app.`;
   }
   return NOT_STARTED;
 }

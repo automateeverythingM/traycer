@@ -457,7 +457,7 @@ function floorManifest(
           available,
           unavailableReason: available
             ? null
-            : "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+            : "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
         },
       },
     })),
@@ -476,7 +476,7 @@ function floorManifestWithoutRequiredVersion(
       platforms: {
         "darwin-arm64": {
           ...entry.platforms["darwin-arm64"],
-          unavailableReason: "Needs Traycer CLI ",
+          unavailableReason: "Needs Planwise CLI ",
         },
       },
     })),
@@ -499,7 +499,7 @@ const SELECTED_RC_CASES = [
     name: "a yanked floor-refused stable",
     stableYanked: true,
     stableReason:
-      "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+      "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
   },
   {
     name: "a non-floor unavailable stable",
@@ -533,7 +533,7 @@ function selectedRcManifest(testCase: SelectedRcCase): HostAvailableManifest {
         ...rcBase.platforms["darwin-arm64"],
         available: false,
         unavailableReason:
-          "Needs Traycer CLI 1.3.0-rc.4 or newer (this host's CLI is 1.2.0).",
+          "Needs Planwise CLI 1.3.0-rc.4 or newer (this host's CLI is 1.2.0).",
       },
     },
   };
@@ -2228,7 +2228,7 @@ describe("Overview updates — CLI floor remedy", () => {
     await selectHostOverviewTab("updates");
 
     await screen.findByText(
-      "First update Traycer's command-line tools on host-a. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.",
+      "First update Planwise's command-line tools on host-a. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.",
     );
     // This lone unavailable asset keeps Update now hidden even if only the
     // cliFloor suppression is removed: the asset gate independently rejects
@@ -2267,7 +2267,7 @@ describe("Overview updates — CLI floor remedy", () => {
     await selectHostOverviewTab("updates");
 
     await screen.findByText(
-      "Traycer's command-line tools on host-a were updated, but the host is still using an older copy. Run the command again: First update Traycer's command-line tools on host-a. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.",
+      "Planwise's command-line tools on host-a were updated, but the host is still using an older copy. Run the command again: First update Planwise's command-line tools on host-a. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.",
     );
     // Treating cliManifest.version as clearance while restoring updatableVersion
     // would expose Update now; the meaningful positive pin above is the
@@ -2336,7 +2336,7 @@ describe("Overview updates — CLI floor remedy", () => {
     await selectHostOverviewTab("updates");
 
     await screen.findByText(
-      "Traycer couldn't determine how its command-line tools were installed on host-a.",
+      "Planwise couldn't determine how its command-line tools were installed on host-a.",
     );
     expect(
       screen.getByRole("button", { name: "Show installation help" }),
@@ -2571,11 +2571,11 @@ describe("Overview updates — CLI floor remedy", () => {
       // below it. The remedy being on screen is what keeps the answer
       // sentence present at all while the park is in flight.
       expect(screen.getByTestId("host-overview-updates").textContent).toContain(
-        "First update Traycer's command-line tools on host-a.",
+        "First update Planwise's command-line tools on host-a.",
       );
       expect(
         screen.getByTestId("host-overview-update-attempt-failed").textContent,
-      ).toContain("v1.3.0 needs Traycer CLI 1.3.0 or newer on host-a.");
+      ).toContain("v1.3.0 needs Planwise CLI 1.3.0 or newer on host-a.");
     });
     await act(async () => {
       await vi.advanceTimersByTimeAsync(30_000);
@@ -2625,9 +2625,9 @@ describe("Overview updates — CLI floor remedy", () => {
     await waitFor(() => {
       const notice = screen.getByTestId("host-overview-update-attempt-failed");
       expect(notice.textContent).toBe(
-        "host-a's Traycer CLI couldn't complete the request.",
+        "host-a's Planwise CLI couldn't complete the request.",
       );
-      expect(notice.textContent).not.toContain("needs Traycer CLI");
+      expect(notice.textContent).not.toContain("needs Planwise CLI");
     });
     expect(screen.queryByTestId("host-overview-updates")).toBeNull();
     expect(installCalls).toEqual([]);
@@ -2789,19 +2789,19 @@ describe("Overview updates — CLI floor remedy", () => {
       {
         manifest: floorManifest("1.3.0", false),
         version: "1.3.0",
-        expected: "v1.3.0 needs Traycer CLI 1.3.0 or newer on host-a.",
+        expected: "v1.3.0 needs Planwise CLI 1.3.0 or newer on host-a.",
       },
       {
         manifest: floorManifest("1.2.0", true),
         version: "1.3.0",
         expected:
-          "Traycer couldn't verify that v1.3.0 can be installed on host-a.",
+          "Planwise couldn't verify that v1.3.0 can be installed on host-a.",
       },
       {
         manifest: floorManifestWithoutRequiredVersion("1.3.0"),
         version: "1.3.0",
         expected:
-          "Traycer couldn't verify that v1.3.0 can be installed on host-a.",
+          "Planwise couldn't verify that v1.3.0 can be installed on host-a.",
       },
     ] as const;
 
@@ -2992,7 +2992,7 @@ describe("Overview updates — CLI floor remedy", () => {
           ...rcBase.platforms["darwin-arm64"],
           available: false,
           unavailableReason:
-            "Needs Traycer CLI 1.4.0 or newer (this host's CLI is 1.2.0).",
+            "Needs Planwise CLI 1.4.0 or newer (this host's CLI is 1.2.0).",
         },
       },
     };
@@ -3171,7 +3171,7 @@ describe("Overview updates — a settled first check with no catalog (T2 fixup 1
       "host-overview-update-attempt-failed",
     );
     expect(footer.textContent).toBe(
-      "host-a's Traycer CLI answered in a format this app doesn't understand. It's probably a different version than this app expects.",
+      "host-a's Planwise CLI answered in a format this app doesn't understand. It's probably a different version than this app expects.",
     );
     expect(
       screen.getAllByTestId("host-overview-update-attempt-failed"),
@@ -3209,7 +3209,7 @@ describe("Overview updates — a settled first check with no catalog (T2 fixup 1
       "host-overview-update-attempt-failed",
     );
     expect(footer.textContent).toBe(
-      "host-a's Traycer CLI couldn't complete the request.",
+      "host-a's Planwise CLI couldn't complete the request.",
     );
     expect(
       screen.getAllByTestId("host-overview-update-attempt-failed"),
@@ -3622,7 +3622,7 @@ describe("Overview updates — stagedEntryOfferable", () => {
     });
     expect(onSettled).toHaveBeenCalledTimes(1);
     expect(rendered.result.current.summary.failureDescription).toContain(
-      "Traycer couldn't verify that v1.3.0 can be installed on host-a.",
+      "Planwise couldn't verify that v1.3.0 can be installed on host-a.",
     );
     rendered.unmount();
   });
@@ -4070,7 +4070,7 @@ describe("Overview updates — record-leg liveness and entry-level floor gates",
                 platforms: {
                   "darwin-arm64": {
                     ...entry.platforms["darwin-arm64"],
-                    unavailableReason: `Needs Traycer CLI ${declared} or newer (this host's CLI is 1.2.0).`,
+                    unavailableReason: `Needs Planwise CLI ${declared} or newer (this host's CLI is 1.2.0).`,
                   },
                 },
               })),
@@ -4089,7 +4089,7 @@ describe("Overview updates — record-leg liveness and entry-level floor gates",
     await waitFor(() => expect(checks).toBe(1));
     await waitForButton("Show installation help");
     expect(screen.getByTestId("host-overview-updates").textContent).toBe(
-      "Traycer couldn't verify the required command-line tools version on host-a.",
+      "Planwise couldn't verify the required command-line tools version on host-a.",
     );
     expect(screen.queryByRole("button", { name: "Copy command" })).toBeNull();
     await act(async () => {

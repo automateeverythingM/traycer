@@ -402,7 +402,7 @@ describe("OnboardingDetectedAgents", () => {
       "Codex",
       "Claude Code",
       "OpenCode",
-      "Traycer Inference",
+      "Planwise Inference",
       "OpenRouter",
       "Hugging Face",
       "Droid",
@@ -449,7 +449,7 @@ describe("OnboardingDetectedAgents", () => {
       "Codex",
       "Claude Code",
       "OpenCode",
-      "Traycer Inference",
+      "Planwise Inference",
       "OpenRouter",
       "Hugging Face",
       "Droid",
@@ -510,7 +510,7 @@ describe("OnboardingDetectedAgents", () => {
     expect(firstRows[1]).toContain("Codex");
   });
 
-  it("shows a disabled Traycer card without sign-in or 'Not signed in' copy", () => {
+  it("shows a disabled Planwise card without sign-in or 'Not signed in' copy", () => {
     // Traycer seeds disabled on purpose (its inference bills credits), and its
     // account IS the host session - there is nothing to sign into. Without the
     // traycer guard in `providerNeedsSignInToEnable`, the row would fall
@@ -531,9 +531,9 @@ describe("OnboardingDetectedAgents", () => {
     ).toBeNull();
     expect(screen.queryByText("Not signed in")).toBeNull();
     expect(
-      screen.getByText("Available with your Traycer subscription"),
+      screen.getByText("Available with your Planwise subscription"),
     ).toBeTruthy();
-    expect(providerButton("Traycer Inference", false)).toBeTruthy();
+    expect(providerButton("Planwise Inference", false)).toBeTruthy();
   });
 
   // "Off" is not evidence that an account is missing. These two rows carry

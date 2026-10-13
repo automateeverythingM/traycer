@@ -627,10 +627,10 @@ describe("the terminals-in-use round (Stop-if-idle's first ask over an idle host
     expect(hostQuitTerminalsInUseTitle(1)).toBe("1 terminal is still in use");
     expect(hostQuitTerminalsInUseTitle(3)).toBe("3 terminals are still in use");
     expect(hostQuitTerminalsInUseDescription(1)).toBe(
-      "Stopping the host ends it. Quitting Traycer can keep the host running so it carries on, or stop it now.",
+      "Stopping the host ends it. Quitting Planwise can keep the host running so it carries on, or stop it now.",
     );
     expect(hostQuitTerminalsInUseDescription(3)).toBe(
-      "Stopping the host ends them. Quitting Traycer can keep the host running so they carry on, or stop it now.",
+      "Stopping the host ends them. Quitting Planwise can keep the host running so they carry on, or stop it now.",
     );
   });
 

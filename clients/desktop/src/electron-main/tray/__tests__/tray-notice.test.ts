@@ -119,7 +119,7 @@ vi.mock("../../../config", async (importActual) => {
   return { ...actual, isDevBuild: false };
 });
 
-const NOTICE = { title: "Traycer is still running", content: "In the tray." };
+const NOTICE = { title: "Planwise is still running", content: "In the tray." };
 
 async function trayOn(platform: NodeJS.Platform): Promise<{
   showNotice(notice: { title: string; content: string }): Promise<boolean>;

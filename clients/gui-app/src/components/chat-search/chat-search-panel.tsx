@@ -367,7 +367,7 @@ export function ChatSearchPanel(props: { readonly onClose: () => void }) {
       <div ref={resultsRef} className="min-h-0 flex-1 overflow-y-auto">
         {unsupported ? (
           <p className="px-3 py-6 text-center text-ui-sm text-muted-foreground">
-            Chat search isn&apos;t available on this host. Update Traycer Host
+            Chat search isn&apos;t available on this host. Update Planwise Host
             to search your chats.
           </p>
         ) : null}

@@ -136,7 +136,7 @@ export function describeTranscriptFidelity(
     fidelity.unknownMessages + fidelity.unknownBlocks + fidelity.unknownEvents;
   if (unknownItems > 0) {
     parts.push(
-      `${unknownItems} ${unknownItems === 1 ? "item needs" : "items need"} a newer version of Traycer`,
+      `${unknownItems} ${unknownItems === 1 ? "item needs" : "items need"} a newer version of Planwise`,
     );
   }
   if (fidelity.missingPayloads > 0) {

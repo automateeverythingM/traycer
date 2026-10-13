@@ -11,7 +11,7 @@ const KNOWN = traycerLabelIdsForBase("ai.traycer.host");
 
 const UNIT_WITH_HOST_START = [
   "[Unit]",
-  "Description=Traycer Host",
+  "Description=Planwise Host",
   "[Service]",
   "ExecStart=/opt/traycer/bin/traycer host start",
 ].join("\n");
@@ -53,7 +53,7 @@ describe("classifyUnitFile", () => {
     expect(result).toEqual({ kind: "indeterminate", cause: "parse-error" });
   });
 
-  it("is observed with an exec-start identity signal (not program-arguments) for a Traycer ExecStart line", () => {
+  it("is observed with an exec-start identity signal (not program-arguments) for a Planwise ExecStart line", () => {
     const result = classifyUnitFile({
       path: "/home/x/.config/systemd/user/ai.traycer.host.service",
       labelId: KNOWN.cliRaw,

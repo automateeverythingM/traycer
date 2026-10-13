@@ -326,8 +326,8 @@ export function describeWaitDisposition(
       // gives them nowhere to go; the cap lives on this feature's own settings
       // page, which the card already links to beside this line.
       return resetsAtLabel === null
-        ? "This limit resets later than Traycer is set to wait."
-        : `This limit resets at ${resetsAtLabel} — longer than Traycer is set to wait.`;
+        ? "This limit resets later than Planwise is set to wait."
+        : `This limit resets at ${resetsAtLabel} — longer than Planwise is set to wait.`;
     case "attempt_unavailable":
       // SILENT, deliberately.
       //

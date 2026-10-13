@@ -13,7 +13,7 @@ describe("redactSensitiveText session cookies", () => {
    * destroyed support-bundle correlation while protecting nothing - no cookie
    * is ever named `sessionId`.
    */
-  it("leaves Traycer's own camelCase sessionId alone", () => {
+  it("leaves Planwise's own camelCase sessionId alone", () => {
     expect(redactSensitiveText('{"sessionId":"s-7"}')).toBe(
       '{"sessionId":"s-7"}',
     );

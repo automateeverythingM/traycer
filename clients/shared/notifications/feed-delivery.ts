@@ -63,7 +63,7 @@ export function projectNotificationFeedDisplay(
   if (first === undefined) return null;
   const batched = occurrences.length > 1;
   return {
-    title: batched ? "Traycer" : first.title,
+    title: batched ? "Planwise" : first.title,
     body: batched ? `${occurrences.length} new notifications` : first.body,
     payload: first.payload,
     replaceKey: batched ? "notification-batch" : first.replaceKey,

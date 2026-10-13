@@ -435,7 +435,7 @@ describe("GeneralSettingsPanel", () => {
     expect(
       screen.queryByRole("button", { name: "Clear file edit snapshots" }),
     ).toBeNull();
-    expect(screen.queryByRole("button", { name: "Remove Traycer" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Remove Planwise" })).toBeNull();
   });
 
   it("opens the confirm dialog when clicking Clear local app state", () => {
@@ -736,7 +736,7 @@ describe("GeneralSettingsPanel", () => {
     const preventSleep = within(agents).getByText(
       "Prevent sleep while running",
     );
-    const lifecycle = within(agents).getByText("When you quit Traycer");
+    const lifecycle = within(agents).getByText("When you quit Planwise");
     const prefix = within(agents).getByText("Worktree branch prefix");
     const agentRolesRow = agents.querySelector(
       `[data-settings-anchor="${GENERAL.definitions.agentRoles.anchor}"]`,
@@ -761,7 +761,7 @@ describe("GeneralSettingsPanel", () => {
     expect(screen.queryByTestId("host-lifecycle-card")).toBeNull();
     expect(screen.queryByTestId("host-lifecycle-options")).toBeNull();
     expect(
-      screen.getByRole("combobox", { name: "When you quit Traycer" }),
+      screen.getByRole("combobox", { name: "When you quit Planwise" }),
     ).not.toBeNull();
   });
 

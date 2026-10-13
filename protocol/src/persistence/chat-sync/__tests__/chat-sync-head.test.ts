@@ -475,7 +475,7 @@ function judgeFallbackNoticeEvent(): ChatEvent {
       metadata: { autoJudge: "fallback" },
     }),
     message:
-      "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
+      "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
     severity: "warning",
   };
 }

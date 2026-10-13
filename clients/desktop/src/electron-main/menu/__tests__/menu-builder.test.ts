@@ -35,7 +35,7 @@ import {
 
 function buildState(platform: NodeJS.Platform): MenuState {
   return {
-    appName: "Traycer",
+    appName: "Planwise",
     platform,
     authSession: {
       status: "signed-in",
@@ -153,7 +153,7 @@ describe("buildApplicationMenu", () => {
     const appMenu =
       menuByLabel(
         template(buildApplicationMenu(withUpdate, actions)),
-        "Traycer",
+        "Planwise",
       ).submenu ?? [];
 
     const update = menuByLabel(appMenu, "Update to 2.0.0");
@@ -161,7 +161,7 @@ describe("buildApplicationMenu", () => {
     expect(commands).toEqual(["host.installUpdate"]);
 
     const withoutUpdate =
-      menuByLabel(template(buildApplicationMenu(state, actions)), "Traycer")
+      menuByLabel(template(buildApplicationMenu(state, actions)), "Planwise")
         .submenu ?? [];
     expect(
       withoutUpdate.some((item) => item.label?.startsWith("Update to ")),
@@ -184,12 +184,12 @@ describe("buildApplicationMenu", () => {
       }),
     );
 
-    const appMenu = menuByLabel(items, "Traycer").submenu ?? [];
-    const appAbout = menuByLabel(appMenu, "About Traycer");
+    const appMenu = menuByLabel(items, "Planwise").submenu ?? [];
+    const appAbout = menuByLabel(appMenu, "About Planwise");
     const helpMenu = menuByLabel(items, "Help").submenu ?? [];
     const documentation = menuByLabel(helpMenu, "Documentation");
     const releaseNotes = menuByLabel(helpMenu, "Release Notes");
-    const helpAbout = menuByLabel(helpMenu, "About Traycer");
+    const helpAbout = menuByLabel(helpMenu, "About Planwise");
     expect(appAbout.role).toBeUndefined();
     appAbout.click?.(null, null);
     documentation.click?.(null, null);
@@ -216,7 +216,7 @@ describe("buildApplicationMenu", () => {
         }),
       );
       const helpMenu = menuByLabel(items, "Help").submenu ?? [];
-      const about = menuByLabel(helpMenu, "About Traycer");
+      const about = menuByLabel(helpMenu, "About Planwise");
       about.click?.(null, null);
       expect(commands).toEqual(["app.aboutDetails"]);
     }
@@ -573,7 +573,7 @@ describe("buildApplicationMenu", () => {
         toggleAppDevTools: () => undefined,
       }),
     );
-    const appMenu = menuByLabel(items, "Traycer").submenu ?? [];
+    const appMenu = menuByLabel(items, "Planwise").submenu ?? [];
     const fileMenu = menuByLabel(items, "File").submenu ?? [];
     const editMenu = menuByLabel(items, "Edit").submenu ?? [];
     const viewMenu = menuByLabel(items, "View").submenu ?? [];
@@ -743,12 +743,12 @@ describe("buildApplicationMenu", () => {
         expect(commands).toEqual(["host.restart"]);
 
         if (platform === "darwin") {
-          const appMenu = menuByLabel(items, "Traycer").submenu ?? [];
+          const appMenu = menuByLabel(items, "Planwise").submenu ?? [];
           expect(appMenu.some((item) => item.label === "Restart Host")).toBe(
             true,
           );
         } else {
-          expect(items.some((item) => item.label === "Traycer")).toBe(false);
+          expect(items.some((item) => item.label === "Planwise")).toBe(false);
         }
       }
     });

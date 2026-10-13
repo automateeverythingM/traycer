@@ -369,7 +369,7 @@ describe("<TuiAgentTile /> fork split button", () => {
         (item instanceof HTMLButtonElement && item.disabled),
     ).toBe(true);
     expect(tooltipTextNear(item)).toBe(
-      "Update Traycer host to continue this session under another profile.",
+      "Update Planwise host to continue this session under another profile.",
     );
     // amend-02 a11y fix: Radix's roving-tabindex skips this disabled item
     // entirely, so keyboard/AT users never focus it to hear the aria-label
@@ -378,7 +378,7 @@ describe("<TuiAgentTile /> fork split button", () => {
     // focus or hover.
     expect(
       within(item).getByText(
-        "Update Traycer host to continue this session under another profile.",
+        "Update Planwise host to continue this session under another profile.",
       ),
     ).not.toBeNull();
 

@@ -69,7 +69,7 @@ const baseInput: BuildPublicDraftInput = {
   privateOutcome: "delivered",
 };
 
-const BASE_ENVIRONMENT_LINE = "Environment: Traycer 1.2.3 · darwin arm64";
+const BASE_ENVIRONMENT_LINE = "Environment: Planwise 1.2.3 · darwin arm64";
 const BASE_REPORT_LINE = "Support report: rpt_abc123";
 
 describe("buildPublicDraftFields", () => {
@@ -132,7 +132,7 @@ describe("buildPublicDraftFields", () => {
       expect(result.template).toBe("bug_report.yml");
       if (result.template !== "bug_report.yml") return;
       expect(result.fields["what-happened"]).toContain(
-        "Environment: Traycer 1.2.3 · darwin arm64 · host 0.4.0 · claude / opus",
+        "Environment: Planwise 1.2.3 · darwin arm64 · host 0.4.0 · claude / opus",
       );
     });
 
@@ -149,7 +149,7 @@ describe("buildPublicDraftFields", () => {
       expect(result.template).toBe("bug_report.yml");
       if (result.template !== "bug_report.yml") return;
       expect(result.fields["what-happened"]).toContain(
-        "Environment: Traycer 1.2.3 · darwin arm64 · codex",
+        "Environment: Planwise 1.2.3 · darwin arm64 · codex",
       );
     });
 
@@ -199,7 +199,7 @@ describe("buildPublicDraftFields", () => {
 
     it("falls back to the generic title when intent is empty and there is no cause", () => {
       const result = buildPublicDraftFields({ ...baseInput, intent: "" });
-      expect(result.title).toBe("Traycer desktop issue");
+      expect(result.title).toBe("Planwise desktop issue");
     });
 
     it("caps a very long intent's contribution to the title independently of the URL budget", () => {
@@ -282,7 +282,7 @@ describe("buildPublicDraftFields", () => {
         ...baseInput,
         overrideTitle: "   ",
       });
-      expect(result.title).toBe("Traycer desktop issue");
+      expect(result.title).toBe("Planwise desktop issue");
     });
 
     it("re-fits the whole draft to the URL budget using the override title, not the derived one", () => {

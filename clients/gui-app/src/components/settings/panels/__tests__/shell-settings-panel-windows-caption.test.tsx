@@ -129,7 +129,7 @@ describe("<ShellSettingsPanel /> WSL agent caption", () => {
     renderPanel("C:\\Windows\\System32\\wsl.exe", undefined);
     expect(await screen.findByText(WSL_CAPTION)).toBeTruthy();
     // The remedy prose stays out of the inline caption - hover card only.
-    expect(screen.queryByText(/does not move the Traycer host/)).toBeNull();
+    expect(screen.queryByText(/does not move the Planwise host/)).toBeNull();
   });
 
   it("escalates to the terminals-won't-start caption when the host flags WSL", async () => {
@@ -174,7 +174,7 @@ describe("<ShellSettingsPanel /> WSL agent caption", () => {
     await screen.findByText(WSL_CAPTION);
     // The hover card is pointer-only; the docs link must ALSO exist in the
     // sequential tab order - the caption's Info glyph is a real anchor.
-    const link = screen.getByRole("link", { name: /install Traycer in WSL/i });
+    const link = screen.getByRole("link", { name: /install Planwise in WSL/i });
     expect(link.getAttribute("href")).toBe(
       "https://docs.traycer.ai/install#windows-via-wsl",
     );
@@ -184,7 +184,7 @@ describe("<ShellSettingsPanel /> WSL agent caption", () => {
     renderPanel("C:\\Windows\\System32\\cmd.exe", undefined);
     await screen.findByText("Startup flags for cmd.exe");
     expect(
-      screen.queryByRole("link", { name: /install Traycer in WSL/i }),
+      screen.queryByRole("link", { name: /install Planwise in WSL/i }),
     ).toBeNull();
   });
 

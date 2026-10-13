@@ -92,7 +92,7 @@ describe("StartPageSettingsSection", () => {
     ).toBeNull();
     expect(rowLabels()).toEqual([
       "Wallpaper",
-      "Traycer team curated wallpapers",
+      "Planwise team curated wallpapers",
       "Show greeting",
       "Show tasks on the start page",
     ]);
@@ -131,7 +131,7 @@ describe("StartPageSettingsSection", () => {
     renderSection();
     expect(rowLabels()).toEqual([
       "Wallpaper",
-      "Traycer team curated wallpapers",
+      "Planwise team curated wallpapers",
       "Wallpaper effect",
       "Effect strength",
       "Tint wallpaper with theme accent color",
@@ -167,7 +167,7 @@ describe("StartPageSettingsSection", () => {
     renderSection();
     expect(rowLabels()).toEqual([
       "Wallpaper",
-      "Traycer team curated wallpapers",
+      "Planwise team curated wallpapers",
       "Wallpaper effect",
       "Effect strength",
       "Show greeting",
@@ -189,7 +189,7 @@ describe("StartPageSettingsSection", () => {
     renderSection();
     expect(rowLabels()).toEqual([
       "Wallpaper",
-      "Traycer team curated wallpapers",
+      "Planwise team curated wallpapers",
       "Wallpaper effect",
       "Effect strength",
       "Show greeting",
@@ -259,7 +259,7 @@ describe("StartPageSettingsSection", () => {
     expect(screen.queryByRole("button", { name: "Remove" })).toBeNull();
     expect(rowLabels()).toEqual([
       "Wallpaper",
-      "Traycer team curated wallpapers",
+      "Planwise team curated wallpapers",
       "Show greeting",
       "Show tasks on the start page",
     ]);

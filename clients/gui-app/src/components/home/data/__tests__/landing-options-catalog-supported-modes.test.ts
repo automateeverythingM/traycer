@@ -70,7 +70,7 @@ describe("catalogSupportedPermissionModes", () => {
 // veto short-circuiting ahead of it. The veto's own behaviour is pinned
 // separately in `landing-options-permission-clamp.test.ts`.
 describe("unsupportedPermissionModeCopy", () => {
-  it("blames a newer Traycer when a host that cannot spell auto lists modes without it", () => {
+  it("blames a newer Planwise when a host that cannot spell auto lists modes without it", () => {
     expect(
       unsupportedPermissionModeCopy({
         hostKnowsAutoMode: false,
@@ -82,7 +82,7 @@ describe("unsupportedPermissionModeCopy", () => {
           "full_access",
         ],
       }),
-    ).toBe("Needs a newer Traycer on this machine.");
+    ).toBe("Needs a newer Planwise on this machine.");
   });
 
   it("blames the provider when the catalog carries auto elsewhere but not on this row", () => {

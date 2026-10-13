@@ -128,7 +128,7 @@ describe("profileSyncReasonSentence", () => {
 });
 
 describe("profileSyncItemDetail", () => {
-  it("tells the user to update Traycer on the device for update-needed", () => {
+  it("tells the user to update Planwise on the device for update-needed", () => {
     expect(
       profileSyncItemDetail(
         item({
@@ -140,7 +140,7 @@ describe("profileSyncItemDetail", () => {
         }),
         NAMES,
       ),
-    ).toBe("Update Traycer on Office Linux");
+    ).toBe("Update Planwise on Office Linux");
   });
 
   it("falls back when cannot-sync arrives with no reason", () => {
@@ -654,7 +654,7 @@ describe("profileSyncDeviceSummary", () => {
     ).toBe("Device offline · syncs when it connects");
   });
 
-  it("uses the Update Traycer line when every row is update-needed", () => {
+  it("uses the Update Planwise line when every row is update-needed", () => {
     expect(
       summaryText(
         profileSyncDeviceSummary({
@@ -680,7 +680,7 @@ describe("profileSyncDeviceSummary", () => {
           profileCount: 2,
         }),
       ),
-    ).toBe("Update Traycer on Office Linux");
+    ).toBe("Update Planwise on Office Linux");
   });
 
   it("still counts mixed update-needed rows as needs an update", () => {
@@ -745,7 +745,7 @@ describe("profileSyncDeviceSummary", () => {
     ).toBe("1 synced · 1 needs an update");
   });
 
-  it("tells the user to update Traycer when reach is update-required", () => {
+  it("tells the user to update Planwise when reach is update-required", () => {
     expect(
       summaryText(
         profileSyncDeviceSummary({
@@ -756,7 +756,7 @@ describe("profileSyncDeviceSummary", () => {
           profileCount: 2,
         }),
       ),
-    ).toBe("Update Traycer on Office Linux");
+    ).toBe("Update Planwise on Office Linux");
   });
 
   it("says No profiles to sync when the device has no items and the source has none", () => {

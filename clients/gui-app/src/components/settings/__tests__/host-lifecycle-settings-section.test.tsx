@@ -156,7 +156,7 @@ const OPTION_COPY = hostLifecycleOptionCopy(MACHINE);
 const HOST_BUSY_STOP_REFUSED_COPY =
   "The host has work in progress, so it was left running. Stop host again to end that work.";
 const LOCK_BUSY_STOP_REFUSED_COPY =
-  "Another Traycer process is managing the host right now, so nothing was changed. Try again in a moment.";
+  "Another Planwise process is managing the host right now, so nothing was changed. Try again in a moment.";
 const UPDATE_ACTIVE_STOP_REFUSED_COPY =
   "The host is installing an update, so nothing was changed. Try again once it finishes.";
 const STOP_FAILED_COPY =
@@ -164,7 +164,7 @@ const STOP_FAILED_COPY =
 const WRITE_FAILED_COPY =
   "Couldn't save this setting. Try again, or change it from the command line with `traycer host lifecycle set <mode>`.";
 const CONFIRMATION_REQUIRED_COPY =
-  "Turning off the local host stops Traycer Host. Confirm the stop to continue.";
+  "Turning off the local host stops Planwise Host. Confirm the stop to continue.";
 
 // Fixture `message` values: the real raw CLI/main text that must never reach
 // the DOM.
@@ -935,7 +935,7 @@ describe("<HostLifecycleSettingsSection /> - the 'none' option and the subscript
       Promise.resolve({
         kind: "stop-refused",
         reason: "lock-busy",
-        message: "Another Traycer process is managing the host.",
+        message: "Another Planwise process is managing the host.",
         view: view({}),
       }),
     );
@@ -1247,7 +1247,7 @@ describe("<HostLifecycleSettingsSection /> - the none confirm during a foregroun
 
     expect(dialog.textContent).toContain("Switch to No local host?");
     expect(dialog.textContent).toContain(
-      "A host started in a terminal is running. Traycer won't stop it: it keeps running until you stop it there. From the next launch, Traycer connects only to remote hosts.",
+      "A host started in a terminal is running. Planwise won't stop it: it keeps running until you stop it there. From the next launch, Planwise connects only to remote hosts.",
     );
     expect(
       screen.queryByRole("button", { name: HOST_NONE_CONFIRM_STOP_LABEL }),
@@ -1344,7 +1344,7 @@ describe("<HostLifecycleSettingsSection /> - the settings card's own inline erro
         kind: "failed",
         reason: "confirmation-required",
         message:
-          "Turning off the local host stops Traycer Host. Confirm the stop to continue.",
+          "Turning off the local host stops Planwise Host. Confirm the stop to continue.",
         view: view({}),
       }),
     );
@@ -1461,7 +1461,7 @@ describe("<HostLifecycleSettingsSection /> - another Windows user's task", () =>
   // nothing on the card calls the task another user's.
   it("an owner that could not be confirmed: the card shows that copy, holds the same modes, and never says another Windows user", async () => {
     const UNCONFIRMED =
-      "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
+      "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.";
     const fixture = buildLifecycleHost(
       view({
         desired: { mode: "linked", rev: 2, updatedBy: null, updatedAt: null },

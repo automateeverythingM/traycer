@@ -131,7 +131,7 @@ describe("<SessionImportProgressToastBridge />", () => {
     expect(progressSuccessToastMock).not.toHaveBeenCalled();
     expect(toastMessageMock).toHaveBeenCalledWith(
       "Nothing was imported",
-      expect.objectContaining({ description: "Host A · 1 already in Traycer" }),
+      expect.objectContaining({ description: "Host A · 1 already in Planwise" }),
     );
   });
 

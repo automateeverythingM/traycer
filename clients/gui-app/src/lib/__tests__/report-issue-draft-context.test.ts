@@ -31,7 +31,7 @@ describe("createReportIssueDraftContext", () => {
       title: "Something went wrong",
       message: "The app hit an unexpected error.",
       code: null,
-      source: "Traycer app",
+      source: "Planwise app",
       capture,
     });
 
@@ -42,7 +42,7 @@ describe("createReportIssueDraftContext", () => {
       title: "Something went wrong",
       message: "The app hit an unexpected error.",
       code: null,
-      source: "Traycer app",
+      source: "Planwise app",
     });
 
     // The real text DOES reach privateDiagnostics - that is the point of the

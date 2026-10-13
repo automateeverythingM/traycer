@@ -156,7 +156,7 @@ export function attestTraycerRegistration(input: {
       } else if (!isTraycerLabelShape(input.labelId)) {
         return {
           kind: "not-traycer",
-          reason: `label '${input.labelId}' is outside the Traycer host namespace`,
+          reason: `label '${input.labelId}' is outside the Planwise host namespace`,
         };
       } else {
         // In namespace but not the expected triple for this environment —
@@ -204,7 +204,7 @@ export function attestTraycerRegistration(input: {
   if (signals.length === 0) {
     return {
       kind: "indeterminate",
-      cause: "no positive Traycer identity signals found",
+      cause: "no positive Planwise identity signals found",
     };
   }
 

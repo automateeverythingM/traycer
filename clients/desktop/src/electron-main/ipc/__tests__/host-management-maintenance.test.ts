@@ -142,11 +142,11 @@ describe("laneBusyRestartMessage", () => {
 
   it("groups kinds by the operation the watcher should wait for", () => {
     const installing =
-      "Traycer is installing an update on this host. Restart it once that finishes.";
+      "Planwise is installing an update on this host. Restart it once that finishes.";
     const service =
-      "Traycer is changing this host's background service. Restart it once that finishes.";
+      "Planwise is changing this host's background service. Restart it once that finishes.";
     const removing =
-      "Traycer is removing this host. There is nothing to restart until that finishes.";
+      "Planwise is removing this host. There is nothing to restart until that finishes.";
     const restarting = "This host is already restarting.";
     expect(laneBusyRestartMessage("install")).toBe(installing);
     expect(laneBusyRestartMessage("apply")).toBe(installing);
@@ -1315,7 +1315,7 @@ const HOST_CHANGED_MESSAGE =
 const HOST_UNVERIFIED_MESSAGE =
   "This computer's host can't confirm its identity right now. Try again in a moment.";
 const LOGIN_ITEM_REFRESH_MESSAGE =
-  "Traycer is refreshing this host's background service registration. Try again once that finishes.";
+  "Planwise is refreshing this host's background service registration. Try again once that finishes.";
 const LIVE_HOST_ID = "host-local";
 const OTHER_HOST_ID = "host-other";
 
@@ -2608,7 +2608,7 @@ describe("maintenance identity + doctorRepairIfIdle IPC", () => {
       const bridge = makeBridge();
       // `LOCK_BUSY_MESSAGE` in host-controller.ts:180 - module-private, hence
       // the literal here rather than an import.
-      const message = "Another Traycer process is managing the host.";
+      const message = "Another Planwise process is managing the host.";
       const refreshServiceDefinition = vi.fn(() =>
         Promise.resolve({ kind: "deferred" as const, message }),
       );
@@ -2652,7 +2652,7 @@ describe("maintenance identity + doctorRepairIfIdle IPC", () => {
   // `{kind: "declined", message}` with the outcome's exact message, never
   // rejecting; every other non-ok outcome still rejects, as today. The
   // success shape also gains a discriminant.
-  describe("DECL: uninstall, Remove Traycer and queued free-port resolve a deferral as declined", () => {
+  describe("DECL: uninstall, Remove Planwise and queued free-port resolve a deferral as declined", () => {
     const DEFERRAL_MESSAGES: ReadonlyArray<{
       readonly label: string;
       readonly message: string;
@@ -2667,7 +2667,7 @@ describe("maintenance identity + doctorRepairIfIdle IPC", () => {
       },
     ];
 
-    describe("Remove Traycer (traycerAppUninstall)", () => {
+    describe("Remove Planwise (traycerAppUninstall)", () => {
       it.each(DEFERRAL_MESSAGES)(
         "$label resolves declined, and skips the registry refresh",
         async ({ message }) => {

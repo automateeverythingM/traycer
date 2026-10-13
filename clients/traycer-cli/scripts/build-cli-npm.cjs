@@ -169,7 +169,7 @@ function main() {
     version: cliVersion,
     description:
       workspaceManifest.description ||
-      "Traycer CLI - host supervisor, auth, and config surface",
+      "Planwise CLI - host supervisor, auth, and config surface",
     // No "type": the single extensionless `traycer` bundle is CommonJS (it
     // opens with `"use strict";`); omitting the field keeps the manifest
     // unambiguous regardless of host defaults.

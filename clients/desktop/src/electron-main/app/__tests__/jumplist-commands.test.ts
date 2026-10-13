@@ -31,10 +31,10 @@ describe("findJumplistCommandInArgv", () => {
   });
 
   it("ignores argv without a jump-list flag", () => {
-    expect(findJumplistCommandInArgv(["Traycer.exe"])).toBeNull();
+    expect(findJumplistCommandInArgv(["Planwise.exe"])).toBeNull();
     expect(
       findJumplistCommandInArgv([
-        "Traycer.exe",
+        "Planwise.exe",
         "traycer-staging://auth/callback",
       ]),
     ).toBeNull();
@@ -62,13 +62,13 @@ describe("registerJumplistCommandHandling", () => {
   }
 
   it("focuses the main window and dispatches a recognized flag", () => {
-    const sink = installAndFire(["Traycer.exe", "--open-settings"]);
+    const sink = installAndFire(["Planwise.exe", "--open-settings"]);
     expect(sink.focusMainWindow).toHaveBeenCalledOnce();
     expect(sink.dispatch).toHaveBeenCalledWith("app.openSettings");
   });
 
   it("still focuses the main window on a plain relaunch", () => {
-    const sink = installAndFire(["Traycer.exe"]);
+    const sink = installAndFire(["Planwise.exe"]);
     expect(sink.focusMainWindow).toHaveBeenCalledOnce();
     expect(sink.dispatch).not.toHaveBeenCalled();
   });

@@ -280,7 +280,7 @@ async function runCase(mod, scenario, kind, trigger, addon) {
       throw new Error("application window did not take native focus");
     const menu = mod.buildApplicationMenu(
       {
-        appName: "Traycer",
+        appName: "Planwise",
         platform: process.platform,
         authSession: { status: "signed-out" },
         host: { status: "ready", version: "0.0.0" },

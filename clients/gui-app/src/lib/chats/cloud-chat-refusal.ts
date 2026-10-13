@@ -43,7 +43,7 @@ export function describeCloudChatRefusal(
       };
     case "needs-newer-app":
       return {
-        title: "Needs a newer version of Traycer",
+        title: "Needs a newer version of Planwise",
         // The protocol's own phrasing, which names the versions involved. It is
         // written to be renderer-safe and carries no object coordinates.
         body: outcome.message,

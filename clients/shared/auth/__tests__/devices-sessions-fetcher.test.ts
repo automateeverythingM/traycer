@@ -16,7 +16,7 @@ function sessionListBody() {
       {
         familyId: "family-1",
         clientKind: "desktop",
-        displayLabel: "Traycer on Mac",
+        displayLabel: "Planwise on Mac",
         platform: "macOS",
         appVersion: "1.2.3",
         location: "Ahmedabad, Gujarat, IN",

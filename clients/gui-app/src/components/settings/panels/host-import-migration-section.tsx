@@ -100,7 +100,7 @@ function SessionImportRow(props: {
     : (status?.active ?? null);
 
   let description =
-    "Bring work you already started in Claude Code, Codex, or OpenCode into Traycer as tasks.";
+    "Bring work you already started in Claude Code, Codex, or OpenCode into Planwise as tasks.";
   if (active !== null) {
     // A run is active from the moment it is submitted, but its size is the
     // host's answer to that submission - so between the two there is a real

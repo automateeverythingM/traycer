@@ -98,13 +98,13 @@ export function describeCliFloorRemedy(
     !isValidHostVersion(input.requiredCliVersion)
   ) {
     return {
-      sentence: `Traycer couldn't verify the required command-line tools version on ${input.hostName}.`,
+      sentence: `Planwise couldn't verify the required command-line tools version on ${input.hostName}.`,
       actions: [{ kind: "help", label: "Show installation help" }],
     };
   }
   if (input.cliSource === null) {
     return {
-      sentence: `Traycer couldn't determine how its command-line tools were installed on ${input.hostName}.`,
+      sentence: `Planwise couldn't determine how its command-line tools were installed on ${input.hostName}.`,
       actions: [{ kind: "help", label: "Show installation help" }],
     };
   }
@@ -138,14 +138,14 @@ export function describeCliFloorRemedy(
     // named - a POSIX host has no PowerShell to open.
     return describeCopyRemedy(
       input,
-      `Run the copied commands on ${input.hostName} from a terminal outside Traycer on that machine: first the tools upgrade, then the host restart. Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.`,
+      `Run the copied commands on ${input.hostName} from a terminal outside Planwise on that machine: first the tools upgrade, then the host restart. Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.`,
       "traycer cli upgrade\ntraycer host restart",
       "Copy commands",
     );
   }
   return describeCopyRemedy(
     input,
-    `First update Traycer's command-line tools on ${input.hostName}. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.`,
+    `First update Planwise's command-line tools on ${input.hostName}. Open a terminal on that machine and run the copied command. When it finishes, come back here: this page rechecks while it is open, and Update now appears once the host accepts the update.`,
     posixCliUpgradeCommand(input.cliBinaryPath),
     "Copy command",
   );
@@ -174,7 +174,7 @@ function describePackageManagerRemedy(
     source !== "npm"
   ) {
     return {
-      sentence: `Traycer CLI prereleases aren't published through ${source}. Install Traycer CLI ${requiredVersion} another way; this page rechecks while it is open.`,
+      sentence: `Planwise CLI prereleases aren't published through ${source}. Install Planwise CLI ${requiredVersion} another way; this page rechecks while it is open.`,
       actions: [{ kind: "help", label: "Show installation help" }],
     };
   }
@@ -200,7 +200,7 @@ function describeDesktopRemedy(
   switch (snapshot.status) {
     case "available":
       return {
-        sentence: `Update Traycer Desktop${version === null ? "" : ` to ${version}`} to install this host update.`,
+        sentence: `Update Planwise Desktop${version === null ? "" : ` to ${version}`} to install this host update.`,
         actions: [
           {
             kind: "desktop-download",
@@ -212,7 +212,7 @@ function describeDesktopRemedy(
       };
     case "downloading":
       return {
-        sentence: "Downloading the Traycer Desktop update…",
+        sentence: "Downloading the Planwise Desktop update…",
         actions: [
           {
             kind: "desktop-progress",
@@ -228,7 +228,7 @@ function describeDesktopRemedy(
     case "up-to-date":
       return {
         sentence:
-          "Traycer Desktop is up to date, but this computer still needs to finish updating its host tools. Restart Traycer Desktop to finish.",
+          "Planwise Desktop is up to date, but this computer still needs to finish updating its host tools. Restart Planwise Desktop to finish.",
         actions: [{ kind: "restart-desktop-hint" }],
       };
     case "error":
@@ -240,7 +240,7 @@ function describeDesktopRemedy(
       // `idle` after it; the button is what keeps that from being a dead
       // end.
       return {
-        sentence: "Check for a Traycer Desktop update.",
+        sentence: "Check for a Planwise Desktop update.",
         actions: [
           {
             kind: "desktop-check",
@@ -251,7 +251,7 @@ function describeDesktopRemedy(
       };
     case "checking":
       return {
-        sentence: "Checking for a Traycer Desktop update…",
+        sentence: "Checking for a Planwise Desktop update…",
         actions: [{ kind: "desktop-check", label: null, checkOnMount: false }],
       };
   }
@@ -266,7 +266,7 @@ function describeDesktopReady(
   const showGuidance =
     snapshot.installBlockedReason === null && snapshot.installGuidance !== null;
   return {
-    sentence: `Traycer Desktop${version === null ? "" : ` ${version}`} is ready. Restart Traycer to finish, then this host update can install.`,
+    sentence: `Planwise Desktop${version === null ? "" : ` ${version}`} is ready. Restart Planwise to finish, then this host update can install.`,
     actions: [
       {
         kind: "desktop-install",
@@ -287,7 +287,7 @@ function describeDesktopCheckFailed(
   return {
     sentence:
       snapshot.errorMessage?.trim() ||
-      "Traycer Desktop couldn't check for updates.",
+      "Planwise Desktop couldn't check for updates.",
     actions: [
       { kind: "desktop-check", label: "Check again", checkOnMount: false },
       { kind: "help", label: "Show installation help" },
@@ -334,12 +334,12 @@ function describeDesktopFloorFallback(
   }
   const versionDescription =
     input.desktopUpdate?.status === "up-to-date"
-      ? `Traycer Desktop v${candidate} is installed`
-      : `Traycer v${candidate} is the latest on this update channel`;
+      ? `Planwise Desktop v${candidate} is installed`
+      : `Planwise v${candidate} is the latest on this update channel`;
   const sentence =
     comparison !== null && comparison.comparable
       ? `${versionDescription} and its command-line tools are below ${requiredCliVersion}.`
-      : `Traycer couldn't verify that this Desktop update includes Traycer CLI ${requiredCliVersion} or newer.`;
+      : `Planwise couldn't verify that this Desktop update includes Planwise CLI ${requiredCliVersion} or newer.`;
   const instructions = describeDesktopCliUpgrade(input);
   const help: CliFloorRemedyAction = {
     kind: "help",
@@ -411,7 +411,7 @@ function describeWindowsCliUpgrade(
 ): CliUpgradeInstructions {
   const invocation = windowsCliInvocation(input.cliBinaryPath);
   return {
-    sentence: `Run the copied commands on ${input.hostName} from a PowerShell window outside Traycer on that machine (a Windows Terminal tab there, or an SSH session that opens PowerShell). Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.`,
+    sentence: `Run the copied commands on ${input.hostName} from a PowerShell window outside Planwise on that machine (a Windows Terminal tab there, or an SSH session that opens PowerShell). Restarting briefly disconnects this host. When it reconnects, this page rechecks on its own, and Update now appears once the host accepts the update.`,
     command: `${invocation} cli upgrade\n${invocation} host restart`,
     label: "Copy commands",
   };
@@ -433,7 +433,7 @@ function describeCopyRemedy(
     comparison.ordering !== "less";
   return {
     sentence: olderCopy
-      ? `Traycer's command-line tools on ${input.hostName} were updated, but the host is still using an older copy. Run the command again: ${sentence}`
+      ? `Planwise's command-line tools on ${input.hostName} were updated, but the host is still using an older copy. Run the command again: ${sentence}`
       : sentence,
     actions: [{ kind: "copy-command", label, command }],
   };

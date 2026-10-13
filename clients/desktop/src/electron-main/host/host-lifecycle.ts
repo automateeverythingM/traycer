@@ -912,7 +912,7 @@ export class HostLifecycle extends EventEmitter {
       ) {
         throw new HostStartupException(
           "HOST_NOT_READY",
-          `Traycer Host did not start within ${waitedMs}ms (${quietMs}ms with no installer progress) - run \`traycer host doctor\` to recover.`,
+          `Planwise Host did not start within ${waitedMs}ms (${quietMs}ms with no installer progress) - run \`traycer host doctor\` to recover.`,
         );
       }
       if (extendedFrom === null && lastActivityAt > startedAt) {

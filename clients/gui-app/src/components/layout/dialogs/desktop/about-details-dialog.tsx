@@ -55,7 +55,7 @@ function AboutDetailsDialogContent(
             title: "Couldn't load desktop details",
             message: null,
             code: null,
-            source: "About Traycer",
+            source: "About Planwise",
           })}
           presentation="link"
           className={undefined}
@@ -73,7 +73,7 @@ function AboutDetailsDialogContent(
       <DialogHeader>
         <DialogTitle className="flex items-center gap-2">
           <Info className="size-4" />
-          About Traycer
+          About Planwise
         </DialogTitle>
         <DialogDescription className="sr-only">
           Desktop runtime and diagnostics details.

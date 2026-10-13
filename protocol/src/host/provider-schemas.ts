@@ -301,7 +301,7 @@ export const PROVIDER_DISPLAY_NAMES: Record<ProviderId, string> = {
   codex: "Codex",
   opencode: "OpenCode",
   cursor: "Cursor",
-  traycer: "Traycer",
+  traycer: "Planwise",
   grok: "Grok",
   qwen: "Qwen Code",
   kiro: "Kiro",

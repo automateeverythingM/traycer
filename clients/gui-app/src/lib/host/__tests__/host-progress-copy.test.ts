@@ -44,17 +44,17 @@ describe("hostProgressHeading", () => {
 
   it("the download stage overrides the kind for at least two different kinds", () => {
     expect(hostProgressHeading("ensure", "download")).toBe(
-      "Downloading Traycer Host…",
+      "Downloading Planwise Host…",
     );
     expect(hostProgressHeading("apply", "download")).toBe(
-      "Downloading Traycer Host…",
+      "Downloading Planwise Host…",
     );
     // Confirms it really is an override, not a coincidence of their non-download copy.
     expect(hostProgressHeading("ensure", null)).not.toBe(
-      "Downloading Traycer Host…",
+      "Downloading Planwise Host…",
     );
     expect(hostProgressHeading("apply", null)).not.toBe(
-      "Downloading Traycer Host…",
+      "Downloading Planwise Host…",
     );
   });
 
@@ -198,7 +198,7 @@ describe("buildHostProgressView", () => {
     expect(buildHostProgressView(laneHigh)?.percent).toBe(100);
   });
 
-  it("a verify stage carrying BYTES still heads 'Setting up Traycer Host…', never 'Downloading'", () => {
+  it("a verify stage carrying BYTES still heads 'Setting up Planwise Host…', never 'Downloading'", () => {
     // The `verify` phase now reports hashed bytes, so the card gains a transfer
     // label - "400 MB of 800 MB" - during a local-source install. That is safe
     // only because the download WORDING is gated on `stage === "download"` rather
@@ -221,7 +221,7 @@ describe("buildHostProgressView", () => {
     };
     const view = buildHostProgressView(verifying);
 
-    expect(view?.heading).toBe("Setting up Traycer Host…");
+    expect(view?.heading).toBe("Setting up Planwise Host…");
     expect(view?.heading).not.toContain("Downloading");
     expect(view?.shortLabel).not.toContain("Downloading");
     // Positive control for the assertions above: the bytes DID reach the view, so

@@ -6,7 +6,7 @@ export const APP_DIAGNOSTICS = defineSettingsSection("app-diagnostics", {
     availableWhen: alwaysAvailable,
     label: "Diagnostics",
     description:
-      "Logging and memory capture for the Traycer app itself - this window, whichever host it points at.",
+      "Logging and memory capture for the Planwise app itself - this window, whichever host it points at.",
     keywords: [
       "logs",
       "debug",

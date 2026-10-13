@@ -131,7 +131,7 @@ export function buildServiceInstallCommand(
         if (args.takeover) {
           ctx.progress({
             stage: "register",
-            message: `taking over host management from Traycer Desktop`,
+            message: `taking over host management from Planwise Desktop`,
             percent: null,
             bytes: null,
             totalBytes: null,
@@ -219,7 +219,7 @@ export function buildServiceInstallCommand(
     const { label, cli, takeover, manifestPath } = locked;
     let human =
       takeover !== null && takeover.kind === "took-over"
-        ? `service '${label.id}' registered (environment=${label.environment}); host management taken over from Traycer Desktop (agent '${takeover.agentLabelId}' deregistered, host ${takeover.cooperativeStop === "stopped" ? "stopped cooperatively" : takeover.cooperativeStop === "no-host" ? "was not running" : "was unreachable and booted out"})`
+        ? `service '${label.id}' registered (environment=${label.environment}); host management taken over from Planwise Desktop (agent '${takeover.agentLabelId}' deregistered, host ${takeover.cooperativeStop === "stopped" ? "stopped cooperatively" : takeover.cooperativeStop === "no-host" ? "was not running" : "was unreachable and booted out"})`
         : takeover !== null && takeover.kind === "cli-host-stopped"
           ? `service '${label.id}' registered (environment=${label.environment}); ${takeover.cooperativeStop === "no-host" ? "the job already loaded under this label had no host running and was unloaded before the reload" : `the host already running under this label ${takeover.cooperativeStop === "stopped" ? "stood down cooperatively before the reload" : "was unreachable and booted out"}`}`
           : `service '${label.id}' registered (environment=${label.environment})`;

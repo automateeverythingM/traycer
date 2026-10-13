@@ -29,7 +29,7 @@ import { useShellLocalPlaneAdmission } from "@/hooks/auth/use-shell-local-plane-
 const APP_UPDATE_TOAST_ID = "traycer-app-update";
 const APP_UPDATE_TRANSIENT_TOAST_DURATION_MS = 4000;
 const APP_UPDATE_REPORT_CONTEXT = createReportIssueContext({
-  title: "Could not update Traycer",
+  title: "Could not update Planwise",
   message: null,
   code: null,
   source: "App update",
@@ -252,7 +252,7 @@ function showAppUpdateToast(
   switch (snapshot.status) {
     case "checking":
       if (snapshot.lastCheckIntent === "manual") {
-        toast.info("Checking for Traycer updates...", {
+        toast.info("Checking for Planwise updates...", {
           id: APP_UPDATE_TOAST_ID,
           description: null,
           duration: APP_UPDATE_TRANSIENT_TOAST_DURATION_MS,
@@ -315,7 +315,7 @@ function showAppUpdateToast(
       if (snapshot.installInFlight) {
         progressToast("Restarting to install update…", {
           id: APP_UPDATE_TOAST_ID,
-          description: "Traycer will reopen once the update is applied.",
+          description: "Planwise will reopen once the update is applied.",
           duration: Infinity,
           cancel: null,
         });
@@ -330,7 +330,7 @@ function showAppUpdateToast(
             toastId={APP_UPDATE_TOAST_ID}
             eyebrow={null}
             title="Update ready to install"
-            description="Restart Traycer to finish updating."
+            description="Restart Planwise to finish updating."
             actionLabel="Restart"
             onAction={actions.onRestart}
             onLater={null}
@@ -356,7 +356,7 @@ function showAppUpdateToast(
       return;
     case "error": {
       reportableErrorToast(
-        "Couldn't update Traycer",
+        "Couldn't update Planwise",
         {
           id: APP_UPDATE_TOAST_ID,
           cancel: null,
@@ -378,7 +378,7 @@ function showAppUpdateToast(
       return;
     }
     case "up-to-date":
-      toast.success("Traycer is up to date", {
+      toast.success("Planwise is up to date", {
         id: APP_UPDATE_TOAST_ID,
         description:
           snapshot.currentVersion.length === 0
@@ -403,7 +403,7 @@ function showAppUpdateToast(
 
 function updateAvailableDescription(latestVersion: string | null): string {
   if (latestVersion === null) {
-    return "A new version of Traycer is ready to download.";
+    return "A new version of Planwise is ready to download.";
   }
   return `Version ${latestVersion} is ready to download.`;
 }

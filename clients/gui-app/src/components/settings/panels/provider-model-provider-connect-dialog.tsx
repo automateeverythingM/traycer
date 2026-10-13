@@ -549,7 +549,7 @@ export function ProviderModelProviderConnectDialog(props: {
   if (choices.length === 0) {
     body = (
       <p className="text-ui-xs text-muted-foreground">
-        {entry.name} advertises no sign-in method Traycer can drive. Sign in
+        {entry.name} advertises no sign-in method Planwise can drive. Sign in
         with the provider&apos;s own CLI and it will appear as connected here.
       </p>
     );
@@ -994,7 +994,7 @@ function OauthWaitingPanel(props: {
           Reopen sign-in page
         </Button>
         {/* Honest label: upstream has no OAuth-cancel endpoint, so this stops
-            Traycer waiting and releases the server it was holding. It does not
+            Planwise waiting and releases the server it was holding. It does not
             revoke anything at the provider. */}
         <Button
           type="button"

@@ -165,7 +165,7 @@ describe("<StatusBarResourceSegment />", () => {
       fireEvent.focus(screen.getByTestId("status-bar-resource-cpu-icon"));
 
       expect((await screen.findByRole("tooltip")).textContent).toContain(
-        "Office Linux is running an older Traycer host",
+        "Office Linux is running an older Planwise host",
       );
     });
 
@@ -251,7 +251,7 @@ describe("<StatusBarResourceSegment />", () => {
     fireEvent.focus(screen.getByTestId("status-bar-resource-metric-cpu"));
 
     expect((await screen.findByRole("tooltip")).textContent).toContain(
-      "Office Linux is running an older Traycer host",
+      "Office Linux is running an older Planwise host",
     );
   });
 

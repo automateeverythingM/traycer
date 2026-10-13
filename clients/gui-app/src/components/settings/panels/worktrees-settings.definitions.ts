@@ -5,7 +5,7 @@ export const WORKTREES = defineSettingsSection("worktrees", {
   page: {
     availableWhen: alwaysAvailable,
     label: "Worktrees",
-    description: "Traycer-created worktrees on this host.",
+    description: "Planwise-created worktrees on this host.",
     keywords: [
       "git",
       "branch",

@@ -452,7 +452,7 @@ describe("refuseUpdateOverUnstartableService: not-owned axis (paired supervisor 
 // never says "another Windows user", and `details.reason` says which.
 describe("refuseUpdateOverUnstartableService: the copy follows the reason", () => {
   const UNCONFIRMED =
-    "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone.";
+    "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone.";
 
   function granted(): void {
     const pid = 4242;

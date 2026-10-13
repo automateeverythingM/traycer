@@ -822,7 +822,7 @@ function RemoteAuthFields(props: {
           onChange={props.onEnvAuthVarNameChange}
           placeholder="GITHUB_TOKEN"
           type="text"
-          hint="Traycer passes this name to the provider; the value must already be set in your environment."
+          hint="Planwise passes this name to the provider; the value must already be set in your environment."
         />
       ) : null}
 

@@ -315,7 +315,7 @@ describe("ProviderCliCandidatesSection: empty-candidate notice (F2 route-back)",
 
     expect(
       screen.getByText(
-        "No Amp CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Amp CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
     const guide = screen.getByRole("link", { name: "Amp installation guide" });
@@ -341,7 +341,7 @@ describe("ProviderCliCandidatesSection: empty-candidate notice (F2 route-back)",
 
     expect(
       screen.getByText(
-        "No Command Code CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Command Code CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
     const guide = screen.getByRole("link", {
@@ -398,7 +398,7 @@ describe("ProviderCliCandidatesSection: empty-candidate notice (F2 route-back)",
 
     expect(
       screen.getByText(
-        "No Cursor CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Cursor CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
     expect(screen.queryByRole("link")).toBeNull();
@@ -429,7 +429,7 @@ describe("ProviderCliCandidatesSection: empty-candidate notice (F2 route-back)",
       screen.getByRole("radio", { name: "Select /usr/local/bin/opencode" }),
     ).toBeDefined();
     expect(
-      screen.queryByText(/No Traycer CLI was found on this machine/),
+      screen.queryByText(/No Planwise CLI was found on this machine/),
     ).toBeNull();
   });
 
@@ -890,7 +890,7 @@ describe("ProviderCliCandidatesSection: a pack that failed behind a working bina
  */
 describe("ProviderCliCandidatesSection: row-incompatibility advisory", () => {
   const DETAIL =
-    "Traycer is built to run opencode 1.2.3 specifically, so this copy on your PATH is not used. Select this row to use it anyway.";
+    "Planwise is built to run opencode 1.2.3 specifically, so this copy on your PATH is not used. Select this row to use it anyway.";
 
   it("surfaces the host advisory through a PATH-row tooltip, not a standalone line", () => {
     const state = providerState({
@@ -1002,7 +1002,7 @@ describe("ProviderCliCandidatesSection: substitution note from nextRunBinary", (
     // rather than something a pointer has to uncover.
     expect(
       anyTooltipHasText(
-        "This is the binary Traycer will start. Sessions already running keep the one they started with.",
+        "This is the binary Planwise will start. Sessions already running keep the one they started with.",
       ),
     ).toBe(false);
     // While an install is in flight the note takes its "until it's ready"
@@ -1039,7 +1039,7 @@ describe("ProviderCliCandidatesSection: substitution note from nextRunBinary", (
       screen.getByRole("radio", { name: "Select bundled binary" }),
     ).toHaveProperty("checked", false);
     const note = screen.getByText(
-      /Not used right now — Traycer will start the bundled build instead\./u,
+      /Not used right now — Planwise will start the bundled build instead\./u,
     );
     // On the PATH row — the one the radio picks — not on the bundled row that
     // actually wins, which is where the chip used to land.
@@ -1073,7 +1073,7 @@ describe("ProviderCliCandidatesSection: substitution note from nextRunBinary", (
     ).toHaveProperty("checked", true);
     expect(
       screen.getByText(
-        /Not used right now — Traycer will start the bundled build instead\./u,
+        /Not used right now — Planwise will start the bundled build instead\./u,
       ),
     ).toBeDefined();
   });
@@ -1425,7 +1425,7 @@ describe("ProviderCliCandidatesSection: keyboard reachability", () => {
     // accessible name are now the thing that has to hold.
     mocks.hostSupportsMethod = true;
     const DETAIL =
-      "Traycer is built to run opencode 1.2.3 specifically, so this copy on your PATH is not used. Select this row to use it anyway.";
+      "Planwise is built to run opencode 1.2.3 specifically, so this copy on your PATH is not used. Select this row to use it anyway.";
     const state = providerState({
       selected: { kind: "bundled" },
       candidates: [
@@ -1538,7 +1538,7 @@ describe("ProviderCliCandidatesSection: missing-binary notice reflects custom-pa
 
     expect(
       screen.getByText(
-        "No Antigravity CLI was found on this machine, and Traycer ships no bundled copy of it. Install it.",
+        "No Antigravity CLI was found on this machine, and Planwise ships no bundled copy of it. Install it.",
       ),
     ).toBeDefined();
     expect(screen.queryByText(/add its path below/u)).toBeNull();
@@ -1554,7 +1554,7 @@ describe("ProviderCliCandidatesSection: missing-binary notice reflects custom-pa
 
     expect(
       screen.getByText(
-        "No Codex CLI was found on this machine, and Traycer ships no bundled copy of it. Install it, or add its path below.",
+        "No Codex CLI was found on this machine, and Planwise ships no bundled copy of it. Install it, or add its path below.",
       ),
     ).toBeDefined();
   });

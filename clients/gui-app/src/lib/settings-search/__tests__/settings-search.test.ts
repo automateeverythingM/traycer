@@ -438,7 +438,7 @@ describe("settings search", () => {
       // Installation TAB's own label, so a search for it correctly returns a
       // result labeled "Installation" — the tab trigger, not an in-body row.
       for (const label of [
-        "Remove Traycer from this computer",
+        "Remove Planwise from this computer",
         "Remove from account",
         "File edit snapshots",
         "Import your work",

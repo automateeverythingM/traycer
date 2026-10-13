@@ -722,7 +722,7 @@ describe("agent.listProviderProfiles v1 <-> v2 hermes-provider translation", () 
     expect(downgraded.error.code).toBe("DOWNGRADE_UNSUPPORTED");
     // The message deliberately names no single provider - it must stay honest
     // for every post-v4.0 id, not just the first one that forced the bridge.
-    expect(downgraded.error.message).toMatch(/newer Traycer client/i);
+    expect(downgraded.error.message).toMatch(/newer Planwise client/i);
   });
 
   // omp lives only on v3.0: the v1.1.8 tags froze v2.0 with the 17-id enum, so
@@ -809,7 +809,7 @@ describe("agent.getProviderProfileRateLimits v1 <-> v2 hermes-provider translati
     // unrepresentable provider (Hermes here) no longer names itself, since the
     // bridge now pre-maps grok-available to the unavailable shape rather than
     // failing closed on it.
-    expect(downgraded.error.message).toMatch(/newer Traycer client/i);
+    expect(downgraded.error.message).toMatch(/newer Planwise client/i);
   });
 
   it("degrades a grok-available rate-limit read to unsupported_provider (never errors)", () => {
@@ -1109,7 +1109,7 @@ describe("agent.configure v1 <-> v2 hermes-harness response translation", () => 
     expect(downgraded.error.code).toBe("DOWNGRADE_UNSUPPORTED");
     // Generalized alongside the listProviderProfiles bridge: the copy must not
     // name Hermes now that omp shares the same fail-closed path.
-    expect(downgraded.error.message).toMatch(/newer Traycer client/i);
+    expect(downgraded.error.message).toMatch(/newer Planwise client/i);
   });
 
   // As with listProviderProfiles, omp only exists on v3.0 now.

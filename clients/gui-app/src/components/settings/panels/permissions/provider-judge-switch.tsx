@@ -122,7 +122,7 @@ export function ProviderJudgeSwitch(props: {
   if (!hasNativeJudge) {
     return (
       <p className={LINE_CLASSNAME} data-testid="provider-auto-judge-readonly">
-        Reviewed by Traycer&apos;s judge. Change it under Permissions.
+        Reviewed by Planwise&apos;s judge. Change it under Permissions.
       </p>
     );
   }
@@ -138,7 +138,7 @@ export function ProviderJudgeSwitch(props: {
     );
   }
   const current =
-    value === "provider" ? `${providerName}'s classifier` : "Traycer's judge";
+    value === "provider" ? `${providerName}'s classifier` : "Planwise's judge";
   if (!setAutoJudgeSupported) {
     return (
       <p
@@ -183,7 +183,7 @@ export function ProviderJudgeSwitch(props: {
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="traycer">Traycer&apos;s judge</SelectItem>
+            <SelectItem value="traycer">Planwise&apos;s judge</SelectItem>
             <SelectItem value="provider">
               {providerName}&apos;s classifier
             </SelectItem>
@@ -195,7 +195,7 @@ export function ProviderJudgeSwitch(props: {
           switch's only home; the Judge tab only points to it. */}
       <p className={LINE_CLASSNAME} data-testid="provider-auto-judge-warning">
         Faster and free, but your rules don&apos;t apply to it, and it replaces
-        Traycer&apos;s judge for this provider&apos;s conversations.
+        Planwise&apos;s judge for this provider&apos;s conversations.
       </p>
     </div>
   );

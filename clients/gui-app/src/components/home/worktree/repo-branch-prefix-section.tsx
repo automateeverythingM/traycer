@@ -498,7 +498,7 @@ function UnsupportedBranchNaming(props: {
         className="text-ui-xs text-warning-foreground"
         data-testid="repo-branch-prefix-unsupported"
       >
-        Repository prefixes require a newer Traycer host. Branches continue
+        Repository prefixes require a newer Planwise host. Branches continue
         using the global default.
       </p>
       <BranchPreviewRow

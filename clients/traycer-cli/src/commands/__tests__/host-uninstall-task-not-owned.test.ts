@@ -305,7 +305,7 @@ describe("host uninstall --all over a Scheduled Task another Windows user owns",
       serviceWarning: {
         code: "E_SERVICE_TASK_NOT_OWNED",
         message:
-          "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.",
+          "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task in place; everything of yours was removed.",
         details: { reason: "unconfirmed" },
       },
     });

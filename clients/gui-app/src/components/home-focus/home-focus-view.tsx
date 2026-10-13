@@ -639,7 +639,7 @@ function unattributedReasonLine(
   if (status === "unverified") {
     switch (loss) {
       case "unreachable":
-        return "Can't reach Traycer to confirm your sign-in, so running tasks may not load until it can.";
+        return "Can't reach Planwise to confirm your sign-in, so running tasks may not load until it can.";
       case "session-rejected":
         return "Your session has expired. Sign in again to see running tasks.";
       case "account-unavailable":
@@ -669,14 +669,14 @@ function degradedReasonLine(
     case "cloud-disconnected":
       return (
         <>
-          {host} isn't connected to Traycer, so tasks from your other machines
+          {host} isn't connected to Planwise, so tasks from your other machines
           may be missing.
         </>
       );
     case "cloud-reconnecting":
       return (
         <>
-          {host} is reconnecting to Traycer, so tasks from your other machines
+          {host} is reconnecting to Planwise, so tasks from your other machines
           may be missing.
         </>
       );

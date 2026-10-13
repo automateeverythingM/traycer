@@ -159,7 +159,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     expect(doctorButton.disabled).toBe(true);
   });
 
-  it("a removed host gets Reinstall Traycer, which clears the sentinel and converges", async () => {
+  it("a removed host gets Reinstall Planwise, which clears the sentinel and converges", async () => {
     // Captures the ORDER the two bridge calls actually land in, not merely
     // that both happened — `reinstall()` chains `convergeReady` off
     // `clearRemoval`'s resolution, and that is the behaviour worth pinning.
@@ -189,13 +189,13 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     // The removal read is async (the sentinel query starts disabled-shaped
     // and resolves after mount), so the button only appears once it settles.
     const reinstallButton = await screen.findByRole("button", {
-      name: "Reinstall Traycer",
+      name: "Reinstall Planwise",
     });
     fireEvent.click(reinstallButton);
 
     await waitFor(() => {
       expect(toast.success).toHaveBeenCalledWith(
-        "Reinstalling Traycer on This Mac…",
+        "Reinstalling Planwise on This Mac…",
       );
     });
 
@@ -265,7 +265,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     renderLocalDown({ settingUp: false, management, name: "This Mac" });
 
     const reinstallButton = await screen.findByRole("button", {
-      name: "Reinstall Traycer",
+      name: "Reinstall Planwise",
     });
     fireEvent.click(reinstallButton);
 
@@ -278,7 +278,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     });
     await waitFor(() => {
       expect(toast.error).toHaveBeenCalledWith(
-        "Couldn't reinstall Traycer on This Mac.",
+        "Couldn't reinstall Planwise on This Mac.",
         expect.objectContaining({
           description: "installer could not write to the prefix",
         }),
@@ -294,7 +294,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
 
     await waitFor(() => {
       const stillThere = screen.getByRole<HTMLButtonElement>("button", {
-        name: "Reinstall Traycer",
+        name: "Reinstall Planwise",
       });
       expect(stillThere.disabled).toBe(false);
     });
@@ -353,7 +353,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     renderLocalDown({ settingUp: false, management, name: "This Mac" });
 
     const reinstallButton = await screen.findByRole("button", {
-      name: "Reinstall Traycer",
+      name: "Reinstall Planwise",
     });
     fireEvent.click(reinstallButton);
 
@@ -367,7 +367,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     });
     await waitFor(() => {
       expect(toast.error).toHaveBeenCalledWith(
-        "Couldn't reinstall Traycer on This Mac.",
+        "Couldn't reinstall Planwise on This Mac.",
         expect.objectContaining({
           description: "installer could not write to the prefix",
         }),
@@ -375,7 +375,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     });
 
     const retryButton = screen.getByRole<HTMLButtonElement>("button", {
-      name: "Reinstall Traycer",
+      name: "Reinstall Planwise",
     });
     fireEvent.click(retryButton);
 
@@ -388,7 +388,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     // `reinstall.isPending`).
     await waitFor(() => {
       const stillMounted = screen.getByRole<HTMLButtonElement>("button", {
-        name: "Reinstall Traycer",
+        name: "Reinstall Planwise",
       });
       expect(stillMounted.disabled).toBe(true);
     });
@@ -401,7 +401,7 @@ describe("Overview — this machine's own host, down (LocalHostDownActions)", ()
     });
     await waitFor(() => {
       expect(toast.success).toHaveBeenCalledWith(
-        "Reinstalling Traycer on This Mac…",
+        "Reinstalling Planwise on This Mac…",
       );
     });
   });

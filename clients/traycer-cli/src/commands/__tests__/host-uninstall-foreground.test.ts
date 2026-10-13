@@ -93,7 +93,7 @@ vi.mock("../../service", async (importOriginal) => {
     }),
     serviceLabelFor: (environment: "dev" | "production") => ({
       id: "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -289,7 +289,7 @@ describe("buildHostUninstallCommand --all - refusal over a foreground run (deskt
     expect(message).toContain(
       "host uninstall: the running host was started in a terminal",
     );
-    expect(message).toContain("then remove Traycer");
+    expect(message).toContain("then remove Planwise");
     expect(message).not.toContain("--force");
   });
 

@@ -165,7 +165,7 @@ function showCompletionToast(
   const parts: string[] = [];
   if (hostLabel !== null) parts.push(hostLabel);
   if (counts !== null && counts.skippedAlreadyImported > 0) {
-    parts.push(`${counts.skippedAlreadyImported} already in Traycer`);
+    parts.push(`${counts.skippedAlreadyImported} already in Planwise`);
   }
   if (counts !== null && counts.failed > 0) {
     parts.push(`${counts.failed} failed`);

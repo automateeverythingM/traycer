@@ -1941,7 +1941,7 @@ describe("atomicSwap - swap-lock recovery", () => {
     // One re-kill per schedule entry - the retries genuinely ran.
     expect(kill).toHaveBeenCalledTimes(2);
     expect(cliErr.message).toContain(
-      "no Traycer process matches the install directory",
+      "no Planwise process matches the install directory",
     );
     expect(cliErr.message).toContain("restart Windows");
     expect(cliErr.details?.lockHolders).toEqual([]);

@@ -918,7 +918,7 @@ function SkillsEmptyState({
         </Button>
       ) : (
         <p className="max-w-prose text-ui-xs text-muted-foreground">
-          This provider reads skills but can&apos;t add them from Traycer. Put a
+          This provider reads skills but can&apos;t add them from Planwise. Put a
           skill folder in its skills directory and it will appear here.
         </p>
       )}

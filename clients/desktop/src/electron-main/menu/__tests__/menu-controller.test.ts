@@ -531,7 +531,7 @@ function createController(options: {
   ) => boolean;
 }): MenuController {
   return new MenuController({
-    appName: "Traycer",
+    appName: "Planwise",
     platform: "darwin",
     windowRegistry: options.registry,
     host: options.host,
@@ -653,7 +653,7 @@ describe("MenuController", () => {
   it("keeps Linux native menu bars hidden across menu rebuilds", () => {
     const registry = new FakeWindowRegistry();
     const controller = new MenuController({
-      appName: "Traycer",
+      appName: "Planwise",
       platform: "linux",
       windowRegistry: registry,
       host: new FakeHost(),
@@ -688,7 +688,7 @@ describe("MenuController", () => {
       },
     ]);
     const controller = new MenuController({
-      appName: "Traycer",
+      appName: "Planwise",
       platform: "linux",
       windowRegistry: new FakeWindowRegistry(),
       host: new FakeHost(),
@@ -975,7 +975,7 @@ describe("MenuController", () => {
     const zoomController = new FakeZoomController();
     const dispatchRendererCommand = vi.fn(() => true);
     const controller = new MenuController({
-      appName: "Traycer",
+      appName: "Planwise",
       platform: "darwin",
       windowRegistry: new FakeWindowRegistry(),
       host: new FakeHost(),
@@ -1391,7 +1391,7 @@ describe("MenuController", () => {
     it("omits Restart Host while lanes are inactive, shows it once onChange fires them active, and dispose() unsubscribes", () => {
       const localHostLanes = new FakeLocalHostLanes(false, false);
       const controller = new MenuController({
-        appName: "Traycer",
+        appName: "Planwise",
         platform: "darwin",
         windowRegistry: new FakeWindowRegistry(),
         host: new FakeHost(),
@@ -1405,7 +1405,7 @@ describe("MenuController", () => {
       });
 
       controller.install();
-      expect(() => menuItemInTopLevel("Traycer", "Restart Host")).toThrow(
+      expect(() => menuItemInTopLevel("Planwise", "Restart Host")).toThrow(
         "missing",
       );
       expect(() => menuItemInTopLevel("Help", "Restart Host")).toThrow(
@@ -1416,7 +1416,7 @@ describe("MenuController", () => {
       localHostLanes.active = true;
       localHostLanes.fireChange();
 
-      expect(menuItemInTopLevel("Traycer", "Restart Host")).toBeDefined();
+      expect(menuItemInTopLevel("Planwise", "Restart Host")).toBeDefined();
       expect(menuItemInTopLevel("Help", "Restart Host")).toBeDefined();
 
       controller.dispose();
@@ -1425,7 +1425,7 @@ describe("MenuController", () => {
 
     function newController(localHostLanes: FakeLocalHostLanes): MenuController {
       return new MenuController({
-        appName: "Traycer",
+        appName: "Planwise",
         platform: "darwin",
         windowRegistry: new FakeWindowRegistry(),
         host: new FakeHost(),
@@ -1448,7 +1448,7 @@ describe("MenuController", () => {
       const localHostLanes = new FakeLocalHostLanes(true, true);
       const controller = newController(localHostLanes);
       controller.install();
-      expect(() => menuItemInTopLevel("Traycer", "Restart Host")).toThrow(
+      expect(() => menuItemInTopLevel("Planwise", "Restart Host")).toThrow(
         "missing",
       );
       expect(() => menuItemInTopLevel("Help", "Restart Host")).toThrow(
@@ -1461,7 +1461,7 @@ describe("MenuController", () => {
       const localHostLanes = new FakeLocalHostLanes(true, false);
       const controller = newController(localHostLanes);
       controller.install();
-      expect(menuItemInTopLevel("Traycer", "Restart Host")).toBeDefined();
+      expect(menuItemInTopLevel("Planwise", "Restart Host")).toBeDefined();
       expect(menuItemInTopLevel("Help", "Restart Host")).toBeDefined();
       controller.dispose();
     });
@@ -1470,17 +1470,17 @@ describe("MenuController", () => {
       const localHostLanes = new FakeLocalHostLanes(true, false);
       const controller = newController(localHostLanes);
       controller.install();
-      expect(menuItemInTopLevel("Traycer", "Restart Host")).toBeDefined();
+      expect(menuItemInTopLevel("Planwise", "Restart Host")).toBeDefined();
 
       localHostLanes.foreground = true;
       localHostLanes.fireChange();
-      expect(() => menuItemInTopLevel("Traycer", "Restart Host")).toThrow(
+      expect(() => menuItemInTopLevel("Planwise", "Restart Host")).toThrow(
         "missing",
       );
 
       localHostLanes.foreground = false;
       localHostLanes.fireChange();
-      expect(menuItemInTopLevel("Traycer", "Restart Host")).toBeDefined();
+      expect(menuItemInTopLevel("Planwise", "Restart Host")).toBeDefined();
 
       controller.dispose();
     });
@@ -1489,7 +1489,7 @@ describe("MenuController", () => {
       const localHostLanes = new FakeLocalHostLanes(false, true);
       const controller = newController(localHostLanes);
       controller.install();
-      expect(() => menuItemInTopLevel("Traycer", "Restart Host")).toThrow(
+      expect(() => menuItemInTopLevel("Planwise", "Restart Host")).toThrow(
         "missing",
       );
       expect(() => menuItemInTopLevel("Help", "Restart Host")).toThrow(

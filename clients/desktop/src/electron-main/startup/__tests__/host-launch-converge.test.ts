@@ -24,7 +24,7 @@ import type { SignedInGate } from "../host-launch-converge";
 const electronMock = vi.hoisted(() => ({
   app: {
     getPath: vi.fn(() => "/tmp"),
-    getName: vi.fn(() => "Traycer"),
+    getName: vi.fn(() => "Planwise"),
     getVersion: vi.fn(() => "0.0.0"),
     on: vi.fn(),
   },
@@ -656,7 +656,7 @@ describe("runLaunchHostConvergeReconcile (fixup B1 + B2)", () => {
       {
         kind: "deferred",
         message:
-          "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
+          "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
       },
       { kind: "ok", value: { activated: true } },
     );
@@ -1134,7 +1134,7 @@ describe("armLocalHostBootOnSignIn", () => {
             {
               kind: "deferred",
               message:
-                "Traycer couldn't confirm that the Traycer Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
+                "Planwise couldn't confirm that the Planwise Host task on this PC belongs to your Windows account, so it left the task alone. Try again, or run `traycer host doctor`.",
             },
           ],
           calls,
@@ -1159,7 +1159,7 @@ describe("armLocalHostBootOnSignIn", () => {
           [
             {
               kind: "deferred",
-              message: "Another Traycer process is managing the host.",
+              message: "Another Planwise process is managing the host.",
             },
           ],
           calls,
@@ -1576,7 +1576,7 @@ describe("armLocalHostBootOnSignIn", () => {
               }
             : {
                 kind: "deferred" as const,
-                message: "another Traycer process holds the CLI lock",
+                message: "another Planwise process holds the CLI lock",
               },
         );
       },

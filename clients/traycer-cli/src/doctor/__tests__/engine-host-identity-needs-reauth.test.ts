@@ -349,7 +349,7 @@ describe("runDoctor host identity needs-reauth", () => {
     // And the recoveries point in opposite directions.
     expect(identity?.terminalCommand).toBe("traycer login");
     expect(credential?.terminalCommand).toBeNull();
-    expect(credential?.message).toContain("open the Traycer desktop app");
+    expect(credential?.message).toContain("open the Planwise desktop app");
     // Exactly one of each - substituted nowhere, duplicated nowhere.
     expect(issues.filter((i) => i.code === IDENTITY_CODE)).toHaveLength(1);
     expect(issues.filter((i) => i.code === CREDENTIAL_CODE)).toHaveLength(1);

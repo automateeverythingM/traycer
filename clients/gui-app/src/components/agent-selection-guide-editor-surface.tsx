@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export const AGENT_SELECTION_GUIDE_TITLE = "Agent selection guide";
 export const AGENT_SELECTION_GUIDE_DESCRIPTION =
-  "Instructions for choosing Traycer agents' harnesses, models, and reasoning effort. Provider-native subagents follow their provider's configuration and do not have separate Traycer agent IDs.";
+  "Instructions for choosing Planwise agents' harnesses, models, and reasoning effort. Provider-native subagents follow their provider's configuration and do not have separate Planwise agent IDs.";
 
 type AgentSelectionGuideEditorSurfaceProps = {
   readonly titleId: string;

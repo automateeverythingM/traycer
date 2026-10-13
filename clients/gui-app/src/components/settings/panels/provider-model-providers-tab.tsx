@@ -620,7 +620,7 @@ export function ProviderModelProvidersTab(props: {
     >
       <p className="text-ui-xs text-muted-foreground">
         Credentials for the upstream model providers {providerLabel} can call.
-        They are stored by {providerLabel} itself, so its CLI and Traycer see
+        They are stored by {providerLabel} itself, so its CLI and Planwise see
         the same sign-ins.
       </p>
 

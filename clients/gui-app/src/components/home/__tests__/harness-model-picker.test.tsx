@@ -1659,7 +1659,7 @@ describe("<HarnessModelPicker />", () => {
   it("shows a deprecated-model badge with its notice as a tooltip", async () => {
     const deprecationNotice =
       "Claude Sonnet 4.6 is deprecated in favor of Claude Sonnet 5 and " +
-      "will be removed from Traycer on 2026-08-31. Switch to Claude Sonnet 5.";
+      "will be removed from Planwise on 2026-08-31. Switch to Claude Sonnet 5.";
     installClaudeCatalog([
       model({
         harnessId: "claude",

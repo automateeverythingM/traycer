@@ -328,7 +328,7 @@ describe("<ImportLoginsDialog /> choose-sites step", () => {
     expect(excludedCheckbox.disabled).toBe(true);
     expect(
       screen.getByText(
-        "Google accounts are left out: Google binds sign-ins to the device they were made on. Sign in to Google inside Traycer once, or import them anyway and accept that they can stop working.",
+        "Google accounts are left out: Google binds sign-ins to the device they were made on. Sign in to Google inside Planwise once, or import them anyway and accept that they can stop working.",
       ),
     ).not.toBeNull();
     const optIn = screen.getByRole("switch", {

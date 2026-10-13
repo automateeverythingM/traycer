@@ -631,7 +631,7 @@ describe("<SessionImportWizard />", () => {
 
     expect(screen.getAllByTestId("session-import-row")).toHaveLength(1);
     expect(screen.queryByText("Already there")).toBeNull();
-    expect(screen.queryByText("In Traycer")).toBeNull();
+    expect(screen.queryByText("In Planwise")).toBeNull();
   });
 
   it("shows imported rows after a compatible scan and opens their task without selecting them", () => {

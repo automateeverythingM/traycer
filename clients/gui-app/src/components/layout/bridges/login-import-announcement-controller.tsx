@@ -110,7 +110,7 @@ export function LoginImportAnnouncementController(): null {
       <ActionToastContent
         toastId={LOGIN_IMPORT_ANNOUNCEMENT_TOAST_ID}
         eyebrow="New in this release"
-        title="Your browser logins, in Traycer"
+        title="Your browser logins, in Planwise"
         description="Import the logins from the browser you already use, so agents work on those sites as you."
         actionLabel="Import logins…"
         onAction={() => {

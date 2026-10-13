@@ -106,13 +106,13 @@ export function describeOverviewDegrade(
     case "unsupported":
       return `${hostName} is running a version that doesn't support this yet. Update it and this comes back on its own.`;
     case "cli-unavailable":
-      return `${hostName} has no Traycer CLI installed to run this, so it can't be done over the connection.`;
+      return `${hostName} has no Planwise CLI installed to run this, so it can't be done over the connection.`;
     case "externally-managed":
       // Deliberately offers no alternative inside Traycer, because there is
       // none: this host skips the update reconciler entirely, so neither the
       // version list nor the auto-update switch below reaches it. An earlier
       // wording sent people to a version pin that this page no longer has.
-      return `${hostName}'s updates are managed outside Traycer. Whatever deploys it decides its version — nothing here will change it.`;
+      return `${hostName}'s updates are managed outside Planwise. Whatever deploys it decides its version — nothing here will change it.`;
     case "terminal-run":
       return HOST_FOREGROUND_RESTART_REASON;
   }
@@ -137,11 +137,11 @@ export function describeCliShellFailure(
 ): string {
   switch (failure) {
     case "cli-unavailable":
-      return `${hostName} has no Traycer CLI installed, so it can't run this.`;
+      return `${hostName} has no Planwise CLI installed, so it can't run this.`;
     case "cli-failed":
-      return `${hostName}'s Traycer CLI couldn't complete the request.`;
+      return `${hostName}'s Planwise CLI couldn't complete the request.`;
     case "invalid-output":
-      return `${hostName}'s Traycer CLI answered in a format this app doesn't understand. It's probably a different version than this app expects.`;
+      return `${hostName}'s Planwise CLI answered in a format this app doesn't understand. It's probably a different version than this app expects.`;
   }
 }
 

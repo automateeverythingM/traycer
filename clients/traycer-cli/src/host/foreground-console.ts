@@ -169,7 +169,7 @@ export function openForegroundConsole(
       percent: null,
       bytes: null,
       totalBytes: null,
-      message: `supervising the Traycer host in the foreground; log=${path}`,
+      message: `supervising the Planwise host in the foreground; log=${path}`,
       workUnits: null,
       timestamp: deps.now(),
     };
@@ -183,7 +183,7 @@ export function openForegroundConsole(
   // banner is the last line this CLI writes in its own voice.
   deps.writeText(
     [
-      `Running the Traycer host in the foreground (environment=${options.environment}).`,
+      `Running the Planwise host in the foreground (environment=${options.environment}).`,
       `  log:  ${path}`,
       `  stop: press Ctrl-C`,
       ...(options.mode === "banner"

@@ -91,7 +91,7 @@ describe("curated core highlighter (smoke)", () => {
   });
 });
 
-describe("Traycer StreamingHighlighter adapter", () => {
+describe("Planwise StreamingHighlighter adapter", () => {
   it("highlights settled blocks and writes the theme-aware cache once", async () => {
     await waitForReady();
     const core = await getOrCreateHighlighter();
@@ -126,7 +126,7 @@ describe("Traycer StreamingHighlighter adapter", () => {
   });
 });
 
-describe("useThrottledHighlight + Traycer adapter", () => {
+describe("useThrottledHighlight + Planwise adapter", () => {
   it("highlights settled blocks synchronously through the adapter cache", async () => {
     await waitForReady();
     const core = await getOrCreateHighlighter();

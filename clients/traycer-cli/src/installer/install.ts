@@ -1477,7 +1477,7 @@ function swapLockFailureSuffix(
       : "";
   if (!isRetryableRenameCode(code)) return "";
   return (
-    "; no Traycer process matches the install directory - another program" +
+    "; no Planwise process matches the install directory - another program" +
     " is holding it open (an antivirus or indexer scan, a terminal or" +
     " Explorer window inside it, or an orphaned child process whose" +
     " working directory is inside it). Close it or restart Windows, then" +

@@ -103,7 +103,7 @@ afterEach(async () => {
 const INSTALLED_VERSION = "2.0.0";
 const SERVICE_LABEL = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production" as const,
   devSlot: null,
 };

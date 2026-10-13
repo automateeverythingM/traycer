@@ -283,7 +283,7 @@ describe("<HostLifecycleSettingsRow />", () => {
   it("renders nothing without the lifecycle bridge", () => {
     renderRow(createFakeRunnerHost({ hostLifecycle: null }));
     expect(screen.queryByTestId("host-lifecycle-select")).toBeNull();
-    expect(screen.queryByText("When you quit Traycer")).toBeNull();
+    expect(screen.queryByText("When you quit Planwise")).toBeNull();
   });
 
   it("renders nothing with no runner host at all", () => {

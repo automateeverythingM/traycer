@@ -163,7 +163,7 @@ async function electronBinary(): Promise<string> {
     return helpers.prepareElectronBinary(
       defaultBinary,
       DESKTOP_ROOT,
-      "Traycer Tree Zoom Test",
+      "Planwise Tree Zoom Test",
     );
   });
 }

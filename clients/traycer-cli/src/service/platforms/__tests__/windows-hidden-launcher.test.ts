@@ -112,7 +112,7 @@ function commandLineToArgv(commandLine: string): readonly string[] {
 function label(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host",
+    displayName: "Planwise Host",
     environment: "production",
     devSlot: null,
   };

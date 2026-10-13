@@ -829,9 +829,9 @@ async function runWindowPhase(state: BootState): Promise<AppServices> {
         tray === null
           ? Promise.resolve(false)
           : tray.showNotice({
-              title: "Traycer is still running",
+              title: "Planwise is still running",
               content:
-                "Traycer is still running in the tray. Quit from the tray to stop the host.",
+                "Planwise is still running in the tray. Quit from the tray to stop the host.",
             }),
     }),
   });

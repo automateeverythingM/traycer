@@ -111,7 +111,7 @@ describe("host-start script / identity attestation lockstep", () => {
     // two cannot drift silently.
     const launcherPath = serviceLauncherScriptPath({
       id: labelId,
-      displayName: "Traycer Host (Dev)",
+      displayName: "Planwise Host (Dev)",
       environment: "dev",
       devSlot: null,
     });
@@ -195,7 +195,7 @@ describe("host-start script / identity attestation lockstep", () => {
     expect(
       serviceLauncherScriptPath({
         id: labelId,
-        displayName: "Traycer Host (Dev)",
+        displayName: "Planwise Host (Dev)",
         environment: "dev",
         devSlot: null,
       }).endsWith(`/${labelId}/${HOST_START_LAUNCHER_BASENAME}`),

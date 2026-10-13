@@ -163,7 +163,7 @@ function RemoveFromAccountRow(props: {
         open={confirmOpen}
         onOpenChange={setConfirmOpen}
         title={`Remove ${hostName} from this account?`}
-        description={`${hostName} stops appearing in your host list and stops reporting presence. Nothing on that machine changes - Traycer stays installed and no agents, history or credentials are deleted. It won't rejoin on its own, and signing in on that machine again won't bring it back: it has to be set up again there. Its host ID is kept, so setting it up again restores the same name and settings.`}
+        description={`${hostName} stops appearing in your host list and stops reporting presence. Nothing on that machine changes - Planwise stays installed and no agents, history or credentials are deleted. It won't rejoin on its own, and signing in on that machine again won't bring it back: it has to be set up again there. Its host ID is kept, so setting it up again restores the same name and settings.`}
         cascadeSummary={null}
         actionLabel="Remove from account"
         isPending={removeFromAccount.isPending}
@@ -244,7 +244,7 @@ function RemovedTraycerStatus(props: RemovedTraycerStatusProps): ReactNode {
             data-testid="settings-quit-after-uninstall"
             onClick={() => requestAppQuit()}
           >
-            Quit Traycer
+            Quit Planwise
           </Button>
         }
       />
@@ -292,7 +292,7 @@ function RemovedTraycerStatus(props: RemovedTraycerStatusProps): ReactNode {
           data-testid="settings-quit-after-uninstall"
           onClick={() => requestAppQuit()}
         >
-          Quit Traycer
+          Quit Planwise
         </Button>
       }
     />
@@ -361,7 +361,7 @@ function RemoveTraycerRow(): ReactNode {
                 variant={undefined}
               />
             ) : null}
-            Remove Traycer
+            Remove Planwise
           </Button>
         }
       />
@@ -369,10 +369,10 @@ function RemoveTraycerRow(): ReactNode {
         blockedReason={blockedReason}
         open={confirmOpen}
         onOpenChange={setConfirmOpen}
-        title="Remove Traycer from this computer?"
-        description="This stops and removes Traycer's background host and services and won't reinstall them automatically. Your agents, history and credentials stay on this computer - you can reinstall anytime from Settings."
+        title="Remove Planwise from this computer?"
+        description="This stops and removes Planwise's background host and services and won't reinstall them automatically. Your agents, history and credentials stay on this computer - you can reinstall anytime from Settings."
         cascadeSummary={null}
-        actionLabel="Remove Traycer"
+        actionLabel="Remove Planwise"
         isPending={uninstall.isPending}
         onConfirm={() => {
           uninstall.mutate(undefined, {

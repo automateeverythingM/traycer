@@ -105,7 +105,7 @@ export const FALLBACK_RUNG_COPY: Record<FallbackRungKind, FallbackRungCopy> = {
     // publishes no reset time would expect a wait and get a skipped step. The
     // precondition is the whole gate on this rung, so it goes first.
     description:
-      "If the provider gives a reset time within your longest wait, Traycer waits until then and retries the message.",
+      "If the provider gives a reset time within your longest wait, Planwise waits until then and retries the message.",
     chipLabel: "wait",
   },
   notify: {
@@ -126,7 +126,7 @@ export const FALLBACK_RUNG_COPY: Record<FallbackRungKind, FallbackRungCopy> = {
     // rather than spatial - so it survives both a reorder and an early
     // `notify`, which a "below" cannot.
     description:
-      "Traycer notifies you and stops trying. Later steps won't run.",
+      "Planwise notifies you and stops trying. Later steps won't run.",
     chipLabel: "notify",
   },
 };

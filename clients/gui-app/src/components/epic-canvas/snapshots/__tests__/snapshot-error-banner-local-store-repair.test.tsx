@@ -69,7 +69,7 @@ const HOST_WITHOUT_REBIND: readonly string[] = ["host.status"];
 const LOCAL_STORE_ERROR: SnapshotFetchError = {
   code: "LOCAL_STORE_UNAVAILABLE",
   message: "The local store refused to open.",
-  localStoreRemedy: "Stop the other Traycer host, then rebind.",
+  localStoreRemedy: "Stop the other Planwise host, then rebind.",
   upgradeGuidance: null,
 };
 

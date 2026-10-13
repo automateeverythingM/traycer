@@ -3,10 +3,10 @@ import { createReportIssueContext } from "@/lib/report-issue-context";
 import { reportableErrorToast } from "@/lib/reportable-error-toast";
 
 const TOAST_CHANNEL_REPORT_CONTEXT = createReportIssueContext({
-  title: "Traycer operation failed",
+  title: "Planwise operation failed",
   message: null,
   code: null,
-  source: "Traycer app",
+  source: "Planwise app",
 });
 
 /**

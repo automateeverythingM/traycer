@@ -186,7 +186,7 @@ describe("desktop app updater", () => {
       status: "error",
       downloadProgress: null,
       errorMessage:
-        "Traycer ran into a problem while updating. Please try again in a little while.",
+        "Planwise ran into a problem while updating. Please try again in a little while.",
       // The download was user-initiated, so its failure is manual-intent.
       lastCheckIntent: "manual",
     });
@@ -357,7 +357,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
       installInFlight: false,
     });
     expect(updater.isInstallingUpdate()).toBe(false);
@@ -386,7 +386,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Move Traycer to your Applications folder to install updates.",
+        "Move Planwise to your Applications folder to install updates.",
       installInFlight: false,
     });
     expect(updater.isInstallingUpdate()).toBe(false);
@@ -459,7 +459,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Traycer couldn't reach the update service right now. Please try again in a little while.",
+        "Planwise couldn't reach the update service right now. Please try again in a little while.",
       lastCheckIntent: "manual",
     });
     const leakedMessage = updater.getAppUpdateSnapshot().errorMessage ?? "";
@@ -481,7 +481,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Traycer couldn't connect to check for updates. Please check your internet connection and try again.",
+        "Planwise couldn't connect to check for updates. Please check your internet connection and try again.",
       lastCheckIntent: "manual",
     });
   });
@@ -496,7 +496,7 @@ describe("desktop app updater", () => {
     await updater.checkForUpdatesNow(false, "manual");
 
     expect(updater.getAppUpdateSnapshot().errorMessage).toBe(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
   });
 
@@ -519,7 +519,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Traycer couldn't download and install the latest update. Please try again in a little while.",
+        "Planwise couldn't download and install the latest update. Please try again in a little while.",
     });
   });
 
@@ -533,7 +533,7 @@ describe("desktop app updater", () => {
     await updater.checkForUpdatesNow(false, "manual");
 
     expect(updater.getAppUpdateSnapshot().errorMessage).toBe(
-      "Traycer ran into a problem while updating. Please try again in a little while.",
+      "Planwise ran into a problem while updating. Please try again in a little while.",
     );
   });
 
@@ -658,11 +658,11 @@ describe("desktop app updater", () => {
   // of the behavior and not an implementation detail.
   describe("update failure classification", () => {
     const SIGNATURE_MESSAGE =
-      "Traycer couldn't verify this update and did not install it. Please download Traycer again from traycer.ai.";
+      "Planwise couldn't verify this update and did not install it. Please download Planwise again from traycer.ai.";
     const DOWNLOAD_MESSAGE =
-      "Traycer couldn't download and install the latest update. Please try again in a little while.";
+      "Planwise couldn't download and install the latest update. Please try again in a little while.";
     const SERVICE_MESSAGE =
-      "Traycer couldn't reach the update service right now. Please try again in a little while.";
+      "Planwise couldn't reach the update service right now. Please try again in a little while.";
 
     async function messageFor(raw: string): Promise<string | null> {
       const { autoUpdater, updater } = await loadUpdater(NOT_LINUX_GUIDANCE);
@@ -793,7 +793,7 @@ describe("desktop app updater", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Traycer couldn't reach the update service right now. Please try again in a little while.",
+        "Planwise couldn't reach the update service right now. Please try again in a little while.",
     });
   });
 
@@ -862,12 +862,12 @@ describe("desktop app updater", () => {
     await updater.installAutoUpdater(true, {
       isAnyWindowFocused: () => true,
       focusPrimaryWindow: vi.fn(),
-      installBlockedReason: () => "Move Traycer to your Applications folder.",
+      installBlockedReason: () => "Move Planwise to your Applications folder.",
     });
     await updater.checkForUpdatesNow(false, "automatic");
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "available",
-      installBlockedReason: "Move Traycer to your Applications folder.",
+      installBlockedReason: "Move Planwise to your Applications folder.",
     });
 
     updater.startUpdateDownload();
@@ -915,8 +915,8 @@ describe("desktop app updater", () => {
 
     expect(notify).toHaveBeenCalledTimes(1);
     expect(notify).toHaveBeenCalledWith(
-      "Traycer update available",
-      "Open Traycer to download v2.0.0.",
+      "Planwise update available",
+      "Open Planwise to download v2.0.0.",
       expect.any(Function),
     );
   });
@@ -1934,7 +1934,7 @@ describe("Linux deb/rpm silent-install gating", () => {
     const snapshot = updater.getAppUpdateSnapshot();
     expect(snapshot.status).toBe("error");
     expect(snapshot.errorMessage).toBe(
-      "Traycer couldn't finish installing the update automatically. Follow the instructions below to finish it manually.",
+      "Planwise couldn't finish installing the update automatically. Follow the instructions below to finish it manually.",
     );
     expect(snapshot.installGuidance).toMatchObject({
       command: 'sudo dpkg -i "/home/user/.cache/updater/pending/traycer.deb"',
@@ -1965,7 +1965,7 @@ describe("Linux deb/rpm silent-install gating", () => {
     const snapshot = updater.getAppUpdateSnapshot();
     expect(snapshot.installGuidance).toBeNull();
     expect(snapshot.errorMessage).toBe(
-      "Traycer couldn't download and install the latest update. Please try again in a little while.",
+      "Planwise couldn't download and install the latest update. Please try again in a little while.",
     );
   });
 });
@@ -2962,7 +2962,7 @@ describe("staging updater release authentication and channel", () => {
     expect(updater.getAppUpdateSnapshot()).toMatchObject({
       status: "error",
       errorMessage:
-        "Traycer couldn't reach the update service right now. Please try again in a little while.",
+        "Planwise couldn't reach the update service right now. Please try again in a little while.",
     });
 
     // The lease was NOT discarded: changing the env token has no effect until
@@ -3098,7 +3098,7 @@ describe("staging updater release authentication and channel", () => {
     // the original generic error stands rather than being reinterpreted as
     // an authentication failure.
     expect(updater.getAppUpdateSnapshot().errorMessage).toBe(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
     expect(calls).toHaveLength(1);
     expect(calls[0]).toContain("/repos/traycerai/traycer-internal");
@@ -3149,7 +3149,7 @@ describe("staging updater release authentication and channel", () => {
 
     expect(updater.getAppUpdateSnapshot().status).toBe("error");
     expect(updater.getAppUpdateSnapshot().errorMessage).toBe(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
     // No token means the masked-404 discriminator never runs - a good-faith
     // absent/public repository 404s the same way with or without one, so no
@@ -3291,7 +3291,7 @@ describe("staging updater release authentication and channel", () => {
     // A service failure, not a credential verdict.
     expect(updater.getAppUpdateSnapshot().status).toBe("error");
     expect(updater.getAppUpdateSnapshot().errorMessage).toBe(
-      "Traycer couldn't reach the update service right now. Please try again in a little while.",
+      "Planwise couldn't reach the update service right now. Please try again in a little while.",
     );
 
     // And the lease survives: changing the env token has no effect, because
@@ -3736,7 +3736,7 @@ describe("macOS native update preparation", () => {
       status: "error",
       downloadProgress: null,
       errorMessage:
-        "Traycer couldn't download and install the latest update. Please try again in a little while.",
+        "Planwise couldn't download and install the latest update. Please try again in a little while.",
     });
 
     // The old bug: clicking Restart here called `quitAndInstall`, which then
@@ -3986,7 +3986,7 @@ describe("macOS native update preparation", () => {
       status: "error",
       downloadProgress: null,
       errorMessage:
-        "Traycer couldn't download and install the latest update. Please try again in a little while.",
+        "Planwise couldn't download and install the latest update. Please try again in a little while.",
     });
 
     // The earlier ignored wrapper-only error did not strand ownership of the
@@ -4209,7 +4209,7 @@ async function loadUpdaterWithControls(
         downloadedFile: string | null,
       ) => ({
         summary: `guidance for ${packageType} (${latestVersion ?? "unknown"})`,
-        steps: ["Open a terminal.", "Run the command.", "Restart Traycer."],
+        steps: ["Open a terminal.", "Run the command.", "Restart Planwise."],
         command:
           downloadedFile === null
             ? null
@@ -4257,11 +4257,11 @@ function macReleaseFixture(
       // macOS updates apply from the ZIP; the DMG is install-only. Discovery
       // requires the ZIP, so it must be present for the release to be eligible.
       {
-        name: `Traycer-${version}-mac.zip`,
+        name: `Planwise-${version}-mac.zip`,
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-zip`,
       },
       {
-        name: `Traycer-${version}-mac.dmg`,
+        name: `Planwise-${version}-mac.dmg`,
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-dmg`,
       },
     ],
@@ -4293,7 +4293,7 @@ function macDmgOnlyReleaseFixture(
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-manifest`,
       },
       {
-        name: `Traycer-${version}-mac.dmg`,
+        name: `Planwise-${version}-mac.dmg`,
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-dmg`,
       },
     ],
@@ -4303,7 +4303,7 @@ function macDmgOnlyReleaseFixture(
 // The GitHub asset name for a mac release's arm64 Squirrel.Mac ZIP.
 function macArm64ZipAssetName(tag: string): string {
   const version = tag.replace(/^desktop-v/, "");
-  return `Traycer-${version}-arm64-mac.zip`;
+  return `Planwise-${version}-arm64-mac.zip`;
 }
 
 // A macOS release publishing ONLY the arm64 ZIP (no x64/universal ZIP), so
@@ -4383,7 +4383,7 @@ function windowsReleaseFixture(
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-manifest`,
       },
       {
-        name: `Traycer-Setup-${version}.exe`,
+        name: `Planwise-Setup-${version}.exe`,
         url: `https://api.github.com/repos/traycerai/traycer/releases/assets/${tag}-exe`,
       },
     ],
@@ -4395,7 +4395,7 @@ function windowsReleaseFixture(
 // must reference for the release to validate.
 function macZipAssetName(tag: string): string {
   const version = tag.replace(/^desktop-v/, "");
-  return `Traycer-${version}-mac.zip`;
+  return `Planwise-${version}-mac.zip`;
 }
 
 // Builds a minimal, fully valid electron-updater channel manifest (the same

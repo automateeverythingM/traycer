@@ -387,5 +387,5 @@ function pollRequestTimeoutMs(intervalMs: number): number {
  */
 function deviceHostLabel(): string {
   const hostname = os.hostname();
-  return hostname.length > 0 ? hostname : "Traycer Desktop";
+  return hostname.length > 0 ? hostname : "Planwise Desktop";
 }

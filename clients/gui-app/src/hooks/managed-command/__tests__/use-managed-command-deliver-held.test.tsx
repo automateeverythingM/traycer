@@ -264,7 +264,7 @@ describe("useManagedCommandDeliverHeld", () => {
           code: "delivery_row_undecodable",
           retryable: false,
           message:
-            "This shell's output was saved by a newer version of Traycer than this host runs.",
+            "This shell's output was saved by a newer version of Planwise than this host runs.",
         },
       ],
       unattributed: [],
@@ -291,7 +291,7 @@ describe("useManagedCommandDeliverHeld", () => {
           commandId: "cmd-1",
           code: "delivery_row_written_by_newer_build",
           retryable: false,
-          message: "This shell's output was written by a newer Traycer host.",
+          message: "This shell's output was written by a newer Planwise host.",
         },
       ],
       unattributed: [],
@@ -307,7 +307,7 @@ describe("useManagedCommandDeliverHeld", () => {
     expect(toastError).toHaveBeenCalledWith(
       "That shell's output can't be delivered by this host.",
       {
-        description: "This shell's output was written by a newer Traycer host.",
+        description: "This shell's output was written by a newer Planwise host.",
       },
     );
     expect(toastWarning).not.toHaveBeenCalled();
@@ -321,7 +321,7 @@ describe("useManagedCommandDeliverHeld", () => {
           commandId: "cmd-1",
           code: "delivery_row_written_by_newer_build",
           retryable: false,
-          message: "This shell's output was written by a newer Traycer host.",
+          message: "This shell's output was written by a newer Planwise host.",
         },
         {
           commandId: "cmd-2",

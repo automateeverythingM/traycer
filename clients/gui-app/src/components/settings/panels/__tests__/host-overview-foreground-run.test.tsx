@@ -992,7 +992,7 @@ function floorStagedManifest(version: string): HostAvailableManifest {
           ...entry.platforms["darwin-arm64"],
           available: false,
           unavailableReason:
-            "Needs Traycer CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
+            "Needs Planwise CLI 1.3.0 or newer (this host's CLI is 1.2.0).",
         },
       },
     })),

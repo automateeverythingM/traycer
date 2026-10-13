@@ -76,7 +76,7 @@ describe("source badges", () => {
       "with its own base URL and models",
     );
     expect(sourceBadgeHint("config", "OpenCode", false)).toContain(
-      "managed outside Traycer",
+      "managed outside Planwise",
     );
   });
 });

@@ -88,7 +88,7 @@ describe.runIf(process.platform !== "win32")("probeMacosWedgedJob", () => {
     // Desktop owns the registration: the repair routes through the app,
     // with the never-refuse uninstall as the escape hatch when the app
     // itself is what is broken.
-    expect(issue?.message).toContain("Traycer Desktop app");
+    expect(issue?.message).toContain("Planwise Desktop app");
     expect(issue?.message).toContain("traycer host service uninstall");
     expect(issue?.terminalCommand).toBe("traycer host service uninstall");
     expect(issue?.fixAction).toBeNull();

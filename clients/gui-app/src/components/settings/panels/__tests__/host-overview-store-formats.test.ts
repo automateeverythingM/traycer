@@ -534,7 +534,7 @@ describe("hostStoreFormatRestriction", () => {
       detail:
         "This device's chat stores couldn't be read, so installing this version may lose access to those chats.",
       confirmation:
-        "This device's chat stores couldn't be read, so Traycer can't verify v1.2.0 can open them.",
+        "This device's chat stores couldn't be read, so Planwise can't verify v1.2.0 can open them.",
     });
   });
 
@@ -553,7 +553,7 @@ describe("hostStoreFormatRestriction", () => {
       detail:
         "v1.3.0 doesn't publish which chat store format it reads, so this device's data can't be verified against it.",
       confirmation:
-        "v1.3.0 doesn't publish which chat store format it reads, so Traycer can't verify it can open this device's chats.",
+        "v1.3.0 doesn't publish which chat store format it reads, so Planwise can't verify it can open this device's chats.",
     });
   });
 
@@ -680,7 +680,7 @@ describe("hostStoreFormatRestriction", () => {
       detail:
         "v1.3.0 doesn't publish which chat store format it reads, so this device's data can't be verified against it.",
       confirmation:
-        "v1.3.0 doesn't publish which chat store format it reads, so Traycer can't verify it can open this device's chats.",
+        "v1.3.0 doesn't publish which chat store format it reads, so Planwise can't verify it can open this device's chats.",
     });
   });
 
@@ -879,7 +879,7 @@ describe("hostStoreFormatRestrictionFromRpc", () => {
     );
     expect(restriction.kind).toBe("blocked");
     expect(restriction.confirmation).toContain(
-      "2 epics (epic-c, epic-d) couldn't be read, so Traycer can't verify v1.2.0 can open them.",
+      "2 epics (epic-c, epic-d) couldn't be read, so Planwise can't verify v1.2.0 can open them.",
     );
     expect(restriction.confirmation).toMatch(
       /Nothing is deleted; a host that reads format 9 opens them again\.$/,

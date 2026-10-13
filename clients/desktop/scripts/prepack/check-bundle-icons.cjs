@@ -172,7 +172,7 @@ if (problems.length > 0) {
       "\n\n" +
       "         The desktop build refuses to package without native app icons.\n" +
       "         Windows requires resources/bundle/icon.ico so Start menu and\n" +
-      "         desktop shortcuts use the Traycer icon instead of Electron's\n" +
+      "         desktop shortcuts use the Planwise icon instead of Electron's\n" +
       "         default executable icon.\n" +
       "         Linux requires the resources/bundle/icons set so the hicolor\n" +
       "         theme can resolve the .desktop entry's Icon= key - regenerate\n" +

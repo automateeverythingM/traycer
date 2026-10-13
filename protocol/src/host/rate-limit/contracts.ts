@@ -107,7 +107,7 @@ function degradeProviderRateLimitsToV12(
 const RATE_LIMIT_READ_REQUIRES_NEWER_CLIENT = {
   code: "DOWNGRADE_UNSUPPORTED" as const,
   message:
-    "Reading this provider's rate limits requires a newer Traycer client.",
+    "Reading this provider's rate limits requires a newer Planwise client.",
 };
 
 function namesProviderNewerThanV40(
@@ -179,7 +179,7 @@ export const providersRefreshProfileStatusDowngradeV20ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED" as const,
             message:
-              "Refreshing this provider's profile status requires a newer Traycer client.",
+              "Refreshing this provider's profile status requires a newer Planwise client.",
           },
         };
       }
@@ -217,7 +217,7 @@ export const providersRefreshProfileStatusDowngradeV30ToV20 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED" as const,
             message:
-              "Refreshing this provider's profile status requires a newer Traycer client.",
+              "Refreshing this provider's profile status requires a newer Planwise client.",
           },
         };
       }
@@ -244,7 +244,7 @@ export const providersRefreshProfileStatusDowngradeV30ToV10 =
           error: {
             code: "DOWNGRADE_UNSUPPORTED" as const,
             message:
-              "Refreshing this provider's profile status requires a newer Traycer client.",
+              "Refreshing this provider's profile status requires a newer Planwise client.",
           },
         };
       }

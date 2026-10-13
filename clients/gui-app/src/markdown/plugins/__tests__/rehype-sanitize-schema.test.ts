@@ -4,7 +4,7 @@ import { extendTraycerSanitizeSchema } from "@/markdown/plugins/rehype-sanitize-
 import { TRAYCER_CHAT_TAG } from "@/markdown/plugins/const";
 
 describe("extendTraycerSanitizeSchema", () => {
-  it("merges Traycer tag attributes with an existing allowlist for the same tag", () => {
+  it("merges Planwise tag attributes with an existing allowlist for the same tag", () => {
     const base: Schema = {
       attributes: {
         [TRAYCER_CHAT_TAG]: ["data-caller-extra"],

@@ -183,7 +183,7 @@ describe("<PushPermissionSection />", () => {
     expect(action.dataset.testid).toBe("push-permission-action");
     expect(
       screen.getByText(
-        "Turned off for Traycer in system Settings. Turn them on to get buzzed when an agent needs you.",
+        "Turned off for Planwise in system Settings. Turn them on to get buzzed when an agent needs you.",
       ),
     ).toBeTruthy();
     expect(screen.getByTestId("push-permission-state").dataset.state).toBe(

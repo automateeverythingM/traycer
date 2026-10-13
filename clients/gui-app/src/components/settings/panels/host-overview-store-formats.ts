@@ -500,7 +500,7 @@ function unknownTargetRestriction(version: string): HostStoreFormatRestriction {
     kind: "unknown",
     reason: "Chat store format not published",
     detail: `v${version} doesn't publish which chat store format it reads, so this device's data can't be verified against it.`,
-    confirmation: `v${version} doesn't publish which chat store format it reads, so Traycer can't verify it can open this device's chats.`,
+    confirmation: `v${version} doesn't publish which chat store format it reads, so Planwise can't verify it can open this device's chats.`,
   };
 }
 
@@ -514,7 +514,7 @@ function unreadableStoresRestriction(
     // own formats nobody can place sends upgrades down this branch too.
     detail:
       "This device's chat stores couldn't be read, so installing this version may lose access to those chats.",
-    confirmation: `This device's chat stores couldn't be read, so Traycer can't verify v${version} can open them.`,
+    confirmation: `This device's chat stores couldn't be read, so Planwise can't verify v${version} can open them.`,
   };
 }
 
@@ -551,7 +551,7 @@ function newerStoresRestriction(
   const unreadableSentence =
     unreadable === null || unreadable.count === 0
       ? ""
-      : ` ${describeEpicGroup(unreadable.count, unreadable.epicIds)} couldn't be read, so Traycer can't verify v${version} can open them.`;
+      : ` ${describeEpicGroup(unreadable.count, unreadable.epicIds)} couldn't be read, so Planwise can't verify v${version} can open them.`;
   // The remedy names the FORMAT rather than a direction. This restriction is
   // no longer downgrade-only: over an install whose own formats nobody can
   // place, the floor evaluates an upgrade too, and "update forward" is

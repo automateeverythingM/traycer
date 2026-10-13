@@ -1002,7 +1002,7 @@ describe("<HostSettingsPanel /> Overview restart outcomes — Force restart", ()
     const restartHostIfIdle = vi.fn(() =>
       Promise.resolve({
         kind: "declined" as const,
-        message: "Another Traycer process holds the management lock.",
+        message: "Another Planwise process holds the management lock.",
       }),
     );
     const management = buildOverviewManagement({ restartHostIfIdle });
@@ -1041,7 +1041,7 @@ describe("<HostSettingsPanel /> Overview restart outcomes — Force restart", ()
       expect(toast.info).toHaveBeenCalledWith(
         "Host not restarted",
         expect.objectContaining({
-          description: "Another Traycer process holds the management lock.",
+          description: "Another Planwise process holds the management lock.",
         }),
       );
     });
@@ -1470,7 +1470,7 @@ describe("<HostSettingsPanel /> Overview doctor structured failure", () => {
     await openHostOverviewMenu();
     fireEvent.click(screen.getByTestId("host-overview-run-doctor"));
     const message = await screen.findByTestId("host-doctor-message");
-    expect(message.textContent).toContain("no Traycer CLI installed");
+    expect(message.textContent).toContain("no Planwise CLI installed");
     expect(toast.error).not.toHaveBeenCalled();
   });
 });

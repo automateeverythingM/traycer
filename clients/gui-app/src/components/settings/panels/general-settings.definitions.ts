@@ -111,7 +111,7 @@ export const GENERAL = defineSettingsSection("general", {
     kind: "row",
     group: "agents",
     search: { anchor: "general-host-lifecycle" },
-    label: "When you quit Traycer",
+    label: "When you quit Planwise",
     description:
       "Choose what happens to the host on this machine when you quit: keep it running in the background, ask each time, stop it if idle, stop it with the app, or don't run a host here.",
     availableWhen: isHostLifecycleRowAvailable,
@@ -137,7 +137,7 @@ export const GENERAL = defineSettingsSection("general", {
   hostLifecycleCard: {
     kind: "group",
     search: { contributesTo: "hostLifecycle" },
-    label: "When you quit Traycer",
+    label: "When you quit Planwise",
     description: null,
     breadcrumb: null,
     availableWhen: isHostLifecycleRowAvailable,

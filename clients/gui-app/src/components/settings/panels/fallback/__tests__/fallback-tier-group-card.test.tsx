@@ -696,7 +696,7 @@ describe("FallbackTierGroupCard - row status line (rowStatusLine / RowStatus)", 
     // `${skipLabel} - warnings` would still pass a test asserting
     // `data-unmatched`, which is why the exact text is pinned here too.
     expect(line.textContent).toBe(
-      `No ${harnessLabel("claude")} model matches gpt-9. Traycer will skip this row. low balance`,
+      `No ${harnessLabel("claude")} model matches gpt-9. Planwise will skip this row. low balance`,
     );
     // canEdit is false (patternsSupported: false on a 1.0-host row), so no
     // "Edit pattern" action renders beside the unmatched line.
@@ -722,7 +722,7 @@ describe("FallbackTierGroupCard - row status line (rowStatusLine / RowStatus)", 
     const line = screen.getByTestId("fallback-tier-candidate-preview");
     expect(line.getAttribute("data-unmatched")).toBe("true");
     expect(line.textContent).toBe(
-      `No ${harnessLabel("codex")} model matches *x*. Traycer will skip this row.`,
+      `No ${harnessLabel("codex")} model matches *x*. Planwise will skip this row.`,
     );
   });
 

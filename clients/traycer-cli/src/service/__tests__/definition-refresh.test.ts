@@ -64,7 +64,7 @@ import { readFile } from "node:fs/promises";
 function labelFor(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host (test)",
+    displayName: "Planwise Host (test)",
     environment: "dev",
     devSlot: null,
   };

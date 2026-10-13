@@ -18,7 +18,7 @@ import { FakeHostController } from "../../ipc/__tests__/fake-host-controller";
 const electronMock = vi.hoisted(() => ({
   app: {
     getPath: vi.fn(() => "/tmp"),
-    getName: vi.fn(() => "Traycer"),
+    getName: vi.fn(() => "Planwise"),
     getVersion: vi.fn(() => "0.0.0"),
     on: vi.fn(),
   },

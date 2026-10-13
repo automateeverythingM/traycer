@@ -1004,12 +1004,12 @@ function deriveBannerAriaLabel(
   offeredVersion: string | null,
 ): string {
   if (terminalOutcome !== null) {
-    return `Traycer host update failed: ${terminalOutcome.message}`;
+    return `Planwise host update failed: ${terminalOutcome.message}`;
   }
   if (updateDeferral !== null) {
-    return `Traycer host update waiting: ${updateDeferral.message}`;
+    return `Planwise host update waiting: ${updateDeferral.message}`;
   }
-  return `Traycer host update available: ${offeredVersion ?? ""}`;
+  return `Planwise host update available: ${offeredVersion ?? ""}`;
 }
 
 function deriveBannerClassName(
@@ -1201,7 +1201,7 @@ function UpdateOrDebtContent(props: UpdateOrDebtContentProps) {
       <span className="min-w-0 flex-1">
         {props.showUpdate ? (
           <>
-            A new Traycer host is available:{" "}
+            A new Planwise host is available:{" "}
             <span className="font-mono">{props.offeredVersion}</span>
             {props.installedVersion !== null ? (
               <>

@@ -1133,7 +1133,7 @@ async function planLinuxDefinition(
   if (registered === null) {
     return {
       kind: "unrecognized",
-      reason: "its ExecStart is not a Traycer host start",
+      reason: "its ExecStart is not a Planwise host start",
     };
   }
   let unitText: string;

@@ -267,7 +267,7 @@ function GlobalShortcutsSection(props: GlobalShortcutsSectionProps) {
           Global shortcuts
         </h2>
         <p className="mt-1 text-ui-xs text-muted-foreground">
-          Registered system-wide - fires from anywhere, even when Traycer isn't
+          Registered system-wide - fires from anywhere, even when Planwise isn't
           focused.
         </p>
       </header>
@@ -300,7 +300,7 @@ function SummonHotkeyRow(props: SummonHotkeyRowProps) {
     return (
       <li className="flex items-center justify-between gap-6 px-5 py-3">
         <span className="truncate text-ui-sm text-foreground">
-          Summon Traycer
+          Summon Planwise
         </span>
       </li>
     );
@@ -320,10 +320,10 @@ function SummonHotkeyRow(props: SummonHotkeyRowProps) {
     <li className="flex items-center justify-between gap-6 px-5 py-3">
       <div className="flex flex-col gap-0.5">
         <span className="truncate text-ui-sm text-foreground">
-          Summon Traycer
+          Summon Planwise
         </span>
         <span className="text-ui-xs text-muted-foreground">
-          Shows and focuses Traycer from anywhere.
+          Shows and focuses Planwise from anywhere.
         </span>
       </div>
       <div className="flex flex-col items-end gap-1">

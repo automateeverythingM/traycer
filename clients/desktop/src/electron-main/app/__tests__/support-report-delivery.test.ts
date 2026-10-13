@@ -287,7 +287,7 @@ function buildService(
     environment: "production",
   };
   return new DesktopSupportService({
-    appName: "Traycer",
+    appName: "Planwise",
     host: { getSnapshot: () => null },
     authSession: {
       get: () => {

@@ -662,7 +662,7 @@ export function buildProgramWithAgentRoles(
   program
     .name("traycer")
     .description(
-      "Traycer CLI - sign in, run the Traycer host on this machine, and work with the agents in a Task",
+      "Planwise CLI - sign in, run the Planwise host on this machine, and work with the agents in a Task",
     )
     .version(cliVersion);
 
@@ -863,7 +863,7 @@ function registerAuthCommands(program: Command): void {
   withRunner(
     program
       .command("login")
-      .description("Sign in to Traycer via your browser")
+      .description("Sign in to Planwise via your browser")
       // Hidden per the house convention for `"Internal:"` options: the payload
       // is produced by a sign-in elsewhere and piped on stdin, so there is
       // nothing a person at a terminal can usefully type here. Its contract is
@@ -899,9 +899,9 @@ function registerAuthCommands(program: Command): void {
         [
           "",
           "What this removes:",
-          "  - The stored credentials for this environment. Traycer Desktop and",
+          "  - The stored credentials for this environment. Planwise Desktop and",
           "    other clients read the same file, so they lose the session too, as",
-          "    each notices the change. A Traycer Host that is already running",
+          "    each notices the change. A Planwise Host that is already running",
           "    holds its own delegated credential and keeps it until it stops.",
           "  - The local published-chat cache. Every entry is a copy of bytes the",
           "    cloud still holds, so this only costs a re-fetch after signing in.",
@@ -932,7 +932,7 @@ function registerAuthCommands(program: Command): void {
     program
       .command("whoami")
       .description(
-        "Validate the stored credentials with Traycer and print the signed-in user",
+        "Validate the stored credentials with Planwise and print the signed-in user",
       )
       .option(
         "--local",
@@ -960,7 +960,7 @@ function registerAuthCommands(program: Command): void {
           "'stored', not 'valid').",
           "",
           "Exit codes:",
-          "  0  default: validated with Traycer. --local: a credential is stored",
+          "  0  default: validated with Planwise. --local: a credential is stored",
           "     here, which is NOT proof that it still works.",
           "  1  signed out (either mode), or the stored credentials were rejected.",
           "  2  the authn service could not be reached (default mode only).",
@@ -973,7 +973,7 @@ function registerAuthCommands(program: Command): void {
   withRunner(
     program
       .command("link-phone")
-      .description("Sign the Traycer mobile app in by scanning a code")
+      .description("Sign the Planwise mobile app in by scanning a code")
       .option(
         "--no-qr",
         "Print only the typeable code (for terminals that mangle block glyphs)",
@@ -1013,7 +1013,7 @@ function registerHostCommands(program: Command): void {
   const host = program
     .command("host")
     .description(
-      "Install, run, update, and troubleshoot the Traycer host on this machine",
+      "Install, run, update, and troubleshoot the Planwise host on this machine",
     );
 
   // `host start` is the long-running supervisor invoked by service
@@ -1468,7 +1468,7 @@ function registerHostCommands(program: Command): void {
           "There is no rollback if the post-swap start fails: the new bytes stay installed and",
           "'traycer host doctor' reports the non-readiness.",
           "",
-          "macOS with Traycer Desktop managing the host differs in step 3. Traycer Desktop",
+          "macOS with Planwise Desktop managing the host differs in step 3. Planwise Desktop",
           "keeps ownership of the registration - nothing here rewrites or removes it - and a",
           "busy host still refuses the install. But a host that cannot be asked to stop is",
           "swapped under anyway, and the CLI then asks Desktop's existing agent registration",
@@ -2291,7 +2291,7 @@ function registerServiceCommands(host: Command): void {
       )
       .option(
         "--takeover",
-        "macOS only: move host management from the Traycer Desktop app to the CLI (stops the Desktop-managed host cooperatively, deregisters its agent, then registers the CLI-owned service)",
+        "macOS only: move host management from the Planwise Desktop app to the CLI (stops the Desktop-managed host cooperatively, deregisters its agent, then registers the CLI-owned service)",
       )
       .addOption(attemptAdoptionOption())
       .addOption(lifecycleOriginOption()),
@@ -2359,18 +2359,18 @@ function registerServiceCommands(host: Command): void {
 function registerHostLifecycleCommands(host: Command): void {
   const modeHelp = `
 Modes:
-  background    Start the host when you log in. Keep work running after you quit Traycer Desktop.
-  linked        Start the host when you open Traycer Desktop. Quitting stops the host and its work.
-  ask           Start the host with Traycer Desktop. When you quit, ask whether to keep work running or stop it.
-  stop-if-idle  Start the host with Traycer Desktop. When you quit, stop if nothing is running; otherwise, ask.
-  none          Don't start a host on this machine. Use Traycer Desktop to connect to remote hosts instead.
+  background    Start the host when you log in. Keep work running after you quit Planwise Desktop.
+  linked        Start the host when you open Planwise Desktop. Quitting stops the host and its work.
+  ask           Start the host with Planwise Desktop. When you quit, ask whether to keep work running or stop it.
+  stop-if-idle  Start the host with Planwise Desktop. When you quit, stop if nothing is running; otherwise, ask.
+  none          Don't start a host on this machine. Use Planwise Desktop to connect to remote hosts instead.
 
-A host you started manually in a terminal keeps running when you quit Traycer Desktop.
+A host you started manually in a terminal keeps running when you quit Planwise Desktop.
 `;
   const lifecycle = host
     .command("lifecycle")
     .description(
-      "Show or change when the host starts and what happens to running work when you quit Traycer Desktop",
+      "Show or change when the host starts and what happens to running work when you quit Planwise Desktop",
     )
     .addHelpText("after", modeHelp);
 
@@ -2378,7 +2378,7 @@ A host you started manually in a terminal keeps running when you quit Traycer De
     lifecycle
       .command("get")
       .description(
-        "Show the current mode, whether Traycer Desktop is open, how the host was started, and whether it supports the selected mode.",
+        "Show the current mode, whether Planwise Desktop is open, how the host was started, and whether it supports the selected mode.",
       ),
     () => hostLifecycleGetCommand,
   );
@@ -2387,7 +2387,7 @@ A host you started manually in a terminal keeps running when you quit Traycer De
     lifecycle
       .command("set")
       .description(
-        "Choose when the host starts and what happens when you quit Traycer Desktop. This command does not start or stop the host. Startup changes apply the next time the host starts automatically. Quit behavior can update while Traycer Desktop is open, but a quit already in progress keeps your earlier choice. Some running hosts need a restart to apply the mode. Choosing 'none' leaves the running host alone; Traycer Desktop switches to remote hosts on its next launch. Login startup settings are updated when needed to match the mode.",
+        "Choose when the host starts and what happens when you quit Planwise Desktop. This command does not start or stop the host. Startup changes apply the next time the host starts automatically. Quit behavior can update while Planwise Desktop is open, but a quit already in progress keeps your earlier choice. Some running hosts need a restart to apply the mode. Choosing 'none' leaves the running host alone; Planwise Desktop switches to remote hosts on its next launch. Login startup settings are updated when needed to match the mode.",
       )
       .argument("<mode>", "background | linked | ask | stop-if-idle | none")
       .addHelpText("after", modeHelp),
@@ -2413,7 +2413,7 @@ function registerCliCommands(program: Command): void {
     cli
       .command("upgrade")
       .description(
-        "Download and install the CLI version Traycer's release feed currently publishes, replacing the tracked binary " +
+        "Download and install the CLI version Planwise's release feed currently publishes, replacing the tracked binary " +
           "recorded in the CLI install manifest (not necessarily the file you invoked). " +
           "Only Desktop-installed and manual installs can self-upgrade: Homebrew, npm, winget, Scoop, apt and rpm installs are " +
           "refused with their manager's upgrade command, so package ownership stays intact. " +
@@ -2487,10 +2487,10 @@ function registerCliCommands(program: Command): void {
     cli
       .command("re-anchor")
       .description(
-        "Point Traycer's upgrade tracking at a CLI binary you installed or moved by hand, so future 'cli upgrade' runs update the right file. " +
+        "Point Planwise's upgrade tracking at a CLI binary you installed or moved by hand, so future 'cli upgrade' runs update the right file. " +
           "Use after manually relocating or replacing the binary, or when 'cli upgrade' reports no recorded install. " +
           "Records the install as manual and clears any pending upgrade; it does not move the binary, and the version you pass is " +
-          "recorded as given - it is never checked against the binary. Refreshing Traycer's copy of the binary is best-effort: a " +
+          "recorded as given - it is never checked against the binary. Refreshing Planwise's copy of the binary is best-effort: a " +
           "failure there is reported but does not fail the command.",
       )
       .requiredOption(
@@ -2517,12 +2517,12 @@ function registerCliCommands(program: Command): void {
 function registerConfigCommands(program: Command): void {
   const config = program
     .command("config")
-    .description("Read or change the Traycer settings stored on this machine");
+    .description("Read or change the Planwise settings stored on this machine");
 
   const shell = config
     .command("shell")
     .description(
-      "Choose the shell Traycer uses to start the host and to open terminal tabs",
+      "Choose the shell Planwise uses to start the host and to open terminal tabs",
     );
   withRunner(
     shell
@@ -2647,7 +2647,7 @@ function registerConfigCommands(program: Command): void {
   const env = config
     .command("env")
     .description(
-      "Environment variables Traycer adds when it starts the host and opens terminal tabs",
+      "Environment variables Planwise adds when it starts the host and opens terminal tabs",
     );
   withRunner(
     env.command("list").description("List env overrides"),
@@ -2850,8 +2850,8 @@ function registerProfileCommands(program: Command): void {
         .command(enabled ? "enable" : "disable")
         .description(
           enabled
-            ? "Let Traycer use a profile again"
-            : "Stop Traycer using a profile without removing it",
+            ? "Let Planwise use a profile again"
+            : "Stop Planwise using a profile without removing it",
         )
         .argument("<provider>", providerArgument)
         .argument("<profile>", profileArgument),
@@ -2956,14 +2956,14 @@ function registerWorktreeCommands(program: Command): void {
   const worktree = program
     .command("worktree")
     .description(
-      "Create, list, and remove the Git worktrees Traycer manages on this machine",
+      "Create, list, and remove the Git worktrees Planwise manages on this machine",
     );
 
   withRunner(
     worktree
       .command("list")
       .description(
-        "List every Traycer-managed worktree on this host (host-wide)",
+        "List every Planwise-managed worktree on this host (host-wide)",
       )
       .option(
         "--include-activity",
@@ -2989,7 +2989,7 @@ function registerWorktreeCommands(program: Command): void {
     worktree
       .command("delete", deleteHidden)
       .description(
-        "Remove a Traycer-managed worktree by path (runs its teardown script, streams output)",
+        "Remove a Planwise-managed worktree by path (runs its teardown script, streams output)",
       )
       .requiredOption("--path <path>", "Worktree path to remove"),
     (opts) =>
@@ -3225,7 +3225,7 @@ function registerAgentCommands(
     agent
       .command("selection-guide", readonlyHidden)
       .description(
-        "Get instructions for choosing Traycer agents’ harnesses, models, and reasoning effort. Does not configure provider-native subagents.",
+        "Get instructions for choosing Planwise agents’ harnesses, models, and reasoning effort. Does not configure provider-native subagents.",
       ),
     () =>
       buildAgentSelectionGuideCommand({
@@ -3635,7 +3635,7 @@ function registerMonitorCommand(program: Command): void {
         hidden: resolveAgentCliSurface(readonlyEnv()) === "readonly",
       })
       .description(
-        "Stream this agent's inter-agent inbox messages to stdout. Long-running: each message it prints is acknowledged as delivered on the host, and it refreshes this machine's stored Traycer credentials (and provisions a host credential if one is missing) while it runs.",
+        "Stream this agent's inter-agent inbox messages to stdout. Long-running: each message it prints is acknowledged as delivered on the host, and it refreshes this machine's stored Planwise credentials (and provisions a host credential if one is missing) while it runs.",
       )
       .option(
         "--agent-id <id>",

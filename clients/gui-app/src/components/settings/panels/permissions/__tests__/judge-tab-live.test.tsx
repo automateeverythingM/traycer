@@ -443,11 +443,11 @@ beforeEach(() => {
   judgeCatalog.harnesses = [
     harness({ id: "claude", label: "Claude Code", nativeAutoJudge: true }),
     harness({ id: "codex", label: "Codex", judgeDefaultModel: "gpt-mini" }),
-    harness({ id: "traycer", label: "Traycer" }),
+    harness({ id: "traycer", label: "Planwise" }),
   ];
   setModels("traycer", {
     kind: "ready",
-    models: [model("traycer", "traycer-fast", "Traycer Fast", {})],
+    models: [model("traycer", "traycer-fast", "Planwise Fast", {})],
   });
   setModels("claude", {
     kind: "ready",
@@ -781,16 +781,16 @@ describe("JudgeTab against the real query stack", () => {
       return screen.getByTestId("auto-judge-effective").textContent;
     }
 
-    it("g: an availability transition shows no Traycer verdict while the re-read is pending or refused, and the fallback once it answers", async () => {
+    it("g: an availability transition shows no Planwise verdict while the re-read is pending or refused, and the fallback once it answers", async () => {
       const fixture = createFixture();
       fixture.setStored(null);
       fixture.setEffective(DEFAULT_VERDICT);
       renderTab(fixture);
       await waitFor(() =>
-        expect(effectiveText()).toContain("Traycer Fast on Traycer"),
+        expect(effectiveText()).toContain("Planwise Fast on Planwise"),
       );
       expect(effectiveText()).toBe(
-        "Now: Traycer Fast on Traycer · uses Traycer credits",
+        "Now: Planwise Fast on Planwise · uses Planwise credits",
       );
 
       fixture.interceptGets(true);
@@ -801,14 +801,14 @@ describe("JudgeTab against the real query stack", () => {
       });
       await waitFor(() => expect(fixture.heldGets).toHaveLength(1));
       await flush();
-      expect(document.body.textContent).not.toContain("on Traycer");
+      expect(document.body.textContent).not.toContain("on Planwise");
 
       await act(async () => {
         heldGetAt(fixture, 0).fail();
         await Promise.resolve();
       });
       await flush();
-      expect(document.body.textContent).not.toContain("on Traycer");
+      expect(document.body.textContent).not.toContain("on Planwise");
 
       // CONTROL: once the host answers the transition, the line is the
       // fallback's.
@@ -885,7 +885,7 @@ describe("JudgeTab against the real query stack", () => {
         await waitFor(() => expect(fixture.held).toHaveLength(1));
       }
 
-      it("h: while the post-save read is held or refused, no Traycer verdict shows", async () => {
+      it("h: while the post-save read is held or refused, no Planwise verdict shows", async () => {
         const fixture = createFixture();
         await chooseAutomaticHeld(fixture);
         fixture.setEcho(AUTOMATIC_ECHO);
@@ -896,14 +896,14 @@ describe("JudgeTab against the real query stack", () => {
         });
         await waitFor(() => expect(fixture.heldGets).toHaveLength(1));
         await flush();
-        expect(document.body.textContent).not.toContain("on Traycer");
+        expect(document.body.textContent).not.toContain("on Planwise");
 
         await act(async () => {
           heldGetAt(fixture, 0).fail();
           await Promise.resolve();
         });
         await flush();
-        expect(document.body.textContent).not.toContain("on Traycer");
+        expect(document.body.textContent).not.toContain("on Planwise");
       });
 
       it("h-control: the post-save read answering fallback shows the fallback line", async () => {

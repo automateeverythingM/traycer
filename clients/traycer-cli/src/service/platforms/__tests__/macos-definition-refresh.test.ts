@@ -85,7 +85,7 @@ import type { CliInvocation } from "../../cli-binary";
 function labelFor(id: string): ServiceLabel {
   return {
     id,
-    displayName: "Traycer Host (test)",
+    displayName: "Planwise Host (test)",
     environment: "dev",
     devSlot: null,
   };
@@ -344,7 +344,7 @@ describe("not-registered and unrecognized", () => {
     expect(processRunnerCalls).toEqual([]);
   });
 
-  it("a plist whose ProgramArguments is not a Traycer host start: unrecognized; refresh throws naming 'traycer host service install', plist untouched", async () => {
+  it("a plist whose ProgramArguments is not a Planwise host start: unrecognized; refresh throws naming 'traycer host service install', plist untouched", async () => {
     const label = labelFor("unrecognized-macos");
     const originalPlist = craftPlist(
       label,
@@ -356,7 +356,7 @@ describe("not-registered and unrecognized", () => {
     const state = await inspectMacosServiceDefinition(label);
     expect(state).toEqual({
       kind: "unrecognized",
-      reason: "its ProgramArguments are not a Traycer host start",
+      reason: "its ProgramArguments are not a Planwise host start",
     });
 
     const error = await refreshMacosServiceDefinition(label).catch(

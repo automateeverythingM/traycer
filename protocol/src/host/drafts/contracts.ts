@@ -86,7 +86,7 @@ export const draftsUpsertDowngradeV20ToV10 = defineDowngradePath<
         ok: false,
         error: {
           code: "DOWNGRADE_UNSUPPORTED",
-          message: "This draft requires a newer Traycer client.",
+          message: "This draft requires a newer Planwise client.",
         },
       };
     }

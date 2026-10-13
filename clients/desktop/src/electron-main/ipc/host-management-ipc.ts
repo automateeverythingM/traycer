@@ -918,16 +918,16 @@ export function laneBusyRestartMessage(kind: MutationKind): string {
     case "apply":
     case "activate":
     case "ensure":
-      return "Traycer is installing an update on this host. Restart it once that finishes.";
+      return "Planwise is installing an update on this host. Restart it once that finishes.";
     case "register":
     case "deregister":
     case "refreshService":
-      return "Traycer is changing this host's background service. Restart it once that finishes.";
+      return "Planwise is changing this host's background service. Restart it once that finishes.";
     case "uninstallHost":
     case "removeTraycer":
-      return "Traycer is removing this host. There is nothing to restart until that finishes.";
+      return "Planwise is removing this host. There is nothing to restart until that finishes.";
     case "stopHost":
-      return "Traycer is stopping this host. Start it again once that finishes.";
+      return "Planwise is stopping this host. Start it again once that finishes.";
     case "respawn":
     case "recoverIfDown":
     case "freePortAndRestart":
@@ -947,7 +947,7 @@ export function admissionBlockRestartMessage(
     case "mutation":
       return laneBusyRestartMessage(block.lane.kind);
     case "login-item-refresh":
-      return "Traycer is refreshing this host's background service registration. Try again once that finishes.";
+      return "Planwise is refreshing this host's background service registration. Try again once that finishes.";
   }
 }
 

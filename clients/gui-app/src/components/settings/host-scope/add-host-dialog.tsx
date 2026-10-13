@@ -253,7 +253,7 @@ function AddHostDialogBody(): ReactNode {
       </DialogHeader>
 
       <ol className="flex min-w-0 flex-col" data-testid="add-host-steps">
-        <Step index={1} title="Install the Traycer CLI">
+        <Step index={1} title="Install the Planwise CLI">
           <Tabs defaultValue="npm" className="gap-1.5">
             <TabsList
               variant="line"

@@ -35,7 +35,7 @@ export const THEME_PRESETS: ReadonlyArray<ThemePresetOption> = [
   },
   {
     id: "traycer-green",
-    label: "Traycer Green",
+    label: "Planwise Green",
     swatch: "#1A2421",
     fg: "#FFFFFF",
     accent: "#257174",

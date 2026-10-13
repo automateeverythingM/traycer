@@ -841,11 +841,11 @@ function verdictBody(model: TestVerdictModel): string {
     case "incomplete":
       return model.text;
     case "fallback-off":
-      return `Your steps are turned off for ${TEST_FAILURE_PLURALS[model.failure]}, so Traycer doesn't try another model.`;
+      return `Your steps are turned off for ${TEST_FAILURE_PLURALS[model.failure]}, so Planwise doesn't try another model.`;
     case "tier-off":
       return model.steps === null
-        ? `The equivalent-model step doesn't run for these errors, and what Traycer does instead ${DEPENDS_ON_THE_ERROR}.`
-        : `The equivalent-model step is off for ${TEST_FAILURE_PLURALS[model.failure]}, so Traycer goes straight to ${testStepsPhrase(model.steps)}.`;
+        ? `The equivalent-model step doesn't run for these errors, and what Planwise does instead ${DEPENDS_ON_THE_ERROR}.`
+        : `The equivalent-model step is off for ${TEST_FAILURE_PLURALS[model.failure]}, so Planwise goes straight to ${testStepsPhrase(model.steps)}.`;
     case "no-tier":
       return `${model.blocked.label} is not in any tier, so there is no equivalent-model step; ${
         model.next === null
@@ -862,8 +862,8 @@ function routedSentence(
 ): string {
   const start =
     model.routing.kind === "default-tier"
-      ? `Traycer uses your default tier, ${model.tierName}`
-      : `Traycer uses the ${model.tierName} tier`;
+      ? `Planwise uses your default tier, ${model.tierName}`
+      : `Planwise uses the ${model.tierName} tier`;
   const conflict =
     model.routing.kind === "own-tier" && model.routing.conflict !== null
       ? ` It is in ${tierCountPhrase(model.routing.conflict.length)}; ${tierDisplayName(model.routing.conflict[0].tierId, model.routing.conflict[0].tierIndex)} handles it until you fix the conflict.`

@@ -61,7 +61,7 @@ export function ChordCaptureInput(props: ChordCaptureInputProps) {
     return [
       {
         id: "global.summon",
-        label: "Summon Traycer (global shortcut)",
+        label: "Summon Planwise (global shortcut)",
         chord: summonStatus.effectiveChord,
       },
     ];

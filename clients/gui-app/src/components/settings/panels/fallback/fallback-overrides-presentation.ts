@@ -30,7 +30,7 @@ export const OVERRIDE_ACTION_HELP: Readonly<Record<FallbackRungKind, string>> =
     profile: "Use another signed-in account on the same provider.",
     tier: "Use a backup model from your Equivalent models list.",
     wait: "Only when the provider gives a reset time within your longest wait.",
-    notify: "Traycer notifies you and stops trying.",
+    notify: "Planwise notifies you and stops trying.",
   };
 
 export interface OverrideDescription {

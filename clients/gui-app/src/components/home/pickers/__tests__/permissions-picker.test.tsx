@@ -77,7 +77,7 @@ function renderPicker(overrides: Partial<RenderPickerOptions>) {
 }
 
 describe("<PermissionsPicker /> - catalogSupportedModes copy", () => {
-  it("blames a newer Traycer when the catalog lists modes but none includes auto", () => {
+  it("blames a newer Planwise when the catalog lists modes but none includes auto", () => {
     renderPicker({
       supportedPermissionModes: [
         "supervised",
@@ -91,7 +91,7 @@ describe("<PermissionsPicker /> - catalogSupportedModes copy", () => {
     openMenu();
 
     expect(
-      screen.getByText("Needs a newer Traycer on this machine."),
+      screen.getByText("Needs a newer Planwise on this machine."),
     ).toBeTruthy();
   });
 
@@ -192,7 +192,7 @@ describe("<PermissionsPicker /> - empty supportedPermissionModes means unconstra
       expect(option.getAttribute("aria-disabled")).not.toBe("true");
     }
     expect(screen.queryByText(/Not supported by/)).toBeNull();
-    expect(screen.queryByText("Needs a newer Traycer on this machine.")).toBe(
+    expect(screen.queryByText("Needs a newer Planwise on this machine.")).toBe(
       null,
     );
   });
@@ -374,7 +374,7 @@ describe("<PermissionsPicker /> - mid-turn lock", () => {
     const item = autoMenuItem();
     expect(item.hasAttribute("data-disabled")).toBe(true);
     expect(item.textContent).toContain(
-      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Traycer's judge in Providers ▸ Claude Code ▸ Permissions.",
+      "Claude Code's built-in classifier starts with your next turn. To switch now, pick Planwise's judge in Providers ▸ Claude Code ▸ Permissions.",
     );
     expect(
       screen.queryByTestId("permission-option-mid-turn-notice"),
@@ -466,7 +466,7 @@ describe("<PermissionsPicker /> - mid-turn lock", () => {
     expect(item.hasAttribute("data-disabled")).toBe(true);
     expect(item.textContent).not.toContain(AUTO_JUDGE_UNAVAILABLE_DESCRIPTION);
     expect(item.textContent).toContain(
-      "Needs a newer Traycer on this machine.",
+      "Needs a newer Planwise on this machine.",
     );
   });
 

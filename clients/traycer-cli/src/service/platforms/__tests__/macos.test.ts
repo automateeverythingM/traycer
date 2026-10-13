@@ -312,7 +312,7 @@ describe("macOS service lifecycle", () => {
   // Developer" - on every CLI-registered install (dev machines and the
   // desktop's takeover fallback alike). The association groups it under
   // the Traycer app in System Settings → Login Items.
-  it("associates the LaunchAgent with the Traycer desktop app so Login Items does not show it as 'sh'", () => {
+  it("associates the LaunchAgent with the Planwise desktop app so Login Items does not show it as 'sh'", () => {
     const plist = buildLaunchAgentPlist({
       label,
       cli: { command: "/usr/local/bin/traycer", args: [] },
@@ -2795,7 +2795,7 @@ printf '%s\\n' "$@" > ${JSON.stringify(newArgs)}
       // The takeover is an ownership change; the audit line is the only
       // record of it a support thread can recover.
       expect(MOCKS.cliLoggerInfo).toHaveBeenCalledWith(
-        expect.stringContaining("booted out Traycer Desktop's SMAppService"),
+        expect.stringContaining("booted out Planwise Desktop's SMAppService"),
         expect.objectContaining({ agentLabel: `${label.id}.agent` }),
       );
     });
@@ -2925,7 +2925,7 @@ printf '%s\\n' "$@" > ${JSON.stringify(newArgs)}
     // rather than bootstrap the CLI label beside a job nobody asked to
     // stand down. Idle here (no pid, no `running` claim to make) - the
     // refusal fires on ownership alone, before any liveness is read.
-    it("rejects with SERVICE_INSTALL_FAILED ('is not Traycer Desktop's registration') when the agent label is loaded idle but not by Desktop", async () => {
+    it("rejects with SERVICE_INSTALL_FAILED ('is not Planwise Desktop's registration') when the agent label is loaded idle but not by Desktop", async () => {
       const loadedPath = `/Users/me/Library/LaunchAgents/${label.id}.agent.plist`;
       const calls: RecordedCall[] = [];
       const runner: ProcessRunner = async (command, args) => {
@@ -2952,7 +2952,7 @@ printf '%s\\n' "$@" > ${JSON.stringify(newArgs)}
       ).rejects.toMatchObject({
         code: CLI_ERROR_CODES.SERVICE_INSTALL_FAILED,
         message: expect.stringContaining(
-          "is not Traycer Desktop's registration",
+          "is not Planwise Desktop's registration",
         ),
         details: expect.objectContaining({
           agentLabel: `${label.id}.agent`,

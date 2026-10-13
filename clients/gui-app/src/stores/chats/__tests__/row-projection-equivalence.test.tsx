@@ -594,7 +594,7 @@ describe("row projection / renderer equivalence", () => {
           turnId: "turn-1",
           messageId: "u-1",
           message:
-            "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
+            "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
           metadata: { autoJudge: "fallback" },
         }),
         event({
@@ -602,7 +602,7 @@ describe("row projection / renderer equivalence", () => {
           type: "permission.blocked",
           timestamp: 3000,
           message:
-            "Traycer could not resolve an auto-mode judge, so commands are being sent to you for approval. Pick a judge in Settings → Permissions.",
+            "Planwise could not resolve an auto-mode judge, so commands are being sent to you for approval. Pick a judge in Settings → Permissions.",
           metadata: { autoJudge: "unavailable" },
         }),
         event({
@@ -735,7 +735,7 @@ describe("row projection / renderer equivalence", () => {
           timestamp: 4500,
           turnId: "turn-2",
           message:
-            "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
+            "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
           metadata: { autoJudge: "fallback" },
         }),
         event({

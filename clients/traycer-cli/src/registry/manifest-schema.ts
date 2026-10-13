@@ -69,7 +69,7 @@ export function parseHostVersionsManifestWithWarnings(
   if (schemaVersion !== SUPPORTED_SCHEMA_VERSION) {
     throw cliError({
       code: CLI_ERROR_CODES.REGISTRY_UNAVAILABLE,
-      message: `host registry manifest at ${sourceLabel}: unsupported schemaVersion=${String(schemaVersion)} (expected ${SUPPORTED_SCHEMA_VERSION}); upgrade the Traycer CLI`,
+      message: `host registry manifest at ${sourceLabel}: unsupported schemaVersion=${String(schemaVersion)} (expected ${SUPPORTED_SCHEMA_VERSION}); upgrade the Planwise CLI`,
       details: { sourceLabel, schemaVersion },
       exitCode: 1,
     });

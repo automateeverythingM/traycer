@@ -178,4 +178,4 @@ export const REASON_ROW_NOTES: Readonly<
  * cancellation window, and Notify's position.
  */
 export const FALLBACK_OVERRIDES_DISCLOSURE =
-  "Turn off every option in a row and Traycer will not switch or wait for that problem - it will notify you instead. Outages and connection problems still get a brief retry first. There is no countdown to cancel.";
+  "Turn off every option in a row and Planwise will not switch or wait for that problem - it will notify you instead. Outages and connection problems still get a brief retry first. There is no countdown to cancel.";

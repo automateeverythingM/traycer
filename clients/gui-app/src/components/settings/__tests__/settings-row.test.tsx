@@ -267,13 +267,13 @@ describe("SettingsRow", () => {
     render(
       <SettingsRow
         row={ROWS.definitions.openLinks}
-        control={<DescribedControl>In Traycer</DescribedControl>}
+        control={<DescribedControl>In Planwise</DescribedControl>}
       />,
     );
 
     expect(
       screen
-        .getByRole("button", { name: "In Traycer" })
+        .getByRole("button", { name: "In Planwise" })
         .getAttribute("aria-describedby"),
     ).toBeNull();
   });
@@ -309,12 +309,12 @@ describe("SettingsRow", () => {
       <SettingsRow
         row={ROWS.definitions.openLinks}
         status="Checking…"
-        control={<DescribedControl>In Traycer</DescribedControl>}
+        control={<DescribedControl>In Planwise</DescribedControl>}
       />,
     );
 
     const describedBy = screen
-      .getByRole("button", { name: "In Traycer" })
+      .getByRole("button", { name: "In Planwise" })
       .getAttribute("aria-describedby");
     if (describedBy === null) throw new Error("expected aria-describedby");
     expect(document.getElementById(describedBy)?.textContent).toBe("Checking…");

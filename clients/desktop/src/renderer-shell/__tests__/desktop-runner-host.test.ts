@@ -357,7 +357,7 @@ function buildFakeBridge(
     },
     support: {
       getSnapshot: async () => ({
-        appName: "Traycer",
+        appName: "Planwise",
         appVersion: "0.0.0",
         platform: "darwin",
         arch: "arm64",

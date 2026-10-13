@@ -51,13 +51,13 @@ describe("findConflict", () => {
       const result = findConflict(bindings, "epic.new", "mod+shift+space", [
         {
           id: "global.summon",
-          label: "Summon Traycer (global shortcut)",
+          label: "Summon Planwise (global shortcut)",
           chord: "mod+shift+space",
         },
       ]);
       expect(result?.severity).toBe("duplicate");
       expect(result?.conflictingActionId).toBeNull();
-      expect(result?.message).toContain("Summon Traycer (global shortcut)");
+      expect(result?.message).toContain("Summon Planwise (global shortcut)");
     });
 
     it("ignores an externally reserved chord that doesn't match the candidate", () => {
@@ -65,7 +65,7 @@ describe("findConflict", () => {
       const result = findConflict(bindings, "epic.new", "mod+shift+o", [
         {
           id: "global.summon",
-          label: "Summon Traycer (global shortcut)",
+          label: "Summon Planwise (global shortcut)",
           chord: "mod+shift+space",
         },
       ]);

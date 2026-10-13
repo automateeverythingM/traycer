@@ -83,7 +83,7 @@ const EMPTY_FORK_ADMISSION: ReadonlyMap<string | null, ProfileRowAdmission> =
   new Map();
 
 const CAPABILITY_LOCK_REASON =
-  "Update Traycer host to continue this session under another profile.";
+  "Update Planwise host to continue this session under another profile.";
 const ADMISSION_PENDING_REASON =
   "Checking whether this profile can continue this session…";
 const ADMISSION_FAILED_REASON =

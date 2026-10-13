@@ -95,7 +95,7 @@ function unbreakableIssue(
     severity: "warning",
     title:
       "Host update-attempt lock was left by an interrupted install and will not be released",
-    message: `The host update-attempt lock at ${lockPath} was left by pid ${String(holder.pid)} (${holder.reason}, since ${holder.startedAt}), ${gone}. ${tree}, so no install, update or uninstall will break the lock. While it stays, every 'traycer host maintenance-lease' - every scripted desktop install and uninstall - is refused with "another host update contender is in progress". If no Traycer installer, uninstaller or update is running, remove the file; the next one then proceeds.`,
+    message: `The host update-attempt lock at ${lockPath} was left by pid ${String(holder.pid)} (${holder.reason}, since ${holder.startedAt}), ${gone}. ${tree}, so no install, update or uninstall will break the lock. While it stays, every 'traycer host maintenance-lease' - every scripted desktop install and uninstall - is refused with "another host update contender is in progress". If no Planwise installer, uninstaller or update is running, remove the file; the next one then proceeds.`,
     fixAction: null,
     terminalCommand: null,
     details: {

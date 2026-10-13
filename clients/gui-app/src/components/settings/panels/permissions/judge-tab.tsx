@@ -577,8 +577,8 @@ function AutomaticTileContent(
         </Badge>
       </ChoiceTileTitle>
       <ChoiceTileDescription id={descriptionId}>
-        Traycer&apos;s recommended model, or the conversation&apos;s own when
-        Traycer can&apos;t answer.
+        Planwise&apos;s recommended model, or the conversation&apos;s own when
+        Planwise can&apos;t answer.
       </ChoiceTileDescription>
       <ChoiceTileFooter aria-live="polite">
         <AutomaticFoot {...props} />

@@ -44,7 +44,7 @@ export function ClockSkewBanner(): ReactNode {
     return null;
   }
   const consequence = clockCanMakeValidBearersLookExpired(state)
-    ? "Traycer can't connect until it's corrected."
+    ? "Planwise can't connect until it's corrected."
     : "Times shown in the app will be wrong until it's corrected.";
   return (
     <output

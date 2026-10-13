@@ -185,9 +185,9 @@ describe("SessionImportProgress", () => {
 
     expect(screen.getByText("Nothing was imported")).toBeTruthy();
     expect(
-      screen.getByText("Everything you picked is already in Traycer."),
+      screen.getByText("Everything you picked is already in Planwise."),
     ).toBeTruthy();
-    expect(screen.getByText("2 already in Traycer")).toBeTruthy();
+    expect(screen.getByText("2 already in Planwise")).toBeTruthy();
   });
 
   it("puts the tour's misses in a chip once something did land", () => {
@@ -211,10 +211,10 @@ describe("SessionImportProgress", () => {
     expect(screen.getByTestId("session-import-not-imported").textContent).toBe(
       "2 not imported",
     );
-    expect(screen.getByText("1 already in Traycer")).toBeTruthy();
+    expect(screen.getByText("1 already in Planwise")).toBeTruthy();
   });
 
-  it("reports how many were already in Traycer", () => {
+  it("reports how many were already in Planwise", () => {
     useSessionImportRunStore.getState().markStarting(HOST, new Map());
     useSessionImportRunStore
       .getState()
@@ -231,7 +231,7 @@ describe("SessionImportProgress", () => {
       />,
     );
 
-    expect(screen.getByText("3 already in Traycer")).toBeTruthy();
+    expect(screen.getByText("3 already in Planwise")).toBeTruthy();
   });
 
   it("groups a complete run's failures by reason and keeps sessions hidden until the toggle is clicked", () => {

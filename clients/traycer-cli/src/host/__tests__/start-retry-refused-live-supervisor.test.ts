@@ -175,7 +175,7 @@ afterEach(async () => {
 const ENVIRONMENT = "production" as const;
 const LABEL: ServiceLabel = {
   id: "ai.traycer.host",
-  displayName: "Traycer Host",
+  displayName: "Planwise Host",
   environment: "production",
   devSlot: null,
 };

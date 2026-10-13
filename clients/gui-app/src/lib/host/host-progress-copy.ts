@@ -67,38 +67,38 @@ const DOWNLOAD_STAGE = "download";
  * wait looked like one modal being replaced by another. The moment a lane DOES
  * report, the headings below take over and say something genuinely new.
  */
-export const HOST_PROGRESS_IDLE_HEADING = "Starting Traycer…";
+export const HOST_PROGRESS_IDLE_HEADING = "Starting Planwise…";
 
 export function hostProgressHeading(
   kind: MutationKind,
   stage: string | null,
 ): string {
-  if (stage === DOWNLOAD_STAGE) return "Downloading Traycer Host…";
+  if (stage === DOWNLOAD_STAGE) return "Downloading Planwise Host…";
   switch (kind) {
     case "ensure":
-      return "Setting up Traycer Host…";
+      return "Setting up Planwise Host…";
     case "apply":
       return "Applying the host update…";
     case "activate":
-      return "Activating Traycer Host…";
+      return "Activating Planwise Host…";
     case "install":
-      return "Installing Traycer Host…";
+      return "Installing Planwise Host…";
     case "register":
       return "Registering the host service…";
     case "deregister":
       return "Removing the host service…";
     case "respawn":
-      return "Restarting Traycer Host…";
+      return "Restarting Planwise Host…";
     case "recoverIfDown":
-      return "Recovering Traycer Host…";
+      return "Recovering Planwise Host…";
     case "freePortAndRestart":
       return "Freeing the host port…";
     case "uninstallHost":
-      return "Uninstalling Traycer Host…";
+      return "Uninstalling Planwise Host…";
     case "removeTraycer":
-      return "Removing Traycer…";
+      return "Removing Planwise…";
     case "stopHost":
-      return "Stopping Traycer Host…";
+      return "Stopping Planwise Host…";
     case "refreshService":
       return "Updating the host service…";
   }

@@ -101,11 +101,11 @@ export function buildLinuxUpdateGuidance(
         ? `sudo dpkg -i "${downloadedFile}"`
         : `sudo rpm -U "${downloadedFile}"`;
   return {
-    summary: `Traycer downloaded ${versionLabel}, but this install can't apply it automatically - one manual step finishes it.`,
+    summary: `Planwise downloaded ${versionLabel}, but this install can't apply it automatically - one manual step finishes it.`,
     steps: [
       "Open a terminal.",
       "Run the command below to install the update.",
-      "Restart Traycer once it completes.",
+      "Restart Planwise once it completes.",
     ],
     command,
     releaseUrl: desktopReleasesUrl(),

@@ -7,7 +7,7 @@ import {
 
 export class HostRecoveryDeferredError extends Error {
   constructor() {
-    super("Host recovery deferred while another Traycer process owns the lock");
+    super("Host recovery deferred while another Planwise process owns the lock");
   }
 }
 

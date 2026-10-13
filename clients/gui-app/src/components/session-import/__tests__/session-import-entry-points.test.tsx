@@ -139,7 +139,7 @@ describe("Import your work row (via HostImportMigrationSection)", () => {
     expect(screen.getByRole("button", { name: "Import" })).toBeTruthy();
     expect(
       screen.getByText(
-        "Bring work you already started in Claude Code, Codex, or OpenCode into Traycer as tasks.",
+        "Bring work you already started in Claude Code, Codex, or OpenCode into Planwise as tasks.",
       ),
     ).toBeTruthy();
   });
@@ -205,7 +205,7 @@ describe("Import your work row (via HostImportMigrationSection)", () => {
     expect(screen.queryByText(/Last import:/)).toBeNull();
     expect(
       screen.getByText(
-        "Bring work you already started in Claude Code, Codex, or OpenCode into Traycer as tasks.",
+        "Bring work you already started in Claude Code, Codex, or OpenCode into Planwise as tasks.",
       ),
     ).toBeTruthy();
   });

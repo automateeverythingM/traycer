@@ -69,7 +69,7 @@ describe("theme customization contract", () => {
     expect(parsed.success).toBe(false);
   });
 
-  it("imports native Traycer JSONC and preserves normalized syntax", () => {
+  it("imports native Planwise JSONC and preserves normalized syntax", () => {
     const [theme] = importThemeText(
       `{
         // JSONC comments and trailing commas are accepted.

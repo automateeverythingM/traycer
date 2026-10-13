@@ -49,7 +49,7 @@ import { RunnerHostProvider } from "@/providers/runner-host-provider";
 import { createFakeRunnerHost } from "../../../../../__tests__/create-fake-runner-host";
 
 const FOREGROUND_REMOVE_SENTENCE =
-  "A host you started in a terminal is running; stop it, then remove Traycer.";
+  "A host you started in a terminal is running; stop it, then remove Planwise.";
 
 const MANAGED_IDLE = { capability: "managed", pending: "none" } as const;
 
@@ -190,8 +190,8 @@ afterEach(() => {
   vi.mocked(toast.message).mockClear();
 });
 
-describe("HostDangerZone - Remove Traycer during a foreground host run", () => {
-  it("R-a RED: foreground disables Remove Traycer, names the reason, and dispatches nothing on click", async () => {
+describe("HostDangerZone - Remove Planwise during a foreground host run", () => {
+  it("R-a RED: foreground disables Remove Planwise, names the reason, and dispatches nothing on click", async () => {
     const uninstallTraycer = vi.fn(() =>
       Promise.reject(new Error("must not run in this test")),
     );
@@ -280,7 +280,7 @@ describe("HostDangerZone - Remove Traycer during a foreground host run", () => {
     expect(describedText(retry)).toBe(FOREGROUND_REMOVE_SENTENCE);
   });
 
-  it("GREEN: admittedAs null - Remove Traycer is enabled, the confirm opens, and confirming removes it once", async () => {
+  it("GREEN: admittedAs null - Remove Planwise is enabled, the confirm opens, and confirming removes it once", async () => {
     const uninstallTraycer = vi.fn(() =>
       Promise.resolve({
         kind: "removed",
@@ -309,10 +309,10 @@ describe("HostDangerZone - Remove Traycer during a foreground host run", () => {
   });
 });
 
-describe("HostDangerZone - Remove Traycer's declined-uninstall notice", () => {
+describe("HostDangerZone - Remove Planwise's declined-uninstall notice", () => {
   it("RED: a foreground-refusal decline shows the notice, not an error toast, and stays on the same row", async () => {
     const FOREGROUND_REFUSAL_MESSAGE =
-      "A host you started in a terminal is running, and Traycer leaves it alone. Stop it there to continue.";
+      "A host you started in a terminal is running, and Planwise leaves it alone. Stop it there to continue.";
     const uninstallTraycer = vi.fn(() =>
       Promise.resolve({
         kind: "declined",
@@ -331,7 +331,7 @@ describe("HostDangerZone - Remove Traycer's declined-uninstall notice", () => {
       expect(uninstallTraycer).toHaveBeenCalledOnce();
     });
     expect(toast.error).not.toHaveBeenCalled();
-    expect(toast.info).toHaveBeenCalledWith("Remove Traycer didn't run", {
+    expect(toast.info).toHaveBeenCalledWith("Remove Planwise didn't run", {
       description: FOREGROUND_REFUSAL_MESSAGE,
     });
     expect(screen.queryByTestId("settings-quit-after-uninstall")).toBeNull();
@@ -340,7 +340,7 @@ describe("HostDangerZone - Remove Traycer's declined-uninstall notice", () => {
   });
 
   it("RED: a lock-busy decline shows the notice, not an error toast, and stays on the same row", async () => {
-    const LOCK_BUSY_MESSAGE = "Another Traycer process is managing the host.";
+    const LOCK_BUSY_MESSAGE = "Another Planwise process is managing the host.";
     const uninstallTraycer = vi.fn(() =>
       Promise.resolve({
         kind: "declined",
@@ -359,7 +359,7 @@ describe("HostDangerZone - Remove Traycer's declined-uninstall notice", () => {
       expect(uninstallTraycer).toHaveBeenCalledOnce();
     });
     expect(toast.error).not.toHaveBeenCalled();
-    expect(toast.info).toHaveBeenCalledWith("Remove Traycer didn't run", {
+    expect(toast.info).toHaveBeenCalledWith("Remove Planwise didn't run", {
       description: LOCK_BUSY_MESSAGE,
     });
     expect(screen.queryByTestId("settings-quit-after-uninstall")).toBeNull();
@@ -382,7 +382,7 @@ describe("HostDangerZone - Remove Traycer's declined-uninstall notice", () => {
     });
     expect(toast.info).not.toHaveBeenCalled();
     const [message, options] = vi.mocked(toast.error).mock.calls[0] ?? [];
-    expect(message).toBe("Couldn't remove Traycer's components.");
+    expect(message).toBe("Couldn't remove Planwise's components.");
     expect(
       (options as { readonly description?: unknown } | undefined)?.description,
     ).toBe("boom");

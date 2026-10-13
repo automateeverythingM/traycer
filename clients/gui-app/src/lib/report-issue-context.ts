@@ -19,7 +19,7 @@ export function createReportIssueContext(input: {
   readonly source: string | null | undefined;
 }): ReportIssueContext {
   return {
-    title: normalizeReportContextValue(input.title) ?? "Traycer error",
+    title: normalizeReportContextValue(input.title) ?? "Planwise error",
     message: normalizeReportContextValue(input.message),
     code: normalizeReportContextValue(input.code),
     source: normalizeReportContextValue(input.source),

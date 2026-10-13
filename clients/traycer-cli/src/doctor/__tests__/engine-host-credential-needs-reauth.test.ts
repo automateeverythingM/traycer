@@ -187,7 +187,7 @@ describe("runDoctor host credential needs-reauth", () => {
     // Desktop's card can show, and it once ruled out signing in again without
     // ever saying what does work - a dead end that no test noticed, because
     // only a comment claimed the instruction was there.
-    expect(issue?.message).toContain("open the Traycer desktop app");
+    expect(issue?.message).toContain("open the Planwise desktop app");
     expect(issue?.message).toContain("provisions a new credential");
     expect(issue?.details).toMatchObject({
       reason: "a freshly refreshed credential was itself rejected",

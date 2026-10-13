@@ -473,7 +473,7 @@ describe("ProviderModelProvidersTab source and disconnect", () => {
     expect(screen.getByText("Config")).toBeTruthy();
     expect(screen.getByText("Custom")).toBeTruthy();
     expect(screen.queryByText("Set in config file")).toBeNull();
-    expect(screen.queryByText("Managed outside Traycer")).toBeNull();
+    expect(screen.queryByText("Managed outside Planwise")).toBeNull();
   });
 
   it("shows Disconnect ALONE on a connected row the host will disconnect", () => {
@@ -602,7 +602,7 @@ describe("ProviderModelProvidersTab source and disconnect", () => {
       capabilities: FULL_CAPS,
     });
     expect(screen.getByText("API key")).toBeTruthy();
-    expect(screen.queryByText("Saved in Traycer")).toBeNull();
+    expect(screen.queryByText("Saved in Planwise")).toBeNull();
   });
 
   it("gives the disconnect control a readable word and destructive intent", () => {

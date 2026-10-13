@@ -750,7 +750,7 @@ describe("event rows", () => {
       clientActionId: null,
       actor: null,
       message:
-        "Traycer's judge couldn't run on Traycer inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
+        "Planwise's judge couldn't run on Planwise inference (out of credits), so it is reviewing commands on Claude Code instead, billed to your account there.",
       turnId: "turn-1",
       messageId: "m-1",
       queueItemId: null,

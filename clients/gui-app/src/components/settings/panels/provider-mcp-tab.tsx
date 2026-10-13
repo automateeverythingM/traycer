@@ -1565,7 +1565,7 @@ function ServerToolsPanel(props: {
                   </button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  Tool enable/disable applies to Traycer sessions only for this
+                  Tool enable/disable applies to Planwise sessions only for this
                   provider.
                 </TooltipContent>
               </Tooltip>

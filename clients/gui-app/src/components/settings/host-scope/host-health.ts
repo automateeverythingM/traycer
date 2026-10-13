@@ -181,7 +181,7 @@ function localServiceHealth(
     return {
       state: "not-installed",
       label: "Not installed",
-      detail: "No Traycer host is installed on this computer yet.",
+      detail: "No Planwise host is installed on this computer yet.",
       tone: HOST_HEALTH_TONE["not-installed"],
       live: false,
     };

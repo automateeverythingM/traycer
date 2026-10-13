@@ -4000,7 +4000,7 @@ describe("RunnerIpcBridge", () => {
     const hostController = new FakeHostController();
     hostController.respawn = async () => ({
       kind: "failed",
-      message: "Traycer needs approval in System Settings.",
+      message: "Planwise needs approval in System Settings.",
       errorCode: null,
     });
     const bridge = new mod.RunnerIpcBridge({
@@ -4022,7 +4022,7 @@ describe("RunnerIpcBridge", () => {
       throw new Error("requestHostRespawn handler missing");
     }
     await expect(respawnHandler(bareEvent())).rejects.toThrow(
-      "Traycer needs approval in System Settings.",
+      "Planwise needs approval in System Settings.",
     );
     bridge.dispose();
   });
@@ -4430,7 +4430,7 @@ describe("RunnerIpcBridge", () => {
       quitState: undefined,
     });
     const display = {
-      title: "Traycer",
+      title: "Planwise",
       body: "Background agent failed",
       payload: null,
       replaceKey: "app-local:host.error:failure-1",
@@ -4586,7 +4586,7 @@ describe("RunnerIpcBridge", () => {
     const show = (feedOccurrences: unknown) =>
       handler(
         event,
-        "Traycer",
+        "Planwise",
         "body",
         null,
         null,
@@ -4597,7 +4597,7 @@ describe("RunnerIpcBridge", () => {
       );
     // Old preload: only the seven legacy arguments, eighth truly omitted.
     const showLegacy = () =>
-      handler(event, "Traycer", "body", null, null, null, "host", null);
+      handler(event, "Planwise", "body", null, null, null, "host", null);
 
     // Valid batch takes the feed path: receipts make a replay a duplicate
     // (notifications are unsupported in this harness, so the first is
@@ -4651,7 +4651,7 @@ describe("RunnerIpcBridge", () => {
     await expect(
       handler(
         event,
-        "Traycer",
+        "Planwise",
         "body",
         null,
         null,

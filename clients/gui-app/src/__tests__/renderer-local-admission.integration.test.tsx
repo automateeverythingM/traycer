@@ -678,7 +678,7 @@ describe("renderer local admission — cross-seam (real AuthService × real useA
     // the real AuthLandingPage never rendered. An absence check alone would
     // be vacuous (shape #2), so it is paired below with real interactive
     // content and a positive control in the identical tree.
-    expect(screen.queryByText("Welcome to Traycer")).toBeNull();
+    expect(screen.queryByText("Welcome to Planwise")).toBeNull();
 
     // Admission gate #3 (header-actions.tsx#HeaderNotificationsBell), identical
     // wiring: the desktop bell reads `admitsLocalPlane` and RENDERS under

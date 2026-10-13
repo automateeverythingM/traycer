@@ -30,7 +30,7 @@ import { defineSettingsSection } from "@/lib/settings-search/settings-definition
  * flight is live, so it goes in the row's `status` at the call site instead.
  */
 export const MASTER_TOGGLE_DESCRIPTION =
-  "Turning this off stops Traycer starting new switches or waits. Chats already switching or waiting carry on - stop those from the chat. Your coding agent's own retries are separate and unaffected.";
+  "Turning this off stops Planwise starting new switches or waits. Chats already switching or waiting carry on - stop those from the chat. Your coding agent's own retries are separate and unaffected.";
 
 /**
  * Host-scoped, so nothing below the page owns an anchor: the page's scope gate
@@ -44,7 +44,7 @@ export const FALLBACK = defineSettingsSection("fallback", {
     availableWhen: alwaysAvailable,
     label: "Model routing",
     description:
-      "What Traycer tries when a rate limit or another provider problem interrupts your chat.",
+      "What Planwise tries when a rate limit or another provider problem interrupts your chat.",
     keywords: [
       // "fallback" and "failover" stay in the index on purpose: they were the
       // shipped name and are what the category calls this, so muscle memory
@@ -117,7 +117,7 @@ export const FALLBACK = defineSettingsSection("fallback", {
     search: { contributesTo: "page" },
     label: "Time to cancel a switch",
     description:
-      "Traycer waits this long before switching, so you can cancel from the chat. Opening the menu to choose another account or model pauses the countdown.",
+      "Planwise waits this long before switching, so you can cancel from the chat. Opening the menu to choose another account or model pauses the countdown.",
     availableWhen: alwaysAvailable,
     keywords: [],
   },
@@ -127,7 +127,7 @@ export const FALLBACK = defineSettingsSection("fallback", {
     search: { contributesTo: "page" },
     label: "Longest wait for a usage limit to reset",
     description:
-      "If the limit resets later than this, Traycer skips waiting and moves on to the next step.",
+      "If the limit resets later than this, Planwise skips waiting and moves on to the next step.",
     availableWhen: alwaysAvailable,
     keywords: [],
   },

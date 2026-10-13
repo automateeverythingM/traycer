@@ -231,7 +231,7 @@ export class DesktopTrayController {
     this.onEpicSelected = options.onEpicSelected;
     this.onCommand = options.onCommand;
     this.tray = new Tray(image, TRAY_GUID);
-    this.tray.setToolTip("Traycer");
+    this.tray.setToolTip("Planwise");
     this.tray.on("click", () => this.showMainWindow());
     this.rebuildMenu();
   }
@@ -388,7 +388,7 @@ export class DesktopTrayController {
     if (this.tray.isDestroyed()) {
       return;
     }
-    const base = `Traycer (${this.indicator})`;
+    const base = `Planwise (${this.indicator})`;
     const line = this.lifecycleLine();
     this.tray.setToolTip(line === null ? base : `${base}\n${line}`);
   }
@@ -491,7 +491,7 @@ export class DesktopTrayController {
       : [];
     const menu = Menu.buildFromTemplate([
       {
-        label: "Open Traycer",
+        label: "Open Planwise",
         // Display-only: `registerAccelerator: false` means the OS never
         // binds this from the menu - the global-shortcuts registry owns the
         // real registration. `undefined` (not `null`) is what Electron's
@@ -537,7 +537,7 @@ export class DesktopTrayController {
       { type: "separator" },
       ...quitAndStopHostItems,
       {
-        label: "Quit Traycer",
+        label: "Quit Planwise",
         click: () => {
           log.info("[tray] quitting from tray menu");
           app.quit();

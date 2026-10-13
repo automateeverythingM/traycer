@@ -54,7 +54,7 @@ function reportedMessage(
   presentation: DefaultHostReadinessPresentation,
 ): string {
   const element = hostFailureReportIssueAction({
-    title: "Could not start Traycer Host",
+    title: "Could not start Planwise Host",
     message: "Something went wrong.",
     code: "host-failure-test",
     source: "test",

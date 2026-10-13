@@ -34,7 +34,7 @@ import { KeyboardResize } from "@capacitor/keyboard";
  */
 const config: CapacitorConfig = {
   appId: "com.traycer.app",
-  appName: "Traycer",
+  appName: "Planwise",
   webDir: "dist/web",
   server: {
     iosScheme: "http",

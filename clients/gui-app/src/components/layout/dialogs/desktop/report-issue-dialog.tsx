@@ -134,7 +134,7 @@ const ROUTE_TEMPLATE_LABELS: Readonly<
   "/settings/shell": "Settings - Shell",
   "/settings/usage": "Settings - Usage",
   "/settings/worktrees": "Settings - Worktrees",
-  "/when-you-quit": "When you quit Traycer",
+  "/when-you-quit": "When you quit Planwise",
 };
 
 // Widened for runtime lookup: `ROUTE_TEMPLATE_LABELS` above is exhaustive
@@ -1336,7 +1336,7 @@ function captureDescriptionCopy(
   if (hasErrorEnvelope) {
     return "The details below were captured automatically. Add what you were doing and send.";
   }
-  return "Sent privately to the Traycer team so we can look into it.";
+  return "Sent privately to the Planwise team so we can look into it.";
 }
 
 function intentLabel(
@@ -1826,7 +1826,7 @@ function ConsentPanel(props: {
   // only a private-report reference, and only when one exists).
   const summary = props.deliveryUnavailable
     ? "Included in your diagnostic bundle: your words, type/frequency, and any log tails still toggled on below. Screenshots stay on this device - attach them manually if you post a GitHub issue."
-    : "Sent privately to the Traycer team: adds your words, screenshots and logs to the crash data we already receive.";
+    : "Sent privately to the Planwise team: adds your words, screenshots and logs to the crash data we already receive.";
 
   return (
     <div className="grid gap-2.5 rounded-md border border-border px-3 py-2.5">
@@ -2054,7 +2054,7 @@ function ConfirmationScreen({
   return (
     <div className="grid gap-2 rounded-md border border-success/40 bg-success/10 px-3 py-3 text-ui-sm">
       <p className="font-medium text-success-foreground">
-        Sent privately to the Traycer team.
+        Sent privately to the Planwise team.
       </p>
       <p className="flex items-center gap-2 font-mono text-code-xs text-muted-foreground">
         Report ID {reportId}

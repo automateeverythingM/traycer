@@ -126,7 +126,7 @@ vi.mock("../../service", async (importOriginal) => {
     },
     serviceLabelFor: (environment: Environment): ServiceLabel => ({
       id: "ai.traycer.host",
-      displayName: "Traycer Host",
+      displayName: "Planwise Host",
       environment,
       devSlot: null,
     }),
@@ -659,7 +659,7 @@ describe("createBytesOnlyInstallLifecycle forwarding, through the real commit", 
       harness.controller,
       {
         id: "ai.traycer.host",
-        displayName: "Traycer Host",
+        displayName: "Planwise Host",
         environment: ENV,
         devSlot: null,
       },

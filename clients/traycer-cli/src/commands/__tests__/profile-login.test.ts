@@ -1493,7 +1493,7 @@ describe("start answers", () => {
   it.each(["unrepairable", "local-storage-mismatch"])(
     "does not ask for a pack retry, and says running the command again will not fix it, when the setup failed with %s",
     async (reason) => {
-      const message = `The provider's first-time setup did not install (${reason}), and running this command again will not fix it. Install the provider's CLI yourself and select it in Settings > Providers in the Traycer app.`;
+      const message = `The provider's first-time setup did not install (${reason}), and running this command again will not fix it. Install the provider's CLI yourself and select it in Settings > Providers in the Planwise app.`;
 
       const result = await runUnretryablePackFailure(reason);
 

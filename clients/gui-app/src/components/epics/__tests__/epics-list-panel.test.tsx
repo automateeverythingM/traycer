@@ -1481,7 +1481,7 @@ describe("<EpicsListPanel />", () => {
     renderPanel("page", "/");
 
     const pin = await screen.findByRole("button", {
-      name: "Pinning Local only epic needs a newer Traycer host",
+      name: "Pinning Local only epic needs a newer Planwise host",
     });
     // `aria-disabled`, not the native attribute: a natively disabled button is
     // unfocusable and swallows pointer events, so the tooltip below - the only
@@ -1496,7 +1496,7 @@ describe("<EpicsListPanel />", () => {
     // account never gets and a stale row has already had - see
     // `HistoryPinControl`.
     expect(tooltipTextNear(pin)).toBe(
-      "Pinning this task needs a newer Traycer host version. Update the host that serves it.",
+      "Pinning this task needs a newer Planwise host version. Update the host that serves it.",
     );
   });
 
@@ -2534,7 +2534,7 @@ describe("<EpicsListPanel />", () => {
     // carries its own, ordinary (uncontrolled) tooltip via `Tooltip` /
     // `TooltipTrigger`, unlike the status glyph's controlled one.
     const pin = await screen.findByRole("button", {
-      name: "Pinning Local only epic needs a newer Traycer host",
+      name: "Pinning Local only epic needs a newer Planwise host",
     });
     const link = await screen.findByRole("link", {
       name: "Open task Local only epic",
@@ -2563,7 +2563,7 @@ describe("<EpicsListPanel />", () => {
         hoveredTooltips.some(
           (tooltip) =>
             tooltip.textContent ===
-            "Pinning this task needs a newer Traycer host version. Update the host that serves it.",
+            "Pinning this task needs a newer Planwise host version. Update the host that serves it.",
         ),
       ).toBe(true);
 

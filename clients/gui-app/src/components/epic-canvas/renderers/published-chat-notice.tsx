@@ -51,8 +51,8 @@ function describe(props: PublishedChatNoticeProps): {
 } {
   if (props.state.kind === "unsupported") {
     return {
-      title: "This device's Traycer is too old to read published chats",
-      body: `Update Traycer here to read the copy ${props.ownerLabel} published.`,
+      title: "This device's Planwise is too old to read published chats",
+      body: `Update Planwise here to read the copy ${props.ownerLabel} published.`,
     };
   }
   if (props.state.kind === "failed") {

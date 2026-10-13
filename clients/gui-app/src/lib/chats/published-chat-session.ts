@@ -164,7 +164,7 @@ function placeholderBlockRaw(blockId: string, index: number): JsonObject {
     timestamp: 0,
     parentBlockId: null,
     type: "text",
-    text: "This part of the message needs a newer version of Traycer to display.",
+    text: "This part of the message needs a newer version of Planwise to display.",
     providerNotice: null,
   };
 }

@@ -324,7 +324,7 @@ async function printCode(
   const qr = showQr ? await renderQr(minted.code) : null;
   ctx.output.humanRequired(
     `${qr === null ? "" : `${qr}\n`}` +
-      `Scan with the Traycer mobile app, or type this code:\n\n` +
+      `Scan with the Planwise mobile app, or type this code:\n\n` +
       `    ${c.bold(minted.code)}\n` +
       (quiet ? `\n  ${c.dim(CODE_FOOTER)}` : ""),
   );
@@ -515,7 +515,7 @@ function scanPrompt(
     return {
       announcement:
         `${c.yellow("▲")} A phone scanned this code but showed NO sign-in code · ${device}\n` +
-        `An up-to-date Traycer app always shows one. Only approve if you scanned this code yourself\n` +
+        `An up-to-date Planwise app always shows one. Only approve if you scanned this code yourself\n` +
         `and your phone is waiting without a code; otherwise reject and update the app.`,
       question: `No code shown by the phone. Approve sign-in anyway? [y/N] `,
     };

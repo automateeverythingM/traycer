@@ -2228,7 +2228,7 @@ function WorktreeBulkDeleteDialog(props: {
                   {summary.title}
                 </DialogTitle>
                 <DialogDescription className="wrap-anywhere">
-                  Deleting {summary.classSummary}. Traycer runs each repo's
+                  Deleting {summary.classSummary}. Planwise runs each repo's
                   teardown script, then removes the worktree.
                 </DialogDescription>
                 {summary.dirtyLoss !== null ? (
@@ -3588,7 +3588,7 @@ function deleteDialogCopy(entry: WorktreeHostEntryV14): {
     const plural = count === 1 ? "" : "s";
     return {
       title: `Discard ${count} uncommitted change${plural}?`,
-      description: `${branch} has ${count} uncommitted change${plural} that will be permanently lost. Traycer runs the repo's teardown script, then force-removes ${entry.worktreePath}.`,
+      description: `${branch} has ${count} uncommitted change${plural} that will be permanently lost. Planwise runs the repo's teardown script, then force-removes ${entry.worktreePath}.`,
       actionLabel: "Delete and discard",
     };
   }
@@ -3604,7 +3604,7 @@ function deleteDialogCopy(entry: WorktreeHostEntryV14): {
     const plural = count === 1 ? "" : "s";
     return {
       title: `Delete worktree with ${count} unpushed commit${plural}?`,
-      description: `${branch} has ${count} commit${plural} not on the default branch. Removing the worktree keeps the branch ref, but that work exists only here. Traycer runs the repo's teardown script, then removes ${entry.worktreePath}.`,
+      description: `${branch} has ${count} commit${plural} not on the default branch. Removing the worktree keeps the branch ref, but that work exists only here. Planwise runs the repo's teardown script, then removes ${entry.worktreePath}.`,
       actionLabel: "Delete worktree",
     };
   }
@@ -3620,13 +3620,13 @@ function deleteDialogCopy(entry: WorktreeHostEntryV14): {
   ) {
     return {
       title: "Delete worktree with unpushed local commits?",
-      description: `${branch} has local-only commits not on the default branch and was never pushed. Removing the worktree keeps the branch ref, so the commits survive on the branch — but this machine is their only copy. Traycer runs the repo's teardown script, then removes ${entry.worktreePath}.`,
+      description: `${branch} has local-only commits not on the default branch and was never pushed. Removing the worktree keeps the branch ref, so the commits survive on the branch — but this machine is their only copy. Planwise runs the repo's teardown script, then removes ${entry.worktreePath}.`,
       actionLabel: "Delete worktree",
     };
   }
   return {
     title: "Delete worktree?",
-    description: `Traycer runs the repo's teardown script, then removes ${branch} (${entry.worktreePath}).`,
+    description: `Planwise runs the repo's teardown script, then removes ${branch} (${entry.worktreePath}).`,
     actionLabel: "Delete worktree",
   };
 }
@@ -3651,13 +3651,13 @@ function unknownRiskDeleteDialogCopy(entry: WorktreeHostEntryV14): {
     const plural = count === 1 ? "" : "s";
     return {
       title: `Discard ${count} uncommitted change${plural}?`,
-      description: `${branch} has ${count} uncommitted change${plural} that will be permanently lost. Its branch and activity status also could not be verified, so Traycer cannot confirm the rest of this worktree is safe to remove either. Traycer runs the repo's teardown script, then force-removes ${entry.worktreePath}.`,
+      description: `${branch} has ${count} uncommitted change${plural} that will be permanently lost. Its branch and activity status also could not be verified, so Planwise cannot confirm the rest of this worktree is safe to remove either. Planwise runs the repo's teardown script, then force-removes ${entry.worktreePath}.`,
       actionLabel: "Delete and discard",
     };
   }
   return {
     title: "Delete worktree with unknown status?",
-    description: `${branch}'s branch and activity status could not be verified, so Traycer cannot confirm this worktree is safe to remove or free of unpushed work. Traycer runs the repo's teardown script, then removes ${entry.worktreePath}.`,
+    description: `${branch}'s branch and activity status could not be verified, so Planwise cannot confirm this worktree is safe to remove or free of unpushed work. Planwise runs the repo's teardown script, then removes ${entry.worktreePath}.`,
     actionLabel: "Delete anyway",
   };
 }
@@ -3933,7 +3933,7 @@ function summarizeBulkWorktreeDelete(
       ? null
       : `Activity status for ${unknownTargets.length} worktree${
           unknownTargets.length === 1 ? "" : "s"
-        } could not be checked. Traycer cannot confirm those are safe to remove or free of unpushed work. Commit, stash, or push anything you want to keep first.`;
+        } could not be checked. Planwise cannot confirm those are safe to remove or free of unpushed work. Commit, stash, or push anything you want to keep first.`;
   const excluded = visible.filter(
     (entry) => !targetPaths.has(entry.worktreePath),
   );

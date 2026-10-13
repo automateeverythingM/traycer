@@ -111,7 +111,7 @@ function SessionImportDialogBody(props: {
           <DialogTitle>Import your work</DialogTitle>
           <DialogDescription>
             Bring work you already started in Claude Code, Codex, or OpenCode
-            into Traycer as tasks.
+            into Planwise as tasks.
           </DialogDescription>
         </DialogHeader>
         {/* The pinned filters and footer share the dialog's full width. */}

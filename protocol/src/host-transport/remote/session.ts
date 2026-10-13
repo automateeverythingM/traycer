@@ -3626,7 +3626,7 @@ export class RemoteSession<
       // list.
       stream.goFatal({
         code: "INCOMPATIBLE",
-        reason: `The host does not support tunnel streams ('${SESSION_CAPABILITY_TUNNEL_STREAMS}'); update the Traycer host on that machine`,
+        reason: `The host does not support tunnel streams ('${SESSION_CAPABILITY_TUNNEL_STREAMS}'); update the Planwise host on that machine`,
         incompatibleMethods: [
           {
             method: stream.method,

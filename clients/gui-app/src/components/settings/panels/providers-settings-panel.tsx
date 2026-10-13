@@ -222,7 +222,7 @@ const PROVIDER_DESCRIPTIONS: Record<ProviderId, string> = {
   opencode: "OpenCode CLI agent.",
   cursor:
     "Cursor coding agent - SDK-driven agents authenticated with your Cursor API key.",
-  traycer: "Traycer's managed harness uses the selected OpenCode CLI binary.",
+  traycer: "Planwise's managed harness uses the selected OpenCode CLI binary.",
   openrouter:
     "OpenRouter - OpenAI-compatible gateway authenticated with your OpenRouter API key.",
   huggingface:
@@ -245,7 +245,7 @@ const PROVIDER_DESCRIPTIONS: Record<ProviderId, string> = {
   reasonix:
     "Reasonix - a coding CLI you point at your own model provider; keys live in Reasonix's own store, set up from its terminal wizard.",
   antigravity:
-    "Antigravity - Google's agent server via your Google account; Traycer can sign the terminal account in or switch its Google account, but never signs it out.",
+    "Antigravity - Google's agent server via your Google account; Planwise can sign the terminal account in or switch its Google account, but never signs it out.",
   commandcode:
     "Command Code - a coding CLI via your Command Code account; install it yourself and sign in from a terminal.",
 };
@@ -412,7 +412,7 @@ function ProvidersSettingsPanelInner({
       description={
         isMobile
           ? undefined
-          : "Choose the CLI binary Traycer runs for each coding agent. Pick the bundled binary, one found on your PATH, or a custom install. Disable a provider to hide it when creating an agent."
+          : "Choose the CLI binary Planwise runs for each coding agent. Pick the bundled binary, one found on your PATH, or a custom install. Disable a provider to hide it when creating an agent."
       }
       // Desktop only, and this is the whole mobile scroll model. `fillHeight`
       // stretches the card to the settings scroll container and lets the ACTIVE

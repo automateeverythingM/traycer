@@ -80,7 +80,7 @@ describe("ClockSkewBanner", () => {
     recordOffset(-SEVEN_HOURS_MS);
     const banner = getBanner();
     expect(banner.textContent).toContain("~7h ahead");
-    expect(banner.textContent).toContain("Traycer can't connect");
+    expect(banner.textContent).toContain("Planwise can't connect");
   });
 
   it("still speaks for a clock running BEHIND, but does not claim connections are blocked", () => {
@@ -93,7 +93,7 @@ describe("ClockSkewBanner", () => {
     recordOffset(SEVEN_HOURS_MS);
     const banner = getBanner();
     expect(banner.textContent).toContain("~7h behind");
-    expect(banner.textContent).not.toContain("Traycer can't connect");
+    expect(banner.textContent).not.toContain("Planwise can't connect");
   });
 
   it("self-clears once the clock is corrected, with nothing to dismiss", () => {

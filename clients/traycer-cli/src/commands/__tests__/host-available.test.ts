@@ -156,7 +156,7 @@ describe("buildHostAvailableListing", () => {
     const reason =
       listing.manifest.versions[0].platforms["darwin-arm64"]?.unavailableReason;
     expect(reason?.startsWith(HOST_CLIENT_FLOOR_REASON_PREFIX)).toBe(true);
-    expect(HOST_CLIENT_FLOOR_REASON_PREFIX).toBe("Needs Traycer CLI ");
+    expect(HOST_CLIENT_FLOOR_REASON_PREFIX).toBe("Needs Planwise CLI ");
   });
 
   it("keeps a malformed required CLI floor unavailable without the repair prefix", () => {

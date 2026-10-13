@@ -56,7 +56,7 @@ vi.mock("@tanstack/react-router", async (importOriginal) => {
 });
 
 const SENTENCE =
-  "the Traycer Host task is disabled in Task Scheduler; enable it or run `traycer host service install`";
+  "the Planwise Host task is disabled in Task Scheduler; enable it or run `traycer host service install`";
 const ENSURE_FAILURE: HostEnsureFailure = {
   message: SENTENCE,
   code: "E_SERVICE_REGISTRATION_DISABLED",

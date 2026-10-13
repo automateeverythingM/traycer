@@ -16,7 +16,7 @@ export const DELETE_ACCOUNT = defineSettingsSection("delete-account", {
     availableWhen: alwaysAvailable,
     label: "Delete account",
     description:
-      "Permanently delete your Traycer account and all associated data.",
+      "Permanently delete your Planwise account and all associated data.",
     keywords: [
       "delete",
       "remove",

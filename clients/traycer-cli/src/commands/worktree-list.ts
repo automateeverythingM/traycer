@@ -255,7 +255,7 @@ function formatWorktreeListTailHints(
   nextCursor: string | null,
 ): string {
   const outputLines =
-    lines.length === 0 ? ["No Traycer-managed worktrees found."] : [...lines];
+    lines.length === 0 ? ["No Planwise-managed worktrees found."] : [...lines];
   if (nextCursor !== null) {
     outputLines.push(
       "",

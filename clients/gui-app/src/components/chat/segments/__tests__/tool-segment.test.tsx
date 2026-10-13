@@ -794,7 +794,7 @@ describe("<ToolSegment /> input rendering", () => {
     cleanup();
   });
 
-  it("renders the Traycer browser REPL as browser activity", () => {
+  it("renders the Planwise browser REPL as browser activity", () => {
     const view = render(
       <ToolSegment
         headerFindUnitId={null}

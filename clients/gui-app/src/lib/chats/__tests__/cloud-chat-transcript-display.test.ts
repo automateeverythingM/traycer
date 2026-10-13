@@ -157,7 +157,7 @@ describe("nothing is dropped", () => {
     const unknown = assistant.blocks.filter((block) => block.isUnknown);
     expect(unknown).toHaveLength(1);
     expect(unknown[0].label).toContain("holodeck");
-    expect(unknown[0].label).toContain("newer version of Traycer");
+    expect(unknown[0].label).toContain("newer version of Planwise");
   });
 
   it("keeps every row's key unique even where the record carries no id", async () => {
@@ -228,7 +228,7 @@ describe("the fidelity line", () => {
     );
 
     expect(notice).toBe(
-      "1 item needs a newer version of Traycer · 2 attachments are stored on the originating device",
+      "1 item needs a newer version of Planwise · 2 attachments are stored on the originating device",
     );
   });
 

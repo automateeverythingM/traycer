@@ -177,19 +177,19 @@ function currentPrivateUpdateToken(): string {
 // and the renderer offers "Report an issue" (which privately attaches logs) so
 // support has the real diagnostics for anything the user can't resolve.
 const UPDATE_ERROR_OFFLINE_MESSAGE =
-  "Traycer couldn't connect to check for updates. Please check your internet connection and try again.";
+  "Planwise couldn't connect to check for updates. Please check your internet connection and try again.";
 const UPDATE_ERROR_SERVICE_MESSAGE =
-  "Traycer couldn't reach the update service right now. Please try again in a little while.";
+  "Planwise couldn't reach the update service right now. Please try again in a little while.";
 const UPDATE_ERROR_DOWNLOAD_MESSAGE =
-  "Traycer couldn't download and install the latest update. Please try again in a little while.";
+  "Planwise couldn't download and install the latest update. Please try again in a little while.";
 // The download itself succeeded and its checksum matched; what failed is the
 // authenticity check on the downloaded installer. "Try again" is the wrong
 // advice - a retry re-downloads bytes that were never the problem - and the
 // artifact to distrust is the UPDATE, not the copy already installed.
 const UPDATE_ERROR_SIGNATURE_MESSAGE =
-  "Traycer couldn't verify this update and did not install it. Please download Traycer again from traycer.ai.";
+  "Planwise couldn't verify this update and did not install it. Please download Planwise again from traycer.ai.";
 const UPDATE_ERROR_GENERIC_MESSAGE =
-  "Traycer ran into a problem while updating. Please try again in a little while.";
+  "Planwise ran into a problem while updating. Please try again in a little while.";
 // Linux deb/rpm only: a live install attempt hit an escalation failure
 // (pkexec/sudo/dpkg/rpm). Unlike the other generic messages, this one points
 // at the guidance dialog rather than suggesting a retry - the escalation path
@@ -197,7 +197,7 @@ const UPDATE_ERROR_GENERIC_MESSAGE =
 // alongside this message (see `handleUpdaterError`'s `installingUpdate`
 // branch).
 const UPDATE_ERROR_LINUX_MANUAL_INSTALL_MESSAGE =
-  "Traycer couldn't finish installing the update automatically. Follow the instructions below to finish it manually.";
+  "Planwise couldn't finish installing the update automatically. Follow the instructions below to finish it manually.";
 
 const listeners = new Set<AppUpdateListener>();
 let sequence = 0;
@@ -2240,16 +2240,16 @@ function notifyUpdateWhenUnfocused(
     // When updates can't be installed from this location, point at the fix
     // instead of telling the user to download something they can't apply.
     showSimpleNotification(
-      "Traycer update available",
+      "Planwise update available",
       currentInstallBlockedReason() ??
-        `Open Traycer to download${versionLabel}.`,
+        `Open Planwise to download${versionLabel}.`,
       focus,
     );
     return;
   }
   showSimpleNotification(
-    "Traycer update ready",
-    `Restart Traycer to install${versionLabel}.`,
+    "Planwise update ready",
+    `Restart Planwise to install${versionLabel}.`,
     focus,
   );
 }

@@ -194,7 +194,7 @@ function FrameHeaderBand(): ReactElement {
         APP_HEADER_HEIGHT_CLASS,
       )}
     >
-      Traycer
+      Planwise
     </div>
   );
 }

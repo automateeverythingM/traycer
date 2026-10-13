@@ -309,7 +309,7 @@ describe("toastFromHostError", () => {
     );
 
     expect(toast.error).toHaveBeenCalledWith(
-      "This needs a newer Traycer host. Update the host to continue.",
+      "This needs a newer Planwise host. Update the host to continue.",
       {
         id: "host-error:E_HOST_UNSUPPORTED:E_HOST_UNSUPPORTED",
         cancel: null,

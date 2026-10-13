@@ -380,7 +380,7 @@ export function importThemeText(
       !("tokenColors" in record) &&
       !("include" in record)
     ) {
-      throw new Error("This file is not a Traycer or VS Code color theme.");
+      throw new Error("This file is not a Planwise or VS Code color theme.");
     }
     const theme = vsCodeThemeSchema.parse(record);
     if (theme.include)

@@ -87,7 +87,7 @@ async function loadNotifications() {
 
 function showOptions(replaceKey: string) {
   return {
-    title: "Traycer",
+    title: "Planwise",
     body: "Agent finished",
     replaceKey,
     deliveryKey: null,
@@ -97,7 +97,7 @@ function showOptions(replaceKey: string) {
 }
 
 describe("showNativeNotification", () => {
-  it("suppresses the OS notification when any live Traycer window is focused", async () => {
+  it("suppresses the OS notification when any live Planwise window is focused", async () => {
     const { showNativeNotification } = await loadNotifications();
     const onForegroundSuppressed = vi.fn();
     FakeBrowserWindow.windows = [
@@ -166,7 +166,7 @@ describe("showNativeNotification", () => {
     expect(FakeNotification.instances).toHaveLength(1);
   });
 
-  it("shows the OS notification when no live Traycer window is focused", async () => {
+  it("shows the OS notification when no live Planwise window is focused", async () => {
     const { showNativeNotification } = await loadNotifications();
     FakeBrowserWindow.windows = [
       { destroyed: false, focused: false },
