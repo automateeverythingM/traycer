@@ -85,6 +85,12 @@ const guideMocks = vi.hoisted(
   }),
 );
 
+// The Auto-Model section above the guide reads the provider catalog through
+// its own host queries; this suite covers the guide editor only.
+vi.mock("@/components/settings/panels/auto-model-settings-section", () => ({
+  AutoModelSettingsSection: () => null,
+}));
+
 vi.mock("@/hooks/host/use-addressable-host-id", () => ({
   useAddressableHostId: () => guideMocks.activeHostId,
 }));
@@ -244,6 +250,7 @@ vi.mock(
 
 import { AgentSelectionGuideSection } from "@/components/settings/panels/agent-selection-guide-section";
 import { AgentsSettingsPanel } from "@/components/settings/panels/agents-settings-panel";
+import { useModelRouterStore } from "@/stores/composer/model-router-store";
 
 function renderPanel() {
   return render(
@@ -525,6 +532,36 @@ describe("AgentSelectionGuideSection", () => {
     expect(
       screen.queryByRole("heading", { name: "Choose an agent" }),
     ).toBeNull();
+  });
+
+  it("writes the Auto-Model routes into the guide and takes them out again", async () => {
+    guideMocks.queryData = {
+      content: "# Mine",
+      generatedDefaultContent: "# Default",
+    };
+    useModelRouterStore.getState().resetForTests();
+    useModelRouterStore.getState().setRoute("frontier", {
+      harnessId: "claude",
+      modelSlug: "opus",
+      modelLabel: "Opus",
+      reasoningEffort: "high",
+    });
+    useModelRouterStore.getState().setEnabled(true);
+    renderPanel();
+
+    const editor = screen.getByTestId("agents-selection-guide-input");
+    expect(readMarkdown(editor)).toContain("| Frontier |");
+    expect(readMarkdown(editor).startsWith("# Mine\n\n")).toBe(true);
+    blurCodeMirror(editor);
+    await waitFor(() => {
+      expect(guideMocks.setGlobalMutateAsync).toHaveBeenCalled();
+    });
+
+    act(() => {
+      useModelRouterStore.getState().setEnabled(false);
+    });
+    expect(readMarkdown(editor)).toBe("# Mine\n");
+    useModelRouterStore.getState().resetForTests();
   });
 
   it("reverts through the host reset API instead of sending generated content back", async () => {

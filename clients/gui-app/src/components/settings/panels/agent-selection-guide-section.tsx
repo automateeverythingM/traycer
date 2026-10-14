@@ -3,7 +3,13 @@
  * Update that file whenever this settings surface changes.
  */
 import type { ReactNode } from "react";
-import { useEffect, useReducer, useRef } from "react";
+import {
+  useEffect,
+  useEffectEvent,
+  useReducer,
+  useRef,
+  type RefObject,
+} from "react";
 import { Check, TriangleAlert } from "lucide-react";
 import {
   AGENT_SELECTION_GUIDE_DESCRIPTION,
@@ -18,6 +24,11 @@ import { useAgentSelectionGuideGlobalQuery } from "@/hooks/agent/use-agent-selec
 import { useAgentSelectionGuideSetGlobalMutation } from "@/hooks/agent/use-agent-selection-guide-set-global-mutation";
 import { useAgentSelectionGuideResetGlobalMutation } from "@/hooks/agent/use-agent-selection-guide-reset-global-mutation";
 import { HostRuntimeContext, useHostBinding } from "@/lib/host/runtime";
+import {
+  renderRouterGuideBlock,
+  upsertRouterGuideBlock,
+} from "@/lib/model-router/sub-agents";
+import { useModelRouterStore } from "@/stores/composer/model-router-store";
 import { HostScopeGate } from "@/components/settings/host-scope/host-scope-gate";
 import {
   useHostScope,
@@ -365,6 +376,8 @@ function AgentsGuideEditor(props: {
     dispatch({ type: "confirm-open-changed", open: false });
   };
 
+  useRouterGuideSync(latestRef, onChange);
+
   const isAtDefault = state.value === generatedDefaultContent;
   const isDirty = state.value !== state.savedContent;
   // A failed save/reset leaves the editor dirty; surface that as an error
@@ -409,6 +422,31 @@ function AgentsGuideEditor(props: {
       />
     </>
   );
+}
+
+/**
+ * Keeps the Auto-Model section of the guide in step with the routing table
+ * while this editor is open: the section is rewritten through the editor's
+ * own edit path, so it saves like a typed change and the user sees it land.
+ * Only the marked section is touched.
+ */
+function useRouterGuideSync(
+  latestRef: RefObject<string>,
+  onChange: (next: string) => void,
+): void {
+  const enabled = useModelRouterStore((state) => state.enabled);
+  const correctSubAgents = useModelRouterStore(
+    (state) => state.correctSubAgents,
+  );
+  const routes = useModelRouterStore((state) => state.routes);
+  const apply = useEffectEvent((block: string | null) => {
+    const current = latestRef.current;
+    const next = upsertRouterGuideBlock(current, block);
+    if (next !== current) onChange(next);
+  });
+  useEffect(() => {
+    apply(enabled && correctSubAgents ? renderRouterGuideBlock(routes) : null);
+  }, [enabled, correctSubAgents, routes]);
 }
 
 function SaveStatus(props: {

@@ -4355,6 +4355,20 @@ min`): "The judge didn't finish in time, so it's asking you instead."
   hooks. This settings panel edits only the global guide. A workspace can add
   `.traycer/agent-selection-guide.md` manually; agents layer that file over the
   global guide when they work in that workspace.
+  - **Auto-Model** (`panels/auto-model-settings-section.tsx`), above the guide.
+    An on/off switch (also on the composer's Auto-Model chip) and a
+    provider/model/effort row per tier - Light `$`, Standard `$$`, Frontier
+    `$$$`. Device-local (`stores/composer/model-router-store.ts`, persist leaf
+    `model-router`), not host-scoped: the rows hold provider ids and model
+    slugs picked from the Settings host's catalog. While on, both composers
+    classify the sent text (`lib/model-router/model-router.ts`, keyword and
+    shape rules) and swap the tier's model into that send's `ChatRunSettings`;
+    an unmapped tier keeps the picker's model. "Apply to agents that agents
+    create" writes a marked `<!-- traycer:auto-model:start/end -->` section into
+    the guide below through the editor's own edit path while this page is
+    open, and lets `providers/sub-agent-model-router-bridge.tsx` move a child
+    chat this window did not create onto its title's tier model before its next
+    turn, when it landed on a model outside the table.
 - `Fallback` (section id `fallback`, route `/settings/fallback`,
   `panels/fallback-settings-panel.tsx` plus `panels/fallback/`) The whole
   configuration surface for **automatic provider fallback**: what the host does

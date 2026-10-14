@@ -17,6 +17,22 @@ import type { PendingChatCreation } from "@/stores/epics/open-epic/pending-chat-
 export type { PendingChatCreation };
 
 /**
+ * Every chat this window asked a host to create, for the life of the window -
+ * whether or not the epic had a live session to show it in. Auto-Model's
+ * sub-agent watcher reads it to tell a chat the user made (whose model the
+ * user picked) from one an agent made.
+ */
+const createdHere = new Set<string>();
+
+function chatCreationKey(epicId: string, chatId: string): string {
+  return `${epicId}\x1f${chatId}`;
+}
+
+export function wasChatCreatedHere(epicId: string, chatId: string): boolean {
+  return createdHere.has(chatCreationKey(epicId, chatId));
+}
+
+/**
  * Show a chat that has just been created, before any record for it exists.
  *
  * Called with the facts of the request that made it, so the row says what was
@@ -27,6 +43,7 @@ export function beginPendingChatCreation(
   epicId: string,
   pending: PendingChatCreation,
 ): void {
+  createdHere.add(chatCreationKey(epicId, pending.chatId));
   const handle = getOpenEpicRegistry().get(epicId);
   if (handle === null) return;
   handle.store.getState().beginPendingChatCreation(pending);
